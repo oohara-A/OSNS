@@ -10,20 +10,13 @@
     <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
     <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/style.css">
 </head>
+
+<h1 class="header-logo" >
+	OharaSampleNetShop
+</h1>
+
+
 <body>
 
-<%@page pageEncoding="UTF-8" %>
-<a>OharaSampleShop</a>
-<select>
-<option>本</option>
-<option>化粧品</option>
-<option>食料品</option>
-</select>
-<a>アカウント</a>
-<a>注文履歴</a>
-<a>カート</a>
-<a>🔔</a>
-<hr>
 
-カテゴリ
-ヘルプ
+
