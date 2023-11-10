@@ -19,18 +19,18 @@ public class LoginAction {
 		String password=request.getParameter("password");
 		LocalDateTime login_date = LocalDateTime.now();
 
-		// 指定したユーザ名とパスワードの顧客をデータベースから検索する
+		// 指定したユーザ名とパスワードのユーザをデータベースから検索する
 		UserDAO dao=new UserDAO();
 		User user=dao.search(user_name, password);
 
-		// ユーザ名とパスワードに合致する顧客が見つかった場合、属性名userで登録する
+		// ユーザ名とパスワードに合致するユーザが見つかった場合、属性名userで登録する
 		if (user!=null) {
 			session.setAttribute("user", user);
-			// login-out.jspをフォワード先に指定
+			// gacha.jspをフォワード先に指定
 			return "gacha.jsp";
 		}
 
-		// login-error.jspをフォワード先に指定
+		// sign_up.jspをフォワード先に指定
 		return "sign_up.jsp";
 	}
 }
