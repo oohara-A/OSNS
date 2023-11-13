@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.AdminDAO;
+
 public class LoginAction {
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
@@ -21,7 +23,7 @@ public class LoginAction {
 
 		// 指定したメールアドレスとパスワードの管理者をデータベースから検索する
 		AdminDAO dao=new AdminDAO();
-		Admin admin=dao.search(email, password);
+		Admin admin=dao.search(email, password, login_date);
 
 		// メールアドレスとパスワードに合致する管理者が見つかった場合、属性名adminで登録する
 		if (admin!=null) {
