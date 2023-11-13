@@ -21,7 +21,7 @@ public class LoginAction {
 
 		// 指定したユーザ名とパスワードのユーザをデータベースから検索する
 		UserDAO dao=new UserDAO();
-		User user=dao.search(user_name, password);
+		User user=dao.search(user_name, password, login_date);
 
 		// ユーザ名とパスワードに合致するユーザが見つかった場合、属性名userで登録する
 		if (user!=null) {
@@ -30,7 +30,10 @@ public class LoginAction {
 			return "gacha.jsp";
 		}
 
-		// sign_up.jspをフォワード先に指定
-		return "sign_up.jsp";
+		// エラーのアラートを表示
+
+
+		// login.jspをフォワード先に指定
+		return "login.jsp";
 	}
 }
