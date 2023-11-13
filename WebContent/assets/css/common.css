@@ -1,0 +1,176 @@
+@charset "utf-8";
+
+.header {
+  width: 100%;
+  display: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-navitem select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.header-navlist {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.header-navitem {
+  margin-right: 15px;
+  box-sizing: border-box;
+}
+
+.header-navitem>a {
+  display: flex;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header-navitem>a:hover {
+  border-bottom: 1px solid #000;
+}
+
+.header-logo {
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.footer {
+  color: #808080;
+  background: #e5e5e5;
+  padding: 30px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer a {
+  color: #808080;
+  text-decoration: none;
+}
+
+.footer li a:hover {
+  text-decoration: underline;
+}
+
+.footer .outbox {
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer .outbox h3 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  border-bottom: 1px #c4c4c4 solid;
+}
+
+.footer .outbox p {
+  margin: 0;
+  padding: 0 0 20px 0;
+}
+
+.footer .outbox .inbox {
+  width: 24%;
+}
+
+.footer .outbox .inbox ul {
+  margin: 0;
+  padding: 0 0 20px 0;
+  list-style: none;
+}
+
+
+@media screen and (max-width: 599px) {
+  .footer .outbox {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .footer .outbox h3 {
+    border: none;
+  }
+
+  .footer .outbox .inbox {
+    width: 100%;
+  }
+
+  .footer .outbox .inbox ul {
+    border-top: 1px #c4c4c4 solid;
+  }
+
+  .footer .outbox .inbox ul li a {
+    display: block;
+    padding: 5px 15px;
+    border-bottom: 1px #c4c4c4 solid;
+  }
+}
+
+/*tableのcssここからーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+table {
+  width: 90%;
+  /*表 (<table>) の中のセルが境界を共有するか分離するかを設定  */
+  border-collapse: separate;
+  /*内の隣接するセルの境界間の距離を設定  */
+  border-spacing: 0;
+}
+
+table th:first-child {
+  border-radius: 5px 0 0 0;
+}
+
+table th:last-child {
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
+}
+
+table td {
+  text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top: none;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  width: 25%;
+  padding: 10px 0;
+}
+
+table td:last-child {
+  border-right: 1px solid #a8b7c5;
+}
+
+table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+/* a{
+	text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top:none;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  width: 25%;
+  padding: 10px 0;
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
+
+}
+ */
+/*tabeleのcssここまでーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
