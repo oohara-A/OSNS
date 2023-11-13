@@ -20,13 +20,12 @@ public class AddAction {
 		String email=request.getParameter("admin_email");
 //		パスワード
 		String password=request.getParameter("admin_password");
-//		登録した日の日時など情報を取得する処理
-		LocalDateTime add_date = LocalDateTime.now();
+
 //		DB接続処理
 		AdminDAO dao=new AdminDAO();
 
 //		インサート実行処理
-		Admin admin=dao.insert(name, email, password, add_date);
+		Admin admin=dao.insert(name, email, password);
 
 //		returnする正常時終了時のJSP
 		try (
@@ -38,7 +37,5 @@ public class AddAction {
 //			returnエラー時のJSP
 			return "add_admin.jsp";
 		)
-
-
 	}
 }
