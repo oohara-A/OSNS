@@ -120,7 +120,7 @@ FOREIGN KEY (purchase_id) REFERENCES purchase_history(id),
 item_id int(100000000) not null,
 FOREIGN KEY (item_id) REFERENCES product(id),
 count int(100000) not null,
-)
+);
 
 
 CREATE TABLE coupon (
@@ -132,7 +132,7 @@ coupon_name varchar(100) not null,
 image varchar(100) not null,								
 coupon_code varchar(100) not null,							
 flag TINYINT(1) NOT NULL DEFAULT 0				
-)
+);
 
 CREATE TABLE have_coupon (
 id int(10000) AUTO_INCREMENT PRIMARY KEY NOT NULL, 							
@@ -141,7 +141,7 @@ FOREIGN KEY (coupon_id) REFERENCES coupon(coupon_id),
 user_id int(10000000) not null,							
 coupon_code varchar(100) not null,								
 used_flag TINYINT(1) NOT NULL DEFAULT 0								
-)
+);
 
 CREATE TABLE review (
 review_id int(10000000) AUTO_INCREMENT PRIMARY KEY NOT NULL, 							
@@ -155,7 +155,7 @@ reviewbody varchar(10000) not null,
 submissiondate datetime(20) not null,
 deleting_time datetime(20) not null,								
 flag TINYINT(1) NOT NULL DEFAULT 0
-)
+);
 
 CREATE TABLE review_video (
 id int(1000000) AUTO_INCREMENT PRIMARY KEY NOT NULL, 							
@@ -163,14 +163,14 @@ review_id int(10000000) not null,
 FOREIGN KEY (review_id) REFERENCES review(review_id),						
 video_filename varchar(100) not null,							
 flag TINYINT(1) NOT NULL DEFAULT 0								
-)
+);
 
 CREATE TABLE review_image (
 id int(1000000) AUTO_INCREMENT PRIMARY KEY NOT NULL,							
 review_id int(1000000) not null,								
 image_filename varchar(100) not null,							
 flag TINYINT(1) NOT NULL DEFAULT 0								
-)
+);
 
 CREATE TABLE email (
 email_id int(10000) AUTO_INCREMENT PRIMARY KEY NOT NULL,							
@@ -185,14 +185,14 @@ status varchar(100) not null,
 sending_time datetime(20) not null,								
 deleting_time datetime(20) not null,					
 flag TINYINT(1) NOT NULL DEFAULT 0
-)
+);
 
 CREATE TABLE login_history (
 id int(10000000) AUTO_INCREMENT PRIMARY KEY NOT NULL, 
 user_id int(10000000) not null,
 FOREIGN KEY(user_id) REFERENCES user(id),
 login_date datetime(20) not null
-)
+);
 
 
 CREATE TABLE company_review(
@@ -206,7 +206,7 @@ submissiondate datetime(20) not null,
 deleting_time datetime(20) not null,				
 flag TINYINT(1) NOT NULL DEFAULT 0							
 
-)
+);
 
 CREATE TABLE creview_video(
 id int(100000) AUTO_INCREMENT PRIMARY KEY NOT NULL,	
@@ -215,7 +215,7 @@ FOREIGN KEY(company_id) REFERENCES company(id),
 video_filename varchar(100) not null,				
 flag TINYINT(1) NOT NULL DEFAULT 0			
 
-)
+);
 
 CREATE TABLE favorite(
 id int(10000000) AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -224,12 +224,12 @@ FOREIGN KEY(user_id) REFERENCES user(id),
 product_id int(10000000) not null,
 FOREIGN KEY(product_id) REFERENCES product(id),							
 flag TINYINT(1) NOT NULL DEFAULT 0								
-)
+);
 CREATE TABLE creview_image(
 id int(100000) AUTO_INCREMENT PRIMARY KEY NOT NULL,							
 company_id int(10000) not null,	
 FOREIGN KEY(company_id) REFERENCES company(id),							
 image_filename varchar(100) not null,							
 flag
-)
+);
 
