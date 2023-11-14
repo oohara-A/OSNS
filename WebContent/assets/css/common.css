@@ -36,7 +36,7 @@
 }
 
 .header-navitem>a:hover {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid black;
 }
 
 .header-logo {
@@ -46,17 +46,17 @@
 }
 
 .footer {
-  color: #808080;
-  background: #e5e5e5;
+  color: gray;
+  background: pink;
   padding: 30px;
   position: fixed;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
 }
 
 .footer a {
-  color: #808080;
+  color: gray;
   text-decoration: none;
 }
 
@@ -64,56 +64,57 @@
   text-decoration: underline;
 }
 
-.footer .outbox {
+.footer .wrap {
   width: 900px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 100%;
+  padding: 20px 0 0 0;
 }
 
-.footer .outbox h3 {
+.footer .wrap h4 {
   margin: 0 0 10px 0;
   padding: 0;
   border-bottom: 1px #c4c4c4 solid;
 }
 
-.footer .outbox p {
+.footer .wrap p {
   margin: 0;
   padding: 0 0 20px 0;
 }
 
-.footer .outbox .inbox {
+.footer .wrap .inbox {
   width: 24%;
 }
 
-.footer .outbox .inbox ul {
+.footer .wrap .inbox ul {
   margin: 0;
   padding: 0 0 20px 0;
   list-style: none;
 }
 
-
-@media screen and (max-width: 599px) {
-  .footer .outbox {
+@media only screen and (max-width: 500px) {
+  .footer .wrap {
     width: 100%;
     padding: 0 20px;
     box-sizing: border-box;
   }
 
-  .footer .outbox h3 {
+  .footer .wrap h4 {
     border: none;
   }
 
-  .footer .outbox .inbox {
+  .footer .wrap .inbox {
     width: 100%;
   }
 
-  .footer .outbox .inbox ul {
+  .footer .wrap .inbox ul {
     border-top: 1px #c4c4c4 solid;
   }
 
-  .footer .outbox .inbox ul li a {
+  .footer .wrap .inbox ul li a {
     display: block;
     padding: 5px 15px;
     border-bottom: 1px #c4c4c4 solid;
