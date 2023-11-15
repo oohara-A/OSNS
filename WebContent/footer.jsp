@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <hr>
-
+<a class="pagetop" href="#">Top</a>
 <div class="footer">
+
 	<div class="wrap">
 		<div class="inbox">
 			<h4>OharaSampleNetShop</h4>
