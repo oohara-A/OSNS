@@ -21,6 +21,9 @@ public class UserDAO extends DAO {
 			//？に代入
 			st.setString(1, user_name);
 			st.setString(2, password);
+//			ログイン日時をログイン履歴テーブルに追加
+			st=con.prepareStatement(
+					"select * from user where user_name=? and password=?");
 			//SQL文実行
 			ResultSet rs=st.executeQuery();
 
