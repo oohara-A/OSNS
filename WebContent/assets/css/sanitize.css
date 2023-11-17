@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+. coupon{
+	fontcolor : red;
+}
+
+.com_registration{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.society{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.com_name{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.address{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500p
+}
+
+.com_email{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500p
+}
+
+.pass{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500p
+}
+

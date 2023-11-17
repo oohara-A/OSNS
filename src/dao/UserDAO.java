@@ -49,7 +49,7 @@ public class UserDAO extends DAO {
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
 				"insert into user(name,email,password) values(?, ?, ?)");
-//ユーザ名
+//		ユーザ名
 		st.setString(1, account_name);
 //		メールアドレス
 		st.setString(2, account_email);
@@ -67,6 +67,26 @@ public class UserDAO extends DAO {
 		con.close();
 
 		return line;
+	}
+
+//登録解除時使用
+	public boolean update(int id,LocalDateTime adding_time )
+		throws Exception{
+		boolean flag =true;
+		Connection con=getConnection();
+		int ID = id;
+		// LocalDateTimeを文字列に変換
+        String formattedTime = adding_time.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+//削除フラグをtureにする
+		PreparedStatement st=con.prepareStatement(
+				"update user set flag = ?,where id = ?");
+		st.setBoolean(1, flag);
+		st.setInt(2,ID);
+//	削除日時を追加
+	PreparedStatement st2=con.prepareStatement(
+				"insert into user(deleting_time) values(?) where id = ?");
+		st2.setString(1, formattedTime);
+		return true;
 	}
 
 }
