@@ -13,6 +13,7 @@ public class NewregAction extends Action{
 	public String execute(
 			HttpServletRequest request, HttpServletResponse response
 		) throws Exception {
+//		変更
 		//セッションを使えるようにする
 		HttpSession session=request.getSession();
 		//ログイン名を取得
