@@ -7,7 +7,7 @@
 	<div class="wrap">
 		<div class="inbox">
 			<h4>OharaSampleNetShop</h4>
-			<p>a</p>
+			<p>感動は感謝を育み、奮闘は成功の一歩となる。興味は才能を開花させ、起動で人は自立する。</p>
 		</div>
 		<div class="inbox">
 			<h4>お支払いについて</h4>
