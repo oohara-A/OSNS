@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="../menu.jsp" %>
-変更
+
 <h1>アカウントを作成</h1>
 
 <form action="registered.jsp" method="post">
 
-  <p>氏名</p>
+  <p class="name">氏名</p>
   <input type="text" name="name">
 
   <p>企業名</p>
