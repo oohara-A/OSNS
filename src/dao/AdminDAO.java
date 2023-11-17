@@ -4,7 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import bean.Customer;
+import src.bean.Admin;
+import src.bean.Customer;
 
 public class AdminDAO extends DAO {
 	public Customer search(String login, String password)
@@ -13,6 +14,7 @@ public class AdminDAO extends DAO {
 
 		Connection con=getConnection();
 
+		// ログイン
 		// SQL文を実行
 		PreparedStatement st;
 		st=con.prepareStatement(
@@ -25,9 +27,12 @@ public class AdminDAO extends DAO {
 		while (rs.next()) {
 			admin=new Admin();
 			admin.setId(rs.getInt("id"));
-			admin.setLogin(rs.getString("login"));
+			admin.setEmail(rs.getString("email"));
 			admin.setPassword(rs.getString("password"));
 		}
+
+		// ログアウト
+
 
 		st.close();
 		con.close();

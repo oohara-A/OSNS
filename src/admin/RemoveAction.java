@@ -4,24 +4,38 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Admin;
 import dao.AdminDAO;
 
 public class RemoveAction {
 	public String execute(
-			HttpServletRequest request, HttpServletResponse response
-		) throws Exception {
+		HttpServletRequest request, HttpServletResponse response
+	) throws Exception {
 
-			HttpSession session=request.getSession();
+		HttpSession session=request.getSession();
 
-	        // AdminDAOを使用して管理者一覧を取得
-	        AdminDAO adminDAO = new AdminDAO();
-	        List<Admin> adminList = adminDAO.getAllAdmins(); // すべての管理者のリストを取得するメソッドを呼び出す
+        String adminId = request.getParameter("adminId"); // 削除対象の管理者ID
 
-	        // 取得した管理者一覧をセッションに保存
-	        session.setAttribute("adminList", adminList);
+        if (adminId != null && !adminId.isEmpty()) {
+            AdminDAO adminDAO = new AdminDAO();
 
-	        return "delete_admin.jsp"; // 管理者一覧を表示するJSP名を返す
 
-		}
+            if (success) {
+                return "delete_admin.jsp"; // 削除成功時に管理者一覧ページにリダイレクト
+            } else {
+//                request.setAttribute("errorMessage", "管理者の削除に失敗しました。");
+//                return "error.jsp"; // エラー画面に遷移するためのJSP名を返す
+
+            	// エラーアラートの表示
+
+
+            }
+        } else {
+//            request.setAttribute("errorMessage", "削除対象の管理者が指定されていません。");
+//            return "error.jsp"; // エラー画面に遷移するためのJSP名を返す
+
+        	//　エラーアラートの表示
+
+
+        }
+	}
 }
