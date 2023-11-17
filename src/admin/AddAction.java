@@ -1,11 +1,10 @@
 package admin;
 
-import java.time.LocalDateTime;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.Admin;
 import dao.AdminDAO;
 
 public class AddAction {
@@ -14,28 +13,34 @@ public class AddAction {
 	) throws Exception {
 
 		HttpSession session=request.getSession();
-//		氏名
-		String name=request.getParameter("admin_name");
-//		メールアドレス
+		//管理者名
+		String admin_name=request.getParameter("admin_name");
+		//メールアドレス
 		String email=request.getParameter("admin_email");
-//		パスワード
+		//パスワード
 		String password=request.getParameter("admin_password");
 
-//		DB接続処理
 		AdminDAO dao=new AdminDAO();
+		Admin admin=dao.insert(admin_name, email, password);
 
-//		インサート実行処理
-		Admin admin=dao.insert(name, email, password);
+		if (session.getAttribute("login_admin")!=null){
+			// 管理者名とメールアドレスとパスワードに合致する管理者が見つからなかった場合、属性名add_adminで登録する
+			if (admin==null) {
+				session.setAttribute("add_admin", admin);
+				// admin.jspをフォワード先に指定
+				return "admin.jsp";
+			}else{
+				//エラーのアラートを表示
 
-//		returnする正常時終了時のJSP
-		try (
-			return "admin.jsp"
-		)catch (
+
+				// add_admin.jspをフォワード先に指定
+				return "add_admin.jsp";
+			}
+		}else {
 			//エラーのアラートを表示
 
-
-//			returnエラー時のJSP
-			return "add_admin.jsp";
-		)
+			//login.jspをフォワード先に指定
+			return "login.jsp";
+		}
 	}
 }
