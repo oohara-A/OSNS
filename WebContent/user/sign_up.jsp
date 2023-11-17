@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+<%@include file="../header.jsp" %>
 
 <title>新規登録</title>
 <link rel="stylesheet" type="text/css" href="osns/WebContent/assets/common.css">
@@ -29,4 +29,4 @@
 <input type="submit" value="登録">
 </form>
 
-<%@include file="../footer.html" %>
+<%@include file="../footer.jsp" %>

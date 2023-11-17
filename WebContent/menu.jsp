@@ -41,5 +41,3 @@
         <hr>
 
 
-
-<%@include file="../footer.jsp" %>
