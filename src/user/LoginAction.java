@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.User;
+import dao.UserDAO;
+//ログインクラス
 public class LoginAction {
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
@@ -14,7 +17,7 @@ public class LoginAction {
 		// セッションを開始
 		HttpSession session=request.getSession();
 
-		// リクエストパラメータからユーザ名とパスワードとログイン日時を取得
+		// jspファイルからユーザ名とパスワードとログイン日時を取得
 		String user_name=request.getParameter("user_name");
 		String password=request.getParameter("password");
 		LocalDateTime login_date = LocalDateTime.now();
