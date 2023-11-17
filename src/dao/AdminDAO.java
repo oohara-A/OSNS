@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import src.bean.Admin;
-import src.bean.Customer;
+import bean.Admin;
+import bean.Customer;
 
 public class AdminDAO extends DAO {
 	public Customer search(String login, String password)
@@ -32,8 +32,6 @@ public class AdminDAO extends DAO {
 		}
 
 		// ログアウト
-
-
 		st.close();
 		con.close();
 		return admin;
