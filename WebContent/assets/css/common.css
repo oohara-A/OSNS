@@ -45,22 +45,6 @@
   text-align: center;
 }
 
-<<<<<<< HEAD
-.pagetop {
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    background: red;
-    color: white;
-    border: solid 2px black;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-=======
 .drawer_hidden {
   display: none;
 }
@@ -147,7 +131,6 @@
 
 body {
   margin-bottom: 100px;
->>>>>>> branch 'main' of https://github.com/oohara-A/OSNS.git
 }
 
 .footer {
