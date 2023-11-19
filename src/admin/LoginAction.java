@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.Admin;
 import dao.AdminDAO;
 
 public class LoginAction {
@@ -22,9 +23,9 @@ public class LoginAction {
 		AdminDAO dao=new AdminDAO();
 		Admin admin=dao.search(email, password);
 
-		// メールアドレスとパスワードに合致する管理者が見つかった場合、属性名adminで登録する
+		// メールアドレスとパスワードに合致する管理者が見つかった場合、属性名login_adminで登録する
 		if (admin!=null) {
-			session.setAttribute("admin", admin);
+			session.setAttribute("login_admin", admin);
 			// admin.jspをフォワード先に指定
 			return "admin.jsp";
 		}
