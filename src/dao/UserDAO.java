@@ -74,19 +74,34 @@ public class UserDAO extends DAO {
 		throws Exception{
 		boolean flag =true;
 		Connection con=getConnection();
-		int ID = id;
 		// LocalDateTimeを文字列に変換
         String formattedTime = adding_time.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 //削除フラグをtureにする
 		PreparedStatement st=con.prepareStatement(
 				"update user set flag = ?,where id = ?");
+//		削除フラグをtureにする
 		st.setBoolean(1, flag);
-		st.setInt(2,ID);
+		st.setInt(2,id);
 //	削除日時を追加
 	PreparedStatement st2=con.prepareStatement(
 				"insert into user(deleting_time) values(?) where id = ?");
 		st2.setString(1, formattedTime);
 		return true;
 	}
+
+
+// プロフィール編集時使用
+public boolean pro_update(int id,String user_name, String emali, String password,LocalDateTime adding_time) throws Exception{
+	boolean flag =true;
+	Connection con=getConnection();
+	// LocalDateTimeを文字列に変換
+    String formattedTime = adding_time.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+//   プロフィール編集処理
+    PreparedStatement st=con.prepareStatement(
+			"update user set flag = ?,where id = ?");
+
+	return true;
+
+}
 
 }
