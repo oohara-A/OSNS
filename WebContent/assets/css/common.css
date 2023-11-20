@@ -152,9 +152,7 @@
 
 
 /* body */
-body {
-  margin-bottom: 900px;
-}
+
 /* body */
 
 
@@ -162,10 +160,6 @@ body {
   color: gray;
   background: pink;
   padding: 30px;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
   box-sizing: border-box;
 }
@@ -276,4 +270,3 @@ table tr:last-child td:first-child {
 table tr:last-child td:last-child {
   border-radius: 0 0 5px 0;
 }
-
