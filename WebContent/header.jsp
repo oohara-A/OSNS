@@ -30,11 +30,11 @@
 	</nav>
 </div>
 
-<nav class="nav-menu">
-	<ul class="menu-list">
-		<li class="menu"><a href="#">OharaSampleNetShop</a></li>
-		<li class="menu"><a href="#">アカウント</a></li>
-		<li class="menu"><a href="#">注文履歴</a></li>
+<nav class="header-menu">
+	<ul class="header-list">
+		<li class="head"><a href="#">OharaSampleNetShop</a></li>
+		<li class="head"><a href="#">アカウント</a></li>
+		<li class="head"><a href="#">注文履歴</a></li>
 	</ul>
 </nav>
 
