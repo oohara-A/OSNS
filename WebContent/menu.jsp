@@ -4,11 +4,6 @@
 
 <nav class="header-nav">
         <ul class="header-navlist">
-        	<li class="header-navitem">
-        		<!--トップページ  -->
-
-            </li>
-
             <li class="header-navitem">
             	<!--カテゴリ選択 -->
             	<select>

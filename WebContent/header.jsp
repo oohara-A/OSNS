@@ -23,15 +23,15 @@
 	<label for="drawer_input" class="drawer_open"><span></span></label>
 	<nav class="nav_content">
 		<ul class="nav_list">
-		  <li class="nav_item"><a href="#">ブランド名</a></li>
-		  <li class="nav_item"><a href="#">1000～3000円</a></li>
-		  <li class="nav_item"><a href="#">試供品</a></li>
+			<li class="nav_item"><a href="#">ブランド名</a></li>
+			<li class="nav_item"><a href="#">1000~3000円</a></li>
+			<li class="nav_item"><a href="#">試供品</a></li>
 		</ul>
 	</nav>
 </div>
 
 <nav class="nav-menu">
-	<ul>
+	<ul class="menu-list">
 		<li class="menu"><a href="#">OharaSampleNetShop</a></li>
 		<li class="menu"><a href="#">アカウント</a></li>
 		<li class="menu"><a href="#">注文履歴</a></li>

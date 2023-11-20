@@ -8,10 +8,19 @@
   right: 0;
 }
 
-.nav-menu .nav-list .menu ul li a{
-	display: flex;
+.nav-menu ul {
+	text-align: right;
+	list-style: none;
+}
+
+.nav-menu li {
+	 display: inline-block;
+}
+
+.nav-menu ul li a{
     padding: 5px 15px;
     box-sizing: border-box;
+	display: flex;
 }
 
 .header-navitem select {
@@ -33,7 +42,7 @@
   box-sizing: border-box;
 }
 
-.header-navitem>a {
+.header-navitem a {
   display: flex;
   padding: 10px;
   color: #333;
@@ -41,9 +50,11 @@
   font-weight: bold;
 }
 
-.header-navitem>a:hover {
+.header-navitem a:hover {
   border-bottom: 1px solid black;
 }
+
+
 
 .header-logo {
   background-color: red;
