@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* header css ここから*/
+/* -----header css ここから----- */
 .header {
   width: 100%;
   display: fixed;
@@ -111,9 +111,9 @@
   z-index: 2;
 }
 
-/* header css ここまで */
+/* ----- header css ここまで ----- */
 
-/* menu css ここから*/
+/* ----- menu css ここから ----- */
 
 .menu a {
   display: flex;
@@ -146,7 +146,7 @@
   border-bottom: 1px solid black;
 }
 
-/* menu css ここまで */
+/* ----- menu css ここまで ----- */
 
 
 
@@ -155,6 +155,7 @@
 
 /* body */
 
+/* ----- footer css ここから ----- */
 
 .footer {
   color: gray;
@@ -230,6 +231,8 @@
     border-bottom: 1px #c4c4c4 solid;
   }
 }
+
+/* ----- footer css ここまで ----- */
 
 /*tableのcssここからーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
 table {

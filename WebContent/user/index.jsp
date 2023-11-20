@@ -1,100 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="../menu.jsp" %>
 
-<p>食料品
+<div>
 	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
+		<img alt="商品詳細へ" src="../assets/image/food_box.png">
 	</a>
-</p>
+	<h1>食料品</h1>
+</div>
 
-<p>書籍
+<div>
 	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
+		<img alt="商品詳細へ" src="../assets/image/tosyokan_book_tana.png">
 	</a>
-</p>
+	<h1>書籍</h1>
+</div>
 
-<p>化粧品
+<div>
 	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
+		<img alt="商品詳細へ" src="../assets/image/makeup_eyeshadow.png">
 	</a>
-</p>
+	<h1>化粧品</h1>
+</div>
 
-<p>試供品提供中
+<div>
 	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
+		<img alt="商品詳細へ" src="../assets/image/foodbank_teikyou.png">
 	</a>
-</p>
+	<h1>試供品提供中</h1>
+</div>
 
-<p>評価の高い商品
+<div>
 	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
+		<img alt="商品詳細へ" src="../assets/image/star5.png">
 	</a>
-</p>
+	<h1>評価の高い商品</h1>
+</div>
 
-<p>新着商品
+<div>
 	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
+		<img alt="商品詳細へ" src="../assets/image/pop_new.png">
 	</a>
-</p>
+	<h1>新着商品</h1>
+</div>
 
-<p>
-	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
-	</a>
-</p>
 
-<p>
-	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
-	</a>
-</p>
-
-<p>
-	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
-	</a>
-</p>
-
-<p>
-	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
-	</a>
-</p>
-
-<p>
-	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
-	</a>
-</p>
-
-<p>
-	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
-	</a>
-</p>
-
-<p>
-	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
-	</a>
-</p>
-
-<p>
-	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
-	</a>
-</p>
-
-<p>
-	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
-	</a>
-</p>
-
-<p>
-	<a href="#">
-		<img alt="商品詳細へ" src="AAAA.png">
-	</a>
-</p>
 
 <%@include file="../footer.jsp" %>
