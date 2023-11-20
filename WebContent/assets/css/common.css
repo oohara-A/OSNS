@@ -152,6 +152,23 @@
 
 
 /* body */
+.index {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image {
+	width: 25%
+}
+
+.image img{
+	width: 60%;
+	height: 50%;
+}
+
+.image h1{
+	text-align: auto;
+}
 
 /* body */
 
