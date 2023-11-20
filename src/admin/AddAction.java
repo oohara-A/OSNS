@@ -23,6 +23,7 @@ public class AddAction {
 		AdminDAO dao=new AdminDAO();
 		Admin admin=dao.insert(admin_name, email, password);
 
+		//ログインされているか
 		if (session.getAttribute("login_admin")!=null){
 			// 管理者名とメールアドレスとパスワードに合致する管理者が見つからなかった場合、属性名add_adminで登録する
 			if (admin==null) {
@@ -39,8 +40,7 @@ public class AddAction {
 		}else {
 			//エラーのアラートを表示
 
-			//login.jspをフォワード先に指定
-			return "login.jsp";
+			return "admin.jsp";
 		}
 	}
 }
