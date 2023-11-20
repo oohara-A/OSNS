@@ -1,11 +1,13 @@
 package user;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.User;
 import dao.UserDAO;
 import tool.Action;
 
@@ -14,9 +16,13 @@ public class DeregiAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//セッションを使えるようにする
 		HttpSession session=request.getSession();
-
-		//登録しているユーザidを取得
-		int id=Integer.parseInt(request.getParameter("id"));
+		int id = 0;
+		@SuppressWarnings("unchecked")
+		List<User> user_been=(List<User>)session.getAttribute("user");
+		for(User i : user_been){
+//			id取得
+			id = i.getId();
+		}
 //		削除日時日時
 		LocalDateTime adding_time = LocalDateTime.now();
 		//登録解除

@@ -34,12 +34,18 @@ public class EditproAction extends Action {
 		LocalDateTime adding_time = LocalDateTime.now();
 //		データベース処理
 		UserDAO dao = new UserDAO();
-		boolean flag = dao.pro_update(id,name,email,phone_number,adding_time);
+		boolean flag = dao.pro_update(id,name,email,phone_number,password,adding_time);
+		if(flag == true){
+			//プロフィール画面を再表示
+			return "user_profile.jsp";
+		}
+//		errorアラート
 
-
-
-//プロフィール画面を表示
+//		プロフィール画面再表示
 		return "user_profile.jsp";
+
+
+
 	}
 
 }
