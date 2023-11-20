@@ -117,7 +117,21 @@ public boolean pro_update(int id,String user_name, String emali, String phone_nu
 	st.close();
 	con.close();
 //電話番号アップデート
+	Connection con2=getConnection();
+	PreparedStatement st2 = con.prepareStatement(
+		    "UPDATE address INNER JOIN user ON address.user_id = user.id SET address.phone_number = ? WHERE user.user_id = ?");
+	st2.setString(1, phone_number);
+	st2.setInt(2, id);
+	st2.executeUpdate();
+	st2.close();
+	con2.close();
 
+	return true;
+}
+//お気に入り登録時使用
+public boolean favorite_insert(int id, int product_id)throws Exception{
+	Connection con = getConnection();
+	PreparedStatement st = con.prepareStatement("INSERT INTO favorite (user_id, product_id) values(?,?) from  WHERE id = ?");
 	return true;
 
 }
