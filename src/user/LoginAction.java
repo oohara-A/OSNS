@@ -28,7 +28,7 @@ public class LoginAction {
 
 		// ユーザ名とパスワードに合致するユーザが見つかった場合、属性名userで登録する
 		if (user!=null) {
-			session.setAttribute("user", user);
+			session.setAttribute("user",user);
 			// gacha.jspをフォワード先に指定
 			return "gacha.jsp";
 		}
