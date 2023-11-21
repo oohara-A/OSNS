@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/* -----header css ここから----- */
 .header {
   width: 100%;
   display: fixed;
@@ -8,58 +9,25 @@
   right: 0;
 }
 
-.nav-menu ul {
-	text-align: right;
-	list-style: none;
-}
-
-.nav-menu li {
-	 display: inline-block;
-}
-
-.nav-menu ul li a{
-    padding: 5px 15px;
-    box-sizing: border-box;
-	display: flex;
-}
-
-.header-navitem select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.header-navlist {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  /* align-items: center; */
-}
-
-.header-navitem {
-  margin-right: 15px;
-  box-sizing: border-box;
-}
-
-.header-navitem a {
-  display: flex;
-  padding: 10px;
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.header-navitem a:hover {
-  border-bottom: 1px solid black;
-}
-
-
-
 .header-logo {
   background-color: red;
   color: white;
   text-align: center;
+}
+
+.header-menu ul {
+  text-align: right;
+  list-style: none;
+}
+
+.header-menu li {
+  display: inline-block;
+}
+
+.header-menu ul li a {
+  padding: 5px 15px;
+  box-sizing: border-box;
+  display: flex;
 }
 
 .drawer_hidden {
@@ -73,7 +41,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 100;/* 重なり順を一番上にする */
+  z-index: 100;
   cursor: pointer;
 }
 
@@ -94,23 +62,20 @@
   bottom: 8px;
 }
 
-/* 三本線の一番下の棒の位置調整 */
 .drawer_open span:after {
   top: 8px;
 }
 
-/* アイコンがクリックされたら真ん中の線を透明にする */
-#drawer_input:checked ~ .drawer_open span {
+#drawer_input:checked~.drawer_open span {
   background: rgba(255, 255, 255, 0);
 }
 
-/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
-#drawer_input:checked ~ .drawer_open span::before {
+#drawer_input:checked~.drawer_open span::before {
   bottom: 0;
   transform: rotate(45deg);
 }
 
-#drawer_input:checked ~ .drawer_open span::after {
+#drawer_input:checked~.drawer_open span::after {
   top: 0;
   transform: rotate(-45deg);
 }
@@ -120,44 +85,99 @@
   height: 100%;
   position: fixed;
   top: 0;
-  left: 100%; /* メニューを画面の外に飛ばす */
+  left: 100%;
   z-index: 99;
   background: #fff;
   transition: .5s;
 }
 
-#drawer_input:checked ~ .nav_content {
-  left: 0;/* メニューを画面に入れる */
+#drawer_input:checked~.nav_content {
+  left: 0;
 }
 
 .pagetop {
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    background: red;
-    color: white;
-    border: solid 2px black;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  background: red;
+  color: white;
+  border: solid 2px black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 }
 
-body {
-  margin-bottom: 900px;
+/* ----- header css ここまで ----- */
+
+/* ----- menu css ここから ----- */
+
+.menu a {
+  display: flex;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
 }
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.menu li {
+  margin-right: 15px;
+  box-sizing: border-box;
+}
+
+.menu select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.menu .menu-list .menu-item a:hover {
+  border-bottom: 1px solid black;
+}
+
+/* ----- menu css ここまで ----- */
+
+
+
+
+/* body */
+.index {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image {
+	width: 25%
+}
+
+.image img{
+	width: 50%;
+	height: 50%;
+}
+
+.image h1{
+	text-align: auto;
+}
+
+/* body */
+
+/* ----- footer css ここから ----- */
 
 .footer {
   color: gray;
   background: pink;
   padding: 30px;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
   box-sizing: border-box;
 }
@@ -229,6 +249,8 @@ body {
   }
 }
 
+/* ----- footer css ここまで ----- */
+
 /*tableのcssここからーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
 table {
   width: 90%;
@@ -268,18 +290,3 @@ table tr:last-child td:first-child {
 table tr:last-child td:last-child {
   border-radius: 0 0 5px 0;
 }
-
-/* a{
-	text-align: center;
-  border-left: 1px solid #a8b7c5;
-  border-bottom: 1px solid #a8b7c5;
-  border-top:none;
-  box-shadow: 0px -3px 5px 1px #eee inset;
-  width: 25%;
-  padding: 10px 0;
-  border-radius: 0 5px 0 0;
-  border-right: 1px solid #3c6690;
-
-}
- */
-/*tabeleのcssここまでーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
