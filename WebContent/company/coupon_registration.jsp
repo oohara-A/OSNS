@@ -1,25 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="../menu.jsp" %>
 
-<div class="coupon">
-<h2>クーポン登録</h2>
-</div>
-
 <form action="CouponRegistrationServlet" method="post">
 
-  <p>クーポン名</p>
+<div class="back_home">
+   <input class="backhome" type="submit" value="ホームに戻る">
+</div>
+
+<div class="coupon">
+<h2 class="coupon_registration">クーポン登録</h2>
+</div>
+
+<div class="coupon_name">
+  <p class="cou_name">クーポン名</p>
   <input type="text" name="couponName">
+</div>
 
-  <p>クーポンコード</p>
+<div class="coupon_code">
+  <p class="cou_code">クーポンコード</p>
   <input type="text" name="couponCode">
+</div>
 
-  <p>発行数</p>
-  <input type="date" name="issue_number">
+<div class="issue_number">
+  <p class="issue_count">発行数</p>
+  <input type="date" name="coupon_issue_number">
+</div>
 
-  <p>割引率</p>
-  <input type="number" name="discountRate" min="1" max="100"> %
+<div class="discount_factor">
+  <p class="discount_rate">割引率</p>
+  <input type="number" name="coupon_discount" min="1" max="100"> %
+</div>
 
-  <input type="submit" value="登録">
+<div class="registration_button">
+  <input class="register_button" type="submit" value="登録">
+</div>
+
 </form>
 
 <%@include file="../footer.jsp" %>

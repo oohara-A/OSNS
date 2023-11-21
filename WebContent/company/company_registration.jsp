@@ -1,29 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="../menu.jsp" %>
 
-<h2>企業を登録</h2>
-
 <form action="registered.jsp" method="post">
 
-  <p>氏名</p>
-  <input type="text" name="name">
+<h2 class="com_registration">企業登録</h2>
 
-  <p>企業名</p>
-  <input type="text" name="com_name">
+<div class="com_full_name">
+   <p class="comfull_name">氏名</p>
+   <input type="text" name="name">
+</div>
 
-  <p>所在地</p>
-  <input type="text" name="address">
+<div class="com_name">
+   <p class="comname">企業名</p>
+   <input type="text" name="com_name">
+</div>
 
-  <p>携帯電話番号・メールアドレス</p>
-  <input type="text" name="email">
+<div class="com_address">
+   <p class="comaddress">所在地</p>
+   <input type="text" name="address">
+</div>
 
-  <p>パスワード</p>
-  <input type="text" name="pass">
+<div class="com_mobile">
+   <p class="commobile">携帯電話番号・メールアドレス</p>
+   <input type="text" name="email">
+</div>
 
-  <p>もう一度パスワード</p>
-  <input type="text" name="onemore">
+<div class="com_password">
+   <p class="compassword">パスワード</p>
+   <input type="text" name="pass">
+</div>
 
-  <input type="submit" value="登録">
+<div class="next_com_password">
+   <p class="next_compassword">もう一度パスワード</p>
+   <input type="text" name="onemore">
+</div>
+
+<div class="go_next">
+   <input class="gonext" type="submit" value="次に進む">
+</div>
+
 </form>
 
 <%@include file="../footer.jsp" %>

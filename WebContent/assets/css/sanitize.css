@@ -1,15 +1,44 @@
 @charset "utf-8";
 
+/*企業側共通のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.back_home{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+  text-align: right; /* 右寄せ */
+}
+
+.back_home .backhome {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/*企業登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
 .com_registration{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  font-size: 50px;
+  text-align: left;
+}
+
+.com_full_name{
   width: 80%;
   margin: 0 auto;
   max-width: 500px;
 }
 
-.society{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
+.com_full_name .comfull_name{
+  font-size: 30px;
+}
+
+.com_full_name input[type="text"] {
+  width: 300px;
+  height: 40px;
 }
 
 .com_name{
@@ -18,26 +47,203 @@
   max-width: 500px;
 }
 
-.address{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500p
+.com_name .comname{
+  font-size: 30px;
 }
 
-.com_email{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500p
+.com_name input[type="text"] {
+  width: 300px;
+  height: 40px;
 }
 
-.pass{
+.com_address{
   width: 80%;
   margin: 0 auto;
-  max-width: 500p
+  max-width: 500px;
 }
 
-.next_pass{
+.com_address .comaddress{
+  font-size: 30px;
+}
+
+.com_address input[type="text"] {
+  width: 300px;
+  height: 40px;
+}
+
+.com_mobile{
   width: 80%;
   margin: 0 auto;
-  max-width: 500p
+  max-width: 500px;
+}
+
+.com_mobile .commobile{
+  font-size: 30px;
+}
+
+.com_mobile input[type="text"]{
+  width: 400px;
+  height: 40px;
+}
+
+.com_password{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.com_password .compassword{
+  font-size: 30px;
+}
+
+.com_password input[type="text"]{
+  width: 300px;
+  height: 40px;
+}
+
+.next_com_password{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.next_compassword{
+  font-size: 30px;
+}
+
+.next_com_password input[type="text"]{
+  width: 300px;
+  height: 40px;
+}
+
+.go_next{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+  text-align: right; /* 右寄せ */
+}
+
+.go_next .gonext{
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/*クーポン登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.back_home{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: right;
+}
+
+.coupon{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+
+}
+
+.coupon .coupon_registration{
+  font-size: 45px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.coupon_name{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.coupon_name .cou_name{
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.coupon_name input[type="text"] {
+  width: 300px;
+  height: 40px;
+}
+
+.coupon_code{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.coupon_code .cou_code{
+  font-size: 30px;
+}
+
+.coupon_code input[type="text"] {
+  width: 300px;
+  height: 40px;
+}
+
+.issue_number{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.issue_number .issue_count{
+  font-size: 30px;
+}
+
+.issue_number input[type="date"] {
+  width: 300px;
+  height: 40px;
+}
+
+.discount_factor{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.discount_factor .discount_rate{
+  font-size: 30px;
+}
+
+.discount_factor input[type="number"] {
+  width: 300px;
+  height: 40px;
+}
+
+.registration_button .register_button{
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/*企業情報編集のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.com_inforedit{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  font-size: 35px;
+  text-align: left;
+}
+
+.com_email .address_name{
+  font-size: 30px;
+  text-align: left;
+  display: flex;
+  align-items: center;
 }
