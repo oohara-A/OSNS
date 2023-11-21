@@ -23,8 +23,6 @@ public class CartaddAction extends Action {
 		List<Product> product=(List<Product>)session.getAttribute("product");
 		List<User> user =(List<User>) session.getAttribute("user");
 
-
-
 //		カートテーブルにinsert
 
 
