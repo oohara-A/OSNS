@@ -1,63 +1,100 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-	<%@include file="../menu.jsp" %>
+<%@include file="../menu.jsp" %>
 
-		<div class="index">
-			<div class="image">
-				<a href="#">
-					<img alt="商品詳細へ" src="../assets/image/food_box.png">
-				</a>
-				<h1>食料品</h1>
-			</div>
+<p>食料品
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
 
-			<div class="image">
-				<a href="#">
-					<img alt="商品詳細へ" src="../assets/image/tosyokan_book_tana.png">
-				</a>
-				<h1>書籍</h1>
-			</div>
+<p>書籍
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
 
-			<div class="image">
-				<a href="#">
-					<img alt="商品詳細へ" src="../assets/image/makeup_eyeshadow.png">
-				</a>
-				<h1>化粧品</h1>
-			</div>
+<p>化粧品
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
 
-			<div class="image">
-				<a href="#">
-					<img alt="商品詳細へ" src="../assets/image/kaden_pikapika.png">
-				</a>
-				<h1>電化製品</h1>
-			</div>
+<p>試供品提供中
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
 
-			<div class="image">
-				<a href="#">
-					<img alt="商品詳細へ" src="../assets/image/shichakushitsu.png">
-				</a>
-				<h1>服飾雑貨</h1>
-			</div>
+<p>評価の高い商品
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
 
-			<div class="image">
-				<a href="#">
-					<img alt="商品詳細へ" src="../assets/image/pop_new.png">
-				</a>
-				<h1>新着商品</h1>
-			</div>
+<p>新着商品
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
 
-			<div class="image">
-				<a href="#">
-					<img alt="商品詳細へ" src="../assets/image/foodbank_teikyou.png">
-				</a>
-				<h1>試供品提供中</h1>
-			</div>
+<p>
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
 
-			<div class="image">
-				<a href="#">
-					<img alt="商品詳細へ" src="../assets/image/star5.png">
-				</a>
-				<h1>評価の高い商品</h1>
-			</div>
-		</div>
+<p>
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
 
+<p>
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
 
-		<%@include file="../footer.jsp" %>
+<p>
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
+
+<p>
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
+
+<p>
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
+
+<p>
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
+
+<p>
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
+
+<p>
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
+
+<p>
+	<a href="#">
+		<img alt="商品詳細へ" src="AAAA.png">
+	</a>
+</p>
+
+<%@include file="../footer.jsp" %>

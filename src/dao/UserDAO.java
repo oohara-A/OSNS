@@ -131,7 +131,13 @@ public boolean pro_update(int id,String user_name, String emali, String phone_nu
 //お気に入り登録時使用
 public boolean favorite_insert(int id, int product_id)throws Exception{
 	Connection con = getConnection();
-	PreparedStatement st = con.prepareStatement("INSERT INTO favorite (user_id, product_id) values(?,?) from  WHERE id = ?");
+	PreparedStatement st = con.prepareStatement("INSERT INTO favorite (user_id, product_id) SELECT ?, ? FROM user WHERE user.id = ?");	st.setInt(1, id);
+	st.setInt(1, id);
+	st.setInt(2, product_id);
+	st.setInt(3, id);
+	st.executeUpdate();
+	st.close();
+	con.close();
 	return true;
 
 }
