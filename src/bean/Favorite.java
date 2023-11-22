@@ -9,6 +9,20 @@ private int	 user_id;
 private int	 product_id;
 //削除フラグ
 private boolean flag;
+
+private Product product;//プロダクト型の変数
+/**
+ * @param product セットする product
+ */
+public void setProduct(Product product) {
+	this.product = product;
+}
+/**
+ * @return product
+ */
+public Product getProduct() {
+	return product;
+}
 /**
  * @return id
  */
@@ -57,5 +71,6 @@ public boolean isFlag() {
 public void setFlag(boolean flag) {
 	this.flag = flag;
 }
+
 
 }

@@ -21,6 +21,20 @@ private Date deleting_time;
 private Date update_time;
 //削除フラグ
 private boolean deletion_flag;
+
+private Product product;//プロダクト型の変数
+/**
+ * @return product
+ */
+public Product getProduct() {
+	return product;
+}
+/**
+ * @param product セットする product
+ */
+public void setProduct(Product product) {
+	this.product = product;
+}
 /**
  * @return id
  */

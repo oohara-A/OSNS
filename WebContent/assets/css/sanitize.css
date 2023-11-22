@@ -144,7 +144,6 @@
   width: 80%;
   margin: 0 auto;
   max-width: 500px;
-
 }
 
 .coupon .coupon_registration{
@@ -223,6 +222,13 @@
   height: 40px;
 }
 
+.registration_button{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+  text-align: right; /* 右寄せ */
+}
+
 .registration_button .register_button{
   background-color: blue;
   color: white;
@@ -233,7 +239,7 @@
 }
 
 /*企業情報編集のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
-.com_inforedit{
+.comed_inforedit{
   width: 80%;
   margin: 0 auto;
   max-width: 500px;
@@ -241,9 +247,18 @@
   text-align: left;
 }
 
-.com_email .address_name{
-  font-size: 30px;
-  text-align: left;
-  display: flex;
-  align-items: center;
+.reg_button{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+  text-align: right; /* 右寄せ */
+}
+
+.reg_button .regbutton{
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
