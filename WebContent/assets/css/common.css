@@ -157,17 +157,36 @@
   flex-wrap: wrap;
 }
 
-.image {
-	width: 25%
+.index .image {
+	width: 25%;
 }
 
-.image img{
+.index .image img{
 	width: 50%;
 	height: 50%;
 }
 
 .image h1{
 	text-align: auto;
+}
+
+.product_list {
+	/* display: flex; */
+}
+
+.product {
+	display: flex;
+}
+
+.product_list .image img{
+	width: 50%;
+	height: 50%;
+}
+
+.product_list .image a {
+	padding: 10px;
+	width: 50%;
+	height: 50%;
 }
 
 /* body */
