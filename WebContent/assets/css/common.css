@@ -158,35 +158,35 @@
 }
 
 .index .image {
-	width: 25%;
+  width: 25%;
 }
 
-.index .image img{
-	width: 50%;
-	height: 50%;
+.index .image img {
+  width: 50%;
+  height: 50%;
 }
 
-.image h1{
-	text-align: auto;
+.image h1 {
+  text-align: auto;
 }
 
 .product_list {
-	/* display: flex; */
+  /* display: flex; */
 }
 
 .product {
-	display: flex;
+  display: flex;
 }
 
-.product_list .image img{
-	width: 50%;
-	height: 50%;
+.product_list .image img {
+  width: 50%;
+  height: 50%;
 }
 
 .product_list .image a {
-	padding: 10px;
-	width: 50%;
-	height: 50%;
+  padding: 10px;
+  width: 50%;
+  height: 50%;
 }
 
 /* body */
