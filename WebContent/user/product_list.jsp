@@ -5,7 +5,7 @@
 			<h1>売れ筋ランキング</h1>
 			<div class="product">
 				<div class="image">
-					<a href="#">
+					<a href="product_detail.jsp">
 						<img alt="商品詳細へ" src="../assets/image/food_box.png">
 					</a>
 					<p>商品名</p>
