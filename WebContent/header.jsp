@@ -22,7 +22,11 @@
 
 	<nav class="header-menu">
 		<ul class="header-list">
+<<<<<<< HEAD
 			<li class="head"><a href="#">OharaSampleNetShop</a></li>
+=======
+			<li class="head"><a href="../user/index.jsp">OharaSampleNetShop</a></li>
+>>>>>>> b3ac6223cea92d9d3e8451668b00fbbe07bb88e3
 			<li class="head"><a href="#">アカウント</a></li>
 			<li class="head"><a href="#">注文履歴</a></li>
 		</ul>
