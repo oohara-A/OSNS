@@ -17,15 +17,94 @@
   cursor: pointer;
 }
 
-/*企業登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
-.com_registration{
+.registration_button{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+  text-align: right; /* 右寄せ */
+}
+
+.registration_button .register_button{
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.com_title {
   width: 80%;
   margin: 0 auto;
   max-width: 500px;
-  font-size: 50px;
+  display: flex;
+  align-items: center;
   text-align: left;
+  font-size: 35px;
 }
 
+.com_title select {
+    width: 300px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+/*送信↓ーーーーーーーー */
+.inq_sending{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+}
+
+.inq_sending .sending{
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.inq_sending input[type="submit"] {
+  width: 200px;
+  height: 40px;
+}
+
+/*次に進む↓ーーーーーーーー */
+.go_next{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+  text-align: right; /* 右寄せ */
+}
+
+.go_next .gonext{
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/*登録ボタン↓ーーーーーーーー */
+.reg_button{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+  text-align: right; /* 右寄せ */
+}
+
+.reg_button .regbutton{
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/*企業登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
 .com_full_name{
   width: 80%;
   margin: 0 auto;
@@ -81,7 +160,7 @@
   font-size: 30px;
 }
 
-.com_mobile input[type="text"]{
+.com_mobile input[type="email"]{
   width: 400px;
   height: 40px;
 }
@@ -114,22 +193,6 @@
 .next_com_password input[type="text"]{
   width: 300px;
   height: 40px;
-}
-
-.go_next{
-  width: 80%;
-  margin: 0 auto; /* 中央寄せ */
-  max-width: 500px;
-  text-align: right; /* 右寄せ */
-}
-
-.go_next .gonext{
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
 }
 
 /*クーポン登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
@@ -222,43 +285,123 @@
   height: 40px;
 }
 
-.registration_button{
-  width: 80%;
-  margin: 0 auto; /* 中央寄せ */
-  max-width: 500px;
-  text-align: right; /* 右寄せ */
-}
-
-.registration_button .register_button{
-  background-color: blue;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-/*企業情報編集のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
-.comed_inforedit{
+/*お問い合わせのcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.inq_name{
   width: 80%;
   margin: 0 auto;
   max-width: 500px;
-  font-size: 35px;
-  text-align: left;
 }
 
-.reg_button{
+.inq_name .inqname{
+  font-size: 30px;
+}
+
+.inq_name input[type="text"] {
+  width: 300px;
+  height: 40px;
+}
+
+.inq_com_name{
   width: 80%;
-  margin: 0 auto; /* 中央寄せ */
+  margin: 0 auto;
   max-width: 500px;
-  text-align: right; /* 右寄せ */
 }
 
-.reg_button .regbutton{
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+.inq_com_name .inq_comname{
+  font-size: 30px;
+}
+
+.inq_com_name input[type="text"] {
+  width: 300px;
+  height: 40px;
+}
+
+.inq_de_sign{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.inq_de_sign .inq_design{
+  font-size: 30px;
+}
+
+.inq_de_sign input[type="text"] {
+  width: 300px;
+  height: 40px;
+}
+
+.inq_job_title{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.inq_job_title .inq_jobtitle{
+  font-size: 30px;
+}
+
+.inq_job_title input[type="text"]{
+  width: 300px;
+  height: 40px;
+}
+
+.inq_email{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.inq_email .inqemail{
+  font-size: 30px;
+}
+
+.inq_email input[type="email"]{
+  width: 300px;
+  height: 40px;
+}
+
+.inq_phnum{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.inq_phnum .inqphnum{
+  font-size: 30px;
+}
+
+.inq_phnum input[type="tel"]{
+  width: 300px;
+  height: 40px;
+}
+
+.contact_item {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.contact_item .contact_items {
+    font-size: 28px;
+}
+
+.contact_item select {
+    width: 300px;
+    height: 40px;
+}
+
+.inq_detail{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.inq_detail .inqdetail{
+  font-size: 28px;
+}
+
+.inq_detail input[type="memo"]{
+  width: 300px;
+  height: 60px;
 }

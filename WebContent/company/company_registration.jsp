@@ -3,26 +3,30 @@
 
 <form action="registered.jsp" method="post">
 
-<h2 class="com_registration">企業登録</h2>
+<h2 class="com_title">企業登録</h2>
 
 <div class="com_full_name">
    <p class="comfull_name">氏名</p>
    <input type="text" name="name">
+   <p>(例)大原太郎</p>
 </div>
 
 <div class="com_name">
    <p class="comname">企業名</p>
    <input type="text" name="com_name">
+   <p>(例)株式会社大原</p>
 </div>
 
 <div class="com_address">
    <p class="comaddress">所在地</p>
    <input type="text" name="address">
+   <p>(例)福岡県北九州市</p>
 </div>
 
 <div class="com_mobile">
    <p class="commobile">携帯電話番号・メールアドレス</p>
-   <input type="text" name="email">
+   <input type="email" name="email">
+   <p>(例)0120-111-111</p>
 </div>
 
 <div class="com_password">
