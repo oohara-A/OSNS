@@ -153,11 +153,26 @@
 
 /* body */
 
+
 /* index */
+
 .index {
   display: flex;
   flex-wrap: wrap;
 }
+
+
+.image {
+	width: 25%
+}
+
+.image img{
+	width: 50%;
+	height: 50%;
+}
+
+.image h1{
+	text-align: auto;
 
 .index .image {
   width: 25%;
@@ -219,7 +234,6 @@
 
 .detail_img {
 	display: flex;
-	justify-content: space-between;
 }
 
 body {
