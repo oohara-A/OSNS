@@ -1,6 +1,7 @@
 package user;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,7 +35,6 @@ public class PurchaseAction extends Action {
 //		住所
 		String deladdress = request.getParameter("register_tellephone");
 
-
 //		購入する商品Id
 		int product_id = Integer.parseInt(request.getParameter("id"));
 //購入方法
@@ -65,11 +65,15 @@ public class PurchaseAction extends Action {
 //		後で追加
 	int	coupon = 1;
 //購入日時取得
-		LocalDateTime adding_time = LocalDateTime.now();
+	Date date = new Date();
+	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	String formattedDate = simpleDateFormat.format(date);
+	java.sql.Date adding_time = java.sql.Date.valueOf(formattedDate);
+
 
 //購入処理
 		PurchaseDAO dao2 = new PurchaseDAO();
-		dao2.insert(company_id, user_id, coupon, adding_time, price, paymentmethod, deladdress, tellephone);
+		dao2.insert(company_id, user_id, coupon, adding_time, price, paymentmethod, deladdress, tellephone,product_id);
 //		購入完了画面
 		return "buy_completion.jsp";
 	}

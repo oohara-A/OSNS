@@ -1,6 +1,8 @@
 package user;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,11 +22,24 @@ public class LoginAction {
 		// jspファイルからユーザ名とパスワードとログイン日時を取得
 		String user_name=request.getParameter("user_name");
 		String password=request.getParameter("password");
-		LocalDateTime login_date = LocalDateTime.now();
+		Date date = new Date();
+
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formattedDate = simpleDateFormat.format(date);
+		java.sql.Date login_date = java.sql.Date.valueOf(formattedDate);
+
 
 		// 指定したユーザ名とパスワードのユーザをデータベースから検索する
 		UserDAO dao=new UserDAO();
-		User user=dao.search(user_name, password, login_date);
+		List<User>user=(List<User>)dao.search(user_name, password, login_date);
+		int user_id = 0;
+		for(User u :user){
+			user_id = u.getId();
+			break;
+		}
+		UserDAO dao2 = new UserDAO();
+		boolean flag = dao2.insert_login(user_id, login_date);
+
 
 		// ユーザ名とパスワードに合致するユーザが見つかった場合、属性名userで登録する
 		if (user!=null) {
