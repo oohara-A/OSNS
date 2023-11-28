@@ -245,7 +245,6 @@
 }
 
 .cart_div {
-	width: 50%;
 }
 
 .cart_box {
@@ -257,6 +256,7 @@
 
 .cart_box img {
 	width: 40%;
+	height: auto;
 	float: left;
 }
 
