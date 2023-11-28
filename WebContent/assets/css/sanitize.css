@@ -49,6 +49,10 @@
     margin-left: 10px;
 }
 
+.image{
+	width: 360px;
+}
+
 /*送信↓ーーーーーーーー */
 .inq_sending{
   width: 80%;
@@ -87,7 +91,7 @@
   cursor: pointer;
 }
 
-/*登録ボタン↓ーーーーーーーー */
+/*ボタン↓ーーーーーーーー */
 .reg_button{
   width: 80%;
   margin: 0 auto; /* 中央寄せ */
@@ -102,6 +106,26 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
+}
+
+
+To achieve consistent styling for your buttons, you can use the following CSS rules for the .com_button class:
+
+css
+Copy code
+.com_button {
+  width: 80%;
+  max-width: 500px;
+  text-align: left;
+  font: inherit;
+}
+
+.com_button .combutton {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  width: 12%;
 }
 
 /*企業登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
