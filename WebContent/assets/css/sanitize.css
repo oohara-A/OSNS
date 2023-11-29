@@ -49,15 +49,13 @@
     margin-left: 10px;
 }
 
-.image{
-	width: 360px;
-}
-
 /*送信↓ーーーーーーーー */
+
 .inq_sending{
   width: 80%;
   margin: 0 auto; /* 中央寄せ */
   max-width: 500px;
+  padding: 30px;
 }
 
 .inq_sending .sending{
@@ -108,24 +106,62 @@
   cursor: pointer;
 }
 
+/*トップページ(企業)のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.content .menu .image{
+	width: 360px;
+}
 
-To achieve consistent styling for your buttons, you can use the following CSS rules for the .com_button class:
-
-css
-Copy code
-.com_button {
+.content .menu .com_button {
   width: 80%;
   max-width: 500px;
   text-align: left;
   font: inherit;
 }
 
-.com_button .combutton {
+.content .menu .com_button .combutton {
   background-color: red;
   color: white;
   padding: 10px 20px;
   font-size: 20px;
-  width: 12%;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.content .main {
+    text-align: right;
+	font-size : 30px;
+}
+
+.content .main .com_title .com_top{
+    white-space: nowrap;
+    text-align: center;
+    margin-left: -10px;
+    font-size: 60px;
+}
+
+.content .main .com_info {
+    margin-bottom: 0;
+}
+
+.content .main .user_info {
+    border: 2px solid #000;
+    padding: 10px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.content .main .com_info .user_information{
+	font-size: 40px;
+	text-align: left;
+}
+
+.content .main .user_info .com_user {
+    font-size: 25px;
+    margin-right: 10px;
 }
 
 /*企業登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
@@ -310,122 +346,48 @@ Copy code
 }
 
 /*お問い合わせのcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
-.inq_name{
+.contact_us{
   width: 80%;
   margin: 0 auto;
   max-width: 500px;
 }
 
-.inq_name .inqname{
+.contact_us .inquiry{
   font-size: 30px;
 }
 
-.inq_name input[type="text"] {
+.contact_us input[type="text"] {
   width: 300px;
   height: 40px;
 }
 
-.inq_com_name{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
-}
-
-.inq_com_name .inq_comname{
-  font-size: 30px;
-}
-
-.inq_com_name input[type="text"] {
+.contact_us input[type="email"]{
   width: 300px;
   height: 40px;
 }
 
-.inq_de_sign{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
-}
-
-.inq_de_sign .inq_design{
-  font-size: 30px;
-}
-
-.inq_de_sign input[type="text"] {
+.contact_us input[type="tel"]{
   width: 300px;
   height: 40px;
 }
 
-.inq_job_title{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
-}
-
-.inq_job_title .inq_jobtitle{
-  font-size: 30px;
-}
-
-.inq_job_title input[type="text"]{
-  width: 300px;
-  height: 40px;
-}
-
-.inq_email{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
-}
-
-.inq_email .inqemail{
-  font-size: 30px;
-}
-
-.inq_email input[type="email"]{
-  width: 300px;
-  height: 40px;
-}
-
-.inq_phnum{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
-}
-
-.inq_phnum .inqphnum{
-  font-size: 30px;
-}
-
-.inq_phnum input[type="tel"]{
-  width: 300px;
-  height: 40px;
-}
-
-.contact_item {
+.contact_us {
     width: 80%;
     margin: 0 auto;
     max-width: 500px;
 }
 
-.contact_item .contact_items {
+.contact_us .contact_items {
     font-size: 28px;
 }
 
-.contact_item select {
+.contact_us select {
     width: 300px;
     height: 40px;
 }
 
-.inq_detail{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
-}
-
-.inq_detail .inqdetail{
-  font-size: 28px;
-}
-
-.inq_detail input[type="memo"]{
+.contact_us input[type="text"]{
   width: 300px;
   height: 60px;
 }
+
