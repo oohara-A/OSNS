@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.Admin;
+import bean.Company;
+import bean.User;
 
 public class AdminDAO extends DAO {
 
@@ -108,6 +110,7 @@ public class AdminDAO extends DAO {
 			admin.setAdmin_name(rs.getString("admin_name"));
 			admin.setEmail(rs.getString("email"));
 			admin.setPassword(rs.getString("password"));
+			admin.setAdding_time(rs.getDate("add_date"));
 			admin_list.add(admin);
 		}
 
@@ -117,30 +120,58 @@ public class AdminDAO extends DAO {
 	}
 
 	//企業一覧
-		public List<Admin> showcompany(String company_name)
-			throws Exception {
-			List<Admin> company_list=new ArrayList<>();
+	public List<Company> showcompany(String company_name)
+		throws Exception {
+		List<Company> company_list=new ArrayList<>();
 
-			Connection con=getConnection();
+		Connection con=getConnection();
 
-			PreparedStatement st=con.prepareStatement(
-				"select * from admin where company_name like ?");
-			st.setString(1, "%"+company_name+"%");
-			ResultSet rs=st.executeQuery();
+		PreparedStatement st=con.prepareStatement(
+			"select * from company where company_name like ?");
+		st.setString(1, "%"+company_name+"%");
+		ResultSet rs=st.executeQuery();
 
-			while (rs.next()) {
-				Admin company=new Admin();
-				company.setId(rs.getInt("id"));
-				company.setAdmin_name(rs.getString("company_name"));
-				company.setEmail(rs.getString("email"));
-				company.setPassword(rs.getString("password"));
-				company_list.add(company);
-			}
-
-			st.close();
-			con.close();
-			return company_list;
+		while (rs.next()) {
+			Company company=new Company();
+			company.setId(rs.getInt("id"));
+			company.setCompany_name(rs.getString("company_name"));
+			company.setEmail(rs.getString("email"));
+			company.setPassword(rs.getString("password"));
+			company.setAdding_time(rs.getDate("add_date"));
+			company_list.add(company);
 		}
+
+		st.close();
+		con.close();
+		return company_list;
+	}
+
+	//ユーザ一覧
+	public List<User> showuser(String user_name)
+		throws Exception {
+		List<User> user_list=new ArrayList<>();
+
+		Connection con=getConnection();
+
+		PreparedStatement st=con.prepareStatement(
+			"select * from user where user_name like ?");
+		st.setString(1, "%"+user_name+"%");
+		ResultSet rs=st.executeQuery();
+
+		while (rs.next()) {
+			User user=new User();
+			user.setId(rs.getInt("id"));
+			user.setUser_name(rs.getString("user_name"));
+			user.setEmail(rs.getString("email"));
+			user.setPassword(rs.getString("password"));
+			user.setAdding_time(rs.getDate("add_date"));
+			user_list.add(user);
+		}
+
+		st.close();
+		con.close();
+		return user_list;
+	}
 
 	//管理者削除
 	public boolean update(int adminId)

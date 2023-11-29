@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Admin;
+import bean.Company;
 import dao.AdminDAO;
 
 public class ShowcompanyAction {
@@ -18,13 +18,14 @@ public class ShowcompanyAction {
 		// 企業名
 		String company_name=request.getParameter("company_name");
 		if (company_name==null) company_name="";
+
 		// ログインされている場合
 		if (session.getAttribute("login_admin")!=null){
             // DB接続処理
             AdminDAO dao = new AdminDAO();
 
             // サーチ実行処理
-            List<Admin> company_list = dao.showcompany(company_name);
+            List<Company> company_list = dao.showcompany(company_name);
 
             session.setAttribute("companyList", company_list);
 

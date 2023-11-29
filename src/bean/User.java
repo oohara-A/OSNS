@@ -14,7 +14,7 @@ public class User implements java.io.Serializable {
 //	ユーザー名
 	private String user_name;
 //	追加日時
-	private Date  addling_time;
+	private Date  adding_time;
 //	削除日時
 	private Date deleting_time;
 //	更新日時
@@ -82,16 +82,16 @@ public class User implements java.io.Serializable {
 		this.user_name = user_name;
 	}
 	/**
-	 * @return addling_time
+	 * @return adding_time
 	 */
-	public Date getAddling_time() {
-		return addling_time;
+	public Date getAdding_time() {
+		return adding_time;
 	}
 	/**
-	 * @param addling_time セットする addling_time
+	 * @param adding_time セットする adding_time
 	 */
-	public void setAddling_time(Date addling_time) {
-		this.addling_time = addling_time;
+	public void setAdding_time(Date adding_time) {
+		this.adding_time = adding_time;
 	}
 	/**
 	 * @return deleting_time
