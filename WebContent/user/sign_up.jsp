@@ -1,7 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.jsp" %>
 
-<title>新規登録</title>
 <link rel="stylesheet" type="text/css" href="osns/WebContent/assets/common.css">
 <h1>アカウントを作成</h1>
 <p>氏名</p>
