@@ -15,7 +15,7 @@ public class RemoveAction {
 
         int adminId = Integer.parseInt(request.getParameter("adminId"));
 
-        // ログインされているか
+        // ログインされている場合
         if (session.getAttribute("login_admin")!=null) {
         	AdminDAO dao=new AdminDAO();
         	boolean delete_admin=dao.deleteadmin(adminId);

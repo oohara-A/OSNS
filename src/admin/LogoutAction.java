@@ -11,9 +11,18 @@ public class LogoutAction {
 
 		HttpSession session=request.getSession();
 
-		// 管理者Beanを削除
-		session.removeAttribute("admin");
-		// フォワード先を指定
-		return "admin.jsp";
+		// ログインされている場合
+        if (session.getAttribute("login_admin")!=null) {
+			// セッションから削除
+			session.removeAttribute("admin");
+			// admin.jspをフォワード先に指定
+			return "admin.jsp";
+        }else{
+        	//エラーアラートを表示
+
+
+	    	// admin.jspをフォワード先に指定
+	    	return "admin.jsp";
+        }
 	}
 }
