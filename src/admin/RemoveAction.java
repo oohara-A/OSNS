@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Admin;
 import dao.AdminDAO;
 
 public class RemoveAction {
@@ -14,25 +13,24 @@ public class RemoveAction {
 
 		HttpSession session=request.getSession();
 
-        int adminId = Integer.parseInt(request.getParameter("adminId")); // 削除対象の管理者ID
+        int adminId = Integer.parseInt(request.getParameter("adminId"));
 
         // ログインされているか
         if (session.getAttribute("login_admin")!=null) {
         	AdminDAO dao=new AdminDAO();
-        	boolean admin=dao.update(adminId);
+        	boolean delete_admin=dao.deleteadmin(adminId);
 
-            if () {
-            	session.setAttribute("delete_admin", admin);
-                return "delete_admin.jsp"; // 削除成功時に管理者一覧ページにリダイレクト
-            } else {
-            	// エラーアラートの表示
+        	session.setAttribute("adminDelete", delete_admin);
 
-            	return "delete_admin.jsp";
+        	// delete_admin.jspをフォワード先に指定
+        	return "delete_admin.jsp";
 
-            }
+        // ログインされていない場合
         } else {
         	//　エラーアラートの表示
 
+
+        	// admin.jspをフォワード先に指定
         	return "admin.jsp";
         }
 	}

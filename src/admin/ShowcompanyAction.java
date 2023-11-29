@@ -37,8 +37,8 @@ public class ShowcompanyAction {
         	//エラーアラートを表示
 
 
-            // copany_info.jspをフォワード先に指定
-            return "company_info.jsp";
+            // admin.jspをフォワード先に指定
+            return "admin.jsp";
         }
 	}
 }

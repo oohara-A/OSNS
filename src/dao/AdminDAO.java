@@ -101,7 +101,7 @@ public class AdminDAO extends DAO {
 		Connection con=getConnection();
 
 		PreparedStatement st=con.prepareStatement(
-			"select * from admin");
+			"select * from admin where flag=0");
 		ResultSet rs=st.executeQuery();
 
 		while (rs.next()) {
@@ -127,7 +127,7 @@ public class AdminDAO extends DAO {
 		Connection con=getConnection();
 
 		PreparedStatement st=con.prepareStatement(
-			"select * from company where company_name like ?");
+			"select * from company where company_name like ? and flag=0");
 		st.setString(1, "%"+company_name+"%");
 		ResultSet rs=st.executeQuery();
 
@@ -154,7 +154,7 @@ public class AdminDAO extends DAO {
 		Connection con=getConnection();
 
 		PreparedStatement st=con.prepareStatement(
-			"select * from user where user_name like ?");
+			"select * from user where user_name like ? and flag=0");
 		st.setString(1, "%"+user_name+"%");
 		ResultSet rs=st.executeQuery();
 
@@ -174,7 +174,7 @@ public class AdminDAO extends DAO {
 	}
 
 	//管理者削除
-	public boolean update(int adminId)
+	public boolean deleteadmin(int adminId)
 		throws Exception {
 		boolean flag =true;
 		Connection con=getConnection();

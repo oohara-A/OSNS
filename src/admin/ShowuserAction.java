@@ -37,8 +37,8 @@ public class ShowuserAction {
             //エラーアラートを表示
 
 
-        	// admin_manage_user.jspをフォワード先に指定
-            return "admin_manage_user.jsp";
+        	// admin.jspをフォワード先に指定
+            return "admin.jsp";
         }
 	}
 }
