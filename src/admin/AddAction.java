@@ -32,27 +32,17 @@ public class AddAction {
 		AdminDAO dao=new AdminDAO();
 		Admin admin=dao.add(admin_name, email, password, add_date);
 
-		//ログインされている場合
-		if (session.getAttribute("login_admin")!=null){
-			// 管理者名とメールアドレスとパスワードに合致する管理者が見つからなかった場合、属性名add_adminで登録する
-			if (admin==null) {
-				session.setAttribute("add_admin", admin);
-				// admin.jspをフォワード先に指定
-				return "admin.jsp";
-			}else{
-				//エラーのアラートを表示
-
-
-				// add_admin.jspをフォワード先に指定
-				return "add_admin.jsp";
-			}
-		//ログインされていない場合
-		}else {
+		// 入力した情報に合致する管理者が見つからなかった場合、属性名adminで登録する
+		if (admin==null) {
+			session.setAttribute("admin", admin);
+			// admin.jspをフォワード先に指定
+			return "admin.jsp";
+		}else{
 			//エラーのアラートを表示
 
 
 			// add_admin.jspをフォワード先に指定
-			return "admin.jsp";
+			return "add_admin.jsp";
 		}
 	}
 }

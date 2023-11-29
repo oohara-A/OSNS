@@ -57,4 +57,41 @@ public class CompanyDAO extends DAO{
 		con2.close();
 		return company;
 	}
+
+	//企業追加
+	public Company register(String name, String company_name, String address, String email, String phone_number, String password, Date add_date)
+		throws Exception {
+		Company company=null;
+
+		Connection con=getConnection();
+
+		// SQL文を実行
+		PreparedStatement st;
+		st=con.prepareStatement(
+			"insert into company name=? and company_name=? and address=? and email=? and phone_number=? and password=? and add_date=?");
+		st.setString(1, name);
+		st.setString(2, company_name);
+		st.setString(3, address);
+		st.setString(4, email);
+		st.setString(5, phone_number);
+		st.setString(6, password);
+		st.setDate(7, add_date);
+		ResultSet rs=st.executeQuery();
+
+		// 検索結果を管理者Beanに保存する
+		while (rs.next()) {
+			company=new Company();
+			company.setId(rs.getInt("id"));
+			company.setName(rs.getString("name"));
+			company.setCompany_name(rs.getString("company_name"));
+			company.setAddress(rs.getString("address"));
+			company.setEmail(rs.getString("email"));
+			company.setPhone_number(rs.getString("phone_number"));
+			company.setPassword(rs.getString("password"));
+			company.setAdding_time(rs.getDate("add_date"));
+		}
+		st.close();
+		con.close();
+		return company;
+	}
 }
