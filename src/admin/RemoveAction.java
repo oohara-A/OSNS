@@ -14,12 +14,12 @@ public class RemoveAction {
 
 		HttpSession session=request.getSession();
 
-        String adminId = request.getParameter("adminId"); // 削除対象の管理者ID
+        int adminId = Integer.parseInt(request.getParameter("adminId")); // 削除対象の管理者ID
 
         // ログインされているか
         if (session.getAttribute("login_admin")!=null) {
         	AdminDAO dao=new AdminDAO();
-        	Admin admin=dao.update("adminId");
+        	boolean admin=dao.update(adminId);
 
             if () {
             	session.setAttribute("delete_admin", admin);
