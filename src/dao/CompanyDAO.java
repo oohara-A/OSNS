@@ -94,4 +94,20 @@ public class CompanyDAO extends DAO{
 		con.close();
 		return company;
 	}
+
+	//企業削除
+	public boolean deletecompany(int companyId)
+		throws Exception {
+		boolean flag =true;
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				"update company set flag = ?,where companyId = ?");
+		st.setBoolean(1, flag);
+		st.setInt(2,companyId);
+
+		st.close();
+		con.close();
+
+		return true;
+	}
 }
