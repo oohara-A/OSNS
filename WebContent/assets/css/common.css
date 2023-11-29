@@ -239,33 +239,35 @@
 
 /* cart */
 
-.cart {
-	display: flex;
-	justify-content: space-between;
+.cart_table {
+	width: 100%;
+	border-collapse: collapse;
 }
 
-.cart_div {
+.cart_table td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	box-sizing: border-box;
 }
 
-.cart_box {
-	width: auto;
-	height: 200px;
-	margin: 2em;
-	border: solid 1px black;
+.number {
+	width: 100%;
+	box-sizing: border-box;
 }
 
-.cart_box img {
-	width: 40%;
-	height: auto;
-	float: left;
+
+#delete {
+       writing-mode: horizontal-tb;
+       padding: 5px 10px;
 }
 
-.cart_cash {
-	width: auto;
-	height: 200px;
-	margin: 2em;
-	border: solid 1px black;
+#delete p {
+       margin: 0;
 }
+
+
+
+
 
 
 /* body */
