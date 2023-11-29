@@ -17,6 +17,8 @@ public class LogoutAction {
 			session.removeAttribute("admin");
 			// admin.jspをフォワード先に指定
 			return "admin.jsp";
+
+		// ログインされていない場合
         }else{
         	//エラーアラートを表示
 
