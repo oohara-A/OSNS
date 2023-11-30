@@ -3,26 +3,11 @@
 
 <form action="registered.jsp" method="post">
 
-    <h2 class="com_title">企業用お問い合わせフォーム</h2>
+    <h2 class="com_title">お問い合わせフォーム</h2>
 
 	<div class="contact_us">
       <p class="inquiry">お名前</p>
       <input type="text" name="inq_name">
-    </div>
-
-	<div class="contact_us">
-      <p class="inquiry">企業名</p>
-      <input type="text" name="inq_com_name">
-    </div>
-
-	<div class="contact_us">
-      <p class="inquiry">部署名</p>
-      <input type="text" name="inq_de_sign">
-    </div>
-
-	<div class="contact_us">
-      <p class="inquiry">役職名</p>
-      <input type="text" name="inq_job_title">
     </div>
 
 	<div class="contact_us">

@@ -30,6 +30,9 @@
 			</ul>
 		</nav>
 
+<<<<<<< HEAD
+		<hr>
+=======
 		<div>
 			<input id="drawer_input" class="drawer_hidden" type="checkbox">
 			<label for="drawer_input" class="drawer_open"><span></span></label>
@@ -43,3 +46,4 @@
 		</div>
 
 		<hr>
+>>>>>>> 0f830f44b5a75c59f4bce1cb2411c287e6adad79
