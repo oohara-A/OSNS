@@ -37,11 +37,12 @@ public class LoginAction {
 			session.setAttribute("login_company", company);
 			// company_top_page.jspをフォワード先に指定
 			return "company_top_page.jsp";
+		}else{
+			//エラーのアラートを表示
+
+
+			// login.jspをフォワード先に指定
+			return "login.jsp";
 		}
-		//エラーのアラートを表示
-
-
-		// login.jspをフォワード先に指定
-		return "login.jsp";
 	}
 }

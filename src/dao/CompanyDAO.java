@@ -111,6 +111,7 @@ public class CompanyDAO extends DAO{
 		return true;
 	}
 
+	//企業情報編集
 	public Company editcompinfo(String name,String company_name,String address,String email,String phone_number,String password)
 		throws Exception {
 		Company company=null;
