@@ -39,6 +39,7 @@ public class UserDAO extends DAO {
 			con.close();
 			return (List<User>) user;
 		}
+
 //ログイン履歴
 public boolean insert_login(int user_id, Date login_date)throws Exception{
 	//データベース接続

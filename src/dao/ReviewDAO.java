@@ -21,9 +21,8 @@ public class ReviewDAO extends DAO{
 		//SQL文レビュー情報を持ってくる
 		st=con.prepareStatement(
 			"select * from review INNER JOIN review_video on review.review_id = review_video.review_id "
-			+ "INNER JOIN review_image on review.review_id = review_image WHERE product_id = ? and user_id =?");
+			+ "INNER JOIN review_image on review.review_id = review_image WHERE product_id = ? and flag = 0");
 		st.setInt(1, pro_id);
-		st.setInt(2, user_id);
 		//SQL文実行
 		ResultSet rs=st.executeQuery();
 		st.close();
@@ -49,14 +48,56 @@ public class ReviewDAO extends DAO{
 	}
 
 //レビュー投稿処理
-	public boolean Postedreview(int user_id ,int pro_id, String body,int rating,Date submissiondate) throws Exception{
+	public boolean Postedreview(int user_id ,int pro_id, String body,int rating,Date submissiondate, String url, String video_url) throws Exception{
 		//データベース接続
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
-				"insert into review(deleting_time) values(?) where product_id =?");
-//        削除日時
-		return false;
+				"insert into review(product_id,user_id,rating,reviewbody,submissiondate) values(?,?,?,?,?) where product_id =?");
+		st.setInt(1, pro_id);
+		st.setInt(2, user_id);
+		st.setInt(3, rating);
+		st.setString(4, body);
+		st.setDate(5, submissiondate);
+		st.executeUpdate();
+		st.close();
+		con.close();
+
+		return true;
 
 	}
+
+
+//	レビュー削除処理
+	public boolean review_del(int review_id)throws Exception{
+//		データベース接続
+		Connection con = getConnection();
+		boolean flag = true;
+		PreparedStatement st = con.prepareStatement(
+				"update user set flag = ? where review_id =?"
+				);
+		st.setBoolean(1, flag);
+		st.setInt(2,review_id );
+		st.executeUpdate();
+		st.close();
+		con.close();
+		return true;
 	}
 
+//	レビュー更新処理
+	public boolean review_up(int review_id,int user_id, int pro_id, String reviewbody, int rating)throws Exception{
+//		データベース接続
+		Connection con = getConnection();
+		PreparedStatement st = con.prepareStatement(
+				"update review set rating = ?,reviewbody = ?  where review_id =? and product_id = ? and user_id = ?");
+		st.setInt(1, rating);
+		st.setString(2, reviewbody);
+		st.setInt(3, review_id);
+		st.setInt(4, pro_id);
+		st.setInt(5, user_id);
+		st.executeUpdate();
+		st.close();
+		con.close();
+		return true;
+
+	}
+}
