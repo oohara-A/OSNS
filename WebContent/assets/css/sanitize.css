@@ -185,6 +185,11 @@
   height: 40px;
 }
 
+.log input[type="email"] {
+  width: 300px;
+  height: 40px;
+}
+
 .logged{
 	display: flex;
 	align-items: center;
@@ -195,8 +200,7 @@
 	margin-left: 8px;
 }
 
-.com_login,
-.admin_log {
+.com_login,.admin_log {
     display: flex;
     justify-content: center;
 }

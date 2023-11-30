@@ -6,8 +6,8 @@
     <h2 class="com_title">ログイン</h2>
 
 		<div class="log">
-	      <p class="login">ユーザー名</p>
-	      <input type="text" name="inq_name">
+	      <p class="login">メールアドレス</p>
+	      <input type="email" name="inq_name">
 	    </div>
 
 		<div class="log">
@@ -15,21 +15,21 @@
 	      <input type="text" name="inq_com_name">
 	    </div>
 
+	    <div class="logged">
+	    	<input type="checkbox" name="logged">
+	    	<p class="logged_in">ログインしたままにする</p>
+		</div>
+
 
 		<div class="inq_sending">
   			<input class="sending" type="submit" value="ログイン">
 		</div>
 
-		<div class="com_login">
-        	<a href="/logout">企業の方はこちら</a>
-    	</div>
+<p class="new_acount">企業登録の方はこちらをクリック↓</p>
 
-    	<div class="admin_log">
-        	<a href="/logout">管理者の方はこちら</a>
-    	</div>
-
-
-<p>新規登録の方はこちら</p>
+		<div class="inq_sending">
+  			<input class="sending" type="submit" value="アカウントを作成する">
+		</div>
 
 </form>
 
