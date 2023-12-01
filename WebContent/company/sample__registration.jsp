@@ -3,26 +3,26 @@
 
 <form action="processProductRegistration.jsp" method="post">
 
-    <h2 class="product_title">商品登録</h2>
+    <h2 class="product_title">試供品登録</h2>
 
 	<div class="item_entry">
 
 	    <div class="product_info">
-	        <label for="productName">商品名:</label>
+	        <label for="productName">試供品名:</label>
 	        <input type="text" id="productName" name="productName" required>
 	    </div>
 
 	    <div class="product_info">
-	        <label for="productPrice">商品価格:</label>
+	        <label for="productPrice">試供品価格:</label>
 	        <input type="text" id="productPrice" name="productPrice" required>
 	    </div>
 
 	    <div class="product_info">
-	        <label for="productImage">商品画像:</label>
+	        <label for="productImage">試供品画像:</label>
 	        <input type="file" id="productImage" name="productImage" accept="image/*" required>
 	    </div>
 
-		<div class="product_info">
+    	<div class="product_info">
         	<label for="productStock">在庫数:</label>
         	<input type="number" id="productStock" name="productStock" required>
     	</div>
@@ -52,11 +52,6 @@
     <div class="product_submit">
         <input type="submit" value="登録完了">
     </div>
-
-    <div class="sample_info">
-        <a href="sample_registration.jsp">試供品登録はこちら</a>
-    </div>
-
 </form>
 
 <%@ include file="../footer.jsp" %>

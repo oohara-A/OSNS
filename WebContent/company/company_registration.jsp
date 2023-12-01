@@ -37,12 +37,12 @@
 
 <div class="com_reg">
    <p class="comreg">パスワード</p>
-   <input type="text" name="pass">
+   <input type="password" name="pass">
 </div>
 
 <div class="com_reg">
    <p class="comreg">もう一度パスワード</p>
-   <input type="text" name="onemore">
+   <input type="password" name="onemore">
 </div>
 
 <div class="inq_sending">
