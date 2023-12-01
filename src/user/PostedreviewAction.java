@@ -8,8 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.User;
+import org.h2.engine.User;
+
+import dao.ReviewDAO;
 import tool.Action;
+
 //レビュー投稿
 public class PostedreviewAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -41,9 +44,12 @@ public class PostedreviewAction extends Action {
 
 //		レビュー時の投稿したい動画
 		String video_url = "";
+		ReviewDAO dao = new ReviewDAO();
+		boolean flag = dao.Postedreview(user_id, pro_id, body, rating, submissiondate,url,video_url);
 
-
+//レビューページに遷移
 		return "review.jsp";
 	}
 
 }
+
