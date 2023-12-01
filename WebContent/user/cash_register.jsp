@@ -8,7 +8,7 @@
             <h2>注文情報入力</h2>
 
             <h1>1.受け取り場所</h1>
-            <form class="checkout-form">
+            <form class="checkout-form" onsubmit="return validateForm()">
                 <div class="form-group">
                     <label for="country">　　　　　　国:</label>
                     <input type="text" id="country" name="country" required placeholder="日本">
@@ -115,9 +115,9 @@
                 <h1>3.商品と発送情報</h1>
 
                 <div class="checkout-summary">
-                	<h2>お届け予定日:XXXX年XX月XX日～XXXX年XX月XX日</h2>
+                    <h2>お届け予定日:XXXX年XX月XX日～XXXX年XX月XX日</h2>
                     <%@include file="cart_main.jsp" %>
-                    <button type="submit">購入する</button>
+                        <input type="submit" value="購入する">
                 </div>
 
 
@@ -125,6 +125,44 @@
         </div>
 
         <script>
+
+            function validateForm(event) {
+
+            	event = event || window.event;
+
+                var submitButton = (event && event.submitter) ? event.submitter : null;
+
+                if (submitButton && submitButton.id === "delete") {
+                    return true;
+                }
+
+                if (submitButton && submitButton.type === "submit") {
+
+                    // 必須フィールドの値を取得
+                    var country = document.getElementById('country').value;
+                    var name = document.getElementById('name').value;
+                    var phone = document.getElementById('phone').value;
+                    var post = document.getElementById('post').value;
+                    var prefecture = document.getElementById('prefecture').value;
+                    var municipalities = document.getElementById('municipalities').value;
+                    var street = document.getElementById('street').value;
+                    var building = document.getElementById('building').value;
+                    var room = document.getElementById('room').value;
+
+                    // バリデーションを実行
+                    if (country.trim() === '' || name.trim() === '' || phone.trim() === '') {
+                        alert('必須の住所情報フィールドを全て入力してください。');
+                        return false; // フォームの送信を防止
+                    }
+
+                    // 他のバリデーションが必要であれば追加
+
+                    // すべてのバリデーションが通過した場合、フォームの送信を許可
+                    return true;
+                }
+                return false;
+            }
+
             function toggleCouponInput() {
                 const couponInput = document.getElementById('coupon-input');
                 const couponRadio = document.getElementById('coupon');

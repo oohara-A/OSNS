@@ -37,4 +37,21 @@
         <div class="cart-summary">
             <p>カート内数量: <span id="total-items">1</span></p>
             <p>カート内合計: \<span id="subtotal">2000</span></p>
+
+            <script>
+    function deleteCartItem(button) {
+        // バリデーションを無効にする
+
+        // バリデーションを通過した場合、削除ロジックを実行
+        var confirmation = confirm("本当に削除しますか？");
+        if (confirmation) {
+            // ここに削除ロジックを追加
+            // 例: カートアイテムを削除するAPI呼び出しや表示の更新
+            console.log("削除ボタンがクリックされました。");
+        } else {
+            // キャンセル時の処理
+            console.log("削除がキャンセルされました。");
+        }
+    }
+</script>
         </div>
