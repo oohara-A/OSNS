@@ -49,10 +49,8 @@ public class Edit_comp_infoAction {
 
 		//ログインされていない場合
         }else{
-        	//エラーアラートを表示
-
-        	// company_top_page.jspをフォワード先に指定
-        	return "company_top_page.jsp";
+        	// com_login_error.jspをフォワード先に指定
+        	return "com_login_error.jsp";
         }
 	}
 }
