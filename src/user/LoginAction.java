@@ -42,7 +42,7 @@ public class LoginAction extends Action{
 			boolean flag = dao2.insert_login(user_id, login_date);
 			return "index.jsp";
 		}
-	// TODO: handle exception
+	// エラーページ
 		return "index.jsp";
 	}
 	}

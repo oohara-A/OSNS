@@ -21,7 +21,7 @@
 				</li>
 				<li class="menu-item">
 					<!--カートのページ  -->
-					<a href="cart.jsp">カート</a>
+					<a href="login.jsp">カート</a>
 				</li>
 				<li class="menu-item">
 					<!--通知  -->
