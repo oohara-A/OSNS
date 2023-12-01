@@ -41,8 +41,6 @@ public class Edit_comp_infoAction {
 				return "company_top_page.jsp";
 			// 入力したパスワードが一致しなかった場合
         	}else{
-        		//エラーアラートを表示
-
         		// company_info_edit.jspをフォワード先に指定
         		return "company_info_edit.jsp";
         	}
