@@ -46,20 +46,15 @@ public class Register_comanyAction {
 			// 入力した情報に合致する企業が見つからなかった場合、属性名companyで登録する
 			if (company==null) {
 				session.setAttribute("company", company);
-				// company_top_page.jspをフォワード先に指定
-				return "company_top_page.jsp";
+				// company_registration_complete.jspをフォワード先に指定
+				return "company_registration_complete.jsp";
 			}else{
-				//エラーのアラートを表示
-
-
-				// company_registration.jspをフォワード先に指定
-				return "company_registration.jsp";
+				// company_registration_error.jspをフォワード先に指定
+				return "company_registration_error.jsp";
 			}
 
 		//パスワードが一致しない場合
 		}else{
-			// エラーアラートを表示
-
 			// company_registration.jspをフォワード先に指定
 			return "company_registration.jsp";
 		}
