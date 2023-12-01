@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import bean.Company;
+import bean.Product;
 
 public class CompanyDAO extends DAO{
 
@@ -22,15 +25,7 @@ public class CompanyDAO extends DAO{
 			"select * from company where email=? and password=?");
 		st.setString(1, email);
 		st.setString(2, password);
-		ResultSet rs=st.executeQuery();
-
-		// 検索結果を管理者Beanに保存する
-		while (rs.next()) {
-			company=new Company();
-			company.setId(rs.getInt("id"));
-			company.setEmail(rs.getString("email"));
-			company.setPassword(rs.getString("password"));
-		}
+		st.executeQuery();
 
 		st.close();
 		con.close();
@@ -44,14 +39,7 @@ public class CompanyDAO extends DAO{
 		st2=con2.prepareStatement(
 			"update company set update_time=?");
 		st2.setDate(1,login_date );
-		ResultSet rs2=st2.executeQuery();
-
-		// 検索結果を管理者Beanに保存する
-		while (rs2.next()) {
-			company=new Company();
-			company.setId(rs2.getInt("id"));
-			company.setUpdate_time(rs2.getDate("login_date"));
-		}
+		st2.executeQuery();
 
 		st2.close();
 		con2.close();
@@ -76,20 +64,8 @@ public class CompanyDAO extends DAO{
 		st.setString(5, phone_number);
 		st.setString(6, password);
 		st.setDate(7, add_date);
-		ResultSet rs=st.executeQuery();
+		st.executeQuery();
 
-		// 検索結果を管理者Beanに保存する
-		while (rs.next()) {
-			company=new Company();
-			company.setId(rs.getInt("id"));
-			company.setName(rs.getString("name"));
-			company.setCompany_name(rs.getString("company_name"));
-			company.setAddress(rs.getString("address"));
-			company.setEmail(rs.getString("email"));
-			company.setPhone_number(rs.getString("phone_number"));
-			company.setPassword(rs.getString("password"));
-			company.setAdding_time(rs.getDate("add_date"));
-		}
 		st.close();
 		con.close();
 		return company;
@@ -107,7 +83,6 @@ public class CompanyDAO extends DAO{
 
 		st.close();
 		con.close();
-
 		return true;
 	}
 
@@ -128,19 +103,8 @@ public class CompanyDAO extends DAO{
 		st.setString(4, email);
 		st.setString(5, phone_number);
 		st.setString(6, password);
-		ResultSet rs=st.executeQuery();
+		st.executeQuery();
 
-		// 検索結果を管理者Beanに保存する
-		while (rs.next()) {
-			company=new Company();
-			company.setId(rs.getInt("id"));
-			company.setName(rs.getString("name"));
-			company.setCompany_name(rs.getString("company_name"));
-			company.setAddress(rs.getString("address"));
-			company.setEmail(rs.getString("email"));
-			company.setPhone_number(rs.getString("phone_number"));
-			company.setPassword(rs.getString("password"));
-		}
 		st.close();
 		con.close();
 		return company;
@@ -179,5 +143,33 @@ public class CompanyDAO extends DAO{
 		st2.close();
 		con2.close();
 		return company;
+	}
+
+	// 商品一覧
+	public List<Product> productlist(String product_name,int unit_price, int regiinvqua)
+		throws Exception {
+		List<Product> product_list=new ArrayList<>();
+
+		Connection con=getConnection();
+
+		PreparedStatement st=con.prepareStatement(
+			"select * from product where product_name like ? and unit_price like ? and regiinvqua like ?");
+		st.setString(1, "%"+product_name+"%");
+		st.setInt(2, unit_price);
+		st.setInt(3, regiinvqua);
+		ResultSet rs=st.executeQuery();
+
+		while (rs.next()) {
+			Product product=new Product();
+			product.setId(rs.getInt("id"));
+			product.setProduct_name(rs.getString("product_name"));
+			product.setUnit_price(rs.getInt("unit_price"));
+			product.setRegiinvqua(rs.getInt("regiinvqua"));
+			product.setUpdate_time(rs.getDate("update_date"));
+			product_list.add(product);
+		}
+		st.close();
+		con.close();
+		return product_list;
 	}
 }
