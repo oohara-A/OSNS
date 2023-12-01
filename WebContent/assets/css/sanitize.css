@@ -219,6 +219,20 @@
     position: relative;
 }
 
+.log_error{
+	width: 80%;
+  	margin: 0 auto;
+  	max-width: 500px;
+  	font-size : 50px
+}
+
+.error_message{
+	width: 80%;
+  	margin: 0 auto;
+  	max-width: 500px;
+  	font-size : 18px
+}
+
 .new_acount::before,
 .new_acount::after {
     content: "ーーーーーーーーーーーーーーーーーーーー";
