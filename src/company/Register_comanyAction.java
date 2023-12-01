@@ -41,11 +41,11 @@ public class Register_comanyAction {
 			java.sql.Date add_date = java.sql.Date.valueOf(formattedDate);
 
 			CompanyDAO dao=new CompanyDAO();
-			Company company=dao.register(name, company_name, address, email, phone_number, password, add_date);
+			Company add_company=dao.register(name, company_name, address, email, phone_number, password, add_date);
 
 			// 入力した情報に合致する企業が見つからなかった場合、属性名companyで登録する
-			if (company==null) {
-				session.setAttribute("company", company);
+			if (add_company==null) {
+				session.setAttribute("company", add_company);
 				// company_registration_complete.jspをフォワード先に指定
 				return "company_registration_complete.jsp";
 			}else{

@@ -145,4 +145,39 @@ public class CompanyDAO extends DAO{
 		con.close();
 		return company;
 	}
+
+	// 商品追加
+	public Company productregistration(String product_name, int unit_price, int regiinvqua, String category, String product_description, String image_filename, Date add_date)
+		throws Exception {
+		Company company=null;
+
+		Connection con=getConnection();
+		int pro_id = 0;
+		// SQL文を実行
+		PreparedStatement st;
+		st=con.prepareStatement(
+			"insert into product product_name=? and unit_price=? and regiinvqua=? and category=? and product_description=? and adding_time=?");
+		st.setString(1, product_name);
+		st.setInt(2, unit_price);
+		st.setInt(3, regiinvqua);
+		st.setString(4, category);
+		st.setString(5, product_description);
+		st.setDate(6, add_date);
+		ResultSet rs=st.executeQuery();
+		st.close();
+		con.close();
+//		商品Id取得
+		pro_id = rs.getInt("id");
+
+		Connection con2=getConnection();
+		PreparedStatement st2;
+		st2=con2.prepareStatement(
+				"insert into pro_image product_id=? and image_filename=?");
+		st2.setInt(1, pro_id);
+		st2.setString(2, image_filename);
+		st2.executeQuery();
+		st2.close();
+		con2.close();
+		return company;
+	}
 }

@@ -30,11 +30,11 @@ public class LoginAction {
 
 		// 指定したメールアドレスとパスワードの企業をデータベースから検索する
 		CompanyDAO dao=new CompanyDAO();
-		Company company=dao.login(email, password,login_date);
+		Company login_company=dao.login(email, password,login_date);
 
 		// メールアドレスとパスワードに合致する企業が見つかった場合、属性名login_companyで登録する
-		if (company!=null) {
-			session.setAttribute("login_company", company);
+		if (login_company!=null) {
+			session.setAttribute("company", login_company);
 			// company_top_page.jspをフォワード先に指定
 			return "company_top_page.jsp";
 		}else{

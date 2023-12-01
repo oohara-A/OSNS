@@ -35,8 +35,8 @@ public class Edit_comp_infoAction {
         	if (password==password2){
 	        	//入力した情報をデータベースに登録
 				CompanyDAO dao=new CompanyDAO();
-				Company company=dao.editcompinfo(name,company_name,address,email,phone_number,password);
-				session.setAttribute("company", company);
+				Company edit_company_info=dao.editcompinfo(name,company_name,address,email,phone_number,password);
+				session.setAttribute("company", edit_company_info);
 				// company_top_page.jspをフォワード先に指定
 				return "company_top_page.jsp";
 			// 入力したパスワードが一致しなかった場合
