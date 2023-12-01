@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.Company;
+import bean.Coupon;
 import bean.Product;
 
 public class CompanyDAO extends DAO{
@@ -186,5 +187,24 @@ public class CompanyDAO extends DAO{
 		st.close();
 		con.close();
 		return true;
+	}
+
+	// 商品追加
+	public Coupon coupon_issuing_creation(String coupon_name, String coupon_code, int effect)
+		throws Exception {
+		Coupon coupon=null;
+
+		Connection con=getConnection();
+		// SQL文を実行
+		PreparedStatement st;
+		st=con.prepareStatement(
+			"insert into coupon coupon_name=? and coupon_code=? and effect=?");
+		st.setString(1, coupon_name);
+		st.setString(2, coupon_code);
+		st.setInt(3, effect);st.executeQuery();
+
+		st.close();
+		con.close();
+		return coupon;
 	}
 }
