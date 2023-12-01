@@ -1,17 +1,16 @@
 
 
-create table user (
-	id int auto_increment primary key not null,						
-	name varchar(100) not null,							
-	email varchar(50) not null,							
-	password varchar(20) not null,								
-	user_name datetime(20) not null,								
-	adding_time datetime(20) not null,								
-	deleting_time datetime(20) not null,							
-	update_time datetime(20) not null,								
-	flag TINYINT(1) NOT NULL DEFAULT 0						
+CREATE TABLE user (
+    id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    user_name VARCHAR(50) NOT NULL,
+    adding_time DATE NOT NULL,
+    deleting_time DATE NOT NULL,
+    update_time DATE NOT NULL,
+    flag TINYINT(1) NOT NULL DEFAULT 0
 );
-
 CREATE TABLE address (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     user_id INT,
@@ -103,6 +102,8 @@ company_id int(100000000) not null,
 FOREIGN KEY (company_id ) REFERENCES company(id),
 user_id int(100000000) not null,
 FOREIGN KEY (user_id) REFERENCES user(id),
+product_id int(10000000) not null,
+FOREIGN KEY (product_id) REFERENCES product(id),
 coupon_id int(100000000) not null,
 phone_number int(10000) not null,	
 purchase_price int(1000000) not null, 

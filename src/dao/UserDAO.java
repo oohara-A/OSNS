@@ -4,14 +4,13 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.List;
 
 import bean.User;
 //ログイン操作など
 public class UserDAO extends DAO {
 //	ログイン時使用
-	@SuppressWarnings("unchecked")
-	public List<User> search(String user_name, String password,Date login_date)
+
+	public User search(String user_name, String password,Date login_date)
 			throws Exception {
 			User user=null;
 			//データベース接続
@@ -37,7 +36,7 @@ public class UserDAO extends DAO {
 			//データベース接続切断
 			st.close();
 			con.close();
-			return (List<User>) user;
+			return  user;
 		}
 
 //ログイン履歴
