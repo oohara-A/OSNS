@@ -22,6 +22,7 @@ public class Product_listAction {
 		// 在庫
 		int regiinvqua=Integer.parseInt(request.getParameter("regiinvqua"));
 
+		// 商品名が入力されていない場合
 		if (product_name==null) product_name="";
 
 		//ログインされている場合

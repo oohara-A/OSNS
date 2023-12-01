@@ -26,19 +26,10 @@ public class AdminDAO extends DAO {
 			"select * from admin where email=? and password=?");
 		st.setString(1, email);
 		st.setString(2, password);
-		ResultSet rs=st.executeQuery();
-
-		// 検索結果を管理者Beanに保存する
-		while (rs.next()) {
-			admin=new Admin();
-			admin.setId(rs.getInt("id"));
-			admin.setEmail(rs.getString("email"));
-			admin.setPassword(rs.getString("password"));
-		}
+		st.executeQuery();
 
 		st.close();
 		con.close();
-
 
 		//ログイン時の日時
 		Connection con2=getConnection();
@@ -48,14 +39,7 @@ public class AdminDAO extends DAO {
 		st2=con2.prepareStatement(
 			"update admin set update_time=?");
 		st2.setDate(1,login_date );
-		ResultSet rs2=st2.executeQuery();
-
-		// 検索結果を管理者Beanに保存する
-		while (rs2.next()) {
-			admin=new Admin();
-			admin.setId(rs2.getInt("id"));
-			admin.setUpdate_time(rs2.getDate("login_date"));
-		}
+		st2.executeQuery();
 
 		st2.close();
 		con2.close();
@@ -77,17 +61,8 @@ public class AdminDAO extends DAO {
 		st.setString(2, email);
 		st.setString(3, password);
 		st.setDate(4, add_date);
-		ResultSet rs=st.executeQuery();
+		st.executeQuery();
 
-		// 検索結果を管理者Beanに保存する
-		while (rs.next()) {
-			admin=new Admin();
-			admin.setId(rs.getInt("id"));
-			admin.setAdmin_name(rs.getString("admin_name"));
-			admin.setEmail(rs.getString("email"));
-			admin.setPassword(rs.getString("password"));
-			admin.setAdding_time(rs.getDate("add_date"));
-		}
 		st.close();
 		con.close();
 		return admin;
@@ -179,13 +154,12 @@ public class AdminDAO extends DAO {
 		boolean flag =true;
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
-				"update admin set flag = ?,where adminId = ?");
+				"update admin set flag = ?,where id = ?");
 		st.setBoolean(1, flag);
 		st.setInt(2,adminId);
 
 		st.close();
 		con.close();
-
 		return true;
 	}
 }

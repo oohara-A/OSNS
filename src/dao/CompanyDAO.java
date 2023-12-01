@@ -172,4 +172,19 @@ public class CompanyDAO extends DAO{
 		con.close();
 		return product_list;
 	}
+
+	//商品削除
+	public boolean productcancellation(int productId)
+		throws Exception {
+		boolean flag =true;
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				"update product set flag = ?,where id = ?");
+		st.setBoolean(1, flag);
+		st.setInt(2,productId);
+
+		st.close();
+		con.close();
+		return true;
+	}
 }
