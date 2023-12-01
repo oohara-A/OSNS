@@ -1,68 +1,141 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@include file="../menu.jsp" %>
+    <%@include file="../menu.jsp" %>
 
-<div class="checkout-container">
-        <h2>注文情報入力</h2>
 
-        <h1>1.受け取り場所</h1>
-        <form class="checkout-form">
-            <div class="form-group">
-                <label for="country">　　　　　　国:</label>
-                <input type="text" id="country" name="country" required placeholder="日本">
-            </div>
 
-            <div class="form-group">
-                <label for="name">　　　　　氏名:</label>
-                <input type="text" id="name" name="name" required placeholder="大原太郎">
-            </div>
+        <div class="checkout-container">
 
-            <div class="form-group">
-                <label for="phone">　　　電話番号:</label>
-                <input type="text" id="phone" name="phone" required placeholder="093-551-0820">
-            </div>
+            <h2>注文情報入力</h2>
 
-            <div class="form-group">
-                <label for="post">　　　郵便番号:</label>
-                <input type="text" id="post" name="post" required placeholder="802-0002">
-            </div>
+            <h1>1.受け取り場所</h1>
+            <form class="checkout-form">
+                <div class="form-group">
+                    <label for="country">　　　　　　国:</label>
+                    <input type="text" id="country" name="country" required placeholder="日本">
+                </div>
 
-            <div class="form-group">
-                <label for="prefecture">　　　都道府県:</label>
-                <input type="text" id="prefecture" name="prefecture" required placeholder="福岡県">
-            </div>
+                <div class="form-group">
+                    <label for="name">　　　　　氏名:</label>
+                    <input type="text" id="name" name="name" required placeholder="大原太郎">
+                </div>
 
-            <div class="form-group">
-                <label for="municipalities">　　　市区町村:</label>
-                <input type="text" id="municipalities" name="municipalities" required placeholder="北九州市小倉北区京町">
-            </div>
+                <div class="form-group">
+                    <label for="phone">　　　電話番号:</label>
+                    <input type="text" id="phone" name="phone" required placeholder="093-551-0820">
+                </div>
 
-            <div class="form-group">
-                <label for="street">丁目・番地・号:</label>
-                <input type="text" id="street" name="street" required placeholder="3-9-20">
-            </div>
+                <div class="form-group">
+                    <label for="post">　　　郵便番号:</label>
+                    <input type="text" id="post" name="post" required placeholder="802-0002">
+                </div>
 
-            <div class="form-group">
-                <label for="building">建物名／会社名:</label>
-                <input type="text" id="building" name="building" required placeholder="大原学園">
-            </div>
+                <div class="form-group">
+                    <label for="prefecture">　　　都道府県:</label>
+                    <input type="text" id="prefecture" name="prefecture" required placeholder="福岡県">
+                </div>
 
-            <div class="form-group">
-                <label for="room">　　　部屋番号:</label>
-                <input type="text" id="room" name="room" required placeholder="602">
-            </div>
+                <div class="form-group">
+                    <label for="municipalities">　　　市区町村:</label>
+                    <input type="text" id="municipalities" name="municipalities" required placeholder="北九州市小倉北区京町">
+                </div>
 
-            <h1>2.支払方法</h1>
+                <div class="form-group">
+                    <label for="street">丁目・番地・号:</label>
+                    <input type="text" id="street" name="street" required placeholder="3-9-20">
+                </div>
 
-           	<div>
-           		<label for="pay">プリペイド</label>
-           		<input type="radio">
-           	</div>
+                <div class="form-group">
+                    <label for="building">建物名／会社名:</label>
+                    <input type="text" id="building" name="building" required placeholder="大原学園">
+                </div>
 
-            <div class="checkout-summary">
-                <p>カート内数量: <span id="total-items">1</span></p>
-                <p>カート内合計金額: ¥<span id="subtotal">2000</span></p>
-                <button type="submit">購入する</button>
-            </div>
-        </form>
-    </div>
-<%@include file="../footer.jsp" %>
+                <div class="form-group">
+                    <label for="room">　　　部屋番号:</label>
+                    <input type="text" id="room" name="room" required placeholder="602">
+                </div>
+
+                <div>
+                    <input type="radio" id="new_address" name="address">
+                    <label for="new_address">入力した住所を使用する</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="address" name="address">
+                    <label for="address">登録済住所を使用する</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="check">
+                    <label for="check">デフォルトの住所を今回の注文と同じにする</label>
+                </div>
+
+                <h1>2.支払方法</h1>
+
+                <div>
+                    <input type="radio" id="coupon" name="coupon" onclick="toggleCouponInput()">
+                    <label for="coupon">クーポンを使用する</label>
+                </div>
+
+                <!-- クーポンコード入力画面 -->
+                <div id="coupon-input" style="display: none;">
+                    <h4>クーポンコード入力</h4>
+
+                    <div class="form-group">
+                        <label for="coupon-code">クーポンコード:</label>
+                        <input type="text" id="coupon-code" name="coupon-code" placeholder="クーポンコードを入力">
+                    </div>
+
+                    <button type="button" onclick="toggleCouponInput()">キャンセル</button>
+
+                </div>
+
+
+
+
+                <div>
+                    <input type="radio" id="pre-paid" name="pay">
+                    <label for="pre-paid">プリペイド</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="credit" name="pay">
+                    <label for="credit">クレジットカード</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="cash_deli" name="pay">
+                    <label for="cash_deli">代金引換</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="other" name="pay">
+                    <label for="other">コンビニ・ATM・電子マネー</label>
+                </div>
+
+                <h1>3.商品と発送情報</h1>
+
+                <div class="checkout-summary">
+                	<h2>お届け予定日:XXXX年XX月XX日～XXXX年XX月XX日</h2>
+                    <%@include file="cart_main.jsp" %>
+                    <button type="submit">購入する</button>
+                </div>
+
+
+            </form>
+        </div>
+
+        <script>
+            function toggleCouponInput() {
+                const couponInput = document.getElementById('coupon-input');
+                const couponRadio = document.getElementById('coupon');
+
+                // クーポン入力画面の表示と非表示を切り替える
+                if (couponInput.style.display === 'none' || couponInput.style.display === '') {
+                    couponInput.style.display = 'block';
+                } else {
+                    couponInput.style.display = 'none';
+                    couponRadio.checked = false;
+                }
+            }
+        </script>
+        <%@include file="../footer.jsp" %>
