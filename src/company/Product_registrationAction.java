@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Company;
+import bean.Product;
 import dao.CompanyDAO;
 
 public class Product_registrationAction {
@@ -32,7 +32,7 @@ public class Product_registrationAction {
         if (session.getAttribute("login_company")!=null) {
         	//入力した情報をデータベースに登録
 			CompanyDAO dao=new CompanyDAO();
-			Company add_product=dao.productregistration(product_name,unit_price,regiinvqua,category,product_description,image_filename);
+			Product add_product=dao.productregistration(product_name,unit_price,regiinvqua,category,product_description,image_filename);
 			session.setAttribute("product", add_product);
 			// product_registration_complete.jspをフォワード先に指定
 			return "product_registration_complete.jsp";

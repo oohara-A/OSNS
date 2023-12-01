@@ -88,7 +88,7 @@ public class CompanyDAO extends DAO{
 	}
 
 	//企業情報編集
-	public Company editcompinfo(String name,String company_name,String address,String email,String phone_number,String password)
+	public Company edit_comp_info(String name,String company_name,String address,String email,String phone_number,String password)
 		throws Exception {
 		Company company=null;
 
@@ -112,9 +112,9 @@ public class CompanyDAO extends DAO{
 	}
 
 	// 商品追加
-	public Company productregistration(String product_name, int unit_price, int regiinvqua, String category, String product_description, String image_filename, Date add_date)
+	public Product productregistration(String product_name, int unit_price, int regiinvqua, String category, String product_description, String image_filename, Date add_date)
 		throws Exception {
-		Company company=null;
+		Product product=null;
 
 		Connection con=getConnection();
 		int pro_id = 0;
@@ -143,7 +143,7 @@ public class CompanyDAO extends DAO{
 		st2.executeQuery();
 		st2.close();
 		con2.close();
-		return company;
+		return product;
 	}
 
 	// 商品一覧
@@ -189,7 +189,7 @@ public class CompanyDAO extends DAO{
 		return true;
 	}
 
-	// 商品追加
+	// クーポン発行
 	public Coupon coupon_issuing_creation(String coupon_name, String coupon_code, int effect)
 		throws Exception {
 		Coupon coupon=null;
