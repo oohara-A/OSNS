@@ -38,11 +38,8 @@ public class LoginAction {
 			// company_top_page.jspをフォワード先に指定
 			return "company_top_page.jsp";
 		}else{
-			//エラーのアラートを表示
-
-
-			// login.jspをフォワード先に指定
-			return "login.jsp";
+			// com_login_error.jspをフォワード先に指定
+			return "com_login_error.jsp";
 		}
 	}
 }
