@@ -37,11 +37,9 @@ public class LoginAction {
 			session.setAttribute("login_admin", admin);
 			// admin.jspをフォワード先に指定
 			return "admin.jsp";
+		}else{
+			// admin_login_error.jspをフォワード先に指定
+			return "admin_login_error.jsp";
 		}
-		//エラーのアラートを表示
-
-
-		// login.jspをフォワード先に指定
-		return "login.jsp";
 	}
 }

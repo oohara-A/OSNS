@@ -24,21 +24,18 @@ public class ShowuserAction {
 			// DB接続処理
             AdminDAO dao = new AdminDAO();
 
-         // サーチ実行処理
-            List<User> user_list = dao.showuser(user_name);
+            // サーチ実行処理
+            List<User> user_list = dao.show_user(user_name);
 
             session.setAttribute("userList", user_list);
 
-         // admin_manage_user.jspをフォワード先に指定
+            // admin_manage_user.jspをフォワード先に指定
             return "admin_manage_user.jsp";
 
         // ログインされていない場合
         } else {
-            //エラーアラートを表示
-
-
-        	// admin.jspをフォワード先に指定
-            return "admin.jsp";
+        	// admin_login_error.jspをフォワード先に指定
+            return "admin_login_error.jsp";
         }
 	}
 }

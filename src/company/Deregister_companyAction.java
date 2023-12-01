@@ -19,7 +19,7 @@ public class Deregister_companyAction {
         // ログインされている場合
         if (session.getAttribute("login_company")!=null) {
         	CompanyDAO dao=new CompanyDAO();
-        	boolean delete_company=dao.deletecompany(companyId);
+        	boolean delete_company=dao.delete_company(companyId);
 
         	session.setAttribute("companyDelete", delete_company);
 

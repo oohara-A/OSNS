@@ -32,7 +32,7 @@ public class Product_registrationAction {
         if (session.getAttribute("login_company")!=null) {
         	//入力した情報をデータベースに登録
 			CompanyDAO dao=new CompanyDAO();
-			Product add_product=dao.productregistration(product_name,unit_price,regiinvqua,category,product_description,image_filename);
+			Product add_product=dao.product_registration(product_name,unit_price,regiinvqua,category,product_description,image_filename);
 			session.setAttribute("product", add_product);
 			// product_registration_complete.jspをフォワード先に指定
 			return "product_registration_complete.jsp";

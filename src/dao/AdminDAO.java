@@ -69,7 +69,7 @@ public class AdminDAO extends DAO {
 	}
 
 	//管理者一覧
-	public List<Admin> showadmin()
+	public List<Admin> show_admin()
 		throws Exception {
 		List<Admin> admin_list=new ArrayList<>();
 
@@ -95,7 +95,7 @@ public class AdminDAO extends DAO {
 	}
 
 	//企業一覧
-	public List<Company> showcompany(String company_name)
+	public List<Company> show_company(String company_name)
 		throws Exception {
 		List<Company> company_list=new ArrayList<>();
 
@@ -122,7 +122,7 @@ public class AdminDAO extends DAO {
 	}
 
 	//ユーザ一覧
-	public List<User> showuser(String user_name)
+	public List<User> show_user(String user_name)
 		throws Exception {
 		List<User> user_list=new ArrayList<>();
 
@@ -149,7 +149,7 @@ public class AdminDAO extends DAO {
 	}
 
 	//管理者削除
-	public boolean deleteadmin(int adminId)
+	public boolean delete_admin(int adminId)
 		throws Exception {
 		boolean flag =true;
 		Connection con=getConnection();

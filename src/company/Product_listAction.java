@@ -30,7 +30,7 @@ public class Product_listAction {
 
 	        // AdminDAOを使用して管理者一覧を取得
 			CompanyDAO dao=new CompanyDAO();
-			List<Product> product_list = dao.productlist(product_name,unit_price,regiinvqua);
+			List<Product> product_list = dao.product_list(product_name,unit_price,regiinvqua);
 
 	        // 取得した管理者一覧をセッションに保存
 	        session.setAttribute("productlist", product_list);

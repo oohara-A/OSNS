@@ -38,11 +38,8 @@ public class AddAction {
 			// admin.jspをフォワード先に指定
 			return "admin.jsp";
 		}else{
-			//エラーのアラートを表示
-
-
-			// add_admin.jspをフォワード先に指定
-			return "add_admin.jsp";
+			// admin_login_error.jspをフォワード先に指定
+			return "admin_add_error.jsp";
 		}
 	}
 }

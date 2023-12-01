@@ -19,7 +19,7 @@ public class Product_cancellationAction {
         // ログインされている場合
         if (session.getAttribute("login_company")!=null) {
         	CompanyDAO dao=new CompanyDAO();
-        	boolean delete_product=dao.productcancellation(productId);
+        	boolean delete_product=dao.product_cancellation(productId);
 
         	session.setAttribute("productdelete", delete_product);
 

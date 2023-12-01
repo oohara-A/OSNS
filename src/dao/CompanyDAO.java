@@ -73,7 +73,7 @@ public class CompanyDAO extends DAO{
 	}
 
 	//企業削除
-	public boolean deletecompany(int companyId)
+	public boolean delete_company(int companyId)
 		throws Exception {
 		boolean flag =true;
 		Connection con=getConnection();
@@ -112,7 +112,7 @@ public class CompanyDAO extends DAO{
 	}
 
 	// 商品追加
-	public Product productregistration(String product_name, int unit_price, int regiinvqua, String category, String product_description, String image_filename, Date add_date)
+	public Product product_registration(String product_name, int unit_price, int regiinvqua, String category, String product_description, String image_filename, Date add_date)
 		throws Exception {
 		Product product=null;
 
@@ -147,7 +147,7 @@ public class CompanyDAO extends DAO{
 	}
 
 	// 商品一覧
-	public List<Product> productlist(String product_name,int unit_price, int regiinvqua)
+	public List<Product> product_list(String product_name,int unit_price, int regiinvqua)
 		throws Exception {
 		List<Product> product_list=new ArrayList<>();
 
@@ -175,7 +175,7 @@ public class CompanyDAO extends DAO{
 	}
 
 	//商品削除
-	public boolean productcancellation(int productId)
+	public boolean product_cancellation(int productId)
 		throws Exception {
 		boolean flag =true;
 		Connection con=getConnection();

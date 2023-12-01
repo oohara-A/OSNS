@@ -18,7 +18,7 @@ public class RemoveAction {
         // ログインされている場合
         if (session.getAttribute("login_admin")!=null) {
         	AdminDAO dao=new AdminDAO();
-        	boolean delete_admin=dao.deleteadmin(adminId);
+        	boolean delete_admin=dao.delete_admin(adminId);
 
         	session.setAttribute("adminDelete", delete_admin);
 
@@ -27,11 +27,8 @@ public class RemoveAction {
 
         // ログインされていない場合
         } else {
-        	//　エラーアラートの表示
-
-
-        	// admin.jspをフォワード先に指定
-        	return "admin.jsp";
+        	// admin_login_error.jspをフォワード先に指定
+        	return "admin_login_error.jsp";
         }
 	}
 }

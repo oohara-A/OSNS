@@ -11,20 +11,9 @@ public class LogoutAction {
 
 		HttpSession session=request.getSession();
 
-		// ログインされている場合
-        if (session.getAttribute("login_admin")!=null) {
-			// セッションから削除
-			session.removeAttribute("admin");
-			// admin.jspをフォワード先に指定
-			return "admin.jsp";
-
-		// ログインされていない場合
-        }else{
-        	//エラーアラートを表示
-
-
-	    	// admin.jspをフォワード先に指定
-	    	return "admin.jsp";
-        }
+		// セッションから削除
+		session.removeAttribute("admin");
+		// admin.jspをフォワード先に指定
+		return "admin.jsp";
 	}
 }
