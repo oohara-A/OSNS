@@ -11,20 +11,10 @@ public class LogoutAction {
 
 		HttpSession session=request.getSession();
 
-		// ログインされている場合
-        if (session.getAttribute("login_company")!=null) {
-			// セッションから削除
-			session.removeAttribute("company");
-			// company_top_page.jspをフォワード先に指定
-			return "company_top_page.jsp";
+		// セッションから削除
+		session.removeAttribute("company");
+		// company_top_page.jspをフォワード先に指定
+		return "company_top_page.jsp";
 
-		//ログインされていない場合
-        }else{
-        	//エラーアラートを表示
-
-
-	    	// company_top_page.jspをフォワード先に指定
-	    	return "company_top_page.jsp";
-        }
 	}
 }
