@@ -5,7 +5,7 @@
     boolean loginFailed = true;
 %>
 
-<form action="registered.jsp" method="post">
+<form action="user_login.jsp" method="post">
 
     <h2 class="log_error">ログインエラー</h2>
 

@@ -2,6 +2,8 @@ package tool;
 
 import java.io.PrintWriter;
 
+import javax.servlet.annotation.MultipartConfig;
+@MultipartConfig
 public class Page {
 //htmlのヘッダメソッド
 	public static void header(PrintWriter out) {
