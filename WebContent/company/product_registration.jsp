@@ -3,6 +3,10 @@
 
 <form action="processProductRegistration.jsp" method="post">
 
+	<div class="back_home">
+		<input class="backhome" type="submit" value="ホームに戻る">
+	</div>
+
     <h2 class="product_title">商品登録</h2>
 
 	<div class="item_entry">
