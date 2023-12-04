@@ -14,12 +14,13 @@ public class Product_cancellationAction {
 		// セッションを開始
 		HttpSession session=request.getSession();
 
-        int productId = Integer.parseInt(request.getParameter("productId"));
+		// 商品id
+        int id = Integer.parseInt(request.getParameter("id"));
 
         // ログインされている場合
         if (session.getAttribute("login_company")!=null) {
         	CompanyDAO dao=new CompanyDAO();
-        	boolean delete_product=dao.product_cancellation(productId);
+        	boolean delete_product=dao.product_cancellation(id);
 
         	session.setAttribute("productdelete", delete_product);
 

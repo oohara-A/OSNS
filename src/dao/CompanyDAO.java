@@ -175,14 +175,14 @@ public class CompanyDAO extends DAO{
 	}
 
 	//商品削除
-	public boolean product_cancellation(int productId)
+	public boolean product_cancellation(int id)
 		throws Exception {
 		boolean flag =true;
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
 				"update product set flag = ?,where id = ?");
 		st.setBoolean(1, flag);
-		st.setInt(2,productId);
+		st.setInt(2,id);
 
 		st.close();
 		con.close();
@@ -206,5 +206,20 @@ public class CompanyDAO extends DAO{
 		st.close();
 		con.close();
 		return coupon;
+	}
+
+	//商品削除
+	public boolean delete_coupon(int coupon_id)
+		throws Exception {
+		boolean flag =true;
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				"update coupon set flag = ?,where coupon_id = ?");
+		st.setBoolean(1, flag);
+		st.setInt(2,coupon_id);
+
+		st.close();
+		con.close();
+		return true;
 	}
 }
