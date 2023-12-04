@@ -1,7 +1,5 @@
 package user;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,13 +15,11 @@ public class ReviewoutAction extends Action{
 		//sessionの情報を取得
 		HttpSession session=request.getSession();
 		@SuppressWarnings("unchecked")
-		List<User> user = (List<User>) session.getAttribute("user");
+		User user = (User) session.getAttribute("user");
 //		ユーザーID取得
 		int user_id = 0;
-		for(User u :user){
-			user_id = u.getId();
-			break;
-		}
+		user_id = user.getId();
+		;
 //商品ID取得
 		int pro_id = Integer.parseInt(request.getParameter("id"));
 //データベース接続

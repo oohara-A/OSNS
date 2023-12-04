@@ -45,6 +45,22 @@ deleting_time DATE  not null,
 update_time DATE  not null,								
 flag TINYINT(1) NOT NULL DEFAULT 0		
 
+)
+
+CREATE TABLE test_product (
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,									
+pro_id int(10000),
+FOREIGN KEY (pro_id) REFERENCES product(id),								
+product_category_id int(100) not null,								
+testpro_name varchar(100) not null,								
+test_price int(10000000) not null,								
+adding_time DATE  not null,								
+deleting_time DATE  not null,								
+update_time DATE  not null,								
+product_description varchar(1000) not null,						
+regiinvqua int(10000) not null,					
+product_overview varchar not null,								
+flag TINYINT(1) NOT NULL DEFAULT 0	
 );
 
 CREATE TABLE product (
@@ -52,7 +68,9 @@ id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
 company_id int,
 FOREIGN KEY (company_id) REFERENCES company(id),								
 original_products_id int(1000000) AUTO_INCREMENT not null,							
-product_category_id int(100) not null,								
+product_category_id int(100) not null,
+test_proid int(1000000)	,
+FOREIGN KEY (test_proid) REFERENCES test_product(id),													
 product_name varchar(100) not null,								
 unit_price int(10000000) not null,								
 adding_time DATE  not null,								
