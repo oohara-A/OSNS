@@ -34,7 +34,7 @@ public class Product_registrationAction {
 		// 在庫
 		int regiinvqua=Integer.parseInt(request.getParameter("regiinvqua"));
 		// ジャンル
-		String category=request.getParameter("category");
+		String category_name=request.getParameter("category_name");
 		// 商品コメント
 		String product_description=request.getParameter("product_description");
 
@@ -48,7 +48,7 @@ public class Product_registrationAction {
         if (session.getAttribute("login_company")!=null) {
         	//入力した情報をデータベースに登録
 			CompanyDAO dao=new CompanyDAO();
-			Product add_product=dao.product_registration(product_name,unit_price,regiinvqua,category,product_description,filename,add_date);
+			Product add_product=dao.product_registration(product_name,unit_price,regiinvqua,category_name,product_description,filename,add_date);
 			session.setAttribute("product", add_product);
 			// product_registration_complete.jspをフォワード先に指定
 			return "product_registration_complete.jsp";

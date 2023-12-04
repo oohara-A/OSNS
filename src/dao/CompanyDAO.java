@@ -112,28 +112,28 @@ public class CompanyDAO extends DAO{
 	}
 
 	// 商品追加
-	public Product product_registration(String product_name, int unit_price, int regiinvqua, String category, String product_description, String filename, Date add_date)
+	public Product product_registration(String product_name, int unit_price, int regiinvqua, String category_name, String product_description, String filename, Date add_date)
 		throws Exception {
 		Product product=null;
 
-		Connection con=getConnection();
 		int pro_id = 0;
-		// SQL文を実行
+		// 商品情報をテーブルに追加
+		Connection con=getConnection();
 		PreparedStatement st;
 		st=con.prepareStatement(
-			"insert into product product_name=? and unit_price=? and regiinvqua=? and category=? and product_description=? and adding_time=?");
+			"insert into product product_name=? and unit_price=? and regiinvqua=? and product_description=? and adding_time=?");
 		st.setString(1, product_name);
 		st.setInt(2, unit_price);
 		st.setInt(3, regiinvqua);
-		st.setString(4, category);
-		st.setString(5, product_description);
-		st.setDate(6, add_date);
+		st.setString(4, product_description);
+		st.setDate(5, add_date);
 		ResultSet rs=st.executeQuery();
 		st.close();
 		con.close();
 		//商品Id取得
 		pro_id = rs.getInt("id");
 
+		//商品画像をテーブルに追加
 		Connection con2=getConnection();
 		PreparedStatement st2;
 		st2=con2.prepareStatement(
@@ -143,6 +143,18 @@ public class CompanyDAO extends DAO{
 		st2.executeQuery();
 		st2.close();
 		con2.close();
+
+		//カテゴリをテーブル追加
+		Connection con3=getConnection();
+		PreparedStatement st3;
+		st3=con3.prepareStatement(
+				"insert into product_category product_id=? and category_name=?");
+		st3.setInt(1, pro_id);
+		st3.setString(2, category_name);
+		st3.executeQuery();
+		st3.close();
+		con3.close();
+
 		return product;
 	}
 
@@ -187,6 +199,53 @@ public class CompanyDAO extends DAO{
 		st.close();
 		con.close();
 		return true;
+	}
+
+	// 商品追加
+	public Test_product sample_registration(String testpro_name, int test_price, int regiinvqua, String category_name, String product_description, String filename, Date add_date)
+		throws Exception {
+		Test_product test_product=null;
+
+		int pro_id = 0;
+		// 試供品情報をテーブルに追加
+		Connection con=getConnection();
+		PreparedStatement st;
+		st=con.prepareStatement(
+			"insert into test_product testpro_name=? and test_price=? and regiinvqua=? and product_description=? and adding_time=?");
+		st.setString(1, testpro_name);
+		st.setInt(2, test_price);
+		st.setInt(3, regiinvqua);
+		st.setString(4, product_description);
+		st.setDate(5, add_date);
+		ResultSet rs=st.executeQuery();
+		st.close();
+		con.close();
+		//商品Id取得
+		pro_id = rs.getInt("id");
+
+		//試供品画像をテーブルに追加
+		Connection con2=getConnection();
+		PreparedStatement st2;
+		st2=con2.prepareStatement(
+				"insert into pro_image product_id=? and image_filename=?");
+		st2.setInt(1, pro_id);
+		st2.setString(2, filename);
+		st2.executeQuery();
+		st2.close();
+		con2.close();
+
+		//カテゴリをテーブル追加
+		Connection con3=getConnection();
+		PreparedStatement st3;
+		st3=con3.prepareStatement(
+				"insert into product_category product_id=? and category_name=?");
+		st3.setInt(1, pro_id);
+		st3.setString(2, category_name);
+		st3.executeQuery();
+		st3.close();
+		con3.close();
+
+		return test_product;
 	}
 
 	// クーポン発行
