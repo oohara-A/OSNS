@@ -43,6 +43,6 @@ public class LoginAction extends Action{
 			return "index.jsp";
 		}
 	// エラーページ
-		return "index.jsp";
+		return "user_login_error.jsp";
 	}
 	}

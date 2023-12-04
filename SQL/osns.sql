@@ -1,16 +1,17 @@
 
 
-CREATE TABLE user (
-    id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(50) NOT NULL,
-    password VARCHAR(20) NOT NULL,
-    user_name VARCHAR(50) NOT NULL,
-    adding_time DATE NOT NULL,
-    deleting_time DATE NOT NULL,
-    update_time DATE NOT NULL,
-    flag TINYINT(1) NOT NULL DEFAULT 0
+create table user (
+	id int auto_increment primary key not null,						
+	name varchar(100) not null,							
+	email varchar(50) not null,							
+	password varchar(20) not null,								
+	user_name varchar(100) not null,								
+	adding_time DATE  not null,								
+	deleting_time DATE  not null,							
+	update_time DATE  not null,								
+	flag TINYINT(1) NOT NULL DEFAULT 0						
 );
+
 CREATE TABLE address (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     user_id INT,
@@ -24,9 +25,9 @@ CREATE TABLE admin (
     admin_name VARCHAR(20) NOT NULL,
     password VARCHAR(20) NOT NULL,
     email VARCHAR(20) NOT NULL,
-    adding_time DATETIME NOT NULL,
-    deleting_time DATETIME NOT NULL,
-    update_time DATETIME NOT NULL,
+    adding_time DATE  NOT NULL,
+    deleting_time DATE  NOT NULL,
+    update_time DATE  NOT NULL,
     flag TINYINT(1) NOT NULL DEFAULT 0
 );
 
@@ -39,9 +40,9 @@ company_image VARCHAR(20) NOT NULL,
 email VARCHAR(20) NOT NULL,							
 name VARCHAR(20) NOT NULL,								
 phone_number VARCHAR(20) NOT NULL,		
-adding_time datetime(20) not null,								
-deleting_time datetime(20) not null,							
-update_time datetime(20) not null,								
+adding_time DATE  not null,								
+deleting_time DATE  not null,							
+update_time DATE  not null,								
 flag TINYINT(1) NOT NULL DEFAULT 0		
 
 );
@@ -50,13 +51,13 @@ CREATE TABLE product (
 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,									
 company_id int,
 FOREIGN KEY (company_id) REFERENCES company(id),								
-original_products_id int(1000000) not null,							
+original_products_id int(1000000) AUTO_INCREMENT not null,							
 product_category_id int(100) not null,								
 product_name varchar(100) not null,								
 unit_price int(10000000) not null,								
-adding_time datetime(20) not null,								
-deleting_time datetime(20) not null,								
-update_time datetime(20) not null,								
+adding_time DATE  not null,								
+deleting_time DATE  not null,								
+update_time DATE  not null,								
 product_description varchar(1000) not null,						
 category varchar(20)  not null,				
 regiinvqua int(10000) not null,					
@@ -90,9 +91,9 @@ FOREIGN KEY (product_id ) REFERENCES user(id),
 company_id int(100000) not null,
 FOREIGN KEY (company_id ) REFERENCES company(id),									
 order_count int(1000) not null,															
-adding_time datetime(20) not null,								
-deleting_time datetime(20) not null,								
-update_time datetime(20) not null,								
+adding_time DATE  not null,								
+deleting_time DATE  not null,								
+update_time DATE  not null,								
 deletion_flag TINYINT(1) NOT NULL DEFAULT 0
 );
 
@@ -102,15 +103,13 @@ company_id int(100000000) not null,
 FOREIGN KEY (company_id ) REFERENCES company(id),
 user_id int(100000000) not null,
 FOREIGN KEY (user_id) REFERENCES user(id),
-product_id int(10000000) not null,
-FOREIGN KEY (product_id) REFERENCES product(id),
 coupon_id int(100000000) not null,
 phone_number int(10000) not null,	
 purchase_price int(1000000) not null, 
-purchase_time datetime(20) not null,
+purchase_time DATE  not null,
 paymentmethod varchar(100) not null,							
 deladdress varchar(100) not null,
-cancel_time datetime(20) not null,					
+cancel_time DATE  not null,					
 cancel_flag TINYINT(1) NOT NULL DEFAULT 0
 );
 
@@ -153,8 +152,8 @@ FOREIGN KEY (user_id) REFERENCES user(id),
 rating int(5) not null,								
 review_title varchar(100) not null,							
 reviewbody varchar(10000) not null,				
-submissiondate datetime(20) not null,
-deleting_time datetime(20) not null,								
+submissiondate DATE (20) not null,
+deleting_time DATE (20) not null,								
 flag TINYINT(1) NOT NULL DEFAULT 0
 );
 
@@ -183,8 +182,8 @@ FOREIGN KEY(recipient) REFERENCES user(id),
 subject varchar(10000) not null,							
 body varchar(100000) not null,
 status varchar(100) not null,
-sending_time datetime(20) not null,								
-deleting_time datetime(20) not null,					
+sending_time DATE  not null,								
+deleting_time DATE not null,					
 flag TINYINT(1) NOT NULL DEFAULT 0
 );
 
@@ -192,7 +191,7 @@ CREATE TABLE login_history (
 id int(10000000) AUTO_INCREMENT PRIMARY KEY NOT NULL, 
 user_id int(10000000) not null,
 FOREIGN KEY(user_id) REFERENCES user(id),
-login_date datetime(20) not null
+login_date DATE  not null
 );
 
 
@@ -203,8 +202,8 @@ FOREIGN KEY(company_id) REFERENCES company(id),
 review_title varchar(100) not null,							
 review_body varchar(10000) not null,					
 image varchar(100) not null,				
-submissiondate datetime(20) not null,						
-deleting_time datetime(20) not null,				
+submissiondate DATE not null,						
+deleting_time DATE  not null,				
 flag TINYINT(1) NOT NULL DEFAULT 0							
 
 );

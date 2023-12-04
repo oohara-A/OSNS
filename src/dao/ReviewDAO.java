@@ -5,10 +5,12 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javax.servlet.annotation.MultipartConfig;
+
 import bean.Review;
 import bean.Review_image;
 import bean.Review_video;
-
+@MultipartConfig
 //レビュー表示用
 public class ReviewDAO extends DAO{
 	public Review select(int user_id, int pro_id) throws Exception{

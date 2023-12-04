@@ -2,6 +2,9 @@ package bean;
 
 import java.sql.Date;
 
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.http.Part;
+@MultipartConfig
 public class Review  implements java.io.Serializable {
 //	レビューID
 private int	 review_id;
@@ -25,6 +28,20 @@ private int	 flag;
 private Review_image revi_image;
 
 private Review_video revi_video;
+
+private Part part;
+/**
+ * @return part
+ */
+public Part getPart() {
+	return part;
+}
+/**
+ * @param part セットする part
+ */
+public void setPart(Part part) {
+	this.part = part;
+}
 /**
  * @return revi_image
  */
@@ -158,4 +175,14 @@ public void setFlag(int flag) {
 	this.flag = flag;
 }
 
+public String getFileName(Part part) {
+	 String[] headerArrays = part.getHeader("Content-Disposition").split(";");
+	 String fileName = null;
+	 for (String head : headerArrays) {
+	 if (head.trim().startsWith("filename")) {
+	 fileName = head.substring(head.indexOf('"')).replaceAll("\"", "");
+	 }
+	 }
+	 return fileName;
+	 }
 }
