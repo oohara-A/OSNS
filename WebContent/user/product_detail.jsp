@@ -94,5 +94,5 @@
 
 
 
-        <%@include file="../user/test.jsp" %>
+        <%@include file="../user/review.jsp" %>
         <%@include file="../footer.jsp" %>

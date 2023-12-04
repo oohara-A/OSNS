@@ -31,7 +31,7 @@
 
     <hr>
     <div>
-        <h3>商品レビュー＆チャット</h3>
+        <h3>商品レビュー</h3>
 
         <!-- ツイートとリプライの表示 -->
         <div class="tweets" id="tweets">
@@ -40,7 +40,7 @@
 
         <!-- ツイート＆リプライ投稿フォーム -->
         <form id="tweetReplyForm" onsubmit="submitTweetReply(); return false;">
-            <h4>商品レビューを投稿＆チャット</h4>
+            <h4>商品レビューを投稿</h4>
             <textarea id="tweetReplyContent" rows="4" cols="50" placeholder="あなたの商品レビューを入力してください" required></textarea>
             <br>
             <label for="rating">評価:</label>
@@ -79,10 +79,6 @@
                 ' <span class="edit-link" onclick="editTweetReply(\'' + tweetId + '\')">編集</span>' +
                 ' <span class="delete-link" onclick="deleteTweetReply(\'' + tweetId + '\')">削除</span>' +
                 ' <span class="report-link" onclick="reportTweetReply(\'' + tweetId + '\')">通報</span></p>' +
-                '<form onsubmit="submitReplyToTweet(\'' + tweetId + '\'); return false;" style="display:none;">' +
-                '<input type="text" placeholder="返信を入力" id="replyContent-' + tweetId + '" required>' +
-                '<input type="submit" value="返信">' +
-                '</form>' +
                 '<div class="replies" id="replies-' + tweetId + '"></div>';
             tweetsDiv.appendChild(newTweetReply);
 
@@ -91,41 +87,10 @@
             document.getElementById('rating').value = '1';
         }
 
-        // ツイート＆リプライ表示エリアに新しいツイートまたはリプライを追加
+        // リプライのクリックでの遷移
         function showReplyForm(tweetId) {
-            var form = document.querySelector('#tweets #' + tweetId + ' form');
-            form.style.display = 'block';
-        }
-
-        // チャット画面に遷移
-        function showChatScreen(tweetId) {
-            // チャット画面のURLを生成
-            var chatUrl = 'chat.jsp?tweetId=' + tweetId;
-            // 新しいウィンドウまたはタブで開く
-            window.open(chatUrl, '_blank');
-        }
-
-        // ツイート＆リプライの編集
-        function editTweetReply(tweetId) {
-            var existingTweetReply = tweets.find(function (tweet) {
-                return tweet.id === tweetId;
-            });
-
-            var editedTweetReply = prompt('編集', existingTweetReply.content);
-
-            if (editedTweetReply !== null) {
-                // ツイートまたはリプライを更新
-                existingTweetReply.content = editedTweetReply;
-
-                // ツイート＆リプライ表示エリアを更新
-                var tweetReplyElement = document.getElementById(tweetId);
-                tweetReplyElement.querySelector('p').innerHTML = 'ユーザー: ' + editedTweetReply +
-                    ' <span class="rating">評価: ' + getStars(existingTweetReply.rating) + '</span>' +
-                    ' <span class="reply-link" onclick="showReplyForm(\'' + tweetId + '\')">リプライ</span>' +
-                    ' <span class="edit-link" onclick="editTweetReply(\'' + tweetId + '\')">編集</span>' +
-                    ' <span class="delete-link" onclick="deleteTweetReply(\'' + tweetId + '\')">削除</span>' +
-                    ' <span class="report-link" onclick="reportTweetReply(\'' + tweetId + '\')">通報</span>';
-            }
+            // リプライをクリックしたときの遷移処理を追加
+            window.location.href = 'message.jsp' + tweetId;
         }
 
         // ユーザーが評価を変更するための関数
@@ -151,76 +116,30 @@
             }
         }
 
-        // ツイート＆リプライの削除
-        function deleteTweetReply(tweetId) {
-            var confirmDelete = confirm('本当に削除しますか？');
-            if (confirmDelete) {
-                // 対象のツイートを削除
-                var tweetIndex = tweets.findIndex(function (tweet) {
-                    return tweet.id === tweetId;
-                });
-                if (tweetIndex !== -1) {
-                    tweets.splice(tweetIndex, 1);
-                    // 対象のツイートを表示から削除
-                    var tweetElement = document.getElementById(tweetId);
-                    tweetElement.parentNode.removeChild(tweetElement);
-                }
-            }
-        }
-
-        // ツイート＆リプライの通報
-        function reportTweetReply(tweetId) {
-            var reason = prompt('通報理由');
-            if (reason !== null && reason.trim() !== '') {
-                // 通報処理を実行
-                alert('通報が送信されました。理由: ' + reason);
-            }
-        }
-
-        // ツイートに対するリプライ投稿
-        function submitReplyToTweet(tweetId) {
-            var replyContent = document.getElementById('replyContent-' + tweetId).value;
-
-            // 対象のツイートにリプライを追加
-            var targetTweet = tweets.find(function (tweet) {
+        // ツイートの編集
+        function editTweetReply(tweetId) {
+            var existingTweetReply = tweets.find(function (tweet) {
                 return tweet.id === tweetId;
             });
 
-            targetTweet.replies.push({ user: 'ユーザー', content: replyContent });
+            var editedTweetReply = prompt('編集', existingTweetReply.content);
 
-            // 対象のツイートのリプライ表示エリアを更新
-            var repliesDiv = document.getElementById('replies-' + tweetId);
-            var newReply = document.createElement('div');
-            newReply.className = 'reply';
-            newReply.innerHTML = '<p>ユーザー: ' + replyContent +
-                ' <span class="edit-link" onclick="editReplyToTweet(\'' + tweetId + '\', ' + (targetTweet.replies.length - 1) + ')">編集</span>' +
-                ' <span class="delete-link" onclick="deleteReplyToTweet(\'' + tweetId + '\', ' + (targetTweet.replies.length - 1) + ')">削除</span>' +
-                ' <span class="report-link" onclick="reportReplyToTweet(\'' + tweetId + '\', ' + (targetTweet.replies.length - 1) + ')">通報</span></p>';
-            repliesDiv.appendChild(newReply);
+            if (editedTweetReply !== null) {
+                // ツイートまたはリプライを更新
+                existingTweetReply.content = editedTweetReply;
 
-            // リプライ投稿後にフォームを非表示にする
-            document.getElementById('replyContent-' + tweetId).value = '';
-            toggleReplyForm(tweetId);
-        }
-
-        // リプライの削除
-        function deleteReplyToTweet(tweetId, replyIndex) {
-            var targetTweet = tweets.find(function (tweet) {
-                return tweet.id === tweetId;
-            });
-
-            var confirmDelete = confirm('本当に削除しますか？');
-            if (confirmDelete) {
-                // 対象のリプライを削除
-                targetTweet.replies.splice(replyIndex, 1);
-                // 対象のリプライを表示から削除
-                var repliesDiv = document.getElementById('replies-' + tweetId);
-                var replyElement = repliesDiv.children[replyIndex];
-                replyElement.parentNode.removeChild(replyElement);
+                // ツイート＆リプライ表示エリアを更新
+                var tweetReplyElement = document.getElementById(tweetId);
+                tweetReplyElement.querySelector('p').innerHTML = 'ユーザー: ' + editedTweetReply +
+                    ' <span class="rating" onclick="changeRating(\'' + tweetId + '\', true)">評価: ' + getStars(existingTweetReply.rating) + '</span>' +
+                    ' <span class="reply-link" onclick="showReplyForm(\'' + tweetId + '\')">リプライ</span>' +
+                    ' <span class="edit-link" onclick="editTweetReply(\'' + tweetId + '\')">編集</span>' +
+                    ' <span class="delete-link" onclick="deleteTweetReply(\'' + tweetId + '\')">削除</span>' +
+                    ' <span class="report-link" onclick="reportTweetReply(\'' + tweetId + '\')">通報</span>';
             }
         }
 
-        // リプライの編集
+        // リプライに対する編集
         function editReplyToTweet(tweetId, replyIndex) {
             var targetTweet = tweets.find(function (tweet) {
                 return tweet.id === tweetId;
@@ -242,12 +161,78 @@
             }
         }
 
+        // ツイートまたはリプライの削除
+        function deleteTweetReply(tweetId) {
+            var confirmation = confirm('この投稿を削除してもよろしいですか？');
+
+            if (confirmation) {
+                // 対象のツイートまたはリプライを削除
+                var tweetIndex = tweets.findIndex(function (tweet) {
+                    return tweet.id === tweetId;
+                });
+
+                if (tweetIndex !== -1) {
+                    tweets.splice(tweetIndex, 1);
+
+                    // ツイート＆リプライ表示エリアを更新
+                    var tweetElement = document.getElementById(tweetId);
+                    tweetElement.parentNode.removeChild(tweetElement);
+                }
+            }
+        }
+
+        // リプライの削除
+        function deleteReplyToTweet(tweetId, replyIndex) {
+            var confirmation = confirm('このリプライを削除してもよろしいですか？');
+
+            if (confirmation) {
+                // 対象のツイートのリプライを削除
+                var targetTweet = tweets.find(function (tweet) {
+                    return tweet.id === tweetId;
+                });
+
+                if (targetTweet && targetTweet.replies.length > replyIndex) {
+                    targetTweet.replies.splice(replyIndex, 1);
+
+                    // 対象のツイートのリプライ表示エリアを更新
+                    var repliesDiv = document.getElementById('replies-' + tweetId);
+                    repliesDiv.removeChild(repliesDiv.children[replyIndex]);
+                }
+            }
+        }
+
+        // ツイートの通報
+        function reportTweetReply(tweetId) {
+            var reason = prompt('通報理由');
+
+            if (reason !== null && reason.trim() !== '') {
+                // 通報処理を実行
+                var targetTweet = tweets.find(function (tweet) {
+                    return tweet.id === tweetId;
+                });
+
+                if (targetTweet) {
+                    // 通報の処理を追加
+                    alert('商品レビューが通報されました。理由: ' + reason);
+                }
+            }
+        }
+        このコー
+
         // リプライの通報
         function reportReplyToTweet(tweetId, replyIndex) {
             var reason = prompt('通報理由');
+
             if (reason !== null && reason.trim() !== '') {
                 // 通報処理を実行
-                alert('通報が送信されました。理由: ' + reason);
+                var targetTweet = tweets.find(function (tweet) {
+                    return tweet.id === tweetId;
+                });
+
+                if (targetTweet && targetTweet.replies.length > replyIndex) {
+                    // 通報の処理を追加
+                    alert('リプライが通報されました。理由: ' + reason);
+                }
             }
         }
 
@@ -261,4 +246,5 @@
         function getStars(rating) {
             return '★'.repeat(rating) + '☆'.repeat(5 - rating);
         }
+
     </script>
