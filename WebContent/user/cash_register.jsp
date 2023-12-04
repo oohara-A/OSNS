@@ -111,17 +111,18 @@
                     <input type="radio" id="other" name="pay">
                     <label for="other">コンビニ・ATM・電子マネー</label>
                 </div>
+            </form>
 
-                <h1>3.商品と発送情報</h1>
+            	 <h1>3.商品と発送情報</h1>
 
                 <div class="checkout-summary">
                     <h2>お届け予定日:XXXX年XX月XX日～XXXX年XX月XX日</h2>
                     <%@include file="cart_main.jsp" %>
-                        <input type="submit" value="購入する">
                 </div>
 
-
-            </form>
+                <form class="checkout-form" onsubmit="return validateForm()">
+                <input type="submit" value="購入する">
+                </form>
         </div>
 
         <script>

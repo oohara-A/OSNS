@@ -2,7 +2,7 @@
 	<%@include file="../menu.jsp" %>
 
 		<div class="product_list">
-			<h1>売れ筋ランキング</h1>
+			<h1>売れ筋商品</h1>
 			<div class="product">
 				<div class="image">
 					<a href="product_detail.jsp">
@@ -79,7 +79,7 @@
 					<p>★★☆☆☆</p>
 				</div>
 			</div>
-			<h1>注目商品</h1>
+			<h1>評価の高い商品</h1>
 			<div class="product">
 
 
