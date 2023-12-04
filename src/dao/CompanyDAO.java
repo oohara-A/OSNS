@@ -208,7 +208,7 @@ public class CompanyDAO extends DAO{
 		return coupon;
 	}
 
-	//商品削除
+	//クーポン削除
 	public boolean delete_coupon(int coupon_id)
 		throws Exception {
 		boolean flag =true;
@@ -221,5 +221,28 @@ public class CompanyDAO extends DAO{
 		st.close();
 		con.close();
 		return true;
+	}
+
+	// クーポン一覧
+	public List<Coupon> coupon_list(String coupon_name)
+		throws Exception {
+		List<Coupon> coupon_list=new ArrayList<>();
+
+		Connection con=getConnection();
+
+		PreparedStatement st=con.prepareStatement(
+			"select * from coupon where coupon_name like ?");
+		st.setString(1, "%"+coupon_name+"%");
+		ResultSet rs=st.executeQuery();
+
+		while (rs.next()) {
+			Coupon coupon=new Coupon();
+			coupon.setCoupon_id(rs.getInt("coupon_id"));
+			coupon.setCoupon_name(rs.getString("coupon_name"));
+			coupon_list.add(coupon);
+		}
+		st.close();
+		con.close();
+		return coupon_list;
 	}
 }
