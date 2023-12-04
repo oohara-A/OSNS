@@ -112,7 +112,7 @@ public class CompanyDAO extends DAO{
 	}
 
 	// 商品追加
-	public Product product_registration(String product_name, int unit_price, int regiinvqua, String category, String product_description, String image_filename, Date add_date)
+	public Product product_registration(String product_name, int unit_price, int regiinvqua, String category, String product_description, String filename, Date add_date)
 		throws Exception {
 		Product product=null;
 
@@ -131,7 +131,7 @@ public class CompanyDAO extends DAO{
 		ResultSet rs=st.executeQuery();
 		st.close();
 		con.close();
-//		商品Id取得
+		//商品Id取得
 		pro_id = rs.getInt("id");
 
 		Connection con2=getConnection();
@@ -139,7 +139,7 @@ public class CompanyDAO extends DAO{
 		st2=con2.prepareStatement(
 				"insert into pro_image product_id=? and image_filename=?");
 		st2.setInt(1, pro_id);
-		st2.setString(2, image_filename);
+		st2.setString(2, filename);
 		st2.executeQuery();
 		st2.close();
 		con2.close();
