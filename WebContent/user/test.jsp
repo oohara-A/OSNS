@@ -41,8 +41,7 @@
         <!-- ツイート＆リプライ投稿フォーム -->
         <form id="tweetReplyForm" onsubmit="submitTweetReply(); return false;">
             <h4>商品レビューを投稿＆チャット</h4>
-            <textarea id="tweetReplyContent" rows="4" cols="50" placeholder="あなたの商品レビューを入力してください"
-                required></textarea>
+            <textarea id="tweetReplyContent" rows="4" cols="50" placeholder="あなたの商品レビューを入力してください" required></textarea>
             <br>
             <label for="rating">評価:</label>
             <select id="rating" required>
@@ -75,8 +74,8 @@
             newTweetReply.className = 'tweet';
             newTweetReply.id = tweetId;
             newTweetReply.innerHTML = '<p>ユーザー: ' + tweetReplyContent +
-                ' <span class="rating">評価: ' + getStars(rating) + '</span>' +
-                ' <span class="reply-link" onclick="showChatScreen(\'' + tweetId + '\')">リプライ</span>' +
+                ' <span class="rating" onclick="changeRating(\'' + tweetId + '\', true)">評価: ' + getStars(rating) + '</span>' +
+                ' <span class="reply-link" onclick="showReplyForm(\'' + tweetId + '\')">リプライ</span>' +
                 ' <span class="edit-link" onclick="editTweetReply(\'' + tweetId + '\')">編集</span>' +
                 ' <span class="delete-link" onclick="deleteTweetReply(\'' + tweetId + '\')">削除</span>' +
                 ' <span class="report-link" onclick="reportTweetReply(\'' + tweetId + '\')">通報</span></p>' +
@@ -90,6 +89,12 @@
             // ツイート＆リプライ投稿後にフォームをクリア
             document.getElementById('tweetReplyContent').value = '';
             document.getElementById('rating').value = '1';
+        }
+
+        // ツイート＆リプライ表示エリアに新しいツイートまたはリプライを追加
+        function showReplyForm(tweetId) {
+            var form = document.querySelector('#tweets #' + tweetId + ' form');
+            form.style.display = 'block';
         }
 
         // チャット画面に遷移
@@ -116,10 +121,33 @@
                 var tweetReplyElement = document.getElementById(tweetId);
                 tweetReplyElement.querySelector('p').innerHTML = 'ユーザー: ' + editedTweetReply +
                     ' <span class="rating">評価: ' + getStars(existingTweetReply.rating) + '</span>' +
-                    ' <span class="reply-link" onclick="toggleReplyForm(\'' + tweetId + '\')">リプライ</span>' +
+                    ' <span class="reply-link" onclick="showReplyForm(\'' + tweetId + '\')">リプライ</span>' +
                     ' <span class="edit-link" onclick="editTweetReply(\'' + tweetId + '\')">編集</span>' +
                     ' <span class="delete-link" onclick="deleteTweetReply(\'' + tweetId + '\')">削除</span>' +
                     ' <span class="report-link" onclick="reportTweetReply(\'' + tweetId + '\')">通報</span>';
+            }
+        }
+
+        // ユーザーが評価を変更するための関数
+        function changeRating(tweetId, isStarClick) {
+            if (isStarClick) {
+                var existingTweet = tweets.find(function (tweet) {
+                    return tweet.id === tweetId;
+                });
+
+                var newRating = prompt('新しい評価を入力してください (1-5)', existingTweet.rating);
+                if (newRating !== null) {
+                    newRating = parseInt(newRating);
+                    if (newRating >= 1 && newRating <= 5) {
+                        existingTweet.rating = newRating;
+
+                        // ツイート＆リプライ表示エリアを更新
+                        var tweetElement = document.getElementById(tweetId);
+                        tweetElement.querySelector('.rating').innerHTML = '評価: ' + getStars(newRating);
+                    } else {
+                        alert('評価は1から5の範囲で入力してください。');
+                    }
+                }
             }
         }
 
