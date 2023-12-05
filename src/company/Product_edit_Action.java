@@ -38,7 +38,7 @@ public class Product_edit_Action {
 		// 商品コメント
 		String product_description=request.getParameter("product_description");
 
-		//追加日時
+		//更新日時
 		Date date = new Date();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		String formattedDate = simpleDateFormat.format(date);
