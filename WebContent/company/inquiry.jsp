@@ -3,7 +3,7 @@
 
 <form action="registered.jsp" method="post">
 
-    <h2 class="com_title">企業用お問い合わせフォーム</h2>
+    <h2 class="com_title">企業用お問い合わせ</h2>
 
 	<div class="contact_us">
       <p class="inquiry">お名前</p>
