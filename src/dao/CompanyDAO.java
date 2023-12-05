@@ -201,7 +201,7 @@ public class CompanyDAO extends DAO{
 		return true;
 	}
 
-	// 商品追加
+	// 試供品追加
 	public Test_product sample_registration(String testpro_name, int test_price, int regiinvqua, String category_name, String product_description, String filename, Date add_date)
 		throws Exception {
 		Test_product test_product=null;
