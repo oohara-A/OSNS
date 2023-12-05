@@ -60,7 +60,7 @@ public class PostedreviewAction extends Action {
 		System.out.println(filename2);
 
 		 String uploadDirectory = System.getProperty("user.dir") + File.separator ;
-
+		 request.getContextPath();
 		// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
 		part.write("C:\\\\work\\\\pleiades\\\\workspace\\\\OSNS\\\\"+"image" +"\\\\" + filename2);
 
