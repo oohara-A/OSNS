@@ -88,7 +88,7 @@ public class CompanyDAO extends DAO{
 	}
 
 	//企業情報編集
-	public Company edit_comp_info(String name,String company_name,String address,String email,String phone_number,String password)
+	public Company edit_comp_info(String name,String company_name,String address,String email,String phone_number,String password,Date update_date)
 		throws Exception {
 		Company company=null;
 
@@ -97,13 +97,14 @@ public class CompanyDAO extends DAO{
 		// SQL文を実行
 		PreparedStatement st;
 		st=con.prepareStatement(
-			"update company set name=? and company_name=? and address=? and email=? and phone_number=? and password=?");
+			"update company set name=? and company_name=? and address=? and email=? and phone_number=? and password=? and update_time=?");
 		st.setString(1, name);
 		st.setString(2, company_name);
 		st.setString(3, address);
 		st.setString(4, email);
 		st.setString(5, phone_number);
 		st.setString(6, password);
+		st.setDate(7, update_date);
 		st.executeQuery();
 
 		st.close();
@@ -201,8 +202,55 @@ public class CompanyDAO extends DAO{
 		return true;
 	}
 
+	// 商品編集
+	public Product product_edit(String product_name, int unit_price, int regiinvqua, String category_name, String product_description, String filename, Date update_date)
+		throws Exception {
+		Product product=null;
+
+		int pro_id = 0;
+		// 商品情報をテーブルに追加
+		Connection con=getConnection();
+		PreparedStatement st;
+		st=con.prepareStatement(
+			"update product set product_name=? and unit_price=? and regiinvqua=? and product_description=? and update_time=?");
+		st.setString(1, product_name);
+		st.setInt(2, unit_price);
+		st.setInt(3, regiinvqua);
+		st.setString(4, product_description);
+		st.setDate(5, update_date);
+		ResultSet rs=st.executeQuery();
+		st.close();
+		con.close();
+		//商品Id取得
+		pro_id = rs.getInt("id");
+
+		//商品画像をテーブルに追加
+		Connection con2=getConnection();
+		PreparedStatement st2;
+		st2=con2.prepareStatement(
+				"update pro_image set product_id=? and image_filename=?");
+		st2.setInt(1, pro_id);
+		st2.setString(2, filename);
+		st2.executeQuery();
+		st2.close();
+		con2.close();
+
+		//カテゴリをテーブル追加
+		Connection con3=getConnection();
+		PreparedStatement st3;
+		st3=con3.prepareStatement(
+				"update product_category set product_id=? and category_name=?");
+		st3.setInt(1, pro_id);
+		st3.setString(2, category_name);
+		st3.executeQuery();
+		st3.close();
+		con3.close();
+
+		return product;
+	}
+
 	// 試供品追加
-	public Test_product sample_registration(String testpro_name, int test_price, int regiinvqua, String category_name, String product_description, String filename, Date add_date)
+	public Test_product testpro_registration(String testpro_name, int test_price, int regiinvqua, String category_name, String product_description, String filename, Date add_date)
 		throws Exception {
 		Test_product test_product=null;
 
@@ -239,6 +287,53 @@ public class CompanyDAO extends DAO{
 		PreparedStatement st3;
 		st3=con3.prepareStatement(
 				"insert into product_category product_id=? and category_name=?");
+		st3.setInt(1, pro_id);
+		st3.setString(2, category_name);
+		st3.executeQuery();
+		st3.close();
+		con3.close();
+
+		return test_product;
+	}
+
+	// 試供品編集
+	public Test_product testpro_edit(String testpro_name, int test_price, int regiinvqua, String category_name, String product_description, String filename, Date update_date)
+		throws Exception {
+		Test_product test_product=null;
+
+		int pro_id = 0;
+		// 試供品情報をテーブルに追加
+		Connection con=getConnection();
+		PreparedStatement st;
+		st=con.prepareStatement(
+			"update test_product set testpro_name=? and test_price=? and regiinvqua=? and product_description=? and update_time=?");
+		st.setString(1, testpro_name);
+		st.setInt(2, test_price);
+		st.setInt(3, regiinvqua);
+		st.setString(4, product_description);
+		st.setDate(5, update_date);
+		ResultSet rs=st.executeQuery();
+		st.close();
+		con.close();
+		//商品Id取得
+		pro_id = rs.getInt("id");
+
+		//試供品画像をテーブルに追加
+		Connection con2=getConnection();
+		PreparedStatement st2;
+		st2=con2.prepareStatement(
+				"update pro_image set product_id=? and image_filename=?");
+		st2.setInt(1, pro_id);
+		st2.setString(2, filename);
+		st2.executeQuery();
+		st2.close();
+		con2.close();
+
+		//カテゴリをテーブル追加
+		Connection con3=getConnection();
+		PreparedStatement st3;
+		st3=con3.prepareStatement(
+				"update product_category set product_id=? and category_name=?");
 		st3.setInt(1, pro_id);
 		st3.setString(2, category_name);
 		st3.executeQuery();

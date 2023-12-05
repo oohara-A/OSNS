@@ -11,7 +11,7 @@ import javax.servlet.http.Part;
 
 import dao.CompanyDAO;
 
-public class Sample_registrationAction {
+public class Testpro_registrationAction {
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
@@ -46,7 +46,7 @@ public class Sample_registrationAction {
         if (session.getAttribute("login_company")!=null) {
         	//入力した情報をデータベースに登録
 			CompanyDAO dao=new CompanyDAO();
-			Test_product add_test_product=dao.sample_registration(testpro_name,test_price,regiinvqua,category_name,product_description,filename,add_date);
+			Test_product add_test_product=dao.testpro_registration(testpro_name,test_price,regiinvqua,category_name,product_description,filename,add_date);
 			session.setAttribute("testproduct", add_test_product);
 			// product_registration_complete.jspをフォワード先に指定
 			return "product_registration_complete.jsp";
