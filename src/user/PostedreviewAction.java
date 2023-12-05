@@ -65,16 +65,28 @@ public class PostedreviewAction extends Action {
 		part.write("C:\\\\work\\\\pleiades\\\\workspace\\\\OSNS\\\\"+"image" +"\\\\" + filename2);
 
 
-
-
-//		ファイル名を取得
-//		String filename=Paths.get(part.getSubmittedFileName()).getFileName().toString();
-//		String url = "";
-//
 //		レビュー時の投稿したい動画
-		String video_url = "";
+		Part part2 = request.getPart("part2");
+
+		String filename3 = rev.getFileName(part);
+		System.out.println(filename);
+		 String[] filenames3 = filename.split("\\\\"); // Windowsの場合
+		List<String> filenames4 = new ArrayList<>();
+
+		for (String file : filenames2) {
+		    filenames4.add(file);
+		}
+
+		int len2 = filenames4.size();
+		String filename5 = filenames4.get(len - 1);
+		System.out.println(filename5);
+
+		 String uploadDirectory2 = System.getProperty("user.dir") + File.separator ;
+		// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
+		part.write("C:\\\\work\\\\pleiades\\\\workspace\\\\OSNS\\\\"+"image" +"\\\\" + filename5);
+
 		ReviewDAO dao = new ReviewDAO();
-		boolean flag = dao.Postedreview(user_id, pro_id, body, rating, submissiondate,filename2,video_url);
+		boolean flag = dao.Postedreview(user_id, pro_id, body, rating, submissiondate,filename2,filename5);
 
 //レビューページに遷移
 		return "index.jsp";
