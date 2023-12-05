@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-	<%@include file="../menu.jsp" %>
-
+<%@include file="../menu.jsp" %>
 		<div class="index">
 			<div class="image">
 				<a href="product_list.jsp">
@@ -53,7 +52,6 @@
 					<img alt="商品詳細へ" src="../assets/image/star5.png">
 				<h1>評価の高い商品</h1>
 			</div>
-		</div>
 
 
-		<%@include file="../footer.jsp" %>
+<%@include file="../footer.jsp" %>
