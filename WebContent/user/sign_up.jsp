@@ -4,24 +4,27 @@
 <link rel="stylesheet" type="text/css" href="osns/WebContent/assets/common.css">
 <h1>アカウントを作成</h1>
 <p>氏名</p>
-<form action="new_reg_out.jsp" method="post">
-<input type="text" name="name">
+<form action="Newreg.action" method="post">
+<input type="text" name="account_name" required="required">
+
+<p>ユーザ名</p>
+<input type="text" name ="account_user" required="required">
 
 <p>携帯電話番号・メールアドレス</p>
 
-<input type="text" name="email">
+<input type="text" name="account_email" required="required">
 
 <p>パスワード</p>
 
-<input type="text" name="pass">
+<input type="text" name="account_password" required="required">
 
 <p>もう一度パスワード</p>
 
-<input type="text" name="onemore">
+<input type="text" name="onemore" required="required">
 
 <p>利用規約・プライバシー規約</p>
 
-<input type="text" name="terms_of_use">
+<input type="text" name="terms">
 
 <input type="submit" value="登録">
 </form>
