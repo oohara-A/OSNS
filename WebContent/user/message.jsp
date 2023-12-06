@@ -6,7 +6,6 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f0f0f0;
     }
 
     .container {
@@ -133,6 +132,7 @@
     }
 </script>
 
+<hr>
 <div class="container">
     <div class="buyer-info">
         <img alt="ユーザーアイコン" src="#" onclick="changeReview('購入者1', '「あああああああああ」', '★★★★☆')">
