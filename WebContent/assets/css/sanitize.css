@@ -1,43 +1,418 @@
 @charset "utf-8";
 
-.com_registration{
+/*企業側共通のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.back_home{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+  text-align: right; /* 右寄せ */
+}
+
+.back_home .backhome {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.registration_button{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+  text-align: right; /* 右寄せ */
+}
+
+.registration_button .register_button{
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.com_title {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-size: 35px;
+}
+
+.com_title select {
+    width: 300px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+/*送信↓ーーーーーーーー */
+
+.inq_sending{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+  padding: 30px;
+}
+
+.inq_sending .sending{
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.inq_sending input[type="submit"] {
+  width: 200px;
+  height: 40px;
+}
+
+/*次に進む↓ーーーーーーーー */
+.go_next{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+  text-align: right; /* 右寄せ */
+}
+
+.go_next .gonext{
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/*ボタン↓ーーーーーーーー */
+.reg_button{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 500px;
+  text-align: right; /* 右寄せ */
+}
+
+.reg_button .regbutton{
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/*トップページ(企業)のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.content .menu .image{
+	width: 360px;
+}
+
+.content .menu .com_button {
+  width: 80%;
+  max-width: 500px;
+  text-align: left;
+  font: inherit;
+}
+
+.content .menu .com_button .combutton {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.content .main {
+    text-align: right;
+	font-size : 30px;
+}
+
+.content .main .com_title .com_top{
+    white-space: nowrap;
+    text-align: center;
+    margin-left: -10px;
+    font-size: 60px;
+}
+
+.content .main .com_info {
+    margin-bottom: 0;
+}
+
+.content .main .user_info {
+    border: 2px solid #000;
+    padding: 10px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.content .main .com_info .user_information{
+	font-size: 40px;
+	text-align: left;
+}
+
+.content .main .user_info .com_user {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+/*トップページ(管理者)のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.content .main .admin_title .admin_top{
+
+}
+
+/*ログインのcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.log{
   width: 80%;
   margin: 0 auto;
   max-width: 500px;
 }
 
-.society{
+.log .login{
+  font-size: 30px;
+}
+
+.log input[type="text"] {
+  width: 300px;
+  height: 40px;
+}
+
+.log input[type="email"] {
+  width: 300px;
+  height: 40px;
+}
+
+.logged{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.logged .logged_in{
+	margin-left: 8px;
+}
+
+.com_login,.admin_log {
+    display: flex;
+    justify-content: center;
+}
+
+.com_login{
+	margin-left: 70px;
+}
+
+.admin_log {
+    margin-left: 70px;
+}
+
+.new_acount {
+	margin-left: 35px;
+    text-align: center;
+    position: relative;
+}
+
+.log_error{
+	width: 80%;
+  	margin: 0 auto;
+  	max-width: 500px;
+  	font-size : 50px
+}
+
+.error_message{
+	width: 80%;
+  	margin: 0 auto;
+  	max-width: 500px;
+  	font-size : 18px
+}
+
+.new_acount::before,
+.new_acount::after {
+    content: "ーーーーーーーーーーーーーーーーーーーー";
+    display: block;
+    color: #000;
+    text-align: center;
+    margin-left: 35px;
+}
+
+.new_acount::before {
+    margin-bottom: 10px;
+}
+
+.new_acount::after {
+    margin-top: 10px;
+}
+
+/*企業登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.com_reg{
   width: 80%;
   margin: 0 auto;
   max-width: 500px;
 }
 
-.com_name{
+.com_reg .comreg{
+  font-size: 30px;
+}
+
+.com_reg input[type="text"] {
+  width: 300px;
+  height: 40px;
+}
+
+.com_reg input[type="email"]{
+  width: 400px;
+  height: 40px;
+}
+
+.com_reg input[type="tel"]{
+  width: 400px;
+  height: 40px;
+}
+
+/*商品登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+
+
+
+/*クーポン登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.back_home{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: right;
+}
+
+.coupon{
   width: 80%;
   margin: 0 auto;
   max-width: 500px;
 }
 
-.address{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500p
+.coupon .coupon_registration{
+  font-size: 45px;
+  text-align: left;
+  display: flex;
+  align-items: center;
 }
 
-.com_email{
+.coupon_name{
   width: 80%;
   margin: 0 auto;
-  max-width: 500p
+  max-width: 500px;
+  display: flex;
+  align-items: center;
 }
 
-.pass{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500p
+.coupon_name .cou_name{
+  font-size: 30px;
+  margin-right: 10px;
 }
 
-.next_pass{
+.coupon_name input[type="text"] {
+  width: 300px;
+  height: 40px;
+}
+
+.coupon_code{
   width: 80%;
   margin: 0 auto;
-  max-width: 500p
+  max-width: 500px;
+  display: flex;
+  align-items: center;
 }
+
+.coupon_code .cou_code{
+  font-size: 30px;
+}
+
+.coupon_code input[type="text"] {
+  width: 300px;
+  height: 40px;
+}
+
+.issue_number{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.issue_number .issue_count{
+  font-size: 30px;
+}
+
+.issue_number input[type="date"] {
+  width: 300px;
+  height: 40px;
+}
+
+.discount_factor{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.discount_factor .discount_rate{
+  font-size: 30px;
+}
+
+.discount_factor input[type="number"] {
+  width: 300px;
+  height: 40px;
+}
+
+/*お問い合わせのcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.contact_us{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.contact_us .inquiry{
+  font-size: 30px;
+}
+
+.contact_us input[type="text"] {
+  width: 300px;
+  height: 40px;
+}
+
+.contact_us input[type="email"]{
+  width: 300px;
+  height: 40px;
+}
+
+.contact_us input[type="tel"]{
+  width: 300px;
+  height: 40px;
+}
+
+.contact_us {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.contact_us .contact_items {
+    font-size: 28px;
+}
+
+.contact_us select {
+    width: 300px;
+    height: 40px;
+}
+
+.contact_us input[type="text"]{
+  width: 300px;
+  height: 60px;
+}
+

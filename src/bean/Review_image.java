@@ -1,6 +1,6 @@
 package bean;
 
-public class Review_image implements java.io.Serializable {
+public class Review_image extends Review implements java.io.Serializable {
 //	レビュー画像ID
 private int	id;
 //レビューID

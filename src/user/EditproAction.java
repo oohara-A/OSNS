@@ -1,6 +1,7 @@
 package user;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,10 +32,14 @@ public class EditproAction extends Action {
 		String password=request.getParameter("profile_password");
 
 //		ログイン日時
-		LocalDateTime adding_time = LocalDateTime.now();
+		Date date = new Date();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formattedDate = simpleDateFormat.format(date);
+		java.sql.Date date1 = java.sql.Date.valueOf(formattedDate);
+
 //		データベース処理
 		UserDAO dao = new UserDAO();
-		boolean flag = dao.pro_update(id,name,email,phone_number,password,adding_time);
+		boolean flag = dao.pro_update(id,name,email,phone_number,password,date1);
 		if(flag == true){
 			//プロフィール画面を再表示
 			return "user_profile.jsp";

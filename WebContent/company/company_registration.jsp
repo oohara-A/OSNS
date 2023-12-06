@@ -1,29 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="../menu.jsp" %>
 
-<h2>企業を登録</h2>
-
 <form action="registered.jsp" method="post">
 
-  <p>氏名</p>
-  <input type="text" name="name">
+<h2 class="com_title">企業登録</h2>
 
-  <p>企業名</p>
-  <input type="text" name="com_name">
+<div class="com_reg">
+   <p class="comreg">氏名</p>
+   <input type="text" name="name">
+   <p>(例)大原太郎</p>
+</div>
 
-  <p>所在地</p>
-  <input type="text" name="address">
+<div class="com_reg">
+   <p class="comreg">企業名</p>
+   <input type="text" name="com_name">
+   <p>(例)株式会社大原</p>
+</div>
 
-  <p>携帯電話番号・メールアドレス</p>
-  <input type="text" name="email">
+<div class="com_reg">
+   <p class="comreg">所在地</p>
+   <input type="text" name="address">
+   <p>(例)福岡県北九州市</p>
+</div>
 
-  <p>パスワード</p>
-  <input type="text" name="pass">
+<div class="com_reg">
+   <p class="comreg">メールアドレス</p>
+   <input type="email" name="email">
+   <p>(例)kkr11111@stu.o-hara.ac.jp</p>
+</div>
 
-  <p>もう一度パスワード</p>
-  <input type="text" name="onemore">
+<div class="com_reg">
+   <p class="comreg">携帯電話番号</p>
+   <input type="tel" name="tel">
+   <p>(例)0120-111-111</p>
+</div>
 
-  <input type="submit" value="登録">
+<div class="com_reg">
+   <p class="comreg">パスワード</p>
+   <input type="text" name="pass">
+</div>
+
+<div class="com_reg">
+   <p class="comreg">もう一度パスワード</p>
+   <input type="text" name="onemore">
+</div>
+
+<div class="inq_sending">
+  <input class="sending" type="submit" value="次に進む">
+</div>
+
 </form>
 
 <%@include file="../footer.jsp" %>

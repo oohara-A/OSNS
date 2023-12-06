@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import bean.Product;
 import dao.ProductDAO;
 import tool.Action;
-//購入画面を表示する際の
+//購入画面を表示する際の情報取得
 public class PurchaseoutAction extends Action {
 		public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 			//sessionの情報を取得

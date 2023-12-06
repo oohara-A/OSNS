@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDateTime;
@@ -112,15 +113,13 @@ public class ProductDAO extends DAO {
 			return line;
 		}
 //カート削除する関数
-		public boolean del_cart(int product_id,LocalDateTime adding_time)throws Exception{
+		public boolean del_cart(int product_id,Date adding_time)throws Exception{
 			boolean flag =true;
 			Connection con=getConnection();
-			// LocalDateTimeを文字列に変換
-	        String formattedTime = adding_time.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 	        PreparedStatement st=con.prepareStatement(
 					"insert into product_cart(deleting_time) values(?) where product_id =?");
 //	        削除日時
-	        st.setString(1, formattedTime);
+	        st.setDate(1, adding_time);
 //	        商品ID
 			st.setInt(2, product_id);
 			//SQL文実行

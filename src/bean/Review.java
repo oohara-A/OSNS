@@ -21,6 +21,34 @@ private Date submissiondate;
 private Date deleting_time;
 //削除フラグ
 private int	 flag;
+
+private Review_image revi_image;
+
+private Review_video revi_video;
+/**
+ * @return revi_image
+ */
+public Review_image getRevi_image() {
+	return revi_image;
+}
+/**
+ * @param revi_image セットする revi_image
+ */
+public void setRevi_image(Review_image revi_image) {
+	this.revi_image = revi_image;
+}
+/**
+ * @return revi_video
+ */
+public Review_video getRevi_video() {
+	return revi_video;
+}
+/**
+ * @param revi_video セットする revi_video
+ */
+public void setRevi_video(Review_video revi_video) {
+	this.revi_video = revi_video;
+}
 /**
  * @return review_id
  */
