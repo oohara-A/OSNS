@@ -26,7 +26,7 @@
 	        <input type="file" id="productImage" name="pro_image" accept="image/*">
 	    </div>
 
-		<div class="product_info">
+		<div class="pro_info">
         	<label for="productStock">在庫数:</label>
         	<input type="number" id="pro_input_stock" name="productStock">
     	</div>
@@ -40,7 +40,7 @@
 	        </select>
     	</div>
 
-    	<div class="product_info">
+    	<div class="pro_info">
         	<label for="shippingCost">送料設定:</label>
         	<input type="number" id="shippingCost" name="shipping_fee">
     	</div>

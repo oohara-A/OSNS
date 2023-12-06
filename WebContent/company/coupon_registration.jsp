@@ -11,7 +11,7 @@
     	</a>
 	</div>
 
-	<h2 class="product_title">クーポン登録</h2>
+	<h2 class="coupon_title">クーポン登録</h2>
 
 		<div class="coupon_reg">
 			<p class="couponreg">クーポン名</p>

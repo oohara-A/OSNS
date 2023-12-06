@@ -45,10 +45,10 @@
       </select>
     </div>
 
-<div class="contact_us">
-    <p class="inquiry">お問い合わせ内容</p>
-    <textarea name="inq_detail" rows="5" cols="50" maxlength="1000"></textarea>
-</div>
+	<div class="contact_us">
+    	<p class="inquiry">お問い合わせ内容</p>
+    	<textarea name="inq_detail" rows="5" cols="50" maxlength="1000"></textarea>
+	</div>
 
 <div class="inq_sending">
   <input class="sending" type="submit" value="送信">

@@ -40,7 +40,7 @@
   display: flex;
   align-items: center;
   text-align: left;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .com_title select {
@@ -309,7 +309,6 @@
     background-color: #f4f4f4;
 }
 
-
 .confirmation{
 	margin: 0 auto;
 	width: 700%;
@@ -391,10 +390,18 @@
   	max-width: 600px;
 }
 
+.pro_info{
+	margin-bottom: 15px;
+    font-family: system-ui;
+	width: 100%;
+  	margin: 0 auto;
+  	max-width: 600px;
+}
+
 .product_genre{
 	margin-bottom: 15px;
     font-family: system-ui;
-	width: 80%;
+	width: 40%;
   	margin: 0 auto;
   	max-width: 600px;
 }
@@ -458,6 +465,12 @@ input[type="file"] {
 }
 
 /*クーポン登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.coupon_registration .coupon_title{
+	width: 100%;
+	margin: 0 auto;
+	font-size: 40px;
+}
+
 .coupon_registration{
     width: 80%;
     max-width: 600px;
@@ -471,16 +484,23 @@ input[type="file"] {
 
 .coupon_reg {
     margin-bottom: 15px;
+    margin: 20 auto;
 }
 
 .couponreg {
     font-size: 18px;
 }
 
-input[type="text"],
+.coupon_reg input[type="text"]{
+	width: 90%;
+   	padding: 8px;
+   	box-sizing: border-box;
+   	margin-bottom: 10px;
+}
+
 input[type="number"],
 input[type="date"] {
-   width: 100%;
+   width: 90%;
    padding: 8px;
    box-sizing: border-box;
    margin-bottom: 10px;
@@ -506,13 +526,13 @@ input[type="date"] {
 
 /*お問い合わせのcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
 .contact_us{
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   max-width: 500px;
 }
 
 .contact_us .inquiry{
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .contact_us input[type="text"] {
@@ -539,9 +559,80 @@ input[type="date"] {
     height: 40px;
 }
 
-.contact_us input[type="text"]{
-  width: 300px;
-  height: 60px;
+/*管理者追加のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.admin_title{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 700px;
+  font-size: 45px;
 }
 
-/*管理者追加のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.admin_email{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.admin_password{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.admin_reg_time{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.contact_us .add{
+  font-size: 25px;
+}
+
+.admin_email .add{
+  font-size: 25px;
+}
+
+.admin_password .add{
+  font-size: 25px;
+}
+
+.admin_reg_time .add{
+  font-size: 25px;
+}
+
+.admin_email input[type="email"]{
+  width: 300px;
+  height: 40px;
+}
+
+.admin_password input[type="password"]{
+  width: 300px;
+  height: 40px;
+}
+
+.admin_reg_time input[type="month"]{
+  width: 300px;
+  height: 40px;
+}
+
+.to-add{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 400px;
+  padding: 30px;
+}
+
+.to-add .add{
+  background-color: #0000ff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.to-add input[type="submit"] {
+  width: 200px;
+  height: 40px;
+}
