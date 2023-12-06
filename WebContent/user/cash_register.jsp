@@ -159,7 +159,8 @@
                     // 他のバリデーションが必要であれば追加
 
                     // すべてのバリデーションが通過した場合、フォームの送信を許可
-                    return true;
+                    window.location.href = 'fin_cash.jsp';
+
                 }
                 return false;
             }
