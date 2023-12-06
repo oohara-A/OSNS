@@ -50,8 +50,10 @@
 			<div class="image">
 				<a href="#">
 					<img alt="商品詳細へ" src="../assets/image/star5.png">
+					</a>
 				<h1>評価の高い商品</h1>
 			</div>
+		</div>
 
 
 <%@include file="../footer.jsp" %>

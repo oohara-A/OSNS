@@ -1,4 +1,4 @@
-package admin;
+package company;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,8 +12,9 @@ public class LogoutAction {
 		HttpSession session=request.getSession();
 
 		// セッションから削除
-		session.removeAttribute("admin");
-		// admin.jspをフォワード先に指定
-		return "admin.jsp";
+		session.removeAttribute("company");
+		// company_top_page.jspをフォワード先に指定
+		return "company_top_page.jsp";
+
 	}
 }

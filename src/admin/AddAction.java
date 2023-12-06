@@ -1,5 +1,8 @@
 package admin;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -20,27 +23,23 @@ public class AddAction {
 		//パスワード
 		String password=request.getParameter("admin_password");
 
+		//追加日時
+		Date date = new Date();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formattedDate = simpleDateFormat.format(date);
+		java.sql.Date add_date = java.sql.Date.valueOf(formattedDate);
+
 		AdminDAO dao=new AdminDAO();
-		Admin admin=dao.insert(admin_name, email, password);
+		Admin admin=dao.add(admin_name, email, password, add_date);
 
-		//ログインされているか
-		if (session.getAttribute("login_admin")!=null){
-			// 管理者名とメールアドレスとパスワードに合致する管理者が見つからなかった場合、属性名add_adminで登録する
-			if (admin==null) {
-				session.setAttribute("add_admin", admin);
-				// admin.jspをフォワード先に指定
-				return "admin.jsp";
-			}else{
-				//エラーのアラートを表示
-
-
-				// add_admin.jspをフォワード先に指定
-				return "add_admin.jsp";
-			}
-		}else {
-			//エラーのアラートを表示
-
+		// 入力した情報に合致する管理者が見つからなかった場合、属性名adminで登録する
+		if (admin==null) {
+			session.setAttribute("admin", admin);
+			// admin.jspをフォワード先に指定
 			return "admin.jsp";
+		}else{
+			// admin_login_error.jspをフォワード先に指定
+			return "admin_add_error.jsp";
 		}
 	}
 }
