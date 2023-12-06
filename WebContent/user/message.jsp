@@ -112,7 +112,10 @@
 <script>
     function changeReview(userName, content, rating) {
         var reviewElement = document.getElementById('current-review');
-        reviewElement.innerHTML = '<div class="review"><p>' + userName + ': ' + content + '：' + rating + '</p></div>';
+        reviewElement.innerHTML = '<div class="review"><p>' + userName + ': ' + content + '：' + rating +
+            ' <span class="report-link" onclick="reportReview()">通報</span>' +
+            ' <span class="edit-link" onclick="editReview()">編集</span>' +
+            ' <span class="delete-link" onclick="deleteReview()">削除</span></p></div>';
         // 返信をクリア
         var replyElement = document.getElementById('current-reply');
         replyElement.innerHTML = '';
@@ -120,7 +123,12 @@
 
     function showReply(userName, replyContent) {
         var replyElement = document.getElementById('current-reply');
-        replyElement.innerHTML = '<div class="reply"><p>' + userName + ': ' + replyContent + '</p></div>';
+        var newReply = '<div class="reply"><p>' + userName + ': ' + replyContent +
+            ' <span class="report-link" onclick="reportReply()">通報</span>' +
+            ' <span class="edit-link" onclick="editReply()">編集</span>' +
+            ' <span class="delete-link" onclick="deleteReply()">削除</span></p></div>';
+        // 返信を新しく追加
+        replyElement.innerHTML += newReply;
     }
 
     function replyToReview() {
@@ -130,7 +138,63 @@
         // 返信フォームをクリア
         document.getElementById('replyContent').value = '';
     }
+
+    function reportReview() {
+        var reason = prompt('通報理由');
+        if (reason !== null && reason.trim() !== '') {
+            // 通報処理を実行
+            alert('レビューが通報されました。理由: ' + reason);
+            // 通報されたことを表示するなどの追加の処理があればここに追加
+        }
+    }
+
+    function reportReply() {
+        var reason = prompt('通報理由');
+        if (reason !== null && reason.trim() !== '') {
+            // 通報処理を実行
+            alert('返信が通報されました。理由: ' + reason);
+            // 通報されたことを表示するなどの追加の処理があればここに追加
+        }
+    }
+
+    function editReview() {
+        var reviewContent = prompt('編集', 'ここに現在のレビューの内容を表示');
+        if (reviewContent !== null) {
+            // レビューを更新
+            var reviewElement = document.getElementById('current-review');
+            reviewElement.querySelector('p').innerText = reviewContent;
+        }
+    }
+
+    function editReply() {
+        var replyContent = prompt('編集', 'ここに現在の返信の内容を表示');
+        if (replyContent !== null) {
+            // 返信を更新
+            var replyElement = document.getElementById('current-reply');
+            replyElement.querySelector('p').innerText = replyContent;
+        }
+    }
+
+    function deleteReview() {
+        var confirmation = confirm('このレビューを削除してもよろしいですか？');
+        if (confirmation) {
+            // レビューを削除
+            var reviewElement = document.getElementById('current-review');
+            reviewElement.innerHTML = '';
+        }
+    }
+
+    function deleteReply() {
+        var confirmation = confirm('この返信を削除してもよろしいですか？');
+        if (confirmation) {
+            // 返信を削除
+            var replyElement = document.getElementById('current-reply');
+            replyElement.innerHTML = '';
+        }
+    }
 </script>
+
+
 
 <hr>
 <div class="container">

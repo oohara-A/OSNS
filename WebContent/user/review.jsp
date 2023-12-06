@@ -90,9 +90,10 @@
 
         // リプライのクリックでの遷移
         function showReplyForm(reviewId) {
-            // リプライをクリックしたときの遷移処理を追加
-            window.location.href = 'message.jsp';
-        }
+    // リプライをクリックしたときに新しいウィンドウでmessage.jspを開く
+    window.open('message.jsp', '_blank');
+}
+
 
         // ユーザーが評価を変更するための関数
         function changeRating(reviewId, isStarClick) {
