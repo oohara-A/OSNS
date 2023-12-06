@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="../menu.jsp" %>
 
-<form action="registered.jsp" method="post">
+<form action=".acsion" method="post">
 
     <h2 class="com_title">ログイン</h2>
 
