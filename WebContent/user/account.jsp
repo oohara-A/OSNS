@@ -1,4 +1,115 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@include file="../header.jsp" %>
+<%@include file="../header.jsp" %>
+<style>
+    .account_box {
+        width: 120px;
+        height: 96px;
+        margin: 1em; /* 必要に応じてマージンを調整してください */
+        border: solid 3px black;
+        display: inline-block; /* ボックスを一列に表示する */
+    }
 
-    <%@include file="../footer.jsp" %>
+    .account {
+        text-align: center; /* ボックスを中央に配置する */
+    }
+</style>
+
+<hr>
+<div class="account">
+
+    <div class="account_box">
+        <p>住所追加・変更</p>
+    </div>
+
+    <div class="account_box">
+        <p>ユーザ情報変更</p>
+    </div>
+
+    <div class="account_box">
+        <p>パスワード変更</p>
+    </div>
+
+    <div class="account_box">
+        <p>支払い方法追加</p>
+    </div>
+
+    <div class="account_box">
+        <p>OSNS</p>
+    </div>
+
+    <div class="account_box">
+        <p>登録解除</p>
+    </div>
+
+     <div class="account_box">
+        <p>登録解除</p>
+    </div>
+</div>
+<hr>
+            <h4>おすすめ商品</h4>
+
+            <div class="detail_img">
+
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+            </div>
+
+            <hr>
+            <h4>商品</h4>
+
+            <div class="detail_img">
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+
+                <div class="img">
+                    <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                </div>
+            </div>
+<%@include file="../footer.jsp" %>
