@@ -5,14 +5,13 @@
     boolean loginFailed = true;
 %>
 
-<form action="user_login.jsp" method="post">
+<form action="registered.jsp" method="post">
 
-    <h2 class="log_error">ログインエラー</h2>
-
+    <h2 class="log_error">入力内容に誤りがあります。</h2>
 
 	<div class="error_message">
     <% if (loginFailed) { %>
-        <p style="color: red;">ログインに失敗しました。ユーザー名もしくはパスワードを確認してください。</p>
+        <p style="color: red;">お手数ですがもう一度入力のほどお願いします。</p>
     <% } %>
 	</div>
 

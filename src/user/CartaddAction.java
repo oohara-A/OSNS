@@ -1,7 +1,8 @@
 package user;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +31,12 @@ public class CartaddAction extends Action {
 		List<Product_cart> cart=(List<Product_cart>)session.getAttribute("cart");
 		List<Product> product=(List<Product>)session.getAttribute("product");
 		List<User> user =(List<User>) session.getAttribute("user");
-		LocalDateTime adding_time = LocalDateTime.now();
+//		登録日時
+		Date date = new Date();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formattedDate = simpleDateFormat.format(date);
+		java.sql.Date adding_time = java.sql.Date.valueOf(formattedDate);
+
 		ProductDAO dao = new ProductDAO();
 //		企業ID取得
 		int comp_id =0;

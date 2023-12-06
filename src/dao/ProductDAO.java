@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,7 +90,7 @@ public class ProductDAO extends DAO {
 		}
 
 //カートに追加する関数
-		public int insert_cart(int user_id,int product_id,int company_id,int order_count ,LocalDateTime adding_time) throws Exception {
+		public int insert_cart(int user_id,int product_id,int company_id,int order_count ,Date adding_time) throws Exception {
 			Connection con=getConnection();
 
 			PreparedStatement st=con.prepareStatement(
@@ -101,9 +99,7 @@ public class ProductDAO extends DAO {
 			st.setInt(2, product_id);
 			st.setInt(3, company_id);
 			st.setInt(4, order_count);
-			 // LocalDateTimeを文字列に変換
-	        String formattedTime = adding_time.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-	        st.setString(4, formattedTime);
+	        st.setDate(4, adding_time);
 
 			//SQL文実行
 			int line=st.executeUpdate();

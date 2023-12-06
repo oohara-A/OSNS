@@ -22,8 +22,13 @@
 
 	<nav class="header-menu">
 		<ul class="header-list">
+<<<<<<< HEAD
 			<li class="head"><a href="../user/index.jsp">OharaSampleNetShop</a></li>
 			<li class="head"><a href="user_login.jsp">ログイン</a></li>
+=======
+			<li class="head"><a href="index.jsp">OharaSampleNetShop</a></li>
+			<li class="head"><a href="user_login.jsp">アカウント</a></li>
+>>>>>>> 5d0a5ffced4523f38a7ebec4ef2793a57f74d94e
 			<li class="head"><a href="#">注文履歴</a></li>
 		</ul>
 	</nav>

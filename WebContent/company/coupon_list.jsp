@@ -13,16 +13,14 @@
                 <th>割引率</th>
             </tr>
         </thead>
+
         <tbody>
-            <!-- Iterate over the list of coupons and display each one -->
-            <c:forEach var="coupon" items="${coupons}">
                 <tr>
                     <td>${coupon.couponName}</td>
                     <td>${coupon.couponCode}</td>
                     <td>${coupon.issueNumber}</td>
                     <td>${coupon.discountRate}%</td>
                 </tr>
-            </c:forEach>
         </tbody>
     </table>
 </div>

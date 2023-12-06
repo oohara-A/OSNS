@@ -49,7 +49,7 @@
 		</div>
 
 		<div class="com_info">
-			<p class="user_information">ユーザー情報</p>
+			<p class="user_information">管理者情報</p>
 		</div>
 
     	<div class="user_info">

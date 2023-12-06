@@ -1,5 +1,8 @@
 package bean;
 
+import javax.servlet.annotation.MultipartConfig;
+
+@MultipartConfig
 public class Review_image extends Review implements java.io.Serializable {
 //	レビュー画像ID
 private int	id;
