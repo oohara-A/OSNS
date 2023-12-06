@@ -90,9 +90,9 @@
 
         // リプライのクリックでの遷移
         function showReplyForm(reviewId) {
-    // リプライをクリックしたときに新しいウィンドウでmessage.jspを開く
-    window.open('message.jsp', '_blank');
-}
+            // リプライをクリックしたときに新しいウィンドウでmessage.jspを開く
+            window.open('message.jsp', '_blank');
+        }
 
 
         // ユーザーが評価を変更するための関数

@@ -113,23 +113,23 @@
                 </div>
             </form>
 
-            	 <h1>3.商品と発送情報</h1>
+            <h1>3.商品と発送情報</h1>
 
-                <div class="checkout-summary">
-                    <h2>お届け予定日:XXXX年XX月XX日～XXXX年XX月XX日</h2>
-                    <%@include file="cart_main.jsp" %>
-                </div>
+            <div class="checkout-summary">
+                <h2>お届け予定日:XXXX年XX月XX日～XXXX年XX月XX日</h2>
+                <%@include file="cart_main.jsp" %>
+            </div>
 
-                <form class="checkout-form" onsubmit="return validateForm()">
+            <form class="checkout-form" onsubmit="return validateForm()">
                 <input type="submit" value="購入する">
-                </form>
+            </form>
         </div>
 
         <script>
 
             function validateForm(event) {
 
-            	event = event || window.event;
+                event = event || window.event;
 
                 var submitButton = (event && event.submitter) ? event.submitter : null;
 

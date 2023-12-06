@@ -90,9 +90,9 @@
                     <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
                 </div>
             </div>
-</div>
+        </div>
 
 
 
         <%@include file="../user/review.jsp" %>
-        <%@include file="../footer.jsp" %>
+            <%@include file="../footer.jsp" %>
