@@ -203,7 +203,7 @@ public class CompanyDAO extends DAO{
 	}
 
 	// 商品編集
-	public Product product_edit(String product_name, int unit_price, int regiinvqua, String category_name, String product_description, String filename, Date update_date)
+	public Product product_edit(String product_name, int unit_price, int regiinvqua, String category_name, String product_description, Date update_date)
 		throws Exception {
 		Product product=null;
 
