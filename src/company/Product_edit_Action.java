@@ -2,7 +2,14 @@ package company;
 
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Stream;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,11 +32,29 @@ public class Product_edit_Action {
 		int unit_price=Integer.parseInt(request.getParameter("unit_price"));
 
 		// 商品画像
-		//name属性がpictのファイルをPartオブジェクトとして取得
-		Part image_filename=request.getPart("image_filename");
-		//ファイル名を取得
-		//String filename=part.getSubmittedFileName();//ie対応が不要な場合
-		String filename=Paths.get(image_filename.getSubmittedFileName()).getFileName().toString();
+		//商品画像ID
+		String[] pro_image_ids = request.getParameterValues("pro_image_id");
+		//商品画像IDがnullの場合
+		if(pro_image_ids==null)pro_image_ids=;
+		//intに変換
+		int[] intArray = Stream.of(pro_image_ids).mapToInt(Integer::parseInt).toArray();
+
+		//商品画像リスト
+		List<String> fileNameList = new ArrayList<String>();
+
+		for (Part part : request.getParts()) {
+	        part.getName();
+	        part.getContentType();
+	        part.getSubmittedFileName();
+	        part.getSize();
+	        if ("text/plain".equals(part.getContentType())) {
+	            try (InputStream is = part.getInputStream();
+	                    InputStreamReader r = new InputStreamReader(is);
+	                    BufferedReader br = new BufferedReader(r)) {
+	                System.out.println(br.readLine());
+                }
+            }
+        }
 
 		// 在庫
 		int regiinvqua=Integer.parseInt(request.getParameter("regiinvqua"));
@@ -48,7 +73,7 @@ public class Product_edit_Action {
         if (session.getAttribute("login_company")!=null) {
         	//入力した情報をデータベースに登録
 			CompanyDAO dao=new CompanyDAO();
-			Product edit_product=dao.product_edit(product_name,unit_price,regiinvqua,category_name,product_description,filename,update_date);
+			Product edit_product=dao.product_edit(product_name,unit_price,regiinvqua,category_name,product_description,update_date);
 			session.setAttribute("product", edit_product);
 			// product_registration_complete.jspをフォワード先に指定
 			return "product_registration_complete.jsp";

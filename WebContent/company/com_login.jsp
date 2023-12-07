@@ -9,7 +9,11 @@
 
 		<div class="log">
 	      <p class="login">メールアドレス</p>
+<<<<<<< HEAD
 	      <input type="email" name="email">
+=======
+	      <input type="text" name="inq_name">
+>>>>>>> f49713779204c6034678be1193948446b6e03908
 	    </div>
 
 		<div class="log">

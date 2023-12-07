@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import bean.Company;
 import dao.CompanyDAO;
 
-public class LoginAction {
+public class Login_companyAction {
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {

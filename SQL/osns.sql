@@ -126,7 +126,7 @@ purchase_price int(1000000) not null,
 purchase_time DATE  ,
 paymentmethod varchar(100) not null,
 deladdress varchar(100) not null,
-cancel_time DATE  l,
+cancel_time DATE,
 cancel_flag TINYINT(1) NOT NULL DEFAULT 0
 );
 
