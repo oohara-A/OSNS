@@ -11,7 +11,7 @@
 			<div class="log">
 		      <p class="login">ユーザー名</p>
 		      <input type="text" name="inq_name" required="required">
-		    </div>y
+		    </div>
 
 			<div class="log">
 		      <p class="login">パスワード</p>
