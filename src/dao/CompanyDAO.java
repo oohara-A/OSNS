@@ -10,6 +10,7 @@ import java.util.List;
 import bean.Company;
 import bean.Coupon;
 import bean.Product;
+import bean.Test_product;
 
 public class CompanyDAO extends DAO{
 

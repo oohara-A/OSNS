@@ -37,9 +37,6 @@ public class LoginAction extends Action{
 		if (user!=null) {
 			session.setAttribute("user",user);
 			System.out.print("ログイン完了");
-			user_id = user.getId();
-			UserDAO dao2 = new UserDAO();
-			boolean flag = dao2.insert_login(user_id, login_date);
 			return "index.jsp";
 		}
 	// エラーページ

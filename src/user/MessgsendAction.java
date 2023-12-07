@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.User;
+import dao.EmaileDAO;
 import tool.Action;
 //メッセージ送信
 public class MessgsendAction extends Action {
@@ -20,21 +21,24 @@ public class MessgsendAction extends Action {
 		int user_id = 0;
 		user_id = user.getId();
 //  	相手のユーザID取得
-		String id = request.getParameter("id");
+		int id = Integer.parseInt(request.getParameter("id"));
 //		メッセージ本文
 		String body = request.getParameter("review_input");
 //		メッセージ返信日時日時
 		Date date = new Date();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		String formattedDate = simpleDateFormat.format(date);
-		java.sql.Date submissiondate = java.sql.Date.valueOf(formattedDate);
+		java.sql.Date send_date = java.sql.Date.valueOf(formattedDate);
 //		送信状態
 		String status = "送信済み";
-//		削除処理
-		
-
-
-		return null;
+//		送信処理
+		EmaileDAO dao = new EmaileDAO();
+		boolean flag = dao.emaile_send(user_id, id, body, send_date);
+		if(flag== true){
+			return "message.jsp";
+		}
+//エラー処理
+		return "user_login_error.jsp";
 	}
 
 }

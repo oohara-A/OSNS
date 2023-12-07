@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -57,6 +58,21 @@ public class EmaileDAO extends DAO {
 		con.close();
 		return (Email) recipient_maile;
 
+	}
+
+//	メッセージ送信
+	public boolean emaile_send(int user_id , int send_id, String body,Date send_date)throws Exception{
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				"insert into email(sender,recipient,body,status,sending_time) values(?,?,?,?,?)");
+		st.setInt(1, user_id);
+		st.setInt(2, send_id);
+		st.setString(3, body);
+		st.setDate(4, send_date);
+		st.executeUpdate();
+		st.close();
+		con.close();
+		return true;
 	}
 
 //	メッセージ削除

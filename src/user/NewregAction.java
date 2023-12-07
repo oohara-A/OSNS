@@ -20,6 +20,8 @@ public class NewregAction extends Action{
 		HttpSession session=request.getSession();
 		//ログイン名を取得
 		String name=request.getParameter("account_name");
+//		ユーザ名
+		String user_name = request.getParameter("account_user");
 //		メールアドレス
 		String email = request.getParameter("account_email");
 		//ログインパスワードを取得
@@ -32,9 +34,9 @@ public class NewregAction extends Action{
 		java.sql.Date adding_time = java.sql.Date.valueOf(formattedDate);
 
 		UserDAO dao=new UserDAO();
-		int user = dao.insert(name, email, password,adding_time);
-
-		return "sign_up.jsp";
+		int user = dao.insert(name, email, password,user_name,adding_time);
+//		ログイン画面表示
+		return "user_login.jsp";
 
 }
 }

@@ -82,6 +82,7 @@ public class PostedreviewAction extends Action {
 		System.out.println(filename5);
 
 		 String uploadDirectory2 = System.getProperty("user.dir") + File.separator ;
+//		 ファイル名に日時を足すミリ秒まで
 		// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
 		part.write("C:\\\\work\\\\pleiades\\\\workspace\\\\OSNS\\\\"+"image" +"\\\\" + filename5);
 
