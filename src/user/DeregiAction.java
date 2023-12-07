@@ -1,6 +1,7 @@
 package user;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +12,7 @@ import bean.User;
 import dao.UserDAO;
 import tool.Action;
 
-//登録解除クラス
+//会員登録解除クラス
 public class DeregiAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//セッションを使えるようにする
@@ -24,10 +25,13 @@ public class DeregiAction extends Action {
 			id = i.getId();
 		}
 //		削除日時日時
-		LocalDateTime adding_time = LocalDateTime.now();
+		Date date = new Date();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formattedDate = simpleDateFormat.format(date);
+		java.sql.Date date1 = java.sql.Date.valueOf(formattedDate);
 		//登録解除
 		UserDAO dao=new UserDAO();
-		boolean user = dao.update(id,adding_time);
+		boolean user = dao.update(id,date1);
 //		登録解除が正常に出来た場合
 		if(user == true){
 			// ユーザBeanを削除

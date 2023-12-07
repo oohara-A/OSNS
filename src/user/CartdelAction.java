@@ -1,6 +1,7 @@
 package user;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,10 +23,14 @@ public String execute(HttpServletRequest request, HttpServletResponse response) 
 		int id=Integer.parseInt(request.getParameter("id"));
 		//セッションの中の属性cartを取得
 		List<Product_cart> cart=(List<Product_cart>)session.getAttribute("cart");
-//		削除する日時を取得
-		LocalDateTime adding_time = LocalDateTime.now();
+//		削除日時日時
+		Date date = new Date();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formattedDate = simpleDateFormat.format(date);
+		java.sql.Date date1 = java.sql.Date.valueOf(formattedDate);
+
 		ProductDAO dao = new ProductDAO();
-		boolean flag = dao.del_cart(product_id,adding_time);
+		boolean flag = dao.del_cart(product_id,date1);
 
 		//カートの中の商品を消去
 		for (Product_cart i : cart) {

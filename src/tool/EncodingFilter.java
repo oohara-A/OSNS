@@ -8,8 +8,9 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebFilter;
-
+@MultipartConfig
 @WebFilter(urlPatterns={"/*"})
 //インターフェイス継承
 public class EncodingFilter implements Filter {
@@ -20,7 +21,7 @@ public class EncodingFilter implements Filter {
 		FilterChain chain
 	) throws IOException, ServletException {
 		request.setCharacterEncoding("UTF-8");
-//		response.setContentType("text/html; charset=UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		//各ファイルの共通の部分↓
 		System.out.println("フィルタの前処理");

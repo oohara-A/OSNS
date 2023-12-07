@@ -21,7 +21,7 @@
 				</li>
 				<li class="menu-item">
 					<!--カートのページ  -->
-					<a href="cart.jsp">カート</a>
+					<a href="login.jsp">カート</a>
 				</li>
 				<li class="menu-item">
 					<!--通知  -->
@@ -30,6 +30,7 @@
 			</ul>
 		</nav>
 
+		<hr>
 		<div>
 			<input id="drawer_input" class="drawer_hidden" type="checkbox">
 			<label for="drawer_input" class="drawer_open"><span></span></label>
@@ -43,3 +44,4 @@
 		</div>
 
 		<hr>
+
