@@ -2,21 +2,27 @@
     <%@include file="../header.jsp" %>
 
         <style>
+            .container {
+                display: flex;
+            }
+
             .box {
                 width: 300px;
                 height: 300px;
                 position: relative;
+                display: flex;
             }
 
             .add-button {
                 position: absolute;
-                top: 10px;
-                right: 10px;
-                background-color: #4CAF50;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: pink;
                 color: white;
                 border: none;
-                padding: 10px 15px;
-                font-size: 16px;
+                padding: 20px 20px;
+                font-size: 60px;
                 cursor: pointer;
                 border-radius: 5px;
             }
@@ -51,21 +57,24 @@
                 color: black;
             }
         </style>
-        <hr>
-        <div class="box">
-            <h1>現在の住所</h1>
-        </div>
 
-        <div class="box">
-            <h1>新しい住所を追加</h1>
-            <button class="add-button" onclick="openModal()">＋</button>
+        <hr>
+
+        <div class="container">
+            <div class="box">
+                <h1>現在の住所</h1>
+            </div>
+
+            <div class="box">
+                <h1>新しい住所を追加</h1>
+                <button class="add-button" onclick="openModal()">＋</button>
+            </div>
         </div>
 
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
 
-                <!-- ここに登録画面のコンテンツを追加 -->
                 <h2>登録画面</h2>
 
                 <form class="checkout-form" onsubmit="return validateForm()">
@@ -116,6 +125,42 @@
 
                 </form>
                 <button class="close-button" onclick="closeModal()">登録</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <p>おすすめ商品</p>
+
+        <div class="detail_img">
+
+
+            <div class="img">
+                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+            </div>
+
+            <div class="img">
+                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+            </div>
+
+            <div class="img">
+                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+            </div>
+
+            <div class="img">
+                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+            </div>
+
+            <div class="img">
+                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+            </div>
+
+            <div class="img">
+                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+            </div>
+
+            <div class="img">
+                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
             </div>
         </div>
 
