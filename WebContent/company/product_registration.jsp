@@ -4,7 +4,7 @@
 <form action="processProductRegistration.jsp" method="post">
 
 	<div class="back_home">
-		<input class="backhome" type="submit" value="ホームに戻る">
+		<input class="backhome" type="submit" name="back_home" value="ホームに戻る">
 	</div>
 
     <h2 class="product_title">商品登録</h2>
@@ -26,7 +26,7 @@
 	        <input type="file" id="productImage" name="pro_image" accept="image/*">
 	    </div>
 
-		<div class="product_info">
+		<div class="pro_info">
         	<label for="productStock">在庫数:</label>
         	<input type="number" id="pro_input_stock" name="productStock">
     	</div>
@@ -40,7 +40,7 @@
 	        </select>
     	</div>
 
-    	<div class="product_info">
+    	<div class="pro_info">
         	<label for="shippingCost">送料設定:</label>
         	<input type="number" id="shippingCost" name="shipping_fee">
     	</div>
