@@ -7,12 +7,12 @@
 
 		<div class="log">
 	      <p class="login">メールアドレス</p>
-	      <input type="text" name="inq_name">
+	      <input type="text" name="email">
 	    </div>
 
 		<div class="log">
 	      <p class="login">パスワード</p>
-	      <input type="text" name="inq_com_name">
+	      <input type="text" name="password">
 	    </div>
 
 	    <div class="logged">
@@ -24,13 +24,15 @@
 		<div class="inq_sending">
   			<input class="sending" type="submit" value="ログイン">
 		</div>
+</form>
 
-<p class="new_acount">企業登録の方はこちらをクリック↓</p>
+<form action="company_registration.jsp" method="post">
+
+		<p class="new_acount">企業登録の方はこちらをクリック↓</p>
 
 		<div class="inq_sending">
   			<input class="sending" type="submit" value="アカウントを作成する">
 		</div>
-
 </form>
 
 <%@include file="../footer.jsp" %>
