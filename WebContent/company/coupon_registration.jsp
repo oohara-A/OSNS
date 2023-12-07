@@ -15,12 +15,12 @@
 
 		<div class="coupon_reg">
 			<p class="couponreg">クーポン名</p>
-			<input type="text" name="couponName">
+			<input type="text" name="coupon_name">
 		</div>
 
 		<div class="coupon_reg">
 			<p class="couponreg">クーポンコード</p>
-			<input type="text" name="couponCode">
+			<input type="text" name="coupon_code">
 		</div>
 
 		<div class="coupon_reg">

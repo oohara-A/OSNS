@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../menu.jsp" %>
 
+<form action="processProductRegistration.jsp" method="post">
+
 <div class="coupon-list">
     <h2>クーポン一覧</h2>
 
@@ -24,5 +26,7 @@
         </tbody>
     </table>
 </div>
+
+</form>
 
 <%@ include file="../footer.jsp" %>
