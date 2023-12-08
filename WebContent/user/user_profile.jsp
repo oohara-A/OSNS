@@ -144,15 +144,6 @@
             </div>
         </div>
 
-        <!-- <div id="passModal" class="modal"> -->
-        <!-- <div class="modal-content"> -->
-        <!-- <span class="close" onclick="closeModal('pass')">&times;</span> -->
-        <!-- パスワードの入力フィールド -->
-        <!-- <input type="password" id="passInput" name="passInput" placeholder="パスワードを入力"> -->
-        <!-- 登録ボタン -->
-        <!-- <button class="close-button" onclick="register('pass')">登録</button> -->
-        <!-- </div> -->
-        <!-- </div> -->
 
         <div id="2faModal" class="modal">
             <div class="modal-content">
