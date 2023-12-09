@@ -7,7 +7,7 @@
                 <img alt="商品画像" src="../assets/image/food_box.png">
                 <div class="box">
                     <p>商品名:</p>
-                    <p>価格:</p>
+                    <p >価格:</p>
                     <p>ポイント:</p>
                     <p>クーポン:</p>
                 </div>

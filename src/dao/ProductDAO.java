@@ -49,14 +49,16 @@ public class ProductDAO extends DAO {
 		return prductId;
 	}
 
-	//select関数カテゴリ商品を選択する(jsp側で商品を表示する際に使用)
+//	select関数カテゴリ商品を選択する(jsp側で商品を表示する際に使用)
 		public List<Product> selecategory(String category) throws Exception {
 			List<Product> prduct=new ArrayList<>();
 
 			Connection con=getConnection();
-//カテゴリで商品情報を持ってくる
+			//カテゴリで商品情報を持ってくる
 			PreparedStatement st=con.prepareStatement(
 				"select * from product where category = ? ");
+			st.setString(1, category);
+
 			ResultSet rs=st.executeQuery();
 
 			while (rs.next()) {
@@ -111,8 +113,9 @@ public class ProductDAO extends DAO {
 //カート削除する関数
 		public boolean del_cart(int product_id,Date adding_time)throws Exception{
 			boolean flag =true;
+			PreparedStatement st;
 			Connection con=getConnection();
-	        PreparedStatement st=con.prepareStatement(
+	         st=con.prepareStatement(
 					"insert into product_cart(deleting_time) values(?) where product_id =?");
 //	        削除日時
 	        st.setDate(1, adding_time);
@@ -121,18 +124,14 @@ public class ProductDAO extends DAO {
 			//SQL文実行
 			int line=st.executeUpdate();
 
+//			削除フラグをtureにする
+			 st=con.prepareStatement(
+					"update product_cart set flag = ?,where product_id = ?");
+			st.setBoolean(1, flag);
+			st.setInt(2,product_id);
+			st.executeUpdate();
 			st.close();
 			con.close();
-
-			Connection con2=getConnection();
-//			削除フラグをtureにする
-			PreparedStatement st2=con2.prepareStatement(
-					"update product_cart set flag = ?,where product_id = ?");
-			st2.setBoolean(1, flag);
-			st2.setInt(2,product_id);
-			st2.executeUpdate();
-			st2.close();
-			con2.close();
 			return true;
 
 		}
