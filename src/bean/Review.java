@@ -2,6 +2,9 @@ package bean;
 
 import java.sql.Date;
 
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.http.Part;
+@MultipartConfig
 public class Review  implements java.io.Serializable {
 //	レビューID
 private int	 review_id;
@@ -21,6 +24,48 @@ private Date submissiondate;
 private Date deleting_time;
 //削除フラグ
 private int	 flag;
+
+private Review_image revi_image;
+
+private Review_video revi_video;
+
+private Part part;
+/**
+ * @return part
+ */
+public Part getPart() {
+	return part;
+}
+/**
+ * @param part セットする part
+ */
+public void setPart(Part part) {
+	this.part = part;
+}
+/**
+ * @return revi_image
+ */
+public Review_image getRevi_image() {
+	return revi_image;
+}
+/**
+ * @param revi_image セットする revi_image
+ */
+public void setRevi_image(Review_image revi_image) {
+	this.revi_image = revi_image;
+}
+/**
+ * @return revi_video
+ */
+public Review_video getRevi_video() {
+	return revi_video;
+}
+/**
+ * @param revi_video セットする revi_video
+ */
+public void setRevi_video(Review_video revi_video) {
+	this.revi_video = revi_video;
+}
 /**
  * @return review_id
  */
@@ -130,4 +175,14 @@ public void setFlag(int flag) {
 	this.flag = flag;
 }
 
+public String getFileName(Part part) {
+	 String[] headerArrays = part.getHeader("Content-Disposition").split(";");
+	 String fileName = null;
+	 for (String head : headerArrays) {
+	 if (head.trim().startsWith("filename")) {
+	 fileName = head.substring(head.indexOf('"')).replaceAll("\"", "");
+	 }
+	 }
+	 return fileName;
+	 }
 }

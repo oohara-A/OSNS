@@ -1,6 +1,5 @@
 package admin;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,22 +16,22 @@ public class ShowadminAction {
 
 		HttpSession session=request.getSession();
 
+		//ログインされている場合
 		if (session.getAttribute("login_admin")!=null)  {
-
 	        // AdminDAOを使用して管理者一覧を取得
 			AdminDAO dao=new AdminDAO();
-			List<Admin> admin_list = new ArrayList<Admin>();
+			List<Admin> admin_list = dao.show_admin();
 
 	        // 取得した管理者一覧をセッションに保存
 	        session.setAttribute("adminList", admin_list);
 
-	        return "delete_admin.jsp"; // 管理者一覧を表示するJSP名を返す
+	     // delete_admin.jspをフォワード先に指定
+	        return "delete_admin.jsp";
 
+	    //ログインされていない場合
 		}else{
-			//　エラーアラートの表示
-
-			return "admin.jsp";
+			// admin_login_error.jspをフォワード先に指定
+			return "admin_login_error.jsp";
 		}
-
 	}
 }

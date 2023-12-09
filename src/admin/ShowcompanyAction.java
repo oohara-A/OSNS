@@ -1,10 +1,13 @@
 package admin;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.Company;
+import dao.AdminDAO;
 
 public class ShowcompanyAction {
 	public String execute(
@@ -14,20 +17,25 @@ public class ShowcompanyAction {
 		HttpSession session=request.getSession();
 		// 企業名
 		String company_name=request.getParameter("company_name");
-		// 企業名がnullでないか
-        if (company_name != null && !company_name.isEmpty()) {
+		if (company_name==null) company_name="";
+
+		// ログインされている場合
+		if (session.getAttribute("login_admin")!=null){
             // DB接続処理
-            CompanyDAO dao = new CompanyDAO();
+            AdminDAO dao = new AdminDAO();
 
             // サーチ実行処理
-            Company company = dao.search(company_name);
+            List<Company> company_list = dao.show_company(company_name);
 
-            session.setAttribute("company", company);
+            session.setAttribute("companyList", company_list);
 
+            // copany_info.jspをフォワード先に指定
             return "company_info.jsp";
+
+        // ログインされていない場合
         } else {
-            // 企業名がnullまたは空の場合
-            return "company_info.jsp";
+            // admin_login_error.jspをフォワード先に指定
+            return "admin_login_error.jsp";
         }
 	}
 }

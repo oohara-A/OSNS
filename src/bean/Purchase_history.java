@@ -2,7 +2,7 @@ package bean;
 
 import java.sql.Date;
 //購入履歴クラス
-public class Purchase_history implements java.io.Serializable  {
+public class Purchase_history extends Product implements java.io.Serializable {
 //	購入ID
 private int	id;
 //企業Id
@@ -25,6 +25,32 @@ private	Date cancel_time;
 private Date purchase_time;
 //キャンセルフラグ
 private	boolean cancel_flag;
+private int product_id;
+/**
+ * @return product_id
+ */
+public int getProduct_id() {
+	return product_id;
+}
+/**
+ * @param product_id セットする product_id
+ */
+public void setProduct_id(int product_id) {
+	this.product_id = product_id;
+}
+private Product product;
+/**
+ * @return product
+ */
+public Product getProduct() {
+	return product;
+}
+/**
+ * @param product セットする product
+ */
+public void setProduct(Product product) {
+	this.product = product;
+}
 /**
  * @return id
  */

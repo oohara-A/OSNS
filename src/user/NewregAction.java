@@ -1,6 +1,7 @@
 package user;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,18 +20,23 @@ public class NewregAction extends Action{
 		HttpSession session=request.getSession();
 		//ログイン名を取得
 		String name=request.getParameter("account_name");
+//		ユーザ名
+		String user_name = request.getParameter("account_user");
 //		メールアドレス
 		String email = request.getParameter("account_email");
 		//ログインパスワードを取得
 		String password=request.getParameter("account_password");
 
-//		ログイン日時
-		LocalDateTime adding_time = LocalDateTime.now();
-//		新規登録
-		UserDAO dao=new UserDAO();
-		int user = dao.insert(name, email, password,adding_time);
+//		登録日時
+		Date date = new Date();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formattedDate = simpleDateFormat.format(date);
+		java.sql.Date adding_time = java.sql.Date.valueOf(formattedDate);
 
-		return "sign_up.jsp";
+		UserDAO dao=new UserDAO();
+		int user = dao.insert(name, email, password,user_name,adding_time);
+//		ログイン画面表示
+		return "user_login.jsp";
 
 }
 }

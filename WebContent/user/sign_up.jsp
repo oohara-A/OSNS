@@ -1,31 +1,31 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.jsp" %>
 
-<title>新規登録</title>
 <link rel="stylesheet" type="text/css" href="osns/WebContent/assets/common.css">
 <h1>アカウントを作成</h1>
 <p>氏名</p>
-<form action="new_reg_out.jsp" method="post">
-<input type="text" name="name">
-</form>
-<p>携帯電話番号・メールアドレス</p>
-<form action="new_reg_out.jsp" method="post">
-<input type="text" name="email">
-</form>
-<p>パスワード</p>
-<form action="new_reg_out.jsp" method="post">
-<input type="text" name="pass">
-</form>
-<p>もう一度パスワード</p>
-<form action="new_reg_out.jsp" method="post">
-<input type="text" name="onemore">
-</form>
-<p>利用規約・プライバシー規約</p>
-<form action="new_reg_out.jsp" method="post">
-<input type="text" name="terms_of_use">
-</form>
+<form action="Newreg.action" method="post">
+<input type="text" name="account_name" required="required">
 
-<form>
+<p>ユーザ名</p>
+<input type="text" name ="account_user" required="required">
+
+<p>携帯電話番号・メールアドレス</p>
+
+<input type="text" name="account_email" required="required">
+
+<p>パスワード</p>
+
+<input type="text" name="account_password" required="required">
+
+<p>もう一度パスワード</p>
+
+<input type="text" name="onemore" required="required">
+
+<p>利用規約・プライバシー規約</p>
+
+<input type="text" name="terms">
+
 <input type="submit" value="登録">
 </form>
 

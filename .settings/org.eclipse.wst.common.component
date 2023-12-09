@@ -2,6 +2,9 @@
     <wb-module deploy-name="osns">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/image"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/video"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/proimage"/>
         <property name="context-root" value="osns"/>
         <property name="java-output-path" value="/osns/build/classes"/>
     </wb-module>
