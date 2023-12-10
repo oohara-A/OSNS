@@ -8,9 +8,8 @@
 	<c:forEach var="product_cate" items="${product_category}">
 		<div class="product">
 			<div class="image">
-				<a href="product_detail.jsp"> <img alt="商品詳細へ"
-					src="../assets/proimage/${product_cate.image_filename}">
-				</a>
+			<!-- product_cate.id・・・・・商品ID -->
+			<a href="Prodetail.action?id=${product_cate.id}"><img alt="商品詳細へ"src="../assets/proimage/${product_cate.image_filename}"></a>
 				<p>商品名:${product_cate.product_name }</p>
 				<p>価格:${product_cate.unit_price}</p>
 				<p>★★★★☆</p>

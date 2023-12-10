@@ -172,6 +172,7 @@
 }
 
 /* product_list */
+
 .product {
 	display: flex;
 	justify-content: space-between;
@@ -189,6 +190,7 @@
 }
 
 /* product_detail */
+
 .product_box {
 	display: flex;
 	justify-content: space-between;
