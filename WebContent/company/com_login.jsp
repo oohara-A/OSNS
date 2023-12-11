@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="../menu.jsp" %>
 
-<form action="company/Login_company.action" method="post">
+<form action="Login_company.action" method="post">
 
     <h2 class="login_title">ログイン</h2>
 

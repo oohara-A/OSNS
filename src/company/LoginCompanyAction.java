@@ -3,14 +3,17 @@ package company;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.Company;
 import dao.CompanyDAO;
+import tool.Action;
 
-public class Login_companyAction {
+@WebServlet
+public class LoginCompanyAction extends Action {
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
@@ -32,7 +35,8 @@ public class Login_companyAction {
 		CompanyDAO dao=new CompanyDAO();
 		Company login_company=dao.login(email, password,login_date);
 
-		// メールアドレスとパスワードに合致する企業が見つかった場合、属性名login_companyで登録する
+
+		// メールアドレスとパスワードに合致する企業が見つかった場合、属性名companyで登録する
 		if (login_company!=null) {
 			session.setAttribute("company", login_company);
 			// company_top_page.jspをフォワード先に指定

@@ -18,10 +18,10 @@
 
         <tbody>
                 <tr>
-                    <td>${coupon.couponName}</td>
-                    <td>${coupon.couponCode}</td>
-                    <td>${coupon.issueNumber}</td>
-                    <td>${coupon.discountRate}%</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
         </tbody>
     </table>
