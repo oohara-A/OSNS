@@ -36,6 +36,7 @@ public class DeregiAction extends Action {
 		if(user == true){
 			// ユーザBeanを削除
 			session.removeAttribute("user");
+			System.out.println("登録解除");
 //			topページに戻す
 			return "index.jsp";
 
