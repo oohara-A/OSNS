@@ -9,11 +9,7 @@
 
 		<div class="log">
 	      <p class="login">メールアドレス</p>
-<<<<<<< HEAD
-	      <input type="email" name="email">
-=======
-	      <input type="text" name="inq_name">
->>>>>>> f49713779204c6034678be1193948446b6e03908
+	      <input type="text" name="email">
 	    </div>
 
 		<div class="log">
@@ -29,8 +25,9 @@
 		<div class="log_button">
   			<input class="all_login" type="submit" name="login" value="ログイン">
 		</div>
+		</div>
+</form>
 
-	</div>
 
 	<div class="com">
 		<p class="new_acount">企業登録の方はこちらをクリック↓</p>
@@ -40,6 +37,6 @@
 		</div>
 	</div>
 
-</form>
+
 
 <%@include file="../footer.jsp" %>
