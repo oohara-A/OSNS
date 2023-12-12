@@ -32,11 +32,11 @@
             </div>
 
             <div class="account_box">
-                <a href="user_plofile.jsp">ユーザ情報変更</a>
+                <a href="user_profile.jsp">ユーザ情報変更</a>
             </div>
 
             <div class="account_box">
-                <a href="change_password.jsp">パスワード変更</a>
+                <a href="passwordChange.jsp">パスワード変更</a>
             </div>
 
             <div class="account_box">
