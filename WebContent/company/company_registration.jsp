@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="../menu.jsp" %>
 
-<form action="company_registration_complete.jsp" method="post">
+<form action="Edit_comp_info.action" method="post">
 
-	<h2 class="com_title">企業登録</h2>
+	<div class="com_title">
+		<h2 class="info._edit">企業情報編集</h2>
+	</div>
 
 		<div class="com_reg">
 			<p class="comreg">氏名</p>

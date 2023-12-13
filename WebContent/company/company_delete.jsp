@@ -30,7 +30,7 @@
 	</div>
 
 	<div class="release_signup">
-        <input class="release" type="submit" value="登録を解除する" >
+        <input class="release" type="submit" name="deregistration" value="登録を解除する" >
     </div>
 
 </div>

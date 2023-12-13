@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ include file="../menu.jsp" %>
+<%@ include file="../com_header.jsp" %>
 
-<form action="processProductRegistration.jsp" method="post">
+    <div class="menu-container">
+        <%@ include file="../com_menu.jsp" %>
+    </div>
+
+<form action="Product_registrationAction.java" method="post">
 
 	<div class="back_home">
 		<input class="backhome" type="submit" name="back_home" value="ホームに戻る">
@@ -59,6 +63,8 @@
         <a href="sample_registration.jsp">試供品登録はこちら</a>
     </div>
 
-</form>
+	</form>
 
-<%@ include file="../footer.jsp" %>
+
+
+<%@ include file="../com_footer.jsp" %>

@@ -1,7 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../menu.jsp" %>
+<%@ page import="java.util.ArrayList"%>
 
-<form action="processProductRegistration.jsp" method="post">
+<%
+ArrayList<String> couponList = (ArrayList<String>)session.getAttribute("coupon_list");
+%>
+
+<form action="company_top.jsp" method="post">
+
+
 
 <div class="coupon-list">
     <h2>クーポン一覧</h2>
@@ -17,12 +24,15 @@
         </thead>
 
         <tbody>
+        	<c:forEach var="item" items="${couponList}">
+
                 <tr>
-                    <td></td>
+                    <td><c:out value="${item.coupon_name}" /></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
+             </c:forEach>
         </tbody>
     </table>
 </div>

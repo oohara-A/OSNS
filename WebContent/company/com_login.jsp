@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@include file="../menu.jsp" %>
+
+<head>
+<title>company_login</title>
+<link rel="stylesheet" href="../assets/css/sanitize.css">
+</head>
 
 <form action="Login_company.action" method="post">
 
@@ -37,5 +41,3 @@
 	</div>
 
 </form>
-
-<%@include file="../footer.jsp" %>

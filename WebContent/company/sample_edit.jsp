@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ include file="../menu.jsp" %>
+<%@ include file="../com_header.jsp" %>
+
+    <div class="menu-container">
+        <%@ include file="../com_menu.jsp" %>
+    </div>
 
 <form action="processProductRegistration.jsp" method="post">
 

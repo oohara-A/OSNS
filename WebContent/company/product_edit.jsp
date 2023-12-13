@@ -13,28 +13,27 @@
 
 	    <div class="product_info">
 	        <label for="productName">商品名:</label>
-	        <input type="text" id="productName" name="productName" required>
+	        <input type="text" id="productName" name="pro_input" required>
 	    </div>
 
 	    <div class="product_info">
 	        <label for="productPrice">商品価格:</label>
-	        <input type="text" id="productPrice" name="productPrice" required>
+	        <input type="text" id="productPrice" name="pro_input_price" required>
 	    </div>
 
 	    <div class="product_info">
 	        <label for="productImage">商品画像:</label>
-	        <input type="file" id="productImage" name="productImage" accept="image/*" required>
+	        <input type="file" id="productImage" name="pro_image" accept="image/*" required>
 	    </div>
 
 		<div class="product_info">
         	<label for="productStock">在庫数:</label>
-        	<input type="number" id="productStock" name="productStock" required>
+        	<input type="number" id="productStock" name="pro_input_stock" required>
     	</div>
 
 	    <div class="product_genre">
 	        <label for="productGenre">ジャンル:</label>
-	        <select id="productGenre" name="productGenre" required>
-	            <!-- Add genre options here -->
+	        <select id="productGenre" name="genre_sele" required>
 	            <option value="genre1">本</option>
 	            <option value="genre2">化粧品</option>
 	            <option value="genre3">食料品</option>
@@ -43,12 +42,12 @@
 
     	<div class="product_info">
         	<label for="shippingCost">送料設定:</label>
-        	<input type="number" id="shippingCost" name="shippingCost" required>
+        	<input type="number" id="shippingCost" name="shipping_fee" required>
     	</div>
 
     	<div class="product_info">
-        	<label for="productDescription">商品説明:</label>
-        	<textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+        	<label for="productDescription">商品コメント:</label>
+        	<textarea id="productDescription" name="pro_coment" rows="4" required></textarea>
     	</div>
 
 	</div>

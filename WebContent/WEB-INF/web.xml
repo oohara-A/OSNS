@@ -9,4 +9,22 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name>Display_coupon_list</servlet-name>
+    <servlet-class>company.Display_coupon_listAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>test</servlet-name>
+    <servlet-class>company.TestAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Display_coupon_list</servlet-name>
+    <url-pattern>/coupon_list</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>test</servlet-name>
+    <url-pattern>/test</url-pattern>
+  </servlet-mapping>
 </web-app>

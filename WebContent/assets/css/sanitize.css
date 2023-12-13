@@ -1,6 +1,9 @@
 @charset "utf-8";
 
 /*企業側共通のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.menu-container{
+	float: left;
+}
 .back_home{
   width: 100%;
   margin: 0 auto; /* 中央寄せ */
@@ -47,6 +50,9 @@
     width: 300px;
     height: 40px;
     margin-left: 10px;
+}
+
+.container {
 }
 
 /*送信↓ーーーーーーーー */
@@ -111,7 +117,7 @@
 }
 
 .content .menu .com_button {
-  width: 80%;
+  width: 100%;
   max-width: 500px;
   text-align: left;
   font: inherit;
@@ -120,7 +126,7 @@
 .content .menu .com_button .combutton {
   background-color: red;
   color: white;
-  padding: 10px 20px;
+  padding: 15px 30px;
   font-size: 20px;
 }
 
@@ -134,7 +140,7 @@
 	font-size : 30px;
 }
 
-.content .main .com_title .com_top{
+.content .main .corporate .corporate_top{
     white-space: nowrap;
     text-align: center;
     margin-left: -10px;
@@ -217,42 +223,48 @@
     justify-content: center;
 }
 
-.com_login{
-	margin-left: 70px;
-}
-
-.admin_log {
-    margin-left: 70px;
-}
-
 .log_error{
 	width: 80%;
   	margin: 0 auto;
-  	max-width: 500px;
-  	font-size : 40px
+  	max-width: 600px;
+  	font-size : 60px
 }
 
 .error_message{
 	width: 80%;
   	margin: 0 auto;
-  	max-width: 500px;
-  	font-size : 18px
+  	max-width: 550px;
+  	font-size : 30px
+}
+
+.log_error_button{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 350px;
+}
+
+.log_error_button .error_button{
+  background-color: red;
+  color: white;
+  padding: 20px 40px;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
 }
 
 .new_acount {
-	margin-left: 35px;
-    text-align: center;
-    position: relative;
-    max-width: 1320px;
+  margin-left: 50px;
+  text-align: center;
+  max-width: 1500px;
 }
 
 .new_acount::before,
 .new_acount::after {
-    content: "ーーーーーーーーーーーーーーーーーーーー";
-    display: block;
-    color: #000;
-    text-align: center;
-    margin-left: 35px;
+  content: "ーーーーーーーーーーーーーーーーーー";
+  display: block;
+  color: #000;
+  text-align: center;
+  margin-left: 50px;
 }
 
 .new_acount::before {
@@ -302,6 +314,7 @@
   width: 80%;
   margin: 0 auto;
   max-width: 500px;
+  margin-bottom: 20px;
 }
 
 .com_reg .comreg{
@@ -332,49 +345,80 @@
     margin-bottom: 5px;
 }
 
-.com_reg {
-    margin-bottom: 20px;
+/*企業登録完了のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.company_signup {
+  width: 80%;
+  margin: 20px auto; /* 上下に20pxのマージンを追加 */
+  max-width: 500px;
+  font-size: 40px;
 }
 
-.company_signup{
-	width: 80%;
-  	margin: 0 auto;
-  	max-width: 500px;
-  	font-size: 40px;
+.com_signup {
+  width: 80%;
+  margin: 20px auto; /* 上下に20pxのマージンを追加 */
+  max-width: 350px;
+}
+
+.com_signup .company_up {
+  background-color: red;
+  color: white;
+  padding: 20px 40px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px; /* ボタン上部に10pxのマージンを追加 */
 }
 
 /*企業登録編集のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
-.com_full_name{
+.comed_info{
   width: 80%;
   margin: 0 auto;
   max-width: 400px;
+  margin-bottom: 15px;
 }
 
-.com_name{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
+.comed_info .com_info{
+  font-size: 30px;
 }
 
-.com_address{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
+.comed_info input[type="text"] {
+  width: 280px;
+  height: 40px;
 }
 
-.com_email{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
+.comed_info input[type="email"] {
+  width: 280px;
+  height: 40px;
 }
 
-.com_mobile{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
+.comed_info input[type="tel"] {
+  width: 280px;
+  height: 40px;
 }
 
-.
+.comed_info input[type="password"] {
+  width: 280px;
+  height: 40px;
+}
+
+.comed_info p.com_info {
+    margin-bottom: 5px;
+}
+
+.complete{
+  width: 100%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 250px;
+}
+
+.complete .com_complete{
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
 
 /*企業登録解除のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
 .detele{
@@ -476,7 +520,7 @@
 .product_genre{
 	margin-bottom: 15px;
     font-family: system-ui;
-	width: 40%;
+	width: 100%;
   	margin: 0 auto;
   	max-width: 600px;
 }

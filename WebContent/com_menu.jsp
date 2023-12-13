@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@include file="../com_header.jsp" %>
-
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+<%@ include file="../com_header.jsp" %>
 
 <html lang="en">
 <head>
@@ -52,27 +50,7 @@
 
 	</div>
 
-	<div class="main">
-
-		 <div class="logout">
-        	<a href="/logout">ログアウト</a>
-    	</div>
-
-		<div class="corporate">
-			<h2 class="corporate_top">企業トップ</h2>
-		</div>
-	</div>
-
 </div>
-
-<footer>
-    &copy; 2023 OharaSampleNetShop. All rights reserved.
-</footer>
-
-
-
-
-    <%@include file="../footer.jsp" %>
 
 </body>
 </html>
