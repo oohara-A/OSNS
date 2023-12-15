@@ -115,7 +115,7 @@ public class ProductDAO extends DAO {
 			st.executeUpdate();
 //			select文
 			st = con.prepareStatement(
-					"select * from PRODUCT inner join PRO_IMAGE on product.id = pro_image.product_id inner join PRODUCT_CART on PRODUCT_CART.product_id = product.id where PRODUCT_CART.USER_ID = ? and DELETION_FLAG = 0 ");
+					"select DISTINCT PRODUCT_CART.CART_ID,PRODUCT_CART.PRODUCT_ID,PRODUCT_CART.ORDER_COUNT ,PRO_IMAGE.IMAGE_FILENAME,product.UNIT_PRICE  from PRODUCT_CART inner join product on PRODUCT_CART.product_id = product.id inner join PRO_IMAGE on product.id = pro_image.product_id  where PRODUCT_CART.USER_ID = ? and DELETION_FLAG = 0 ");
 			st.setInt(1, user_id);
 
 			ResultSet rs=st.executeQuery();
@@ -123,23 +123,23 @@ public class ProductDAO extends DAO {
 			while (rs.next()) {
 				p.setCart_id(rs.getInt("cart_id"));
 //				商品ID
-				p.setId(rs.getInt("id"));
+				p.setProduct_id(rs.getInt("product_id"));
 //				企業ID
-				p.setCompany_id(rs.getInt("company_id"));
+//				p.setCompany_id(rs.getInt("company_id"));
 //				本商品ID
-				p.setOriginal_products_id(rs.getInt("original_products_id"));
+//				p.setOriginal_products_id(rs.getInt("original_products_id"));
 //				商品カテゴリID
-				p.setProduct_category_id(rs.getInt("product_category_id"));
+//				p.setProduct_category_id(rs.getInt("product_category_id"));
 //				商品名
-				p.setProduct_name(rs.getString("product_name"));
+//				p.setProduct_name(rs.getString("product_name"));
 //				単価
 				p.setUnit_price(rs.getInt("unit_price"));
 //				商品説明
-				p.setProduct_description(rs.getString("product_description"));
+//				p.setProduct_description(rs.getString("product_description"));
 //				登録在庫数
-				p.setRegiinvqua(rs.getInt("regiinvqua"));
+//				p.setRegiinvqua(rs.getInt("regiinvqua"));
 //				商品概要
-				p.setProduct_overview(rs.getString("product_overview"));
+//				p.setProduct_overview(rs.getString("product_overview"));
 //				ファイルネーム
 				p.setFile_name(rs.getString("image_filename"));
 //				個数
