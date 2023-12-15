@@ -29,7 +29,7 @@
 		</div>
 
 		<div class="com_button">
-		    <button class="combutton" onclick="location.href='.jsp'">商品登録</button>
+		    <button class="combutton" onclick="location.href='product_registration.jsp'">商品登録</button>
 		</div>
 
 		<div class="com_button">
