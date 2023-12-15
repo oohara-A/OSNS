@@ -10,7 +10,6 @@ import java.util.List;
 import bean.Company;
 import bean.Coupon;
 import bean.Product;
-import bean.Test_product;
 
 public class CompanyDAO extends DAO{
 
@@ -23,23 +22,29 @@ public class CompanyDAO extends DAO{
 
 		// SQL文を実行
 		PreparedStatement st;
+
 		st=con.prepareStatement(
-			"select * from company where email=? and password=?");
-		st.setString(1, email);
-		st.setString(2, password);
-		st.executeQuery();
-
-		st.close();
-		con.close();
-
-
+				"SELECT * FROM company where password = ? and email = ? and flag = 0");
+		st.setString(1, password);
+		st.setString(2, email);
+		ResultSet rs=st.executeQuery();
+		//企業のログイン情報を登録
+		while (rs.next()) {
+			company=new Company();
+			company.setId(rs.getInt("id"));
+			company.setCompany_name(rs.getString("company_name"));
+			company.setPassword(rs.getString("password"));
+			company.setEmail(rs.getString("email"));
+		}
 		//ログイン時の日時
-		// SQL文を実行
+		//SQL文を実行
 		st=con.prepareStatement(
-			"update company set update_time=?");
-		st.setDate(1,login_date );
-		st.executeQuery();
-
+			"UPDATE company SET adding_time = ?");
+		//?に代入
+		st.setDate(1,login_date);
+		//SQL文実行
+		st.executeUpdate();
+		//データベース接続切断
 		st.close();
 		con.close();
 		return company;
@@ -63,7 +68,7 @@ public class CompanyDAO extends DAO{
 		st.setString(5, phone_number);
 		st.setString(6, password);
 		st.setDate(7, add_date);
-		st.executeQuery();
+		st.executeUpdate();
 
 		st.close();
 		con.close();
@@ -103,7 +108,7 @@ public class CompanyDAO extends DAO{
 		st.setString(5, phone_number);
 		st.setString(6, password);
 		st.setDate(7, update_date);
-		st.executeQuery();
+		st.executeUpdate();
 
 		st.close();
 		con.close();
@@ -111,42 +116,62 @@ public class CompanyDAO extends DAO{
 	}
 
 	// 商品追加
-	public Product product_registration(String product_name, int unit_price, int regiinvqua, String category_name, String product_description, String filename, Date add_date)
+	public Product product_registration(String category_name,String product_name, int unit_price, Date add_date, String product_description,int regiinvqua, String filename2 )
 		throws Exception {
 		Product product=null;
+		int  category_id = 0;
+
+//		カテゴリの判定条件  食料品だったら１
+		if (category_name.equals("genre1")) {
+			category_id = 1;
+		}else if (category_name.equals("genre2")){
+			category_id = 2;
+		}else if (category_name.equals("genre3")){
+			category_id = 3;
+		}
+
+
+		String PRODUCT_OVERVIEW = "aaaaaaaaaa";
 
 		int pro_id = 0;
 		// 商品情報をテーブルに追加
 		Connection con=getConnection();
 		PreparedStatement st;
 		st=con.prepareStatement(
-			"insert into product product_name=? and unit_price=? and regiinvqua=? and product_description=? and adding_time=?");
-		st.setString(1, product_name);
-		st.setInt(2, unit_price);
-		st.setInt(3, regiinvqua);
-		st.setString(4, product_description);
-		st.setDate(5, add_date);
-		ResultSet rs=st.executeQuery();
-		st.close();
-		con.close();
-		//商品Id取得
-		pro_id = rs.getInt("id");
+			"insert into product (product_category_id,product_name,unit_price,adding_time,product_description,regiinvqua,PRODUCT_OVERVIEW) values(?,?,?,?,?,?,?)") ;
+		st.setInt(1, category_id);
+		st.setString(2, product_name);
+		st.setInt(3, unit_price);
+		st.setDate(4, add_date);
+		st.setString(5, product_description);
+		st.setInt(6, regiinvqua);
+		st.setString(7, PRODUCT_OVERVIEW);
+		st.executeUpdate();
 
+		//商品ID
+		st=con.prepareStatement(
+				"SELECT * FROM product where product_name = ?");
+		st.setString(1, product_name);
+		ResultSet rs=st.executeQuery();
+		//商品Id取得
+		while (rs.next()) {
+			pro_id = rs.getInt("id");
+		}
+		System.out.println(pro_id);
 		//商品画像をテーブルに追加
 		st=con.prepareStatement(
-				"insert into pro_image product_id=? and image_filename=?");
+				"insert into pro_image (product_id,image_filename) values(?,?)");
 		st.setInt(1, pro_id);
-		st.setString(2, filename);
-		st.executeQuery();
-		st.close();
-		con.close();
+		st.setString(2, filename2);
+		st.executeUpdate();
 
 		//カテゴリをテーブル追加
 		st=con.prepareStatement(
-				"insert into product_category product_id=? and category_name=?");
-		st.setInt(1, pro_id);
-		st.setString(2, category_name);
-		st.executeQuery();
+				"insert into product_category (PRODUCT_CATEGORY_ID ,product_id,category_name) values(?,?,?)");
+		st.setInt(1, category_id);
+		st.setInt(2, pro_id);
+		st.setString(3, category_name);
+		st.executeUpdate();
 		st.close();
 		con.close();
 

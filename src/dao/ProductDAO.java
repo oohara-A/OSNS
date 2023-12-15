@@ -7,20 +7,23 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.Pro_image;
 import bean.Product;
+import bean.Product_cart;
 
 public class ProductDAO extends DAO {
 //	購入する商品の情報を持ってる関数
 	public List<Product> selectId(int pro_id)throws Exception{
-		List<Product> prductId=new ArrayList<>();
-
+		List<Product> prduct_detail=new ArrayList<>();
 		Connection con=getConnection();
 //商品情報を持ってくる
 		PreparedStatement st=con.prepareStatement(
-			"select * from product where id = pro_id ");
+				"select * from PRODUCT  inner join PRO_IMAGE on product.id = pro_image.product_id where product.id = ?");
+		st.setInt(1, pro_id);
 		ResultSet rs=st.executeQuery();
+
 		while (rs.next()) {
-			Product p=new Product();
+			Pro_image p=new Pro_image();
 //			商品ID
 			p.setId(rs.getInt("id"));
 //			企業ID
@@ -35,18 +38,20 @@ public class ProductDAO extends DAO {
 			p.setUnit_price(rs.getInt("unit_price"));
 //			商品説明
 			p.setProduct_description(rs.getString("product_description"));
-//			カテゴリ
-			p.setCategory(rs.getString("category"));
 //			登録在庫数
 			p.setRegiinvqua(rs.getInt("regiinvqua"));
 //			商品概要
 			p.setProduct_overview(rs.getString("product_overview"));
-			prductId.add(p);
+//			ファイルネーム
+			p.setImage_filename(rs.getString("image_filename"));
+			prduct_detail.add(p);
+
 		}
+
 		st.close();
 		con.close();
-//商品情報prduct
-		return prductId;
+//商品情報prduct_detail
+		return prduct_detail;
 	}
 
 //	select関数カテゴリ商品を選択する(jsp側で商品を表示する際に使用)
@@ -56,13 +61,12 @@ public class ProductDAO extends DAO {
 			Connection con=getConnection();
 			//カテゴリで商品情報を持ってくる
 			PreparedStatement st=con.prepareStatement(
-				"select * from product where category = ? ");
-			st.setString(1, category);
-
+				"select * from PRODUCT  inner join PRO_IMAGE on product.id = pro_image.product_id inner join product_category on product.id = product_category.product_id  where PRODUCT_CATEGORY.CATEGORY_NAME = ?");
+				st.setString(1, category);
 			ResultSet rs=st.executeQuery();
 
 			while (rs.next()) {
-				Product p=new Product();
+				Pro_image p=new Pro_image();
 //				商品ID
 				p.setId(rs.getInt("id"));
 //				企業ID
@@ -77,12 +81,12 @@ public class ProductDAO extends DAO {
 				p.setUnit_price(rs.getInt("unit_price"));
 //				商品説明
 				p.setProduct_description(rs.getString("product_description"));
-//				カテゴリ
-				p.setCategory(rs.getString("category"));
 //				登録在庫数
 				p.setRegiinvqua(rs.getInt("regiinvqua"));
 //				商品概要
 				p.setProduct_overview(rs.getString("product_overview"));
+//				ファイルネーム
+				p.setImage_filename(rs.getString("image_filename"));
 				prduct.add(p);
 			}
 			st.close();
@@ -92,43 +96,78 @@ public class ProductDAO extends DAO {
 		}
 
 //カートに追加する関数
-		public int insert_cart(int user_id,int product_id,int company_id,int order_count ,Date adding_time) throws Exception {
+		public List<Product> insert_cart(int user_id,int product_id,int company_id,int order_count ,Date adding_time) throws Exception {
 			Connection con=getConnection();
+			List<Product> prduct=new ArrayList<>();
+			PreparedStatement st;
+			int goukei = 0;
+			System.out.println(user_id);
 
-			PreparedStatement st=con.prepareStatement(
-				"insert into product_cart(user_id,product_id,company_id,order_count,adding_time) values(?, ?, ?,?,?) where user_id = ?");
+		 st=con.prepareStatement(
+				"insert into product_cart(user_id,product_id,company_id,order_count,adding_time) values(?, ?, ?,?,?) ");
 			st.setInt(1, user_id);
 			st.setInt(2, product_id);
 			st.setInt(3, company_id);
 			st.setInt(4, order_count);
-	        st.setDate(4, adding_time);
+	        st.setDate(5, adding_time);
 
 			//SQL文実行
-			int line=st.executeUpdate();
+			st.executeUpdate();
+//			select文
+			st = con.prepareStatement(
+					"select * from PRODUCT inner join PRO_IMAGE on product.id = pro_image.product_id inner join PRODUCT_CART on PRODUCT_CART.product_id = product.id where PRODUCT_CART.USER_ID = ? and DELETION_FLAG = 0 ");
+			st.setInt(1, user_id);
 
+			ResultSet rs=st.executeQuery();
+			Product_cart p=new Product_cart();
+			while (rs.next()) {
+				p.setCart_id(rs.getInt("cart_id"));
+//				商品ID
+				p.setId(rs.getInt("id"));
+//				企業ID
+				p.setCompany_id(rs.getInt("company_id"));
+//				本商品ID
+				p.setOriginal_products_id(rs.getInt("original_products_id"));
+//				商品カテゴリID
+				p.setProduct_category_id(rs.getInt("product_category_id"));
+//				商品名
+				p.setProduct_name(rs.getString("product_name"));
+//				単価
+				p.setUnit_price(rs.getInt("unit_price"));
+//				商品説明
+				p.setProduct_description(rs.getString("product_description"));
+//				登録在庫数
+				p.setRegiinvqua(rs.getInt("regiinvqua"));
+//				商品概要
+				p.setProduct_overview(rs.getString("product_overview"));
+//				ファイルネーム
+				p.setFile_name(rs.getString("image_filename"));
+//				個数
+				p.setOrder_count(rs.getInt("order_count"));
+
+				prduct.add(p);
+			}
+			System.out.println("cartactionDAO");
+			System.out.println(goukei);
+//			カート内の情報を入れる
 			st.close();
 			con.close();
-			return line;
+			return prduct;
 		}
 //カート削除する関数
-		public boolean del_cart(int product_id,Date adding_time)throws Exception{
-			boolean flag =true;
+		public boolean del_cart(int cart_id,Date adding_time)throws Exception{
+
 			PreparedStatement st;
 			Connection con=getConnection();
 	         st=con.prepareStatement(
-					"insert into product_cart(deleting_time) values(?) where product_id =?");
+					"update product_cart set deleting_time=?,DELETION_FLAG = ? where CART_ID =?");
 //	        削除日時
 	        st.setDate(1, adding_time);
+	        st.setInt(2, 1);
 //	        商品ID
-			st.setInt(2, product_id);
+			st.setInt(3, cart_id);
 			//SQL文実行
 			int line=st.executeUpdate();
-
-//			削除フラグをtureにする
-			 st=con.prepareStatement(
-					"update product_cart set flag = ?,where product_id = ?");
-			st.setBoolean(1, flag);
-			st.setInt(2,product_id);
 			st.executeUpdate();
 			st.close();
 			con.close();
@@ -141,14 +180,14 @@ public class ProductDAO extends DAO {
 		List<Product> product=new ArrayList<>();
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
-			"select * from product where name like ?");
+			"select * from PRODUCT  inner join PRO_IMAGE on product.id = pro_image.product_id where product_name like ?");
 		//検索キーワードを代入
 		st.setString(1, "%"+keyword+"%");
 		//SQL文実行
 		ResultSet rs=st.executeQuery();
 		//商品を登録していく
 		while (rs.next()) {
-			Product p=new Product();
+			Pro_image p=new Pro_image();
 //			商品ID
 			p.setId(rs.getInt("id"));
 //			企業ID
@@ -163,12 +202,12 @@ public class ProductDAO extends DAO {
 			p.setUnit_price(rs.getInt("unit_price"));
 //			商品説明
 			p.setProduct_description(rs.getString("product_description"));
-//			カテゴリ
-			p.setCategory(rs.getString("category"));
 //			登録在庫数
 			p.setRegiinvqua(rs.getInt("regiinvqua"));
 //			商品概要
 			p.setProduct_overview(rs.getString("product_overview"));
+//			ファイルネーム
+			p.setImage_filename(rs.getString("image_filename"));
 			product.add(p);
 		}
 		//データベース接続切断

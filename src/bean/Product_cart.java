@@ -2,11 +2,23 @@ package bean;
 
 import java.sql.Date;
 
-public class Product_cart implements java.io.Serializable {
+public class Product_cart extends Product  implements java.io.Serializable {
 //	商品カートID
-private int id;
+private int cart_id;
 //ユーザID
 private int user_id;
+/**
+ * @return cart_id
+ */
+public int getCart_id() {
+	return cart_id;
+}
+/**
+ * @param cart_id セットする cart_id
+ */
+public void setCart_id(int cart_id) {
+	this.cart_id = cart_id;
+}
 //商品ID
 private int product_id;
 //企業ID
@@ -19,10 +31,41 @@ private Date adding_time;
 private Date deleting_time;
 //更新日時
 private Date update_time;
+
+private String file_name;
 //削除フラグ
 private boolean deletion_flag;
 
 private Product product;//プロダクト型の変数
+//↓追加
+private Pro_image pro_image;
+//↓追加
+private int total;
+/**
+ * @return pro_image
+ */
+public Pro_image getPro_image() {
+	return pro_image;
+}
+/**
+ * @return total
+ */
+public int getTotal() {
+	return total;
+}
+
+/**
+ * @param total セットする total
+ */
+public void setTotal(int total) {
+	this.total = total;
+}
+/**
+ * @param pro_image セットする pro_image
+ */
+public void setPro_image(Pro_image pro_image) {
+	this.pro_image = pro_image;
+}
 /**
  * @return product
  */
@@ -35,18 +78,20 @@ public Product getProduct() {
 public void setProduct(Product product) {
 	this.product = product;
 }
+
 /**
- * @return id
+ * @return file_name
  */
-public int getId() {
-	return id;
+public String getFile_name() {
+	return file_name;
 }
 /**
- * @param id セットする id
+ * @param file_name セットする file_name
  */
-public void setId(int id) {
-	this.id = id;
+public void setFile_name(String file_name) {
+	this.file_name = file_name;
 }
+
 /**
  * @return user_id
  */

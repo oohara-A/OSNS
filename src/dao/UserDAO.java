@@ -36,16 +36,17 @@ public class UserDAO extends DAO {
 				user_id = rs.getInt("id");
 			}
 
-
-//			履歴にID登録
-			//ログイン履歴
-			st=con.prepareStatement(
-					"insert into login_history(user_id,login_date) values(?,?)");
-			//？に代入
-			st.setInt(1, user_id);
-			st.setDate(2, login_date);
-			//SQL文実行
-			st.executeUpdate();
+			if(user_id != 0){
+	//			履歴にID登録
+				//ログイン履歴
+				st=con.prepareStatement(
+						"insert into login_history(user_id,login_date) values(?,?)");
+				//？に代入
+				st.setInt(1, user_id);
+				st.setDate(2, login_date);
+				//SQL文実行
+				st.executeUpdate();
+			}
 			//データベース接続切断
 			st.close();
 			con.close();
