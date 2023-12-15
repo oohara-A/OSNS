@@ -9,13 +9,12 @@ import java.util.List;
 
 import bean.Pro_image;
 import bean.Product;
+import bean.Product_cart;
 
 public class ProductDAO extends DAO {
 //	購入する商品の情報を持ってる関数
 	public List<Product> selectId(int pro_id)throws Exception{
 		List<Product> prduct_detail=new ArrayList<>();
-		Product point;
-
 		Connection con=getConnection();
 //商品情報を持ってくる
 		PreparedStatement st=con.prepareStatement(
@@ -97,23 +96,61 @@ public class ProductDAO extends DAO {
 		}
 
 //カートに追加する関数
-		public int insert_cart(int user_id,int product_id,int company_id,int order_count ,Date adding_time) throws Exception {
+		public List<Product> insert_cart(int user_id,int product_id,int company_id,int order_count ,Date adding_time) throws Exception {
 			Connection con=getConnection();
+			List<Product> prduct=new ArrayList<>();
+			PreparedStatement st;
+			int goukei = 0;
 
-			PreparedStatement st=con.prepareStatement(
-				"insert into product_cart(user_id,product_id,company_id,order_count,adding_time) values(?, ?, ?,?,?) where user_id = ?");
+		 st=con.prepareStatement(
+				"insert into product_cart(user_id,product_id,company_id,order_count,adding_time) values(?, ?, ?,?,?) ");
 			st.setInt(1, user_id);
 			st.setInt(2, product_id);
 			st.setInt(3, company_id);
 			st.setInt(4, order_count);
-	        st.setDate(4, adding_time);
+	        st.setDate(5, adding_time);
 
 			//SQL文実行
-			int line=st.executeUpdate();
+			st.executeUpdate();
+//			select文
+			st = con.prepareStatement(
+					"select * from PRODUCT  inner join PRO_IMAGE on product.id = pro_image.product_id inner join PRODUCT_CART on PRODUCT_CART.product_id = product.id where PRODUCT_CART.USER_ID = ?");
+			st.setInt(1, user_id);
 
+			ResultSet rs=st.executeQuery();
+
+			while (rs.next()) {
+				Product_cart p=new Product_cart();
+//				商品ID
+				p.setId(rs.getInt("id"));
+//				企業ID
+				p.setCompany_id(rs.getInt("company_id"));
+//				本商品ID
+				p.setOriginal_products_id(rs.getInt("original_products_id"));
+//				商品カテゴリID
+				p.setProduct_category_id(rs.getInt("product_category_id"));
+//				商品名
+				p.setProduct_name(rs.getString("product_name"));
+//				単価
+				p.setUnit_price(rs.getInt("unit_price"));
+//				商品説明
+				p.setProduct_description(rs.getString("product_description"));
+//				登録在庫数
+				p.setRegiinvqua(rs.getInt("regiinvqua"));
+//				商品概要
+				p.setProduct_overview(rs.getString("product_overview"));
+//				ファイルネーム
+				p.setFile_name(rs.getString("image_filename"));
+//				個数
+				p.setOrder_count(rs.getInt("order_count"));
+//				カートない合計
+
+				prduct.add(p);
+			}
+//			カート内の情報を入れる
 			st.close();
 			con.close();
-			return line;
+			return prduct;
 		}
 //カート削除する関数
 		public boolean del_cart(int product_id,Date adding_time)throws Exception{

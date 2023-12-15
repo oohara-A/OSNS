@@ -16,15 +16,18 @@
 
 		<div class="box">
 			<p>在庫:${prodetail.regiinvqua }</p>
-			<p>
-				数量:<input name="cnt" type="number" size="2" value="1" min="1">
-			</p>
-			<p>
-				カート
-				<button onclick="location.href='index.jsp'">追加</button>
-			</p>
+			<form action="Cartadd.action">
+				<p>
+					数量:<input  type="number" name="cnt" min="1" max="10" >
+				</p>
+				<p>
+					カート
+					<button type="submit" name="id" value="${prodetail.id }">追加</button>
+				</p>
+			</form>
 			<p>購入:</p>
 			</div>
+
 	</div>
 
 		<div class="com_box">

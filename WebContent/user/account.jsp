@@ -1,10 +1,8 @@
-<<<<<<< HEAD
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../header.jsp"%>
 
-<%@include file="../footer.jsp"%>
-=======
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@include file="../header.jsp" %>
         <style>
@@ -123,4 +121,4 @@
             </div>
         </div>
         <%@include file="../footer.jsp" %>
->>>>>>> e01b2f8c01ac85a2e0dedbf2850153a4440fbe3c
+
