@@ -23,6 +23,7 @@ public class ProcategoryAction extends Action {
 		List<Product> product=dao.selecategory(keyword);
 		//セッションにlist属性で登録
 		session.setAttribute("product_category", product);
+
 //		商品リストに遷移
 		return "product_list.jsp";
 

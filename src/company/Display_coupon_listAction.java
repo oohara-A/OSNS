@@ -24,7 +24,7 @@ public class Display_coupon_listAction {
 		//ログインされている場合
 		if (session.getAttribute("login_company")!=null)  {
 
-	        // AdminDAOを使用して管理者一覧を取得
+	        // CompanyDAOを使用して管理者一覧を取得
 			CompanyDAO dao=new CompanyDAO();
 			List<Coupon> coupon_list = dao.coupon_list(coupon_name);
 

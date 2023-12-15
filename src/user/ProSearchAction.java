@@ -15,15 +15,17 @@ public class ProSearchAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//セッションの情報を取得
 		HttpSession session=request.getSession();
+//		セッション情報を削除
+		session.removeAttribute("product_detail");
 		//商品検索した名前の所得
 		String keyword=request.getParameter("keyword");
 		if (keyword==null) keyword="";
 		ProductDAO dao = new ProductDAO();
 		List<Product> product=dao.search(keyword);
 		//セッションにlist属性で登録
-		session.setAttribute("product", product);
+		session.setAttribute("product_category", product);
 //		商品リストに遷移
-		return "product_list";
+		return "product_list.jsp";
 	}
 
 }

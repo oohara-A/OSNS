@@ -2,7 +2,7 @@ package bean;
 
 import java.sql.Date;
 
-public class Product_cart implements java.io.Serializable {
+public class Product_cart extends Product  implements java.io.Serializable {
 //	商品カートID
 private int id;
 //ユーザID
@@ -19,10 +19,25 @@ private Date adding_time;
 private Date deleting_time;
 //更新日時
 private Date update_time;
+
+private String file_name;
 //削除フラグ
 private boolean deletion_flag;
 
 private Product product;//プロダクト型の変数
+private Pro_image pro_image;
+/**
+ * @return pro_image
+ */
+public Pro_image getPro_image() {
+	return pro_image;
+}
+/**
+ * @param pro_image セットする pro_image
+ */
+public void setPro_image(Pro_image pro_image) {
+	this.pro_image = pro_image;
+}
 /**
  * @return product
  */
@@ -35,6 +50,20 @@ public Product getProduct() {
 public void setProduct(Product product) {
 	this.product = product;
 }
+
+/**
+ * @return file_name
+ */
+public String getFile_name() {
+	return file_name;
+}
+/**
+ * @param file_name セットする file_name
+ */
+public void setFile_name(String file_name) {
+	this.file_name = file_name;
+}
+
 /**
  * @return id
  */
