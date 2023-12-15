@@ -3,6 +3,7 @@ package company;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -11,7 +12,12 @@ import bean.Company;
 import dao.CompanyDAO;
 import tool.Action;
 
+<<<<<<< HEAD:src/company/Login_companyAction.java
 public class Login_companyAction extends Action {
+=======
+@WebServlet
+public class LoginCompanyAction extends Action {
+>>>>>>> 06994444a6f38efc7ada0ec330c15b38de3bf1c5:src/company/LoginCompanyAction.java
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
@@ -33,7 +39,8 @@ public class Login_companyAction extends Action {
 		CompanyDAO dao=new CompanyDAO();
 		Company login_company=dao.login(email, password,login_date);
 
-		// メールアドレスとパスワードに合致する企業が見つかった場合、属性名login_companyで登録する
+
+		// メールアドレスとパスワードに合致する企業が見つかった場合、属性名companyで登録する
 		if (login_company!=null) {
 			session.setAttribute("login_company", login_company);
 			// company_top_page.jspをフォワード先に指定

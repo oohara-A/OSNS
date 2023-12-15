@@ -7,20 +7,24 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.Pro_image;
 import bean.Product;
 
 public class ProductDAO extends DAO {
 //	購入する商品の情報を持ってる関数
 	public List<Product> selectId(int pro_id)throws Exception{
-		List<Product> prductId=new ArrayList<>();
+		List<Product> prduct_detail=new ArrayList<>();
+		Product point;
 
 		Connection con=getConnection();
 //商品情報を持ってくる
 		PreparedStatement st=con.prepareStatement(
-			"select * from product where id = pro_id ");
+				"select * from PRODUCT  inner join PRO_IMAGE on product.id = pro_image.product_id where product.id = ?");
+		st.setInt(1, pro_id);
 		ResultSet rs=st.executeQuery();
+
 		while (rs.next()) {
-			Product p=new Product();
+			Pro_image p=new Pro_image();
 //			商品ID
 			p.setId(rs.getInt("id"));
 //			企業ID
@@ -35,18 +39,20 @@ public class ProductDAO extends DAO {
 			p.setUnit_price(rs.getInt("unit_price"));
 //			商品説明
 			p.setProduct_description(rs.getString("product_description"));
-//			カテゴリ
-			p.setCategory(rs.getString("category"));
 //			登録在庫数
 			p.setRegiinvqua(rs.getInt("regiinvqua"));
 //			商品概要
 			p.setProduct_overview(rs.getString("product_overview"));
-			prductId.add(p);
+//			ファイルネーム
+			p.setImage_filename(rs.getString("image_filename"));
+			prduct_detail.add(p);
+
 		}
+
 		st.close();
 		con.close();
-//商品情報prduct
-		return prductId;
+//商品情報prduct_detail
+		return prduct_detail;
 	}
 
 //	select関数カテゴリ商品を選択する(jsp側で商品を表示する際に使用)
@@ -56,13 +62,12 @@ public class ProductDAO extends DAO {
 			Connection con=getConnection();
 			//カテゴリで商品情報を持ってくる
 			PreparedStatement st=con.prepareStatement(
-				"select * from product where category = ? ");
-			st.setString(1, category);
-
+				"select * from PRODUCT  inner join PRO_IMAGE on product.id = pro_image.product_id inner join product_category on product.id = product_category.product_id  where PRODUCT_CATEGORY.CATEGORY_NAME = ?");
+				st.setString(1, category);
 			ResultSet rs=st.executeQuery();
 
 			while (rs.next()) {
-				Product p=new Product();
+				Pro_image p=new Pro_image();
 //				商品ID
 				p.setId(rs.getInt("id"));
 //				企業ID
@@ -77,12 +82,12 @@ public class ProductDAO extends DAO {
 				p.setUnit_price(rs.getInt("unit_price"));
 //				商品説明
 				p.setProduct_description(rs.getString("product_description"));
-//				カテゴリ
-				p.setCategory(rs.getString("category"));
 //				登録在庫数
 				p.setRegiinvqua(rs.getInt("regiinvqua"));
 //				商品概要
 				p.setProduct_overview(rs.getString("product_overview"));
+//				ファイルネーム
+				p.setImage_filename(rs.getString("image_filename"));
 				prduct.add(p);
 			}
 			st.close();
@@ -141,14 +146,14 @@ public class ProductDAO extends DAO {
 		List<Product> product=new ArrayList<>();
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
-			"select * from product where name like ?");
+			"select * from PRODUCT  inner join PRO_IMAGE on product.id = pro_image.product_id where product_name like ?");
 		//検索キーワードを代入
 		st.setString(1, "%"+keyword+"%");
 		//SQL文実行
 		ResultSet rs=st.executeQuery();
 		//商品を登録していく
 		while (rs.next()) {
-			Product p=new Product();
+			Pro_image p=new Pro_image();
 //			商品ID
 			p.setId(rs.getInt("id"));
 //			企業ID
@@ -163,12 +168,12 @@ public class ProductDAO extends DAO {
 			p.setUnit_price(rs.getInt("unit_price"));
 //			商品説明
 			p.setProduct_description(rs.getString("product_description"));
-//			カテゴリ
-			p.setCategory(rs.getString("category"));
 //			登録在庫数
 			p.setRegiinvqua(rs.getInt("regiinvqua"));
 //			商品概要
 			p.setProduct_overview(rs.getString("product_overview"));
+//			ファイルネーム
+			p.setImage_filename(rs.getString("image_filename"));
 			product.add(p);
 		}
 		//データベース接続切断

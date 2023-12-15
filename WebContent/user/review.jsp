@@ -1,63 +1,60 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <style>
-        /* レビューフォームのスタイル */
-        .review-form {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<style>
+/* レビューフォームのスタイル */
+.review-form {
+	margin-top: 20px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+}
 
-        /* レビューのスタイル */
-        .product-review,
-        .reply {
-            margin-top: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fff;
-        }
+/* レビューのスタイル */
+.product-review, .reply {
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	background-color: #fff;
+}
 
-        /* レビュー返信フォームのスタイル */
-        .reply-form {
-            margin-top: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-    </style>
+/* レビュー返信フォームのスタイル */
+.reply-form {
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+}
+</style>
 
-    <hr>
-    <div>
-        <h3>商品レビュー</h3>
+<hr>
+<div>
+	<h3>商品レビュー</h3>
 
-        <!-- レビューとリプライの表示 -->
-        <div class="product-reviews" id="productReviews">
-            <!-- レビューと返信表示エリア -->
-        </div>
+	<!-- レビューとリプライの表示 -->
+	<div class="product-reviews" id="productReviews">
+		<!-- レビューと返信表示エリア -->
+	</div>
 
-        <!-- レビュー＆リプライ投稿フォーム -->
-        <form id="productReviewForm" onsubmit="submitProductReview(); return false;" class="review-form">
-            <h4>商品レビューを投稿</h4>
-            <textarea id="productReviewContent" rows="4" cols="50" placeholder="あなたの商品レビューを入力してください"
-                required></textarea>
-            <br>
-            <label for="rating">評価:</label>
-            <select id="rating" required>
-                <option value="1">☆</option>
-                <option value="2">☆☆</option>
-                <option value="3">☆☆☆</option>
-                <option value="4">☆☆☆☆</option>
-                <option value="5">☆☆☆☆☆</option>
-            </select>
-            <br>
-            <input type="submit" value="投稿">
-        </form>
-    </div>
+	<!-- レビュー＆リプライ投稿フォーム -->
+	<form id="productReviewForm"
+		onsubmit="submitProductReview(); return false;" class="review-form">
+		<h4>商品レビューを投稿</h4>
+		<textarea id="productReviewContent" rows="4" cols="50"
+			placeholder="あなたの商品レビューを入力してください" required></textarea>
+		<br> <label for="rating">評価:</label> <select id="rating" required>
+			<option value="1">☆</option>
+			<option value="2">☆☆</option>
+			<option value="3">☆☆☆</option>
+			<option value="4">☆☆☆☆</option>
+			<option value="5">☆☆☆☆☆</option>
+		</select> <br> <input type="submit" value="投稿">
+	</form>
+</div>
 
-    <script>
+<script>
         var productReviews = []; // 商品レビューとチャットの管理用オブジェクト
 
         // レビュー＆リプライ投稿

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="osns">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
@@ -8,4 +9,17 @@
         <property name="context-root" value="osns"/>
         <property name="java-output-path" value="/osns/build/classes"/>
     </wb-module>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+	<wb-module deploy-name="osns">
+		<wb-resource deploy-path="/" source-path="/WebContent"
+			tag="defaultRootSource" />
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src" />
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="/image" />
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="/video" />
+		<property name="context-root" value="osns" />
+		<property name="java-output-path" value="/osns/build/classes" />
+	</wb-module>
+>>>>>>> 06994444a6f38efc7ada0ec330c15b38de3bf1c5
 </project-modules>

@@ -60,7 +60,6 @@ adding_time DATE ,
 deleting_time DATE ,
 update_time DATE  ,
 product_description varchar(1000) not null,
-category varchar(20)  not null,
 regiinvqua int(10000) not null,
 product_overview varchar not null,
 flag TINYINT(1) NOT NULL DEFAULT 0
@@ -92,10 +91,11 @@ flag TINYINT(1) NOT NULL DEFAULT 0
 );
 
 CREATE TABLE product_category (
-product_category_id int(1000) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
+product_category_id int(1000)  NOT NULL,
 product_id int(1000000) not null,
 FOREIGN KEY (product_id) REFERENCES product(id),
-name varchar(100) not null,
+category_name varchar(100) not null,
 icon_image varchar(100)
 );
 
