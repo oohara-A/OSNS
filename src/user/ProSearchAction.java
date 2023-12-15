@@ -21,9 +21,9 @@ public class ProSearchAction extends Action {
 		ProductDAO dao = new ProductDAO();
 		List<Product> product=dao.search(keyword);
 		//セッションにlist属性で登録
-		session.setAttribute("product", product);
+		session.setAttribute("product_category", product);
 //		商品リストに遷移
-		return "product_list";
+		return "product_list.jsp";
 	}
 
 }

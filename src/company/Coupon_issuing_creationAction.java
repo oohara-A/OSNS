@@ -6,8 +6,9 @@ import javax.servlet.http.HttpSession;
 
 import bean.Coupon;
 import dao.CompanyDAO;
+import tool.Action;
 
-public class Coupon_issuing_creationAction {
+public class Coupon_issuing_creationAction extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {

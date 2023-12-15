@@ -8,8 +8,9 @@ import javax.servlet.http.HttpSession;
 
 import bean.Coupon;
 import dao.CompanyDAO;
+import tool.Action;
 
-public class Display_coupon_listAction {
+public class Display_coupon_listAction extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
@@ -24,7 +25,7 @@ public class Display_coupon_listAction {
 		//ログインされている場合
 		if (session.getAttribute("login_company")!=null)  {
 
-	        // AdminDAOを使用して管理者一覧を取得
+	        // CompanyDAOを使用して管理者一覧を取得
 			CompanyDAO dao=new CompanyDAO();
 			List<Coupon> coupon_list = dao.coupon_list(coupon_name);
 

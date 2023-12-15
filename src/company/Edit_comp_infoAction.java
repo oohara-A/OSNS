@@ -9,8 +9,9 @@ import javax.servlet.http.HttpSession;
 
 import bean.Company;
 import dao.CompanyDAO;
+import tool.Action;
 
-public class Edit_comp_infoAction {
+public class Edit_comp_infoAction extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
