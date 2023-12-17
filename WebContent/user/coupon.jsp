@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../couponmenu.jsp"%>
@@ -229,6 +230,93 @@ setInterval(changeWord, 4000);
 >>>>>>> 7540934728c9ff536093269130392b77f0cbbd9f
 
 
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <%@include file="../couponmenu.jsp" %>
+        <div class="text">
+            <p>クーポン獲得！！</p>
+            <p>
+                <span class="word wisteria">おめでとう！.</span>
+                <span class="word belize">ボタンをクリックしてね</span>
+                <span class="word pomegranate">クリックで抽選</span>
+                <span class="word green">開始！！！</span>
+                <!-- <span class="word midnight">cheap.</span> -->
+            </p>
+        </div>
+
+        <a href="#" class="border_btn08"><span class=>クリックでクーポン獲得！！！</span></a>
+        <div id="particles-js"></div>
+        <!-- Please heart it if you like! -->
+        <div id="book">
+            <div id="top"></div>
+            <div id="front"></div>
+            <div id="right"></div>
+            <div id="bottom"></div>
+            <div id="shadow"></div>
+            <div id="bookmark">
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="bookmark-shadow"></div>
+        </div>
+        <div id="flip">
+            <div id="front">
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="back">
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="editor-drag-cover" class="drag-cover"></div>
+
+
+>>>>>>> 7540934728c9ff536093269130392b77f0cbbd9f
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/js/5-8.js"></script>
 
