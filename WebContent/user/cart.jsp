@@ -23,7 +23,7 @@
 		<!-- Sample cart item, repeat this block for each item in the cart -->
 			<tr>
 				<td><a href="product_detail.jsp">
-					<img  width="80" height="80"  src="../assets/proimage/${cart.file_name}" >
+					<img  width="80" height="80"  src="../assets/proimage/${cart.file_name}" alt="imageなし">
 				</a></td>
 
 				<td>￥:${cart.unit_price }</td>

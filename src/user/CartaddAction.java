@@ -17,6 +17,7 @@ public class CartaddAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 			//sessionの情報を取得
 			HttpSession session=request.getSession();
+			session.removeAttribute("cart");
 //			ログインしていない場合
 			User user = (User) session.getAttribute("user");
 			if(user == null){

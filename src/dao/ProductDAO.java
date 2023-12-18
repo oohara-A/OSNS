@@ -113,17 +113,24 @@ public class ProductDAO extends DAO {
 
 			//SQL文実行
 			st.executeUpdate();
+			st.close();
+			con.close();
+			Connection con2=getConnection();
 //			select文
-			st = con.prepareStatement(
-					"select DISTINCT PRODUCT_CART.CART_ID,PRODUCT_CART.PRODUCT_ID,PRODUCT_CART.ORDER_COUNT ,PRO_IMAGE.IMAGE_FILENAME,product.UNIT_PRICE  from PRODUCT_CART inner join product on PRODUCT_CART.product_id = product.id inner join PRO_IMAGE on product.id = pro_image.product_id  where PRODUCT_CART.USER_ID = ? and DELETION_FLAG = 0 ");
+//			st = con.prepareStatement(
+//					"select DISTINCT PRODUCT_CART.CART_ID,PRODUCT_CART.PRODUCT_ID,PRODUCT_CART.ORDER_COUNT ,PRO_IMAGE.IMAGE_FILENAME,product.UNIT_PRICE  from PRODUCT_CART inner join product on PRODUCT_CART.product_id = product.id inner join PRO_IMAGE on product.id = pro_image.product_id  where PRODUCT_CART.USER_ID = ? and DELETION_FLAG = 0 ");
+			st = con2.prepareStatement(
+					"select * from PRODUCT_CART join PRODUCT on PRODUCT_CART.product_id = product.id inner join PRO_IMAGE on product.id = pro_image.product_id  where PRODUCT_CART.USER_ID = ? and DELETION_FLAG = 0 ");
+
 			st.setInt(1, user_id);
 
 			ResultSet rs=st.executeQuery();
 			Product_cart p=new Product_cart();
 			while (rs.next()) {
+//				カートID
 				p.setCart_id(rs.getInt("cart_id"));
 //				商品ID
-				p.setProduct_id(rs.getInt("product_id"));
+				p.setId(rs.getInt("PRODUCT_ID"));
 //				企業ID
 //				p.setCompany_id(rs.getInt("company_id"));
 //				本商品ID
@@ -144,7 +151,6 @@ public class ProductDAO extends DAO {
 				p.setFile_name(rs.getString("image_filename"));
 //				個数
 				p.setOrder_count(rs.getInt("order_count"));
-
 				prduct.add(p);
 			}
 			System.out.println("cartactionDAO");

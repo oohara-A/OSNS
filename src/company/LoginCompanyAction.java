@@ -12,12 +12,8 @@ import bean.Company;
 import dao.CompanyDAO;
 import tool.Action;
 
-<<<<<<< HEAD:src/company/Login_companyAction.java
-public class Login_companyAction extends Action {
-=======
 @WebServlet
 public class LoginCompanyAction extends Action {
->>>>>>> 06994444a6f38efc7ada0ec330c15b38de3bf1c5:src/company/LoginCompanyAction.java
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {

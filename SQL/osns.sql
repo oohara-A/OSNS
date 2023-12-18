@@ -17,7 +17,7 @@ CREATE TABLE address (
     user_id INT,
     FOREIGN KEY (user_id) REFERENCES user(id),
     address VARCHAR(20) ,
-    phone_number VARCHAR(20) NOT NULL
+    phone_number VARCHAR(20)
 );
 
 CREATE TABLE admin (

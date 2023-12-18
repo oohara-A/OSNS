@@ -1,14 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@include file="../header.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
         <style>
+        	p{
+        		font-size: 25px;
+
+        		}
             h1 {
                 text-align: center;
+
             }
 
             .container {
                 display: flex;
                 justify-content: center;
+
             }
 
             .box {
@@ -75,72 +82,91 @@
         <div class="container">
 
             <div class="box">
-
+		<c:forEach var="use" items="user">
                 <div class="box-item">
-                    お名前:
+                    <p> お名前:${user.user_name}</p>
                     <button class="add-button" onclick="openModal('name')">
                         変更
                     </button>
                 </div>
 
                 <div class="box-item">
-                    Eメール:
+                    <p>Eメール:${user.email}</p>
                     <button class="add-button" onclick="openModal('mail')">
                         変更
                     </button>
                 </div>
 
                 <div class="box-item">
-                    電話番号:
+                    <p>電話番号:</p>
                     <button class="add-button" onclick="openModal('phone')">
                         変更
                     </button>
                 </div>
 
                 <div class="box-item">
-                    パスワード:
-                    <button class="add-button" onclick="redirectToPasswordChange()">
+                    <p>パスワード:${user.password}</p>
+                    <button class="add-button" onclick="openModal('pass')">
                 変更
             </button>
                 </div>
-
+<!--
                 <div class="box-item">
                     2段階認証:
                     <button class="add-button" onclick="openModal('2fa')">
                         変更
                     </button>
-                </div>
+                </div> -->
+          </c:forEach>
             </div>
 
         </div>
 
         <div id="nameModal" class="modal">
             <div class="modal-content">
+            <form action="Editpro.action">
                 <span class="close" onclick="closeModal('name')">&times;</span>
                 <!-- ユーザー名の入力フィールド -->
                 <input type="text" id="nameInput" name="nameInput" placeholder="ユーザー名を入力">
                 <!-- 登録ボタン -->
-                <button class="close-button" onclick="register('name')">登録</button>
+               <button type="submit" class="close-button" >登録</button>
+              </form>
             </div>
         </div>
 
         <div id="mailModal" class="modal">
             <div class="modal-content">
+             <form action="Editpro.action">
                 <span class="close" onclick="closeModal('mail')">&times;</span>
                 <!-- メールの入力フィールド -->
                 <input type="text" id="mailInput" name="mailInput" placeholder="メールアドレスを入力">
                 <!-- 登録ボタン -->
-                <button class="close-button" onclick="register('mail')">登録</button>
+                <button class="close-button" type="submit" >登録</button>
+                </form>
             </div>
         </div>
 
         <div id="phoneModal" class="modal">
             <div class="modal-content">
+             <form action="">
                 <span class="close" onclick="closeModal('phone')">&times;</span>
                 <!-- 電話番号の入力フィールド -->
                 <input type="text" id="phoneInput" name="phoneInput" placeholder="電話番号を入力">
                 <!-- 登録ボタン -->
-                <button class="close-button" onclick="register('phone')">登録</button>
+                <button class="close-button" type="submit">登録</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="passModal" class="modal">
+            <div class="modal-content">
+             <form action="Editpro.action">
+                <span class="close" onclick="closeModal('pass')">&times;</span>
+                <!-- 電話番号の入力フィールド -->
+                <input type="text" id="passInput" name="passInput" placeholder="パスワードを入力">
+                <!-- 登録ボタン -->
+                <button class="close-button" type="submit">登録</button>
+                </form>
             </div>
         </div>
 
@@ -151,7 +177,7 @@
                 <!-- 2段階認証の入力フィールド -->
                 <input type="text" id="2faInput" name="2faInput" placeholder="2段階認証を入力">
                 <!-- 登録ボタン -->
-                <button class="close-button" onclick="register('2fa')">登録</button>
+                <button class="close-button" type="submit">登録</button>
             </div>
         </div>
 
