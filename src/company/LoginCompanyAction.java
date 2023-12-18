@@ -35,7 +35,10 @@ public class LoginCompanyAction extends Action {
 		CompanyDAO dao=new CompanyDAO();
 		Company login_company=dao.login(email, password,login_date);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
 		// メールアドレスとパスワードに合致する企業が見つかった場合、属性名companyで登録する
 		if (login_company!=null) {
 			session.setAttribute("login_company", login_company);

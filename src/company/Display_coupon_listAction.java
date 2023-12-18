@@ -8,8 +8,9 @@ import javax.servlet.http.HttpSession;
 
 import bean.Coupon;
 import dao.CompanyDAO;
+import tool.Action;
 
-public class Display_coupon_listAction {
+public class Display_coupon_listAction extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {

@@ -1,22 +1,23 @@
 package company;
 
+<<<<<<< HEAD
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+=======
+>>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.stream.Stream;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
 
 import dao.CompanyDAO;
+import tool.Action;
 
-public class Product_edit_Action {
+public class Product_edit_Action extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
@@ -37,21 +38,7 @@ public class Product_edit_Action {
 		int[] intArray = Stream.of(pro_image_ids).mapToInt(Integer::parseInt).toArray();
 
 		//商品画像リスト
-		List<String> fileNameList = new ArrayList<String>();
 
-		for (Part part : request.getParts()) {
-	        part.getName();
-	        part.getContentType();
-	        part.getSubmittedFileName();
-	        part.getSize();
-	        if ("text/plain".equals(part.getContentType())) {
-	            try (InputStream is = part.getInputStream();
-	                    InputStreamReader r = new InputStreamReader(is);
-	                    BufferedReader br = new BufferedReader(r)) {
-	                System.out.println(br.readLine());
-                }
-            }
-        }
 
 		// 在庫
 		int regiinvqua=Integer.parseInt(request.getParameter("regiinvqua"));

@@ -94,17 +94,30 @@
 
 
 		<div>
+<<<<<<< HEAD
 			<input type="radio" id="pre-paid" name="pay" value="プリペイド"> <label
+=======
+			<input type="radio" id="pre-paid" name="pay"> <label
+>>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
 				for="pre-paid">プリペイド</label>
 		</div>
 
 		<div>
+<<<<<<< HEAD
 			<input type="radio" id="credit" name="pay" value="クレジット"> <label
+=======
+			<input type="radio" id="credit" name="pay"> <label
+>>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
 				for="credit">クレジットカード</label>
 		</div>
 
 		<div>
+<<<<<<< HEAD
 			<input type="radio" id="cash_deli" name="pay" value="代金引換"> <label for="cash_deli">代金引換</label>
+=======
+			<input type="radio" id="cash_deli" name="pay"> <label
+				for="cash_deli">代金引換</label>
+>>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
 		</div>
 
 		<div>

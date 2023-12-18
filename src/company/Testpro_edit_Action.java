@@ -10,8 +10,9 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import dao.CompanyDAO;
+import tool.Action;
 
-public class Testpro_edit_Action {
+public class Testpro_edit_Action extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
