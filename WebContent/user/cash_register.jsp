@@ -94,18 +94,17 @@
 
 
 		<div>
-			<input type="radio" id="pre-paid" name="pay"> <label
+			<input type="radio" id="pre-paid" name="pay" value="プリペイド"> <label
 				for="pre-paid">プリペイド</label>
 		</div>
 
 		<div>
-			<input type="radio" id="credit" name="pay"> <label
+			<input type="radio" id="credit" name="pay" value="クレジット"> <label
 				for="credit">クレジットカード</label>
 		</div>
 
 		<div>
-			<input type="radio" id="cash_deli" name="pay"> <label
-				for="cash_deli">代金引換</label>
+			<input type="radio" id="cash_deli" name="pay" value="代金引換"> <label for="cash_deli">代金引換</label>
 		</div>
 
 		<div>

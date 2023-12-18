@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
+import bean.Address;
 import bean.User;
 //ログイン操作など
 public class UserDAO extends DAO {
@@ -194,5 +197,32 @@ public boolean favorite_insert(int id, int product_id)throws Exception{
 	return true;
 
 }
+//住所追加
+public List<Address> AddressAdd(int id, String prefecture)throws Exception{
+	Connection con = getConnection();
+	List<Address> add=new ArrayList<>();
+	PreparedStatement st;
 
+	 st = con.prepareStatement("insert into address (user_id,address) values(?, ?)");
+		st.setInt(1, id);
+		st.setString(2, prefecture);
+		st.executeUpdate();
+
+		st =con.prepareStatement("select * from address where user_id = ?");
+		st.setInt(1, id);
+		//SQL文実行
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Address address=new Address();
+			address.setUser_id(rs.getInt("user_id"));
+			address.setAddress(rs.getString("address"));
+			add.add(address);
+		}
+		st.close();
+		con.close();
+	return add;
+
+
+
+}
 }

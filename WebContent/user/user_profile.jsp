@@ -11,7 +11,6 @@
                 text-align: center;
 
             }
-
             .container {
                 display: flex;
                 justify-content: center;
@@ -79,49 +78,63 @@
 
         <hr>
         <h1>アカウント情報の更新</h1>
-        <div class="container">
+       <c:choose>
+		<c:when test="${user!=null}">
 
-            <div class="box">
-		<c:forEach var="use" items="user">
-                <div class="box-item">
-                    <p> お名前:${user.user_name}</p>
-                    <button class="add-button" onclick="openModal('name')">
-                        変更
-                    </button>
-                </div>
+	        <c:forEach var="use" items="user">
+	        <div class="container">
+	            <div class="box">
+	                <div class="box-item">
+	                    <p> お名前:${user.user_name}</p>
+	                    <button class="add-button" onclick="openModal('name')">
+	                        変更
+	                    </button>
+	                </div>
 
-                <div class="box-item">
-                    <p>Eメール:${user.email}</p>
-                    <button class="add-button" onclick="openModal('mail')">
-                        変更
-                    </button>
-                </div>
+	                <div class="box-item">
+	                    <p>Eメール:${user.email}</p>
+	                    <button class="add-button" onclick="openModal('mail')">
+	                        変更
+	                    </button>
+	                </div>
 
-                <div class="box-item">
-                    <p>電話番号:</p>
-                    <button class="add-button" onclick="openModal('phone')">
-                        変更
-                    </button>
-                </div>
+	                <div class="box-item">
+	                    <p>電話番号:</p>
+	                    <button class="add-button" onclick="openModal('phone')">
+	                        変更
+	                    </button>
+	                </div>
 
-                <div class="box-item">
-                    <p>パスワード:${user.password}</p>
-                    <button class="add-button" onclick="openModal('pass')">
-                変更
-            </button>
-                </div>
-<!--
-                <div class="box-item">
-                    2段階認証:
-                    <button class="add-button" onclick="openModal('2fa')">
-                        変更
-                    </button>
-                </div> -->
-          </c:forEach>
-            </div>
+	                <div class="box-item">
+	                    <p>パスワード:${user.password}</p>
+	                    <button class="add-button" onclick="openModal('pass')">
+	                変更
+	            </button>
+	                </div>
+	<!--
+	                <div class="box-item">
+	                    2段階認証:
+	                    <button class="add-button" onclick="openModal('2fa')">
+	                        変更
+	                    </button>
+	                </div> -->
 
-        </div>
+	            </div>
 
+	        </div>
+ </c:forEach>
+</c:when>
+	<c:otherwise>
+
+				<div class="inq_sending">
+						<h1>ログインしてください</h1>
+					<a href="user_login.jsp"><input class="sending" type="submit" value="ログイン"></a>
+				</div>
+	</c:otherwise>
+</c:choose>
+
+
+<!--入力欄表示  -->
         <div id="nameModal" class="modal">
             <div class="modal-content">
             <form action="Editpro.action">

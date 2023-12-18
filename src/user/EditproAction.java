@@ -19,11 +19,6 @@ public class EditproAction extends Action {
 		@SuppressWarnings("unchecked")
 		User user_been=(User)session.getAttribute("user");
 			id = user_been.getId();
-//			String name = "";
-//			String email = "";
-//			String phone_number = "";
-//			String password = "";
-		//ログイン名を取得
 		String name=request.getParameter("nameInput");
 //		メールアドレス
 		String email = request.getParameter("mailInput");

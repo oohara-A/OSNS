@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
     <%@include file="../header.jsp" %>
 
         <style>
@@ -56,14 +58,40 @@
             .close:hover {
                 color: black;
             }
+
+            .add{
+
+            	font-size: 50px;
+            	position: absolute;
+				top: 30%;
+				margin-left:-300px;
+            }
+
         </style>
 
         <hr>
 
-        <div class="container">
-            <div class="box">
-                <h1>現在の住所</h1>
-            </div>
+      <div class="container">
+      <c:choose>
+		<c:when test="${Address!=null}">
+	            <div class="box">
+	                <h1>現在の住所</h1>
+	                <%-- <c:forEach var="Address" items="${Address}"> --%>
+	                <%-- </c:forEach> --%>
+	            </div>
+	            <c:forEach var="Address" items="${Address}">
+	            	<p class="add">${Address.address}</p>
+	            </c:forEach>
+
+        </c:when>
+		<c:otherwise>
+			<div class="box">
+	                <h1>現在の住所は登録されていません</h1>
+
+
+	            </div>
+		</c:otherwise>
+	</c:choose>
 
             <div class="box">
                 <h1>新しい住所を追加</h1>
@@ -77,7 +105,7 @@
 
                 <h2>登録画面</h2>
 
-                <form class="checkout-form" onsubmit="return validateForm()">
+                <form class="checkout-form" action="AddressAdd.action">
                     <div class="form-group">
                         <label for="country">　　　　　　国:</label>
                         <input type="text" id="country" name="country" required placeholder="日本">
@@ -122,9 +150,9 @@
                         <label for="room">　　　部屋番号:</label>
                         <input type="text" id="room" name="room" required placeholder="602">
                     </div>
-
+					<button type="submit" class="close-button" >登録</button>
                 </form>
-                <button class="close-button" onclick="closeModal()">登録</button>
+
             </div>
         </div>
 

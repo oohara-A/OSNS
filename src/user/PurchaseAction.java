@@ -27,7 +27,7 @@ public class PurchaseAction extends Action {
 		//カートの情報を取得
 		List<Product_cart> cart=(List<Product_cart>)session.getAttribute("cart");
 //		ユーザの情報を取得
-		List<User> user = (List<User>) session.getAttribute("user");
+		User user = (User) session.getAttribute("user");
 //		購入個数取得
 		int count = Integer.parseInt(request.getParameter("register_quantity"));
 //		電話番号
@@ -42,10 +42,7 @@ public class PurchaseAction extends Action {
 
 //		ユーザーId取得
 		int user_id = 0;
-		for(User u : user){
-			user_id = u.getId();
-			break;
-		}
+		user_id = user.getId();
 
 //		企業ID取得
 		int company_id = 0;

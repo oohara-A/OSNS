@@ -16,8 +16,8 @@ CREATE TABLE address (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     user_id INT,
     FOREIGN KEY (user_id) REFERENCES user(id),
-    address VARCHAR(20) ,
-    phone_number VARCHAR(20)
+    address VARCHAR(1000) ,
+    phone_number VARCHAR(200)
 );
 
 CREATE TABLE admin (

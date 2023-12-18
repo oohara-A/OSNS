@@ -30,9 +30,9 @@
                 <a href="user_profile.jsp">ユーザ情報変更</a>
             </div>
 
-            <div class="account_box">
+           <!--  <div class="account_box">
                 <a href="passwordChange.jsp">パスワード変更</a>
-            </div>
+            </div> -->
 
             <div class="account_box">
                 <a href="user_pay.jsp">支払い方法追加</a>

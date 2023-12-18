@@ -132,7 +132,7 @@ public class ProductDAO extends DAO {
 //				商品ID
 				p.setId(rs.getInt("PRODUCT_ID"));
 //				企業ID
-//				p.setCompany_id(rs.getInt("company_id"));
+				p.setCompany_id(rs.getInt("company_id"));
 //				本商品ID
 //				p.setOriginal_products_id(rs.getInt("original_products_id"));
 //				商品カテゴリID
