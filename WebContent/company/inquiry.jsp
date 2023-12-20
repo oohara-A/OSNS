@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@include file="../menu.jsp" %>
+<%@ include file="../com_header.jsp" %>
 
+    <div class="menu-container">
+        <%@ include file="../com_menu.jsp" %>
+    </div>
 <form action="registered.jsp" method="post">
 
-    <h2 class="com_title">企業用お問い合わせ</h2>
+    <h2 class="inquiry_title">企業用お問い合わせ</h2>
 
 	<div class="contact_us">
       <p class="inquiry">お名前</p>
@@ -56,4 +59,4 @@
 
 </form>
 
-<%@include file="../footer.jsp" %>
+<%@ include file="../com_footer.jsp" %>

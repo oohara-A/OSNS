@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@include file="../menu.jsp" %>
+<%@ include file="../com_header.jsp" %>
+
+    <div class="menu-container">
+        <%@ include file="../com_menu.jsp" %>
+    </div>
 
 <form action="Edit_comp_info.action" method="post">
 
 	<div class="com_title">
-		<h2 class="info._edit">企業情報編集</h2>
+		<h2 class="info._edit">企業登録</h2>
 	</div>
 
 		<div class="com_reg">
@@ -47,4 +51,4 @@
 		</div>
 </form>
 
-<%@include file="../footer.jsp" %>
+<%@include file="../com_footer.jsp" %>

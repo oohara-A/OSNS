@@ -13,11 +13,7 @@
 
 		<div class="log">
 	      <p class="login">メールアドレス</p>
-<<<<<<< HEAD
 	      <input type="email" name="email">
-=======
-	      <input type="text" name="inq_name">
->>>>>>> f49713779204c6034678be1193948446b6e03908
 	    </div>
 
 		<div class="log">
@@ -33,15 +29,14 @@
 		<div class="log_button">
   			<input class="all_login" type="submit" name="login" value="ログイン">
 		</div>
-
 	</div>
+
+</form>
 
 	<div class="com">
 		<p class="new_acount">企業登録の方はこちらをクリック↓</p>
 
 		<div class="acount">
-  			<input class="all_acount" type="submit" name="new_acount" value="アカウントを作成する">
+  			<a href="company_registration.jsp"><input class="all_acount" type="submit" name="new_acount" value="アカウントを作成する"></a>
 		</div>
 	</div>
-
-</form>

@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@include file="../menu.jsp" %>
 
+<head>
+<title>OSNS_login</title>
+<link rel="stylesheet" href="../assets/css/sanitize.css">
+</head>
 
 <c:choose>
 	<c:when  test="${user!=null}">
@@ -14,7 +17,7 @@
 	<c:otherwise>
 		<div class="inq_sending">
 		<form action="Login.action" method="post">
-			<h2 class="com_title">ログイン</h2>
+			<h2 class="login_title">ログイン</h2>
 			<div class="log">
 		      <p class="login">ユーザー名</p>
 		      <input type="text" name="inq_name" required="required">
@@ -28,8 +31,8 @@
 		    	<input type="checkbox" name="logged">
 		    	<p class="logged_in">ログインしたままにする</p>
 			</div>
-			<div class="inq_sending">
-	  			<input class="sending" type="submit" value="ログイン">
+			<div class="log_button">
+	  			<input class="all_login" type="submit" value="ログイン">
 			</div>
 		</form>
 		</div>
@@ -44,9 +47,6 @@
     	</div>
 		<p class="new_acount">新規登録の方はこちらをクリック↓</p>
 
-		<div class="inq_sending">
-  			<a href="sign_up.jsp"><input class="sending" type="submit" value="アカウントを作成する"></a>
+		<div class="log_button">
+  			<a href="sign_up.jsp"><input class="all_login" type="submit" value="アカウントを作成する"></a>
 		</div>
-
-
-<%@include file="../footer.jsp" %>

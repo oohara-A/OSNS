@@ -255,7 +255,7 @@
 .new_acount {
   margin-left: 50px;
   text-align: center;
-  max-width: 1500px;
+  max-width: 1200px;
 }
 
 .new_acount::before,
@@ -264,7 +264,7 @@
   display: block;
   color: #000;
   text-align: center;
-  margin-left: 50px;
+  max-width: 1200px;
 }
 
 .new_acount::before {
@@ -650,6 +650,13 @@ input[type="file"] {
  }
 
 /*お問い合わせのcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.inquiry_title{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 700px;
+  font-size: 40px;
+}
+
 .contact_us{
   width: 80%;
   margin: 0 auto;

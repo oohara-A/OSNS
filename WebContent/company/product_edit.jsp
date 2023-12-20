@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ include file="../menu.jsp" %>
+<%@ include file="../com_header.jsp" %>
 
+    <div class="menu-container">
+        <%@ include file="../com_menu.jsp" %>
+    </div>
 <form action="company_top_page.jsp" method="post">
 
 	<div class="back_home">
@@ -57,9 +60,9 @@
     </div>
 
     <div class="sample_info">
-        <a href="sample_registration.jsp">試供品編集はこちら</a>
+        <a href="../sample_registration.jsp">試供品編集はこちら</a>
     </div>
 
 </form>
 
-<%@ include file="../footer.jsp" %>
+<%@ include file="../com_footer.jsp" %>
