@@ -10,6 +10,7 @@ import java.util.List;
 import bean.Company;
 import bean.Coupon;
 import bean.Product;
+import bean.Test_product;
 
 public class CompanyDAO extends DAO{
 
@@ -66,14 +67,8 @@ public class CompanyDAO extends DAO{
 		st.setString(3, address);
 		st.setString(4, email);
 		st.setString(5, phone_number);
-<<<<<<< HEAD
 		st.setString(6, password);
 		st.setDate(7, add_date);
-=======
-		st.setString(6, filename2);
-		st.setString(7, password);
-		st.setDate(8, add_date);
->>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
 		st.executeUpdate();
 
 		st.close();
@@ -126,14 +121,11 @@ public class CompanyDAO extends DAO{
 		throws Exception {
 		Product product=null;
 		int  category_id = 0;
-
-<<<<<<< HEAD
 //		カテゴリの判定条件  食料品だったら１
 		if (category_name.equals("genre1")) {
 			category_id = 1;
 		}else if (category_name.equals("genre2")){
 			category_id = 2;
-=======
 		//カテゴリで本を選択した場合
 		if (category_name.equals("genre1")) {
 			category_id = 1;
@@ -141,18 +133,10 @@ public class CompanyDAO extends DAO{
 		}else if (category_name.equals("genre2")){
 			category_id = 2;
 		//食料品を選択した場合
->>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
 		}else if (category_name.equals("genre3")){
 			category_id = 3;
 		}
-
-
-<<<<<<< HEAD
 		String PRODUCT_OVERVIEW = "aaaaaaaaaa";
-=======
-		String PRODUCT_OVERVIEW = "abcdefg";
->>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
-
 		int pro_id = 0;
 		// 商品情報をテーブルに追加
 		Connection con=getConnection();
@@ -195,6 +179,8 @@ public class CompanyDAO extends DAO{
 		st.close();
 		con.close();
 
+		return product;
+	}
 		return product;
 	}
 

@@ -1,11 +1,5 @@
 package company;
 
-<<<<<<< HEAD
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-=======
->>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.stream.Stream;

@@ -60,13 +60,10 @@ public class Testpro_registrationAction extends Action{
         if (session.getAttribute("login_company")!=null) {
         	//入力した情報をデータベースに登録
 			CompanyDAO dao=new CompanyDAO();
-<<<<<<< HEAD
 //			Test_product add_test_product=dao.testpro_registration(testpro_name,test_price,regiinvqua,category_name,product_description,filename,add_date);
 //			session.setAttribute("testproduct", add_test_product);
-=======
 			Test_product add_test_product=dao.testpro_registration(testpro_name,test_price,filename2,regiinvqua,category_name,product_description,add_date);
 			session.setAttribute("testproduct", add_test_product);
->>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
 			// product_registration_complete.jspをフォワード先に指定
 			return "product_registration_complete.jsp";
 

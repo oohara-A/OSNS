@@ -16,7 +16,6 @@
 
 		<div class="box">
 			<p>在庫:${prodetail.regiinvqua }</p>
-<<<<<<< HEAD
 			<form action="Cartadd.action">
 				<p>
 					数量:<input  type="number" name="cnt" min="1" max="10" >
@@ -35,109 +34,91 @@
 			<p>商品説明文<br>${prodetail.product_description }</p>
 		</div>
 </c:forEach>
-
-	<hr>
-	<p>おすすめ商品</p>
-
-=======
-			<p>
-				数量:<input name="cnt" type="number" size="2" value="1" min="1">
-			</p>
-			<p>
-				カート
-				<button onclick="location.href='index.jsp'">追加</button>
-			</p>
-			<p>購入:</p>
-			</div>
-	</div>
-
-		<div class="com_box">
-			<p>商品説明文<br>${prodetail.product_description }</p>
-		</div>
-</c:forEach>
-
-	<hr>
-	<p>おすすめ商品</p>
-
->>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
-	<div class="detail_img">
-
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-	</div>
-
-	<hr>
-
-	<div class="detail_img">
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-
-		<div class="img">
-			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
-		</div>
-	</div>
 </div>
+
+
+
+	<hr>
+	<p>おすすめ商品</p>
+
+	<div class="detail_img">
+
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="detail_img">
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+
+		<div class="img">
+			<img alt="商品画像" width="100" height="100"
+				src="../assets/image/food_box.png">
+		</div>
+	</div>
+
 
 
 

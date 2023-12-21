@@ -4,41 +4,57 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import bean.Purchase_history;
 
 //購入処理
 public class PurchaseDAO extends DAO {
-	public boolean insert(int company_id,int user_id,int coupon_id,Date purchase_time,int purchase_price,String paymentmethod,String deladdress,String phone_number,int product_id)
+	public boolean insert(ArrayList<Integer> comp_id,int user_id,String coupon_code,Date purchase_time,ArrayList<Integer> pro_id, String addre, ArrayList<Integer> cart_id)
 			throws Exception {
 		Connection con=getConnection();
+		System.out.println("purchaseDao");
+		PreparedStatement st;
 		//ステートメントごとの自動コミットをやめて，トランザクションを開始
-		con.setAutoCommit(false);
-		PreparedStatement st=con.prepareStatement(
-				"insert into purchase_history(user_id,company_id,coupon_id,purchase_time,purchase_price,paymentmethod,deladdress,phone_number,product_id) "
-				+ "values(?, ?, ?, ?, ?, ?, ?,?)");
-		st.setInt(1, user_id);
-		st.setInt(2, company_id);
-		st.setInt(3, coupon_id);
-		st.setDate(4, purchase_time);
-		st.setInt(5, purchase_price);
-		st.setString(6, paymentmethod);
-		st.setString(7, deladdress);
-		st.setString(8, phone_number);
-		st.setInt(9, product_id);
-		int line=st.executeUpdate();
-		st.close();
+		int pronum = 0;
+		pronum = pro_id.size();
 
-		if(line!=1){
-			con.rollback();
-			con.setAutoCommit(true);
+			 st=con.prepareStatement(
+					"insert into purchase_history(product_id,company_id,user_id,COUPON_ID,purchase_time,purchase_price,paymentmethod,deladdress) "
+					+ "values(?,?,?,?,?,?,?,?)");
+			 for(int i = 0; i < pronum; i++ ){
+				 System.out.println(pro_id.get(i));
+				 st.setInt(1, pro_id.get(i));
+				 st.setInt(2, comp_id.get(i));
+				 st.setInt(3, user_id);
+				 st.setString(4, coupon_code);
+				 st.setDate(5,purchase_time);
+				 st.setInt(6, 1000);
+				 st.setString(7, "購入");
+				 st.setString(8, addre);
+				 int line=st.executeUpdate();
+			 	}
+			 int cart_Id = 0;
+				 cart_Id = cart_id.size();
+	         st=con.prepareStatement(
+					"update product_cart set deleting_time=?,DELETION_FLAG = ? where CART_ID =?");
+	         for(int i = 0; i < cart_Id; i++){
+	//	        削除日時
+		        st.setDate(1, purchase_time);
+		        st.setInt(2, 1);
+	//	        カートID
+				st.setInt(3, cart_id.get(i));
+				st.executeUpdate();
+	         }
+			st.close();
 			con.close();
-			return false;
-		}
-		con.commit();
-		con.setAutoCommit(true);
-		con.close();
+//		if(line!=1){
+//			con.rollback();
+//			con.setAutoCommit(true);
+//			con.close();
+//			return false;
+//		}
 		return true;
 	}
 
@@ -55,7 +71,7 @@ public List<Purchase_history> selectPurchase(int user_id)throws Exception{
 		p.setId(rs.getInt("id"));
 		p.setUser_id(rs.getInt("product_id"));
 		p.setCompany_id(rs.getInt("company_id"));
-		p.setCoupon_id(rs.getInt("coupon_id"));
+		p.setCoupon_id(rs.getString("coupon_id"));
 		p.setPurchase_time(rs.getDate("purchase_time"));
 		p.setPurchase_price(rs.getInt("purchase_price"));
 		p.setPaymentmethod(rs.getString("paymentmethod"));
@@ -93,7 +109,7 @@ public Purchase_history selctProPurchase(int product_id)throws Exception{
 //		配送住所
 		pro_purchase.setDeladdress(rs.getString("deladdress"));
 //		クーポンId
-		pro_purchase.setCoupon_id(rs.getInt("coupon_id"));
+		pro_purchase.setCoupon_id(rs.getString("coupon_id"));
 	}
 	//データベース接続切断
 	st.close();

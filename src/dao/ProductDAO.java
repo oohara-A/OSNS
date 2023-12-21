@@ -15,11 +15,7 @@ public class ProductDAO extends DAO {
 //	購入する商品の情報を持ってる関数
 	public List<Product> selectId(int pro_id)throws Exception{
 		List<Product> prduct_detail=new ArrayList<>();
-<<<<<<< HEAD
-=======
 		Product point;
-
->>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
 		Connection con=getConnection();
 //商品情報を持ってくる
 		PreparedStatement st=con.prepareStatement(

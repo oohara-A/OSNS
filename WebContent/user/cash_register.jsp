@@ -5,11 +5,9 @@
 
 
 <div class="checkout-container">
-
 	<h2>注文情報入力</h2>
-
 	<h1>1.受け取り場所</h1>
-	<form class="checkout-form" onsubmit="return validateForm()">
+	<form action="Purchase.action" class="checkout-form" >
 		<div class="form-group">
 			<label for="country"> 国:</label> <input type="text" id="country"
 				name="country" required placeholder="日本">
@@ -80,7 +78,6 @@
 		<!-- クーポンコード入力画面 -->
 		<div id="coupon-input" style="display: none;">
 			<h4>クーポンコード入力</h4>
-
 			<div class="form-group">
 				<label for="coupon-code">クーポンコード:</label> <input type="text"
 					id="coupon-code" name="coupon-code" placeholder="クーポンコードを入力">
@@ -89,54 +86,9 @@
 			<button type="button" onclick="toggleCouponInput()">キャンセル</button>
 
 		</div>
-
-
-
-
-		<div>
-<<<<<<< HEAD
-			<input type="radio" id="pre-paid" name="pay" value="プリペイド"> <label
-=======
-			<input type="radio" id="pre-paid" name="pay"> <label
->>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
-				for="pre-paid">プリペイド</label>
-		</div>
-
-		<div>
-<<<<<<< HEAD
-			<input type="radio" id="credit" name="pay" value="クレジット"> <label
-=======
-			<input type="radio" id="credit" name="pay"> <label
->>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
-				for="credit">クレジットカード</label>
-		</div>
-
-		<div>
-<<<<<<< HEAD
-			<input type="radio" id="cash_deli" name="pay" value="代金引換"> <label for="cash_deli">代金引換</label>
-=======
-			<input type="radio" id="cash_deli" name="pay"> <label
-				for="cash_deli">代金引換</label>
->>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
-		</div>
-
-		<div>
-			<input type="radio" id="other" name="pay"> <label for="other">コンビニ・ATM・電子マネー</label>
-		</div>
-	</form>
-
-	<h1>3.商品と発送情報</h1>
-
-	<div class="checkout-summary">
-		<h2>お届け予定日:XXXX年XX月XX日～XXXX年XX月XX日</h2>
-		<%@include file="cart_main.jsp"%>
-	</div>
-
-	<form class="checkout-form" onsubmit="return validateForm()">
-		<input type="submit" value="購入する">
+		<button type="submit" >購入確定</button>
 	</form>
 </div>
-
 <script>
 
             function validateForm(event) {

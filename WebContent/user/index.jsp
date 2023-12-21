@@ -57,9 +57,6 @@
 </div>
 
 
-<<<<<<< HEAD
+
 <%@include file="../footer.jsp"%>
 
-=======
-<%@include file="../footer.jsp"%>
->>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
