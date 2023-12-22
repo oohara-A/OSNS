@@ -27,6 +27,59 @@
 	border-radius: 5px;
 	background-color: #f9f9f9;
 }
+
+/* レビュー表示のcss */
+.box2 {
+	 display: flex;
+	 padding-right10
+    position: relative;
+   /*  padding: 1rem 1rem 1.2rem; */
+   	padding-right:2rem;
+ 	border-bottom: 2px solid #333;
+    background: linear-gradient(#DFF3CA 0 calc(100% - 0.2rem), white calc(100% - 0.2rem));
+    font-size: 20px;
+    margin-right:190px;
+	}
+
+.box2:before,
+.box2:after {
+    position: absolute;
+    left: 50%;
+    content: "";
+    height: 0;
+    width: 0;
+}
+
+.box2:before {
+    top: 100%;
+    border: 9px solid;
+    border-color: transparent;
+    border-top-color: #333;
+    margin-left: -9px;
+}
+
+.box2:after {
+    top: 99%;
+    border: 8px solid;
+    border-color: transparent;
+    border-top-color: white;
+    margin-left: -8px;
+}
+
+.box2.p{
+    color: #333;
+    line-height: 1.5;
+}
+.border-radius {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background-color: green;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  margin-right: 10px;
+  }
 </style>
 
 <hr>
@@ -34,22 +87,22 @@
 	<h3>商品レビュー</h3>
 
 	<!-- レビューとリプライの表示 -->
-	<div class="product-reviews" id="productReviews">
-		<!-- レビューと返信表示エリア -->
+	<div class="box2">
+	<div class="border-radius">他</div>
+    	<p >吹出口を中央にしたシンプルな吹き出し。吹出口を中央にしたシンプルな吹き出し吹出口を中央にしたシンプルな吹き出し</p>
 	</div>
-
 	<!-- レビュー＆リプライ投稿フォーム -->
-	<form id="productReviewForm"
+	<form action="Postedreview.action" id="productReviewForm"
 		onsubmit="submitProductReview(); return false;" class="review-form">
 		<h4>商品レビューを投稿</h4>
-		<textarea id="productReviewContent" rows="4" cols="50"
+		<textarea name="reviews" id="productReviewContent" rows="4" cols="50"
 			placeholder="あなたの商品レビューを入力してください" required></textarea>
-		<br> <label for="rating">評価:</label> <select id="rating" required>
-			<option value="1">☆</option>
-			<option value="2">☆☆</option>
-			<option value="3">☆☆☆</option>
-			<option value="4">☆☆☆☆</option>
-			<option value="5">☆☆☆☆☆</option>
+		<br> <label for="rating">評価:</label> <select name="ratings" id="rating" required>
+			<option value=1>☆</option>
+			<option value=2>☆☆</option>
+			<option value=3>☆☆☆</option>
+			<option value=4>☆☆☆☆</option>
+			<option value=5>☆☆☆☆☆</option>
 		</select> <br> <input type="submit" value="投稿">
 	</form>
 </div>

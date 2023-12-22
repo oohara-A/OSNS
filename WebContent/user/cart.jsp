@@ -16,15 +16,17 @@
 			<th>操作</th>
 		</tr>
 	</thead>
-	<c:forEach var="cart" items="${cart}">
+<c:forEach var="cart" items="${cart}">
 	<tbody>
 		<!-- Sample cart item, repeat this block for each item in the cart -->
+
 			<tr>
 				<td><a href="product_detail.jsp">
-					<img  width="80" height="80"  src="../assets/proimage/${cart.file_name}" alt="imageなし">
-				</a></td>
+						<img   src="../assets/proimage/${cart.file_name}" alt="imageなし"  width="80" height="80">
+					</a>
+				</td>
 
-				<td >￥:${cart.unit_price }</td>
+				<td >￥:${cart.unit_price } ${cart.file_name}</td>
 
 				<td><input id="number" type="number" size="auto" value="${cart.order_count}"></td>
 				<td>￥:${cart.order_count * cart.unit_price}</td>
@@ -36,9 +38,11 @@
 				</a>
 				</td>
 			</tr>
+
 		<!-- Repeat this block for each item in the cart -->
 		</tbody>
-	</c:forEach >
+		</c:forEach >
+
 </table>
 	<div class="cart-summary">
 		<p >

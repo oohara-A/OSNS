@@ -37,6 +37,7 @@ public class PurchaseDAO extends DAO {
 			 	}
 			 int cart_Id = 0;
 				 cart_Id = cart_id.size();
+//			購入した商品をカートから削除
 	         st=con.prepareStatement(
 					"update product_cart set deleting_time=?,DELETION_FLAG = ? where CART_ID =?");
 	         for(int i = 0; i < cart_Id; i++){
@@ -49,12 +50,6 @@ public class PurchaseDAO extends DAO {
 	         }
 			st.close();
 			con.close();
-//		if(line!=1){
-//			con.rollback();
-//			con.setAutoCommit(true);
-//			con.close();
-//			return false;
-//		}
 		return true;
 	}
 

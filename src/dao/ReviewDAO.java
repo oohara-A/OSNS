@@ -50,16 +50,40 @@ public class ReviewDAO extends DAO{
 	}
 
 //レビュー投稿処理
-	public boolean Postedreview(int user_id ,int pro_id, String body,int rating,Date submissiondate, String url, String video_url) throws Exception{
+	public boolean Postedreview(int user_id ,int pro_id, String body,int rating,Date submissiondate, String image, String video_url) throws Exception{
 		//データベース接続
 		Connection con=getConnection();
-		PreparedStatement st=con.prepareStatement(
-				"insert into review(product_id,user_id,rating,reviewbody,submissiondate) values(?,?,?,?,?) where product_id =?");
+		PreparedStatement st;
+		 st=con.prepareStatement(
+				"insert into review(product_id,user_id,rating,reviewbody,submissiondate) values(?,?,?,?,?)");
 		st.setInt(1, pro_id);
 		st.setInt(2, user_id);
 		st.setInt(3, rating);
 		st.setString(4, body);
 		st.setDate(5, submissiondate);
+		st.executeUpdate();
+
+		st=con.prepareStatement(
+					"select * from review where user_id = ? and product_id = ?");
+		st.setInt(1, user_id);
+		st.setInt(2, pro_id);
+		ResultSet rs=st.executeQuery();
+		int revew_id = 0;
+		while (rs.next()) {
+			revew_id = rs.getInt("REVIEW_ID");
+		}
+
+
+		st=con.prepareStatement(
+				"insert into REVIEW_IMAGE(review_id,image_filename) values(?,?) ");
+		st.setInt(1,revew_id);
+		st.setString(2,image );
+		st.executeUpdate();
+
+		st=con.prepareStatement(
+				"insert into REVIEW_VIDEO(review_id,video_filename) values(?,?) ");
+		st.setInt(1,revew_id);
+		st.setString(2,video_url );
 		st.executeUpdate();
 		st.close();
 		con.close();

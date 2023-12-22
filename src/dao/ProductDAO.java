@@ -126,8 +126,8 @@ public class ProductDAO extends DAO {
 			st.setInt(1, user_id);
 
 			ResultSet rs=st.executeQuery();
-			Product_cart p=new Product_cart();
 			while (rs.next()) {
+				Product_cart p=new Product_cart();
 //				カートID
 				p.setCart_id(rs.getInt("cart_id"));
 //				商品ID
@@ -150,6 +150,7 @@ public class ProductDAO extends DAO {
 //				p.setProduct_overview(rs.getString("product_overview"));
 //				ファイルネーム
 				p.setFile_name(rs.getString("image_filename"));
+				System.out.println(rs.getString("image_filename"));
 //				個数
 				p.setOrder_count(rs.getInt("order_count"));
 				prduct.add(p);
