@@ -2,7 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <style>
 /* レビューフォームのスタイル */
 .review-form {
@@ -91,7 +90,9 @@ align-items: center;
 	padding-right: 10px;
 }
 a{
-	content: none;
+	color:inherit;
+	text-decoration:none;
+	color: black;
 }
 </style>
 
@@ -107,6 +108,7 @@ a{
                     <div class="review">
                         <div class="border-radius">コメ</div>
                         <p class="ptagu">${review.reviewbody}</p>
+                        <a href="message.jsp?id = ${user_id }">返信</a>
                          <a href="#">編集</a>
                          <a href="Reviewdel.action?review_id=${review.review_id }">削除</a>
                     </div>

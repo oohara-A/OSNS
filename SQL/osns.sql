@@ -192,7 +192,6 @@ flag TINYINT(1) NOT NULL DEFAULT 0
 
 CREATE TABLE email (
 email_id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-review_id int(1000000) not null,
 sender int(10000000) not null,
 FOREIGN KEY(sender) REFERENCES user(id),
 recipient int(10000000) not null,
