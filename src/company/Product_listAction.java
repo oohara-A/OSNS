@@ -8,8 +8,9 @@ import javax.servlet.http.HttpSession;
 
 import bean.Product;
 import dao.CompanyDAO;
+import tool.Action;
 
-public class Product_listAction {
+public class Product_listAction extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {

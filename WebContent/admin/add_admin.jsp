@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ include file="../menu.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="../menu.jsp"%>
 
 <form action="processProductRegistration.jsp" method="post">
 
@@ -10,16 +11,16 @@
 	<h2 class="admin_title">管理者を追加</h2>
 
 	<div class="contact_us">
-      <p class="add">お名前</p>
-      <input type="text" name="admin_name">
-    </div>
+		<p class="add">お名前</p>
+		<input type="text" name="admin_name">
+	</div>
 
-    <div class="admin_email">
-      <p class="add">メールアドレス</p>
-      <input type="email" name="admin_email">
-    </div>
+	<div class="admin_email">
+		<p class="add">メールアドレス</p>
+		<input type="email" name="admin_email">
+	</div>
 
-    <div class="admin_password">
+	<div class="admin_password">
 		<p class="add">パスワード</p>
 		<input type="password" name="admin_password">
 	</div>
@@ -35,4 +36,4 @@
 
 </form>
 
-<%@ include file="../footer.jsp" %>
+<%@ include file="../footer.jsp"%>

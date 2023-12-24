@@ -10,7 +10,7 @@ private int	company_id;
 //ユーザID
 private int	user_id;
 //クーポンID
-private int	coupon_id;
+private String	coupon_id;
 //購入金額
 private int	purchase_price;
 //電話番号
@@ -90,13 +90,13 @@ public void setUser_id(int user_id) {
 /**
  * @return coupon_id
  */
-public int getCoupon_id() {
+public String getCoupon_id() {
 	return coupon_id;
 }
 /**
  * @param coupon_id セットする coupon_id
  */
-public void setCoupon_id(int coupon_id) {
+public void setCoupon_id(String coupon_id) {
 	this.coupon_id = coupon_id;
 }
 /**

@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
+import bean.Address;
 import bean.User;
 //ログイン操作など
 public class UserDAO extends DAO {
@@ -31,21 +34,23 @@ public class UserDAO extends DAO {
 			while (rs.next()) {
 				user=new User();
 				user.setId(rs.getInt("id"));
-				user.setPassword(rs.getString("user_name"));
+				user.setUser_name(rs.getString("user_name"));
 				user.setPassword(rs.getString("password"));
+				user.setEmail("email");
 				user_id = rs.getInt("id");
 			}
 
-
-//			履歴にID登録
-			//ログイン履歴
-			st=con.prepareStatement(
-					"insert into login_history(user_id,login_date) values(?,?)");
-			//？に代入
-			st.setInt(1, user_id);
-			st.setDate(2, login_date);
-			//SQL文実行
-			st.executeUpdate();
+			if(user_id != 0){
+	//			履歴にID登録
+				//ログイン履歴
+				st=con.prepareStatement(
+						"insert into login_history(user_id,login_date) values(?,?)");
+				//？に代入
+				st.setInt(1, user_id);
+				st.setDate(2, login_date);
+				//SQL文実行
+				st.executeUpdate();
+			}
 			//データベース接続切断
 			st.close();
 			con.close();
@@ -106,7 +111,7 @@ public class UserDAO extends DAO {
 		Connection con=getConnection();
 //削除フラグをtureにする
 		PreparedStatement st=con.prepareStatement(
-				"update user set flag = ? deleting_time = ?,where id = ?");
+				"update user set flag = ?,deleting_time = ?where id = ?");
 //		削除フラグをtureにする
 		st.setBoolean(1, flag);
 		st.setDate(2, adding_time);
@@ -114,16 +119,6 @@ public class UserDAO extends DAO {
 		st.executeUpdate();
 		st.close();
 		con.close();
-	Connection con2=getConnection();
-//	削除日時を追加
-	PreparedStatement st2=con.prepareStatement(
-				"insert into user(deleting_time) values(?) where id = ?");
-
-		st2.setDate(1, adding_time);
-		st2.setInt(2, id);
-		st2.executeUpdate();
-		st2.close();
-		con2.close();
 		return true;
 	}
 
@@ -131,27 +126,61 @@ public class UserDAO extends DAO {
 // プロフィール編集時使用
 public boolean pro_update(int id,String user_name, String emali, String phone_number,String password, Date update_time) throws Exception{
 	Connection con=getConnection();
+//	ユーザー名変更
+	if(user_name!=null){
+	    PreparedStatement st=con.prepareStatement(
+				"update user set  user_name = ? where id = ?");
+		    st.setString(1, user_name);
+		    st.setInt(2, id);
+		    st.executeUpdate();
+			st.close();
+			con.close();
+	}
+	if(emali!=null){
+	    PreparedStatement st=con.prepareStatement(
+				"update user set  email = ? where id = ?");
+		    st.setString(1, emali);
+		    st.setInt(2, id);
+		    st.executeUpdate();
+			st.close();
+			con.close();
+	}
+	if(phone_number!=null){
+	    PreparedStatement st=con.prepareStatement(
+				"update user set  phone_number = ? where id = ?");
+		    st.setString(1, phone_number);
+		    st.setInt(2, id);
+		    st.executeUpdate();
+			st.close();
+			con.close();
+	}
+	if(password!=null){
+	    PreparedStatement st=con.prepareStatement(
+				"update user set  password = ? where id = ?");
+		    st.setString(1, password);
+		    st.setInt(2, id);
+		    st.executeUpdate();
+			st.close();
+			con.close();
+	}
 //   プロフィール編集処理
-    PreparedStatement st=con.prepareStatement(
-			"update user set id = ?, user_name = ?, emali = ?, password = ?,update_time = ?,where id = ?");
 //    ユーザID
-    st.setInt(1, id);
-    st.setString(2, user_name);
-    st.setString(3, emali);
-    st.setString(4,password);
-    st.setDate(5, update_time);
-    st.executeUpdate();
-	st.close();
-	con.close();
+//
+//    st.setString(3, emali);
+//    st.setString(4,password);
+//    st.setDate(5, update_time);
+//    st.executeUpdate();
+//	st.close();
+//	con.close();
 //電話番号アップデート
-	Connection con2=getConnection();
-	PreparedStatement st2 = con.prepareStatement(
-		    "UPDATE address INNER JOIN user ON address.user_id = user.id SET address.phone_number = ? WHERE user.user_id = ?");
-	st2.setString(1, phone_number);
-	st2.setInt(2, id);
-	st2.executeUpdate();
-	st2.close();
-	con2.close();
+//	Connection con2=getConnection();
+//	PreparedStatement st2 = con.prepareStatement(
+//		    "UPDATE address INNER JOIN user ON address.user_id = user.id SET address.phone_number = ? WHERE user.user_id = ?");
+//	st2.setString(1, phone_number);
+//	st2.setInt(2, id);
+//	st2.executeUpdate();
+//	st2.close();
+//	con2.close();
 
 	return true;
 }
@@ -168,5 +197,32 @@ public boolean favorite_insert(int id, int product_id)throws Exception{
 	return true;
 
 }
+//住所追加
+public List<Address> AddressAdd(int id, String prefecture)throws Exception{
+	Connection con = getConnection();
+	List<Address> add=new ArrayList<>();
+	PreparedStatement st;
 
+	 st = con.prepareStatement("insert into address (user_id,address) values(?, ?)");
+		st.setInt(1, id);
+		st.setString(2, prefecture);
+		st.executeUpdate();
+
+		st =con.prepareStatement("select * from address where user_id = ?");
+		st.setInt(1, id);
+		//SQL文実行
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Address address=new Address();
+			address.setUser_id(rs.getInt("user_id"));
+			address.setAddress(rs.getString("address"));
+			add.add(address);
+		}
+		st.close();
+		con.close();
+	return add;
+
+
+
+}
 }

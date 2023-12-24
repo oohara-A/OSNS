@@ -1,6 +1,6 @@
 package bean;
 //商品画像クラス
-public class Pro_image implements java.io.Serializable  {
+public class Pro_image extends Product implements java.io.Serializable  {
 //	商品画像Id
 	private int pripro_image_id;
 //	商品ID

@@ -2,11 +2,13 @@ package user;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.Product;
 import bean.User;
 import dao.EmaileDAO;
 import tool.Action;
@@ -17,13 +19,25 @@ public class MessgsendAction extends Action {
 		HttpSession session=request.getSession();
 		@SuppressWarnings("unchecked")
 		User user =(User) session.getAttribute("user");
+		List<Product> pro = (List<Product>) session.getAttribute("product_detail");
+		if(user==null){
+			return "login_error.jsp";
+		}
+//		商品名取得
+			String pro_name ="";
+		for(Product p:pro){
+			 pro_name = p.getProduct_name()+"について";
+			break;
+		}
+
+
 //		ユーザーID取得
 		int user_id = 0;
 		user_id = user.getId();
 //  	相手のユーザID取得
-		int id = Integer.parseInt(request.getParameter("id"));
+		int id = Integer.parseInt(request.getParameter("user_id"));
 //		メッセージ本文
-		String body = request.getParameter("review_input");
+		String body = request.getParameter("reply");
 //		メッセージ返信日時日時
 		Date date = new Date();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -33,12 +47,13 @@ public class MessgsendAction extends Action {
 		String status = "送信済み";
 //		送信処理
 		EmaileDAO dao = new EmaileDAO();
-		boolean flag = dao.emaile_send(user_id, id, body, send_date);
+		boolean flag = dao.emaile_send(user_id, id, pro_name,body, status,send_date);
 		if(flag== true){
 			return "message.jsp";
 		}
 //エラー処理
-		return "user_login_error.jsp";
-	}
+		return "login_error.jsp";
 
+	}
 }
+
