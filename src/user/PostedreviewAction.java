@@ -26,6 +26,10 @@ public class PostedreviewAction extends Action {
 		HttpSession session=request.getSession();
 		@SuppressWarnings("unchecked")
 		User user =(User) session.getAttribute("user");
+		if(user==null){
+			String messege = "ログインしてください";
+			return "user_login.jsp";
+		}
 		List<Product> pro =(List<Product>) session.getAttribute("product_detail");
 //		ユーザーID取得
 		int user_id = 0;
@@ -95,7 +99,9 @@ public class PostedreviewAction extends Action {
 
 		ReviewDAO dao = new ReviewDAO();
 		boolean flag = dao.Postedreview(user_id, pro_id, body, rating, submissiondate,filename2,filename5);
+		List<Review> reviews = dao.select(pro_id);
 
+		session.setAttribute("user_review", reviews);
 //レビューページに遷移
 		return "product_detail.jsp";
 	}
