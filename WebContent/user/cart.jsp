@@ -2,7 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="../menu.jsp"%>
-
+<c:choose>
+<c:when test="${cart != null }">
 	<div class="cart-container">
 		<h2>マイカート</h2>
 		<%-- <%@include file="cart_main.jsp"%> --%>
@@ -42,8 +43,7 @@
 		<!-- Repeat this block for each item in the cart -->
 		</tbody>
 		</c:forEach >
-
-</table>
+	</table>
 	<div class="cart-summary">
 		<p >
 			カート内数量: <span id="total-items">0</span>
@@ -54,6 +54,14 @@
 	</div>
 		<button onclick="location.href='cash_register.jsp'">レジに進む</button>
 	</div>
+	</c:when>
+	<c:otherwise>
+		<div class="cart-container">
+			<h2>マイカート</h2>
+			<p>カートに商品がありません</p>
+		</div>
+	</c:otherwise>
+	</c:choose>
 	<hr>
 	<p>おすすめ商品</p>
 	<div class="detail_img">
