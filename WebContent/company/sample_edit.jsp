@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../menu.jsp"%>
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ include file="../com_header.jsp" %>
+
+    <div class="menu-container">
+        <%@ include file="../com_menu.jsp" %>
+    </div>
+>>>>>>> 69dea079de001152180afc907db1978b275e73a6
 
 <form action="processProductRegistration.jsp" method="post">
 

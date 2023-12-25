@@ -26,8 +26,13 @@
 	</div>
 
 	<div class="release_signup">
+<<<<<<< HEAD
 		<input class="release" type="submit" value="登録を解除する">
 	</div>
+=======
+        <input class="release" type="submit" name="deregistration" value="登録を解除する" >
+    </div>
+>>>>>>> 69dea079de001152180afc907db1978b275e73a6
 
 </div>
 

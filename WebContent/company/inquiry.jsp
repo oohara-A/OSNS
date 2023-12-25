@@ -1,10 +1,22 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../menu.jsp"%>
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ include file="../com_header.jsp" %>
+>>>>>>> 69dea079de001152180afc907db1978b275e73a6
 
+    <div class="menu-container">
+        <%@ include file="../com_menu.jsp" %>
+    </div>
 <form action="registered.jsp" method="post">
 
+<<<<<<< HEAD
 	<h2 class="com_title">企業用お問い合わせ</h2>
+=======
+    <h2 class="inquiry_title">企業用お問い合わせ</h2>
+>>>>>>> 69dea079de001152180afc907db1978b275e73a6
 
 	<div class="contact_us">
 		<p class="inquiry">お名前</p>
@@ -57,4 +69,8 @@
 
 </form>
 
+<<<<<<< HEAD
 <%@include file="../footer.jsp"%>
+=======
+<%@ include file="../com_footer.jsp" %>
+>>>>>>> 69dea079de001152180afc907db1978b275e73a6

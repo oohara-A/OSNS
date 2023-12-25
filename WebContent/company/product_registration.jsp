@@ -1,8 +1,19 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../menu.jsp"%>
 
 <form action="Product_registration.action" method="post" enctype="multipart/form-data">
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ include file="../com_header.jsp" %>
+
+    <div class="menu-container">
+        <%@ include file="../com_menu.jsp" %>
+    </div>
+
+<form action="Product_registrationAction.java" method="post">
+>>>>>>> 69dea079de001152180afc907db1978b275e73a6
 
 	<h2 class="product_title">商品登録</h2>
 
@@ -52,6 +63,7 @@
     <div class="product_submit">
         <input type="submit" value="登録完了">
     </div>
+<<<<<<< HEAD
 </form>
 
 	<div class="sample_info">
@@ -61,3 +73,15 @@
 
 
 <%@ include file="../footer.jsp"%>
+=======
+
+    <div class="sample_info">
+        <a href="sample_registration.jsp">試供品登録はこちら</a>
+    </div>
+
+	</form>
+
+
+
+<%@ include file="../com_footer.jsp" %>
+>>>>>>> 69dea079de001152180afc907db1978b275e73a6
