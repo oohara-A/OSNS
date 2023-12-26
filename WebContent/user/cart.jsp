@@ -27,7 +27,7 @@
 					</a>
 				</td>
 
-				<td >￥:${cart.unit_price } ${cart.file_name}</td>
+				<td >￥:${cart.unit_price }</td>
 
 				<td><input id="number" type="number" size="auto" value="${cart.order_count}"></td>
 				<td>￥:${cart.order_count * cart.unit_price}</td>

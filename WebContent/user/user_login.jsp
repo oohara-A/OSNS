@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="../menu.jsp"%>
-
 <c:choose>
 	<c:when test="${user!=null}">
 		<form action="Userlogout.action">
@@ -13,6 +12,7 @@
 	</c:when>
 	<c:otherwise>
 		<div class="inq_sending">
+
 			<form action="Login.action" method="post">
 				<h2 class="com_title">ログイン</h2>
 				<div class="log">
@@ -32,6 +32,7 @@
 					<input class="sending" type="submit" value="ログイン">
 				</div>
 			</form>
+
 		</div>
 	</c:otherwise>
 </c:choose>

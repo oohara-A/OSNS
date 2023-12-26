@@ -24,7 +24,7 @@
 			<!--カートのページ  --> <a href="cart.jsp">カート</a>
 		</li>
 		<li class="menu-item">
-			<!--通知  --> <a href="#">🔔</a>
+			<!--通知  --> <a href="Messagviewg.action">🔔</a>
 		</li>
 	</ul>
 </nav>

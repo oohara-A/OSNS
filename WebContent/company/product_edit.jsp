@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../menu.jsp"%>
-=======
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../com_header.jsp" %>
->>>>>>> 69dea079de001152180afc907db1978b275e73a6
-
     <div class="menu-container">
         <%@ include file="../com_menu.jsp" %>
     </div>
@@ -20,7 +15,6 @@
 
 	<div class="item_entry">
 
-<<<<<<< HEAD
 		<div class="product_info">
 			<label for="productName">商品名:</label> <input type="text"
 				id="productName" name="productName" required>
@@ -61,7 +55,6 @@
 			<textarea id="productDescription" name="productDescription" rows="4"
 				required></textarea>
 		</div>
-=======
 	    <div class="product_info">
 	        <label for="productName">商品名:</label>
 	        <input type="text" id="productName" name="pro_input" required>
@@ -100,15 +93,12 @@
         	<label for="productDescription">商品コメント:</label>
         	<textarea id="productDescription" name="pro_coment" rows="4" required></textarea>
     	</div>
->>>>>>> 69dea079de001152180afc907db1978b275e73a6
 
 	</div>
 
 	<div class="product_submit">
 		<input type="submit" value="編集完了">
 	</div>
-
-<<<<<<< HEAD
 	<div class="sample_info">
 		<a href="sample_registration.jsp">試供品編集はこちら</a>
 	</div>
@@ -116,12 +106,3 @@
 </form>
 
 <%@ include file="../footer.jsp"%>
-=======
-    <div class="sample_info">
-        <a href="../sample_registration.jsp">試供品編集はこちら</a>
-    </div>
-
-</form>
-
-<%@ include file="../com_footer.jsp" %>
->>>>>>> 69dea079de001152180afc907db1978b275e73a6

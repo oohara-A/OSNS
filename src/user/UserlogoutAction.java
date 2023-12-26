@@ -16,6 +16,7 @@ public class UserlogoutAction extends Action {
 		session.removeAttribute("Address");
 		session.removeAttribute("cart");
 		session.removeAttribute("user_review");
+		session.removeAttribute("send_email");
 		// フォワード先を指定
 		return "index.jsp";
 	}

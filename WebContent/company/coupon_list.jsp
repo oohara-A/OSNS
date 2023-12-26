@@ -12,10 +12,6 @@ ArrayList<String> couponList = (ArrayList<String>)session.getAttribute("coupon_l
 %>
 
 <form action="company_top.jsp" method="post">
-
->>>>>>> 69dea079de001152180afc907db1978b275e73a6
-
-
 	<div class="coupon-list">
 		<h2>クーポン一覧</h2>
 
@@ -28,8 +24,6 @@ ArrayList<String> couponList = (ArrayList<String>)session.getAttribute("coupon_l
 					<th>割引率</th>
 				</tr>
 			</thead>
-
-<<<<<<< HEAD
 			<tbody>
 				<tr>
 					<td></td>
@@ -40,7 +34,6 @@ ArrayList<String> couponList = (ArrayList<String>)session.getAttribute("coupon_l
 			</tbody>
 		</table>
 	</div>
-=======
         <tbody>
         	<c:forEach var="item" items="${couponList}">
 
@@ -54,7 +47,6 @@ ArrayList<String> couponList = (ArrayList<String>)session.getAttribute("coupon_l
         </tbody>
     </table>
 </div>
->>>>>>> 69dea079de001152180afc907db1978b275e73a6
 
 </form>
 

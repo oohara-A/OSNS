@@ -25,8 +25,11 @@ public class EmaileDAO extends DAO {
 			Email p=new Email();
 			p.setEmail_id(rs.getInt("email_id"));
 			p.setSender(rs.getInt("sender"));
+			p.setRecipient(rs.getInt("recipient"));
 			p.setSubject(rs.getString("subject"));
 			p.setBody(rs.getString("body"));
+			p.setStatus(rs.getString("status"));
+			p.setSending_time(rs.getDate("sending_time"));
 			user_maile.add(p);
 			}
 		st.close();
@@ -80,9 +83,9 @@ public class EmaileDAO extends DAO {
 //	メッセージ削除
 	public boolean emaile_del(int email_id, int user_id)throws Exception{
 		Connection con=getConnection();
-		byte flag = 1;
+		int flag = 1;
 		PreparedStatement st=con.prepareStatement(
-				"update email set flag = ?,where email_id = ? and sender = ?");
+				"update email set flag = ? where email_id = ? and sender = ?");
 		st.setInt(1, flag);
 		st.setInt(2, email_id);
 		st.setInt(3, user_id);
