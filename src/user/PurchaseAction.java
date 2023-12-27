@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.Product_cart;
+import bean.Purchase_history;
 import bean.User;
 import dao.PurchaseDAO;
 import tool.Action;
@@ -24,13 +25,18 @@ public class PurchaseAction extends Action {
 		HttpSession session=request.getSession();
 		//カートの情報を取得
 		List<Product_cart> cart=(List<Product_cart>)session.getAttribute("cart");
+		List<Purchase_history> purc_his = new ArrayList<>();
 //		商品Id取得
 		ArrayList<Integer> pro_id  = new ArrayList<>();
+		ArrayList<Integer> pro_count = new ArrayList<>();
 		int pid = 0;
+		int pro_c = 0;
 		for(Product_cart i : cart){
 			pid = i.getId();
+			pro_c = i.getOrder_count();
 			System.out.print(pid);
 			pro_id.add(pid);
+			pro_count.add(pro_c);
 		}
 //		企業Id取得
 		ArrayList<Integer> cart_id = new ArrayList<>();
@@ -76,8 +82,11 @@ public class PurchaseAction extends Action {
 
 //購入処理
 		PurchaseDAO dao2 = new PurchaseDAO();
-		dao2.insert(comp_id, user_id, coupon_code, purchase_date,pro_id,addre,cart_id);
+		dao2.insert(comp_id, user_id, coupon_code, purchase_date,pro_id,addre,cart_id,pro_count);
+//		購入履歴を持ってくる
+		purc_his = dao2.selectPurchase(user_id);
 		session.removeAttribute("cart");
+		session.setAttribute("purc_his", purc_his);
 //		購入完了画面
 		return "fin_cash.jsp";
 	}

@@ -11,7 +11,7 @@ import bean.Purchase_history;
 
 //購入処理
 public class PurchaseDAO extends DAO {
-	public boolean insert(ArrayList<Integer> comp_id,int user_id,String coupon_code,Date purchase_time,ArrayList<Integer> pro_id, String addre, ArrayList<Integer> cart_id)
+	public boolean insert(ArrayList<Integer> comp_id,int user_id,String coupon_code,Date purchase_time,ArrayList<Integer> pro_id, String addre, ArrayList<Integer> cart_id, ArrayList<Integer> pro_count)
 			throws Exception {
 		Connection con=getConnection();
 		System.out.println("purchaseDao");
@@ -21,8 +21,8 @@ public class PurchaseDAO extends DAO {
 		pronum = pro_id.size();
 
 			 st=con.prepareStatement(
-					"insert into purchase_history(product_id,company_id,user_id,COUPON_ID,purchase_time,purchase_price,paymentmethod,deladdress) "
-					+ "values(?,?,?,?,?,?,?,?)");
+					"insert into purchase_history(product_id,company_id,user_id,COUPON_ID,purchase_time,purchase_price,paymentmethod,deladdress,count) "
+					+ "values(?,?,?,?,?,?,?,?,?)");
 			 for(int i = 0; i < pronum; i++ ){
 				 System.out.println(pro_id.get(i));
 				 st.setInt(1, pro_id.get(i));
@@ -33,6 +33,7 @@ public class PurchaseDAO extends DAO {
 				 st.setInt(6, 1000);
 				 st.setString(7, "購入");
 				 st.setString(8, addre);
+				 st.setInt(9, pro_count.get(i));
 				 int line=st.executeUpdate();
 			 	}
 			 int cart_Id = 0;
@@ -55,16 +56,18 @@ public class PurchaseDAO extends DAO {
 
 //	購入履歴の情報を持ってくる
 public List<Purchase_history> selectPurchase(int user_id)throws Exception{
-	List<Purchase_history> purchase_his = (List<Purchase_history>) new Purchase_history();
+	List<Purchase_history> purchase_his =  new ArrayList<>();
 	Connection con=getConnection();
 	//商品情報を持ってくる
 	PreparedStatement st=con.prepareStatement(
-		"select * from purchase_history where user_id = ? ");
+		"select * from purchase_history inner join product on purchase_history.product_id = product.id inner join pro_image on pro_image.product_id = product.id  where user_id = ? and CANCEL_FLAG = 0 ");
+		st.setInt(1, user_id);
 	ResultSet rs=st.executeQuery();
 	while (rs.next()) {
 		Purchase_history p=new Purchase_history();
 		p.setId(rs.getInt("id"));
 		p.setUser_id(rs.getInt("product_id"));
+		p.setProduct_name(rs.getString("product_name"));
 		p.setCompany_id(rs.getInt("company_id"));
 		p.setCoupon_id(rs.getString("coupon_id"));
 		p.setPurchase_time(rs.getDate("purchase_time"));
@@ -72,6 +75,8 @@ public List<Purchase_history> selectPurchase(int user_id)throws Exception{
 		p.setPaymentmethod(rs.getString("paymentmethod"));
 		p.setDeladdress(rs.getString("deladdress"));
 		p.setPhone_number(rs.getString("phone_number"));
+		p.setCount(rs.getInt("count"));
+		p.setImage_filename(rs.getString("image_filename"));
 		purchase_his.add(p);
 	}
 	st.close();
@@ -114,10 +119,10 @@ public Purchase_history selctProPurchase(int product_id)throws Exception{
 
 //購入キャンセル時に使用
 public boolean updatePurchase(int log_number ,Date cancel_time) throws Exception {
-	boolean flag = true;
+	int flag = 1;
 	Connection con=getConnection();
-	PreparedStatement st = con.prepareStatement("update purchase_history set flag = ? cancel_time = ?,where id = ?");
-	st.setBoolean(1, flag);
+	PreparedStatement st = con.prepareStatement("update purchase_history set CANCEL_FLAG = ?, cancel_time = ? where id = ?");
+	st.setInt(1, flag);
 //	キャンセル日時
 	st.setDate(2, cancel_time);
 //	注文履歴id

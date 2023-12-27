@@ -10,7 +10,7 @@
 
 	<div class="error_message">
 
-		<p style="color: red;">削除または変更する際はログインしてください！</p>
+		<p style="color: red;">ログインをしてください！</p>
 
 	</div>
 

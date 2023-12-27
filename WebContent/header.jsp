@@ -26,7 +26,7 @@
 			<li class="head"><a href="../user/index.jsp">OharaSampleNetShop</a></li>
 			<li class="head"><a href="../user/account.jsp">アカウント</a></li>
 			<li class="head"><a href="user_login.jsp">ログイン</a></li>
-			<li class="head"><a href="#">注文履歴</a></li>
+			<li class="head"><a href="order_history.jsp">注文履歴</a></li>
 		</ul>
 	</nav>
 </header>
