@@ -1,7 +1,26 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="bean.Review"%>
+<%@page import="java.util.List"%>
 <%@page import="bean.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+//セッションの情報を取得
+ List<Review> re =new ArrayList<>();
+	re = (List<Review> )session.getAttribute("review_edit");
+	int edit_user = 0;
+	String body ="";
+	int review_id = 0;
+	for(Review r: re){
+		review_id = r.getReview_id();
+		edit_user = r.getUser_id();
+		body = r.getReviewbody();
+		break;
+	}
+%>
+
+
 <style>
 /* レビューフォームのスタイル */
 .review-form {
@@ -55,7 +74,7 @@
 .box2:before {
     top: 100%;
     border: 9px solid;
-    border-color: transparent;
+
     border-top-color: #333;
     margin-left: -9px;
 }
@@ -109,7 +128,7 @@ a{
                         <div class="border-radius">コメ</div>
                         <p class="ptagu">${review.reviewbody}</p>
                         <a href="message.jsp?id = ${user_id }">返信</a>
-                         <a href="Reviewout.action?edit_id=${review.user_id}">編集</a>
+                         <a href="Reviewedit.action?id = ${review.user_id}">編集</a>
                          <a href="Reviewdel.action?review_id=${review.review_id }">削除</a>
                     </div>
         </c:forEach>
@@ -120,21 +139,23 @@ a{
 </c:choose>
 <!-- レビュー＆リプライ投稿フォーム -->
 		<div>
-			<form action="Postedreview.action" id="productReviewForm"
-				onsubmit="submitProductReview(); return false;" class="review-form">
+			<form action="Reviewedit.action" id="productReviewForm" onsubmit="submitProductReview(); return false;" class="review-form">
 				<h4>商品レビューを投稿</h4>
+				<input type="hidden" name = "review_id" value="<%=review_id%>">
+				<input type="hidden" name="id" value="<%=edit_user%>">
 				<textarea name="reviews" id="productReviewContent" rows="4" cols="50"
-					placeholder="あなたの商品レビューを入力してください" required></textarea>
+					placeholder="あなたの商品レビューを入力してください" required><%=body %></textarea>
 				<br> <label for="rating">評価:</label> <select name="ratings" id="rating" required>
 					<option value=1>☆</option>
 					<option value=2>☆☆</option>
 					<option value=3>☆☆☆</option>
 					<option value=4>☆☆☆☆</option>
 					<option value=5>☆☆☆☆☆</option>
-				</select> <br> <input type="submit" value="投稿">
+				</select> <br> <input type="submit" value="編集確定">
 			</form>
 			</div>
 	</div>
+
 
 <script>
         var productReviews = []; // 商品レビューとチャットの管理用オブジェクト

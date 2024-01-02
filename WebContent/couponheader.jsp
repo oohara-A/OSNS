@@ -10,8 +10,9 @@
 	content="sampie text sampie textsampie textsampie textsampie textsampie textsampie textsampie textsampie text">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
 	rel="stylesheet">
-<link rel="stylesheet"
-	href="<%=request.getContextPath() %>/assets/css/book.css">
+	<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/style_copon.css">
+<%-- <link rel="stylesheet"
+	href="<%=request.getContextPath() %>/assets/css/book.css"> --%>
 <link rel="stylesheet"
 	href="<%=request.getContextPath() %>/assets/css/botton.css">
 <link rel="stylesheet"

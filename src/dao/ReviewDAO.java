@@ -46,6 +46,38 @@ public class ReviewDAO extends DAO{
 		return review ;
 	}
 
+	public List<Review> select_userrev(int user_id,int pro_id) throws Exception{
+		List<Review> review= new ArrayList<>();
+		Review_image re_image = new Review_image();
+		Review_video re_video = new Review_video();
+		//データベース接続
+		Connection con=getConnection();
+		PreparedStatement st;
+		//SQL文レビュー情報を持ってくる とりあえずレビューテーブルからだけ（後でimageも取り出せるようにする）
+		st=con.prepareStatement(
+			"select * from review where user_id = ? and product_id = ?  and flag = 0" );
+		st.setInt(1, user_id);
+		st.setInt(2, pro_id);
+		//SQL文実行
+		ResultSet rs=st.executeQuery();
+//データベースからレビュー情報を取得
+		while (rs.next()) {
+			Review r = new Review();
+			r.setReview_id(rs.getInt("review_id"));
+			r.setUser_id(rs.getInt("user_id"));
+			r.setProduct_id(rs.getInt("product_id"));
+			r.setRating(rs.getInt("rating"));
+			r.setReviewbody(rs.getString("reviewbody"));
+			review.add(r);
+
+		}
+		//データベース接続切断
+		st.close();
+		con.close();
+//レビュー情報
+		return review ;
+	}
+
 
 //レビュー投稿処理
 	public boolean Postedreview(int user_id ,int pro_id, String body,int rating,Date submissiondate, String image, String video_url) throws Exception{
