@@ -149,7 +149,7 @@ product_id int(1000000) not null,
 FOREIGN KEY (product_id) REFERENCES product(id),
 effect int(100)	not null,
 coupon_name varchar(100) not null,
-image varchar(100) not null,
+image varchar(100),
 coupon_code varchar(100) not null,
 flag TINYINT(1) NOT NULL DEFAULT 0
 );
@@ -187,7 +187,8 @@ flag TINYINT(1) NOT NULL DEFAULT 0
 CREATE TABLE review_image (
 id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
 review_id int(1000000) not null,
-image_filename varchar(100) not null,
+FOREIGN KEY (review_id) REFERENCES review(review_id),
+image_filename varchar(100) ,
 flag TINYINT(1) NOT NULL DEFAULT 0
 );
 

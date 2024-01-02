@@ -1,6 +1,5 @@
 @charset "utf-8";
-
-/* -----header css ここから----- */
+* -----header css ここから----- */
 .header {
   width: 100%;
   display: fixed;

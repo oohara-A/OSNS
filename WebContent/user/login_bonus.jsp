@@ -6,6 +6,7 @@
 
         body {
             margin: 0;
+             background:radial-gradient(#ed384d, #ad4483);
         }
 
         p {
@@ -19,13 +20,15 @@
         .item {
             width: 80px;
             height: 80px;
-            background: #4169e1;
+            background:radial-gradient(#ed384d, #ad4483);
             margin: 20px;
         }
 
 
         .rever {
             position: absolute;
+            background: transparent;
+            border: none;
             left: 157px;
             /* transform: translateX(-343px); */
             top: 545px;
@@ -34,7 +37,7 @@
     </style>
      <div id="editor-drag-cover" class="drag-cover"></div>
       <div class="text">
-                <p>クーポン獲得！！</p>
+                <p>ログインボーナス！！</p>
                 <p>
                     <span class="word belize">レバーをクリックしてね</span>
                     <span class="word pomegranate">クリックで抽選</span> <span class="word green">開始！！！</span>
@@ -43,8 +46,9 @@
     <div id="particles-js">
 
             <div class='gacha-body'>
-                <img src="https://lallapallooza.jp/wp-content/uploads/2020/07/gacha.png" >
-                <img onClick="Rotation();" class="rever rotate" src="../assets/image/gacha-rever.png">
+
+                <img src="https://lallapallooza.jp/wp-content/uploads/2020/07/gacha.png">
+                 <button type="submit" class="rever rotate"><img onClick="Rotation();"  src="../assets/image/gacha-rever.png"></button>
             </div>
             <div id="editor-drag-cover" class="drag-cover"></div>
         </div>
@@ -66,6 +70,14 @@
                         iterations: 1.5
                     }
                 );
+                setTimeout(() => {
+                    /* window.location.href = "http://localhost:8080/osns/user/boll_down.jsp"; */
+                     location.href = "boll_down.jsp";
+                	/* window.location.href = "boll_down.jsp"; */
+                }, 2100);
+
+
+
             }
 
             var words = document.getElementsByClassName('word');
@@ -124,3 +136,4 @@
             setInterval(changeWord, 4000);
 
         </script>
+<%@include file="../couponfooter.jsp"%>

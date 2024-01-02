@@ -1,19 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../couponmenu.jsp"%>
+<style>
+body{
+	 background:radial-gradient(#ed384d, #ad4483);
+}
+</style>
 <div class="text">
 	<p>クーポン獲得！！</p>
 	<p>
-		<span class="word wisteria">おめでとう！.</span> <span class="word belize">ボタンをクリックしてね</span>
-		<span class="word pomegranate">クリックで抽選</span> <span class="word green">開始！！！</span>
+		<span class="word wisteria">おめでとう！.</span> <span class="word belize">クーポン一覧で</span>
+		<span class="word pomegranate">クーポンコードを</span> <span class="word green">確認してね</span>
 		<!-- <span class="word midnight">cheap.</span> -->
 	</p>
 </div>
 
-<a href="#" class="border_btn08"><span class=>クリックでクーポン獲得！！！</span></a>
+<a href="index.jsp" class="border_btn08"><span class=>トップに戻る</span></a>
 <div id="particles-js"></div>
 <!-- Please heart it if you like! -->
-<div id="book">
+<!-- <div id="book">
 	<div id="top"></div>
 	<div id="front"></div>
 	<div id="right"></div>
@@ -76,7 +81,7 @@
 	</div>
 </div>
 
-
+ -->
 <div id="editor-drag-cover" class="drag-cover"></div>
 
 
@@ -142,3 +147,4 @@ changeWord();
 setInterval(changeWord, 4000);
 
 </script>
+<%@include file="../couponfooter.jsp"%>

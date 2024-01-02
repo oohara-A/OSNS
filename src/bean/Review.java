@@ -25,7 +25,20 @@ private Date deleting_time;
 //削除フラグ
 private int	 flag;
 
-private Review_image revi_image;
+private String review_image;
+
+/**
+ * @return review_image
+ */
+public String getReview_image() {
+	return review_image;
+}
+/**
+ * @param review_image セットする review_image
+ */
+public void setReview_image(String review_image) {
+	this.review_image = review_image;
+}
 
 private Review_video revi_video;
 
@@ -41,18 +54,6 @@ public Part getPart() {
  */
 public void setPart(Part part) {
 	this.part = part;
-}
-/**
- * @return revi_image
- */
-public Review_image getRevi_image() {
-	return revi_image;
-}
-/**
- * @param revi_image セットする revi_image
- */
-public void setRevi_image(Review_image revi_image) {
-	this.revi_image = revi_image;
 }
 /**
  * @return revi_video

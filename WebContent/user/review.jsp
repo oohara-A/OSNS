@@ -107,8 +107,11 @@ a{
         <c:forEach var="review" items="${user_review}">
                     <div class="review">
                         <div class="border-radius">コメ</div>
-                        <p class="ptagu">${review.reviewbody}</p>
-                        <a href="message.jsp?id = ${user_id }">返信</a>
+                        <p class="ptagu">${review.reviewbody}</p><br>
+                        <c:if test="${not empty review.review_image}">
+						    <p><img alt="写真" src="C:\Users\adomin\OneDrive - ooharastudent\デスクトップ\OSNS\image/${review.review_image}" width="250px" height="250px"></p>
+						</c:if>
+                        <a href="message.jsp?id = ${review.user_id }">返信</a>
                          <a href="Reviewout.action?edit_id=${review.user_id}">編集</a>
                          <a href="Reviewdel.action?review_id=${review.review_id }">削除</a>
                     </div>
@@ -119,21 +122,27 @@ a{
     </c:otherwise>
 </c:choose>
 <!-- レビュー＆リプライ投稿フォーム -->
-		<div>
-			<form action="Postedreview.action" id="productReviewForm"
-				onsubmit="submitProductReview(); return false;" class="review-form">
-				<h4>商品レビューを投稿</h4>
-				<textarea name="reviews" id="productReviewContent" rows="4" cols="50"
-					placeholder="あなたの商品レビューを入力してください" required></textarea>
-				<br> <label for="rating">評価:</label> <select name="ratings" id="rating" required>
-					<option value=1>☆</option>
-					<option value=2>☆☆</option>
-					<option value=3>☆☆☆</option>
-					<option value=4>☆☆☆☆</option>
-					<option value=5>☆☆☆☆☆</option>
-				</select> <br> <input type="submit" value="投稿">
-			</form>
-			</div>
+
+<div>
+		<h4>商品レビューを投稿</h4>
+		<form action="Postedreview.action" enctype="multipart/form-data" method="post" class="review-form">
+		    <textarea name="reviews" id="productReviewContent" rows="4" cols="50"
+		              placeholder="あなたの商品レビューを入力してください" required></textarea>
+		    <br>
+		    <h2>画像選択</h2>
+		    <input type="file" name="part"><br>
+		    <label for="rating">評価:</label>
+		    <select name="ratings" id="rating" required>
+		        <option value=1>☆</option>
+		        <option value=2>☆☆</option>
+		        <option value=3>☆☆☆</option>
+		        <option value=4>☆☆☆☆</option>
+		        <option value=5>☆☆☆☆☆</option>
+		    </select>
+		    <br>
+		    <input type="submit" value="投稿">
+		</form>
+	</div>
 	</div>
 
 <script>

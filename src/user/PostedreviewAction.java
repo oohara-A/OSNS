@@ -1,6 +1,8 @@
 package user;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import bean.Product;
 import bean.Review;
@@ -52,28 +55,33 @@ public class PostedreviewAction extends Action {
 		java.sql.Date submissiondate = java.sql.Date.valueOf(formattedDate);
 
 //		レビュー時の投稿したい画像
-//		Part part = request.getPart("part");
-
-//		String filename = rev.getFileName(part);
-//		System.out.println(filename);
-//		 String[] filenames = filename.split("\\\\"); // Windowsの場合
-//		List<String> filenames2 = new ArrayList<>();
-//
-//		for (String file : filenames) {
-//		    filenames2.add(file);
-//		}
-//
-//		int len = filenames2.size();
-//		String filename2 = filenames2.get(len - 1);
+		Part part = null;
 		String filename2 = "";
+		part = request.getPart("part");
+		String filename = rev.getFileName(part);
+		if(filename.isEmpty()){
+			filename2 = null;
+		}else{
 
-//		System.out.println(filename2);
-//
-//		 String uploadDirectory = System.getProperty("user.dir") + File.separator ;
-//		 request.getContextPath();
-//		// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
-//		part.write("C:\\\\work\\\\pleiades\\\\workspace\\\\OSNS\\\\"+"image" +"\\\\" + filename2);
-//
+			System.out.println(filename);
+			 String[] filenames = filename.split("\\\\"); // Windowsの場合
+			List<String> filenames2 = new ArrayList<>();
+
+			for (String file : filenames) {
+			    filenames2.add(file);
+			}
+
+			int len = filenames2.size();
+			filename2 = filenames2.get(len - 1);
+			System.out.println(filename2);
+			String uploadDirectory = System.getProperty("user.dir") + File.separator ;
+			 String path =request.getContextPath();
+			 System.out.println(path);
+			// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
+			part.write("C:\\\\Users\\\\adomin\\\\OneDrive - ooharastudent\\\\デスクトップ\\\\OSNS\\\\"+"image" +"\\\\" + filename2);
+		}
+
+
 
 //		レビュー時の投稿したい動画
 //		Part part2 = request.getPart("part2");

@@ -2,6 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="../menu.jsp"%>
+<style>
+
+</style>
 <div class="index">
 	<div class="image">
 		<!--%E9%A3%9F%E5%93%81は「食品」のURLエンコードされた形 この形じゃないと、エラーになる-->

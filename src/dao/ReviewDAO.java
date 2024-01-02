@@ -24,7 +24,7 @@ public class ReviewDAO extends DAO{
 		PreparedStatement st;
 		//SQL文レビュー情報を持ってくる とりあえずレビューテーブルからだけ（後でimageも取り出せるようにする）
 		st=con.prepareStatement(
-			"select * from review where product_id = ? and flag = 0" );
+			"select * from review inner join review_image on review_image.review_id = review.review_id where  review.product_id = ?  and review.flag = 0" );
 		st.setInt(1, pro_id);
 		//SQL文実行
 		ResultSet rs=st.executeQuery();
@@ -34,6 +34,8 @@ public class ReviewDAO extends DAO{
 			r.setReview_id(rs.getInt("review_id"));
 			r.setUser_id(rs.getInt("user_id"));
 			r.setProduct_id(rs.getInt("product_id"));
+			r.setReview_image(rs.getString("image_filename"));
+			System.out.println("REVIEWだお"+rs.getString("image_filename"));
 			r.setRating(rs.getInt("rating"));
 			r.setReviewbody(rs.getString("reviewbody"));
 			review.add(r);
@@ -55,7 +57,7 @@ public class ReviewDAO extends DAO{
 		PreparedStatement st;
 		//SQL文レビュー情報を持ってくる とりあえずレビューテーブルからだけ（後でimageも取り出せるようにする）
 		st=con.prepareStatement(
-			"select * from review where user_id = ? and product_id = ?  and flag = 0" );
+			"select * from review innser join review_image on review_image.review_id = review.review_id where review.user_id = ? and review.product_id = ?  and review.flag = 0" );
 		st.setInt(1, user_id);
 		st.setInt(2, pro_id);
 		//SQL文実行
@@ -66,6 +68,8 @@ public class ReviewDAO extends DAO{
 			r.setReview_id(rs.getInt("review_id"));
 			r.setUser_id(rs.getInt("user_id"));
 			r.setProduct_id(rs.getInt("product_id"));
+			r.setReview_image(rs.getString("review_image"));
+			System.out.println("REVIEWだお"+rs.getString("review_image"));
 			r.setRating(rs.getInt("rating"));
 			r.setReviewbody(rs.getString("reviewbody"));
 			review.add(r);
@@ -128,10 +132,16 @@ public class ReviewDAO extends DAO{
 	public boolean review_del(int review_id)throws Exception{
 //		データベース接続
 		Connection con = getConnection();
-		PreparedStatement st = con.prepareStatement(
+		PreparedStatement st;
+		 st = con.prepareStatement(
 				"update review set flag = ? where review_id =?"
 				);
 		st.setInt(1, 1);
+		st.setInt(2,review_id );
+		st.executeUpdate();
+		 st = con.prepareStatement(
+				"update review_image set flag = ? where review_id =?");
+		 st.setInt(1, 1);
 		st.setInt(2,review_id );
 		st.executeUpdate();
 		st.close();

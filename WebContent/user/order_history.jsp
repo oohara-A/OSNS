@@ -34,6 +34,8 @@
 }
 </style>
 <h1>注文履歴</h1>
+<c:choose>
+<c:when test="${not empty purc_his }">
 	<div class="cart-container">
 		<%-- <%@include file="cart_main.jsp"%> --%>
 		<c:forEach var="purchase" items="${purc_his}">
@@ -46,7 +48,6 @@
 
 			</tr>
 		</thead>
-
 		<tbody>
 		<!-- Sample cart item, repeat this block for each item in the cart -->
 			<tr>
@@ -55,7 +56,7 @@
 				</td>
 				<td >
 				<div class="image_pro">
-					<a href="product_detail.jsp"><img    src="../assets/proimage/${purchase.image_filename}" alt="imageなし"  width="230" height="230"></a>
+					<a href="product_detail.jsp"><img src="../assets/proimage/${purchase.image_filename}" alt="imageなし"  width="230" height="230"></a>
 					<div class="pro_inf1">
 						<h1 class="pro_nam">${purchase.product_name }</h1>
 							<p>単価:${purchase.purchase_price }円</p>
@@ -68,13 +69,17 @@
 				<td>
 					${purchase.coupon_id }
 				</td>
-
-
 			</tr>
-
 		<!-- Repeat this block for each item in the cart -->
 		</tbody>
 	</table>
 	</c:forEach >
-</div>
+	</div>
+</c:when>
+	<c:otherwise>
+		<h1>購入履歴はありません！</h1>
+	</c:otherwise>
+</c:choose>
+
+
 <%@include file="../footer.jsp"%>
