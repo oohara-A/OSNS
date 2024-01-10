@@ -78,7 +78,7 @@ public class PostedreviewAction extends Action {
 			 String path =request.getContextPath();
 			 System.out.println(path);
 			// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
-			part.write("C:\\\\Users\\\\adomin\\\\OneDrive - ooharastudent\\\\デスクトップ\\\\OSNS\\\\"+"image" +"\\\\" + filename2);
+			part.write("C:\\\\Users\\\\adomin\\\\OneDrive - ooharastudent\\\\デスクトップ\\\\OSNS\\\\WebContent\\\\assets\\\\review_image"+"\\\\" + filename2);
 		}
 
 

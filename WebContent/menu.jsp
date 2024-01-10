@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../header.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <nav class="menu">
 	<ul class="menu-list">
@@ -24,7 +25,7 @@
 			<!--カートのページ  --> <a href="cart.jsp">カート</a>
 		</li>
 		<li class="menu-item">
-			<!--通知  --> <a href="Messagviewg.action">🔔</a>
+			<!--通知  --> <a href="Messagviewg.action?id=<%=user_id %>">🔔</a>
 		</li>
 	</ul>
 </nav>

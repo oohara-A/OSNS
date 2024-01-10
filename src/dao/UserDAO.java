@@ -6,8 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import bean.Address;
+import bean.Coupon;
 import bean.User;
 //ログイン操作など
 public class UserDAO extends DAO {
@@ -221,8 +223,56 @@ public List<Address> AddressAdd(int id, String prefecture)throws Exception{
 		st.close();
 		con.close();
 	return add;
-
-
-
 }
+
+//クーポン追加
+public List<Coupon> Coupon_Add(int user_id) throws Exception{
+	// TODO 自動生成されたメソッド・スタブ
+	Connection con = getConnection();
+	PreparedStatement st;
+	ResultSet rs;
+	List<Coupon> coupon_list = new ArrayList<>();
+	st = con.prepareStatement("select * from coupon");
+	int count = 0;
+	//SQL文実行
+	 rs=st.executeQuery();
+	while(rs.next()){
+		Coupon coupon = new Coupon();
+		coupon.setCoupon_id(rs.getInt("coupon_id"));
+		coupon.setCoupon_name(rs.getString("coupon_name"));
+		coupon.setProduct_id(rs.getInt("product_id"));
+		coupon.setEffect(rs.getInt("effect"));
+		coupon.setCoupon_code(rs.getString("coupon_code"));
+		count+=1;
+	}
+	// 乱数生成器のインスタンス化
+    Random random = new Random();
+    // 1から10までの乱数を生成
+    int randomNumber = random.nextInt(count) + 1;
+    st = con.prepareStatement("select * from coupon where coupon_id = ?");
+    st.setInt(1, randomNumber);
+    rs = st.executeQuery();
+//    取得したクーポン情報
+    int coupon_id = 0;
+
+    while(rs.next()){
+		Coupon coupon = new Coupon();
+		coupon.setCoupon_id(rs.getInt("coupon_id"));
+		coupon_id = rs.getInt("coupon_id");
+		coupon.setCoupon_name(rs.getString("coupon_name"));
+		coupon.setProduct_id(rs.getInt("product_id"));
+		coupon.setEffect(rs.getInt("effect"));
+		coupon.setCoupon_code(rs.getString("coupon_code"));
+		coupon_list.add(coupon);
+    }
+
+    st = con.prepareStatement("insert into have_coupon (coupon_id,user_id) values(?,?)");
+    st.setInt(1, coupon_id);
+	st.setInt(2, user_id);
+	st.executeUpdate();
+	st.close();
+	con.close();
+	return coupon_list;
+}
+
 }

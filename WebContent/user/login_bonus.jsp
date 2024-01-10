@@ -46,7 +46,6 @@
     <div id="particles-js">
 
             <div class='gacha-body'>
-
                 <img src="https://lallapallooza.jp/wp-content/uploads/2020/07/gacha.png">
                  <button type="submit" class="rever rotate"><img onClick="Rotation();"  src="../assets/image/gacha-rever.png"></button>
             </div>

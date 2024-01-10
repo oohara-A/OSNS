@@ -159,7 +159,7 @@ id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
 coupon_id int(1000) not null,
 FOREIGN KEY (coupon_id) REFERENCES coupon(coupon_id),
 user_id int(10000000) not null,
-coupon_code varchar(100) not null,
+coupon_code varchar(100),
 used_flag TINYINT(1) NOT NULL DEFAULT 0
 );
 

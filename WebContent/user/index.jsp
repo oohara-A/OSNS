@@ -15,8 +15,8 @@
 	</div>
 
 	<div class="image">
-		<a href="#"> <img alt="商品詳細へ"
-			src="../assets/image/tosyokan_book_tana.png">
+		<a href="#">
+			<img alt="商品詳細へ"src="../assets/image/tosyokan_book_tana.png">
 		</a>
 		<h1>書籍</h1>
 	</div>

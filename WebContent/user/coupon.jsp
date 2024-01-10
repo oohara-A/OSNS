@@ -15,7 +15,7 @@ body{
 	</p>
 </div>
 
-<a href="index.jsp" class="border_btn08"><span class=>トップに戻る</span></a>
+<a href="Couponadd.action" class="border_btn08"><span class=>トップに戻る</span></a>
 <div id="particles-js"></div>
 <!-- Please heart it if you like! -->
 <!-- <div id="book">

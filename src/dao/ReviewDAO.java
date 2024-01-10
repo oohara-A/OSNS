@@ -48,7 +48,7 @@ public class ReviewDAO extends DAO{
 		return review ;
 	}
 
-	public List<Review> select_userrev(int user_id,int pro_id) throws Exception{
+	public List<Review> select_userrev(int review_id,int pro_id) throws Exception{
 		List<Review> review= new ArrayList<>();
 		Review_image re_image = new Review_image();
 		Review_video re_video = new Review_video();
@@ -57,8 +57,8 @@ public class ReviewDAO extends DAO{
 		PreparedStatement st;
 		//SQL文レビュー情報を持ってくる とりあえずレビューテーブルからだけ（後でimageも取り出せるようにする）
 		st=con.prepareStatement(
-			"select * from review innser join review_image on review_image.review_id = review.review_id where review.user_id = ? and review.product_id = ?  and review.flag = 0" );
-		st.setInt(1, user_id);
+			"select * from review inner join review_image on review_image.review_id = review.review_id where review.review_id=? and  review.product_id = ?  and review.flag = 0" );
+		st.setInt(1, review_id);
 		st.setInt(2, pro_id);
 		//SQL文実行
 		ResultSet rs=st.executeQuery();
@@ -68,8 +68,7 @@ public class ReviewDAO extends DAO{
 			r.setReview_id(rs.getInt("review_id"));
 			r.setUser_id(rs.getInt("user_id"));
 			r.setProduct_id(rs.getInt("product_id"));
-			r.setReview_image(rs.getString("review_image"));
-			System.out.println("REVIEWだお"+rs.getString("review_image"));
+			r.setReview_image(rs.getString("image_filename"));
 			r.setRating(rs.getInt("rating"));
 			r.setReviewbody(rs.getString("reviewbody"));
 			review.add(r);

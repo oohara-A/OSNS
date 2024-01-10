@@ -109,10 +109,10 @@ a{
                         <div class="border-radius">コメ</div>
                         <p class="ptagu">${review.reviewbody}</p><br>
                         <c:if test="${not empty review.review_image}">
-						    <p><img alt="写真" src="C:\Users\adomin\OneDrive - ooharastudent\デスクトップ\OSNS\image/${review.review_image}" width="250px" height="250px"></p>
+						    <p><img alt="写真" src="../assets/review_image/${review.review_image}" width="250px" height="250px"></p>
 						</c:if>
                         <a href="message.jsp?id = ${review.user_id }">返信</a>
-                         <a href="Reviewout.action?edit_id=${review.user_id}">編集</a>
+                         <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
                          <a href="Reviewdel.action?review_id=${review.review_id }">削除</a>
                     </div>
         </c:forEach>
