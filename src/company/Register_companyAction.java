@@ -64,7 +64,7 @@ public class Register_companyAction extends Action{
 
 			// 入力した情報に合致する企業が見つからなかった場合、属性名companyで登録する
 			if (add_company==null) {
-				session.setAttribute("add_company", add_company);
+				session.setAttribute("company", add_company);
 				// company_registration_complete.jspをフォワード先に指定
 				return "company_registration_complete.jsp";
 			}else{

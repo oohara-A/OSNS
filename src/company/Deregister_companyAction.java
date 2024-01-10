@@ -1,9 +1,13 @@
 package company;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.Company;
 import dao.CompanyDAO;
 import tool.Action;
 
@@ -14,23 +18,41 @@ public class Deregister_companyAction extends Action{
 
 		HttpSession session=request.getSession();
 
-		//企業ID
-        int companyId = Integer.parseInt(request.getParameter("companyId"));
+		int id = 0;
 
-        // ログインされている場合
-        if (session.getAttribute("login_company")!=null) {
-        	CompanyDAO dao=new CompanyDAO();
-        	boolean delete_company=dao.delete_company(companyId);
+		@SuppressWarnings("unchecked")
+		Company company_been=(Company)session.getAttribute("login_company");
+		if (company_been != null) {
+				//id取得
+				id = company_been.getId();
+				System.out.println("id取得");
+		}else{
+			// エラーメッセージをセットしてエラーを通知する
+		    String errorMessage = "会社情報が見つかりませんでした。再度ログインしてください。";
+		    System.out.println("32行目エラー");
+		    request.setAttribute("error_message", errorMessage);
+		    return "com_login_error.jsp";
+		}
 
-        	session.setAttribute("companyDelete", delete_company);
+		//削除日時日時
+		Date date = new Date();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formattedDate = simpleDateFormat.format(date);
+		java.sql.Date deleting_time = java.sql.Date.valueOf(formattedDate);
 
-        	// company_top_page.jspをフォワード先に指定
-        	return "company_top_page.jsp";
-
-        // ログインされていない場合
-        } else {
-        	// com_login_error.jspをフォワード先に指定
-        	return "com_login_error.jsp";
-        }
+    	CompanyDAO dao=new CompanyDAO();
+    	boolean company = dao.deregister_company(id,deleting_time);
+    	//登録解除が正常に出来た場合
+		if(company == true){
+			// ユーザBeanを削除
+			session.removeAttribute("company");
+			System.out.println("登録解除");
+			//topページに戻す
+			return "../user/index.jsp";
+		}else{
+			System.out.println("エラー");
+			System.out.println("56行目エラー");
+			return "company_top_page.jsp";
+		}
 	}
 }

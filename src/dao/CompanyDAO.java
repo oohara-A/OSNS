@@ -78,14 +78,16 @@ public class CompanyDAO extends DAO{
 	}
 
 	//企業削除
-	public boolean delete_company(int companyId)
+	public boolean deregister_company(int companyId,Date deleting_time)
 		throws Exception {
 		boolean flag =true;
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
-				"update company set flag = ?,where companyId = ?");
+				"update company set flag = ? ,deleting_time = ? where Id = ?");
 		st.setBoolean(1, flag);
-		st.setInt(2,companyId);
+		st.setDate(2,deleting_time);
+		st.setInt(3,companyId);
+		st.executeUpdate();
 
 		st.close();
 		con.close();
@@ -316,14 +318,14 @@ public class CompanyDAO extends DAO{
 		System.out.println(pro_id);
 		//商品画像をテーブルに追加
 		st=con.prepareStatement(
-				"insert into pro_image (product_id,image_filename) values(?,?)");
+				"insert into testpro_image (product_id,image_filename) values(?,?)");
 		st.setInt(1, pro_id);
 		st.setString(2, filename2);
 		st.executeUpdate();
 
 		//カテゴリをテーブル追加
 		st=con.prepareStatement(
-				"insert into product_category (PRODUCT_CATEGORY_ID ,product_id,category_name) values(?,?,?)");
+				"insert into testpro_category (PRODUCT_CATEGORY_ID ,product_id,name) values(?,?,?)");
 		st.setInt(1, category_id);
 		st.setInt(2, pro_id);
 		st.setString(3, category_name);

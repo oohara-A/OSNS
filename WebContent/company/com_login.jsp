@@ -2,6 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../menu.jsp"%>
 
+<form action="company_top_page.jsp" method="post">
+	<div class="back_home">
+			<input class="backhome" type="submit" value="ホームに戻る">
+	</div>
+</form>
+
 <form action="Login_company.action" method="post">
 
 	<h2 class="login_title">ログイン</h2>

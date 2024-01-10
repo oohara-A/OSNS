@@ -91,10 +91,27 @@ flag TINYINT(1) NOT NULL DEFAULT 0
 
 );
 
+CREATE TABLE testpro_image (
+pro_image_id int(10000) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+product_id int(1000000) not null,
+FOREIGN KEY (product_id) REFERENCES test_product(id),
+image_filename varchar(1000)  not null,
+flag TINYINT(1) NOT NULL DEFAULT 0
+
+);
+
 CREATE TABLE product_category (
 product_category_id int(1000) AUTO_INCREMENT PRIMARY KEY NOT NULL,
 product_id int(1000000) not null,
 FOREIGN KEY (product_id) REFERENCES product(id),
+name varchar(100) not null,
+icon_image varchar(100)
+);
+
+CREATE TABLE testpro_category (
+product_category_id int(1000) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+product_id int(1000000) not null,
+FOREIGN KEY (product_id) REFERENCES test_product(id),
 name varchar(100) not null,
 icon_image varchar(100)
 );

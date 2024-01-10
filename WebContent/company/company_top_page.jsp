@@ -32,7 +32,7 @@
 			</div>
 
 			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">商品登録</button>
+				<button class="combutton" onclick="location.href='product_registration.jsp'">商品登録</button>
 			</div>
 
 			<div class="com_button">
@@ -40,11 +40,11 @@
 			</div>
 
 			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">企業登録</button>
+				<button class="combutton" onclick="location.href='company_registration.jsp'">企業登録</button>
 			</div>
 
 			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">登録解除</button>
+				<button class="combutton" onclick="location.href='company_delete.jsp'">登録解除</button>
 			</div>
 
 			<div class="com_button">
@@ -55,23 +55,19 @@
 
 		<div class="main">
 
+		<form action="Logout.action" method="post">
 			<div class="logout">
-				<a href="/logout">ログアウト</a>
+				<button class="logout">ログアウト</button>
 			</div>
+		</form>
 
 			<div class="com_title">
 				<h2 class="com_top">企業トップ</h2>
 			</div>
 
-<<<<<<< HEAD
-		<div class="com_button">
-		    <button class="combutton" onclick="location.href='product_registration.jsp'">商品登録</button>
-		</div>
-=======
 			<div class="com_info">
 				<p class="user_information">ユーザー情報</p>
 			</div>
->>>>>>> 06994444a6f38efc7ada0ec330c15b38de3bf1c5
 
 			<div class="user_info">
 				<p class="com_user">氏名▶</p>

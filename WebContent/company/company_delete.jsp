@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../menu.jsp"%>
 
+<form action="Deregister_company.action" method="post">
 <div class="detele">
 
 	<div class="back_home">
@@ -30,5 +31,6 @@
 	</div>
 
 </div>
+</form>
 
 <%@ include file="../footer.jsp"%>

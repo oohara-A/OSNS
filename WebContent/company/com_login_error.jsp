@@ -6,6 +6,12 @@
     boolean loginFailed = true;
 %>
 
+<form action="company_top_page.jsp" method="post">
+	<div class="back_home">
+			<input class="backhome" type="submit" value="ホームに戻る">
+	</div>
+</form>
+
 <form action="com_login.jsp" method="post">
 
 	<h2 class="log_error">ログインエラー</h2>
