@@ -45,7 +45,7 @@
             </div>
 
             <div class="account_box">
-                <a>FUCKYOU</a>
+                <a>????</a>
             </div>
         </div>
         <hr>
