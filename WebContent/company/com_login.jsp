@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -6,6 +7,17 @@
 <title>company_login</title>
 <link rel="stylesheet" href="../assets/css/sanitize.css">
 </head>
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@include file="../com_header.jsp"%>
+
+<form action="company_top_page.jsp" method="post">
+	<div class="back_home">
+			<input class="backhome" type="submit" value="ホームに戻る">
+	</div>
+</form>
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 
 <form action="Login_company.action" method="post">
 
@@ -32,4 +44,19 @@
 		</div>
 		</div>
 </form>
+<<<<<<< HEAD
 <%@include file="../footer.jsp"%>
+=======
+
+
+<form action="company_registration.jsp" method="post">
+	<div class="com">
+		<p class="new_acount">企業登録の方はこちらをクリック↓</p>
+
+		<div class="acount">
+			<input class="all_acount" type="submit" name="new_acount"
+				value="アカウントを作成する">
+		</div>
+	</div>
+</form>
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f

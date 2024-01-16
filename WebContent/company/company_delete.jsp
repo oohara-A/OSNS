@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../menu.jsp"%>
+<%@ include file="../com_header.jsp"%>
 
+<form action="Deregister_company.action" method="post">
 <div class="detele">
 
 	<div class="back_home">
@@ -27,13 +28,17 @@
 
 	<div class="release_signup">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<input class="release" type="submit" value="登録を解除する">
 	</div>
 =======
         <input class="release" type="submit" name="deregistration" value="登録を解除する" >
     </div>
 >>>>>>> 69dea079de001152180afc907db1978b275e73a6
+=======
+		<input class="release" type="submit" value="登録を解除する">
+	</div>
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 
 </div>
-
-<%@ include file="../footer.jsp"%>
+</form>

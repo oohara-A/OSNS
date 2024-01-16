@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../menu.jsp"%>
@@ -8,6 +9,11 @@
 
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
 >>>>>>> 69dea079de001152180afc907db1978b275e73a6
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@include file="../com_header.jsp"%>
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 
 <html lang="en">
 <head>
@@ -39,7 +45,7 @@
 			</div>
 
 			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">商品登録</button>
+				<button class="combutton" onclick="location.href='product_registration.jsp'">商品登録</button>
 			</div>
 
 			<div class="com_button">
@@ -47,11 +53,11 @@
 			</div>
 
 			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">企業登録</button>
+				<button class="combutton" onclick="location.href='company_registration.jsp'">企業登録</button>
 			</div>
 
 			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">登録解除</button>
+				<button class="combutton" onclick="location.href='company_delete.jsp'">登録解除</button>
 			</div>
 
 			<div class="com_button">
@@ -59,17 +65,23 @@
 			</div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 		</div>
 
 		<div class="main">
 
+		<form action="Logout.action" method="post">
 			<div class="logout">
-				<a href="/logout">ログアウト</a>
+				<button class="logout">ログアウト</button>
 			</div>
+		</form>
 
 			<div class="com_title">
 				<h2 class="com_top">企業トップ</h2>
 			</div>
+<<<<<<< HEAD
 =======
 		<div class="image">
 		    <img alt="Company Logo" name="logo" src="../assets/image/OSNS_Logo.png">
@@ -129,10 +141,13 @@
 		<div class="com_button">
 		    <button class="combutton" name="inquiry" onclick="location.href='inquiry.jsp'">お問い合わせ</button>
 >>>>>>> 69dea079de001152180afc907db1978b275e73a6
+=======
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 		</div>
 
 	</div>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	<footer> &copy; 2023 OharaSampleNetShop. All rights reserved.
 	</footer>
@@ -159,6 +174,9 @@
 
 
 	<%@include file="../footer.jsp"%>
+=======
+	<%@include file="../com_footer.jsp"%>
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 
 </body>
 </html>

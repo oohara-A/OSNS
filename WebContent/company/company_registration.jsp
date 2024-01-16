@@ -1,12 +1,16 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="../menu.jsp"%>
+<%@include file="../com_header.jsp"%>
 
 <<<<<<< HEAD
 <form action="Register_company.action" method="post">
 =======
 <form action="Register_company.action" method="post" enctype="multipart/form-data">
+<<<<<<< HEAD
 >>>>>>> ac0e97c06eedaa3bf8b1011084f37f98c5bbf961
 =======
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -22,6 +26,10 @@
 	<div class="com_title">
 		<h2 class="info._edit">企業登録</h2>
 	</div>
+=======
+
+	<h2 class="com_title">企業登録</h2>
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 
 	<div class="com_reg">
 		<p class="comreg">氏名</p>
@@ -92,6 +100,7 @@
 	<div class="inq_sending">
 		<input class="sending" type="submit" value="次に進む">
 	</div>
+<<<<<<< HEAD
 </form>
 
 <<<<<<< HEAD
@@ -99,3 +108,6 @@
 =======
 <%@include file="../com_footer.jsp" %>
 >>>>>>> 69dea079de001152180afc907db1978b275e73a6
+=======
+</form>
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f

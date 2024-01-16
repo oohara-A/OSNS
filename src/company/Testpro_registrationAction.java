@@ -69,9 +69,6 @@ public class Testpro_registrationAction extends Action{
 
 		//ログインされていない場合
         }else{
-        	CompanyDAO dao=new CompanyDAO();
-			Test_product add_test_product=dao.testpro_registration(testpro_name,test_price,filename2,regiinvqua,category_name,product_description,add_date);
-			session.setAttribute("testproduct", add_test_product);
         	// com_login_error.jspをフォワード先に指定
         	return "com_login_error.jsp";
         }

@@ -20,18 +20,20 @@ public class Coupon_issuing_creationAction extends Action{
         String coupon_name = request.getParameter("coupon_name");
         // クーポンコード
         String coupon_code = request.getParameter("coupon_code");
+//        // 発行数
+//        int coupon_issue_number = Integer.parseInt(request.getParameter("coupon_issue_number"));
         // 割引率
-        int effect = Integer.parseInt(request.getParameter("effect"));
+        int coupon_discount = Integer.parseInt(request.getParameter("coupon_discount"));
 
         // ログインされている場合
         if (session.getAttribute("login_company")!=null) {
         	CompanyDAO dao=new CompanyDAO();
-        	Coupon issue_coupon=dao.coupon_issuing_creation(coupon_name,coupon_code,effect);
+        	Coupon issue_coupon=dao.coupon_issuing_creation(coupon_name,coupon_code,coupon_discount);
 
         	session.setAttribute("couponissue", issue_coupon);
 
         	// product_list.jspをフォワード先に指定
-        	return "product_list.jsp";
+        	return "company_registration_complete.jsp";
 
         // ログインされていない場合
         } else {

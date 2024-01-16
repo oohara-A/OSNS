@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../com_header.jsp" %>
@@ -9,6 +10,12 @@
 
 <form action="processProductRegistration.jsp" method="post">
 
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="../com_header.jsp"%>
+<form action="company_top_page.jsp" method="post">
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 	<div class="back_home">
 		<input class="backhome" type="submit" value="ホームに戻る">
 	</div>
@@ -59,6 +66,7 @@
 
 	</div>
 
+<<<<<<< HEAD
     <div class="product_submit">
         <input type="submit" value="登録完了">
     </div>
@@ -66,3 +74,9 @@
 
 <%@ include file="../com_footer.jsp" %>
 >>>>>>> 69dea079de001152180afc907db1978b275e73a6
+=======
+	<div class="product_submit">
+		<input type="submit" value="登録完了">
+	</div>
+</form>
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f

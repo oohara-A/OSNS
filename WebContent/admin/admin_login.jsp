@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../menu.jsp"%>
@@ -8,18 +11,17 @@
 	<h2 class="com_title">ログイン</h2>
 
 	<div class="log">
-		<<<<<<< HEAD:WebContent/user/login.jsp
 		<p class="login">ユーザー名</p>
-		<input type="text" name="inq_name" required> =======
+		<input type="text" name="inq_name" required>
 		<p class="login">メールアドレス</p>
-		<input type="email" name="inq_name"> >>>>>>>
-		6e5b127bb38566219bc7633c5e1d0ce3d2f25838:WebContent/admin/admin_login.jsp
+		<input type="email" name="inq_name">
 	</div>
 
 	<div class="log">
 		<p class="login">パスワード</p>
 		<input type="text" name="inq_com_name" required>
 	</div>
+<<<<<<< HEAD
 =======
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
@@ -42,6 +44,8 @@
 	      <input type="text" name="password" required>
 	    </div>
 >>>>>>> 69dea079de001152180afc907db1978b275e73a6
+=======
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 
 	<div class="logged">
 		<input type="checkbox" name="logged">
@@ -49,6 +53,9 @@
 	</div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 
 	<div class="inq_sending">
 		<input class="sending" type="submit" value="ログイン">
@@ -57,6 +64,7 @@
 
 </form>
 
+<<<<<<< HEAD
 <%@include file="../footer.jsp"%>
 =======
 		<div class="log_button">
@@ -66,3 +74,6 @@
 
 </form>
 >>>>>>> 69dea079de001152180afc907db1978b275e73a6
+=======
+<%@include file="../footer.jsp"%>
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f

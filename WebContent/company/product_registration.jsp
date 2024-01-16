@@ -1,9 +1,19 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../menu.jsp"%>
+<%@ include file="../com_header.jsp"%>
+
+<form action="company_top_page.jsp" method="post">
+	<div class="back_home">
+			<input class="backhome" type="submit" value="ホームに戻る">
+	</div>
+</form>
 
 <form action="Product_registration.action" method="post" enctype="multipart/form-data">
+<<<<<<< HEAD
 =======
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../com_header.jsp" %>
@@ -14,6 +24,8 @@
 
 <form action="Product_registrationAction.java" method="post">
 >>>>>>> 69dea079de001152180afc907db1978b275e73a6
+=======
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 
 	<h2 class="product_title">商品登録</h2>
 
@@ -64,6 +76,7 @@
         <input type="submit" value="登録完了">
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 </form>
 
 	<div class="sample_info">
@@ -85,3 +98,10 @@
 
 <%@ include file="../com_footer.jsp" %>
 >>>>>>> 69dea079de001152180afc907db1978b275e73a6
+=======
+</form>
+
+	<div class="sample_info">
+		<a href="sample__registration.jsp">試供品登録はこちら</a>
+	</div>
+>>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
