@@ -44,8 +44,6 @@
 	<a href="../admin/admin_login.jsp">管理者の方はこちら</a>
 </div>
 <p class="new_acount">新規登録の方はこちらをクリック↓</p>
->>>>>>> f1d24d818fc56e30ac55c848bc4a199b24c3a647
-
 <div class="inq_sending">
 	<a href="sign_up.jsp"><input class="sending" type="submit"
 		value="アカウントを作成する"></a>

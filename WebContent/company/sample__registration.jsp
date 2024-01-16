@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../menu.jsp"%>
+<%@ include file="../com_header.jsp"%>
 <form action="company_top_page.jsp" method="post">
 	<div class="back_home">
 			<input class="backhome" type="submit" value="ホームに戻る">
@@ -60,5 +60,3 @@
 		<input type="submit" value="登録完了">
 	</div>
 </form>
-
-<%@ include file="../footer.jsp"%>

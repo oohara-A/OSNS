@@ -17,7 +17,7 @@ public class LogoutAction extends Action{
 		session.removeAttribute("login_company");
 		System.out.println("ログアウト");
 		// company_top_page.jspをフォワード先に指定
-		return "company_top_page.jsp";
+		return "index.jsp";
 
 	}
 }

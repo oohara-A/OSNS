@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../menu.jsp"%>
+<%@ include file="../com_header.jsp"%>
 
 <%
     boolean loginFailed = true;
@@ -20,7 +20,3 @@
 		<input class="sending" type="submit" value="ログイン">
 	</div>
 </form>
-
-
-
-<%@ include file="../footer.jsp"%>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="../menu.jsp"%>
+<%@include file="../com_header.jsp"%>
 
 <html lang="en">
 <head>
@@ -64,32 +64,11 @@
 			<div class="com_title">
 				<h2 class="com_top">企業トップ</h2>
 			</div>
-
-			<div class="com_info">
-				<p class="user_information">ユーザー情報</p>
-			</div>
-
-			<div class="user_info">
-				<p class="com_user">氏名▶</p>
-				<input type="text" name="name">
-				<p class="com_user">企業名▶</p>
-				<input type="text" name="com_name">
-				<p class="com_user">所在地▶</p>
-				<input type="text" name="address">
-				<p class="com_user">メールアドレス▶</p>
-				<input type="email" name="email">
-			</div>
 		</div>
 
 	</div>
 
-	<footer> &copy; 2023 OharaSampleNetShop. All rights reserved.
-	</footer>
-
-
-
-
-	<%@include file="../footer.jsp"%>
+	<%@include file="../com_footer.jsp"%>
 
 </body>
 </html>

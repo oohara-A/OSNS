@@ -80,11 +80,11 @@ public class CompanyDAO extends DAO{
 	//企業削除
 	public boolean deregister_company(int companyId,Date deleting_time)
 		throws Exception {
-		boolean flag =true;
+		int flag =1;
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
 				"update company set flag = ? ,deleting_time = ? where Id = ?");
-		st.setBoolean(1, flag);
+		st.setInt(1, flag);
 		st.setDate(2,deleting_time);
 		st.setInt(3,companyId);
 		st.executeUpdate();
@@ -380,7 +380,7 @@ public class CompanyDAO extends DAO{
 //	}
 
 	// クーポン発行
-	public Coupon coupon_issuing_creation(String coupon_name, String coupon_code, int effect)
+	public Coupon coupon_issuing_creation(String coupon_name, String coupon_code, int coupon_discount)
 		throws Exception {
 		Coupon coupon=null;
 
@@ -388,10 +388,11 @@ public class CompanyDAO extends DAO{
 		// SQL文を実行
 		PreparedStatement st;
 		st=con.prepareStatement(
-			"insert into coupon coupon_name=? and coupon_code=? and effect=?");
+			"insert into coupon (coupon_name,coupon_code,EFFECT) value(?,?,?)");
 		st.setString(1, coupon_name);
 		st.setString(2, coupon_code);
-		st.setInt(3, effect);st.executeQuery();
+		st.setInt(3, coupon_discount);
+		st.executeQuery();
 
 		st.close();
 		con.close();

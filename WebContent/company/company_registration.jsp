@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="../menu.jsp"%>
+<%@include file="../com_header.jsp"%>
 
 <form action="Register_company.action" method="post" enctype="multipart/form-data">
 
@@ -52,5 +52,3 @@
 		<input class="sending" type="submit" value="次に進む">
 	</div>
 </form>
-
-<%@include file="../footer.jsp"%>
