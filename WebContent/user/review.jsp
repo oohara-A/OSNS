@@ -111,6 +111,9 @@ a{
                         <c:if test="${not empty review.review_image}">
 						    <p><img alt="写真" src="../assets/review_image/${review.review_image}" width="250px" height="250px"></p>
 						</c:if>
+						 <c:if test="${not empty review.review_video}">
+							<video  controls="controls"  preload="none" data-setup="{}" src="../assets/review_video/${review.review_video}"  width="400" height="500" ty></video>
+						</c:if>
                         <a href="message.jsp?id = ${review.user_id }">返信</a>
                          <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
                          <a href="Reviewdel.action?review_id=${review.review_id }">削除</a>
@@ -131,6 +134,8 @@ a{
 		    <br>
 		    <h2>画像選択</h2>
 		    <input type="file" name="part"><br>
+		    <h2>動画選択</h2>
+		    <input type="file" name="part2"><br>
 		    <label for="rating">評価:</label>
 		    <select name="ratings" id="rating" required>
 		        <option value=1>☆</option>

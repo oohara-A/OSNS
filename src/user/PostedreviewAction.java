@@ -82,32 +82,36 @@ public class PostedreviewAction extends Action {
 		}
 
 
+	//		レビュー時の投稿したい動画
+			Part part2 = null;
+			String filename5 = "";
+			part2 = request.getPart("part2");
+			System.out.println("動画ファイル１"+part2);
+			String filename3 = rev.getFileName(part2);
+			if(filename3.isEmpty()){
+				filename5 = null;
+			}else{
+				System.out.println("動画ファイル2"+filename3);
+				 String[] filenames3 = filename3.split("\\\\"); // Windowsの場合
+				List<String> filenames4 = new ArrayList<>();
 
-//		レビュー時の投稿したい動画
-//		Part part2 = request.getPart("part2");
+				for (String f : filenames3) {
+				    filenames4.add(f);
+				}
 
-//		String filename3 = rev.getFileName(part);
-//		System.out.println(filename);
-//		 String[] filenames3 = filename.split("\\\\"); // Windowsの場合
-//		List<String> filenames4 = new ArrayList<>();
-//
-//		for (String file : filenames2) {
-//		    filenames4.add(file);
-//		}
-//
-//		int len2 = filenames4.size();
-//		String filename5 = filenames4.get(len - 1);
-//		System.out.println(filename5);
-		String filename5 = "";
-//
-//		 String uploadDirectory2 = System.getProperty("user.dir") + File.separator ;
-////		 ファイル名に日時を足すミリ秒まで
-//		// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
-//		part.write("C:\\\\work\\\\pleiades\\\\workspace\\\\OSNS\\\\"+"image" +"\\\\" + filename5);
-
+				int len2 = filenames4.size();
+				filename5 = filenames4.get(len2 - 1);
+				System.out.println("動画ファイル名"+filename5);
+	//		 String uploadDirectory2 = System.getProperty("user.dir") + File.separator ;
+	////		 ファイル名に日時を足すミリ秒まで
+	//		// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
+			part.write("C:\\\\Users\\\\adomin\\\\OneDrive - ooharastudent\\\\デスクトップ\\\\OSNS\\\\WebContent\\\\assets\\\\review_video" +"\\\\" + filename5);
+		}
 		ReviewDAO dao = new ReviewDAO();
 		boolean flag = dao.Postedreview(user_id, pro_id, body, rating, submissiondate,filename2,filename5);
+
 		List<Review> reviews = dao.select(pro_id);
+
 
 		session.setAttribute("user_review", reviews);
 //レビューページに遷移

@@ -32,7 +32,7 @@
             </div>
 
             <div class="account_box">
-                <a>OSNS</a>
+                <a href="Coupondisp.action">クーポン一覧</a>
             </div>
 
             <div class="account_box">

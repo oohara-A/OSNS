@@ -36,7 +36,7 @@ public class AddressAddAction  extends Action{
 
 			address = dao.AddressAdd(user_id, addre);
 			session.setAttribute("Address", address);
-		return "user_address.jsp";
+			return "user_address.jsp";
 		}
 		return "user_login.jsp";
 	}

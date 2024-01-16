@@ -162,7 +162,7 @@
 
 
 .image {
-  width: 25%
+  width: 50%;
 }
 
 .image img {
@@ -183,11 +183,13 @@
 .product {
   display: flex;
   justify-content: space-between;
+  padding-left:70px;
 }
 
 .product_list .image img {
-  width: 380px;
-  height: 380px;
+
+  width: 200px;
+  height: 200px;
 }
 
 .product_list .image a {

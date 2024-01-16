@@ -180,7 +180,7 @@ CREATE TABLE review_video (
 id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
 review_id int(10000000) not null,
 FOREIGN KEY (review_id) REFERENCES review(review_id),
-video_filename varchar(100) not null,
+video_filename varchar(100),
 flag TINYINT(1) NOT NULL DEFAULT 0
 );
 

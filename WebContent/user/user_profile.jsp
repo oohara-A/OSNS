@@ -106,7 +106,7 @@
 	                </div>
 
 	                <div class="box-item">
-	                    <p>パスワード:${user.password}</p>
+	                    <p>パスワード:＊＊＊＊</p>
 	                    <button class="add-button" onclick="openModal('pass')">
 	                変更
 	            </button>

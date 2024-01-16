@@ -11,7 +11,7 @@ import bean.Email;
 import bean.User;
 import dao.EmaileDAO;
 import tool.Action;
-//メッセージ表示処理
+//送信メッセージ表示処理
 public class MessagviewgAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 //		セッション使用
@@ -32,6 +32,14 @@ public class MessagviewgAction extends Action {
 			session.setAttribute("send_email", user_maile);
 		}else {
 			session.setAttribute("send_email", user_maile);
+		}
+//		RECIPIENT
+		List<Email> recipient_list = dao.select_recipient(user_id);
+		if(recipient_list.isEmpty()){
+			recipient_list = null;
+			session.setAttribute("recipient_mail", recipient_list);
+		}else {
+			session.setAttribute("recipient_mail", recipient_list);
 		}
 
 //		メッセージ画面を表示

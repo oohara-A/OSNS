@@ -11,15 +11,16 @@
   .product {
   	display:block;
   	padding-top:40px;
-    width: 600px; /* 任意の幅を設定 */
+    width: 400px; /* 任意の幅を設定 */
      /* 適切なマージンを設定 */
   }
   .font{
-  	font-size: 25px;
+  	font-size: 20px;
   }
 
 </style>
 <h1>売れ筋商品</h1>
+
 <div class="product_list">
 	<c:forEach var="product_cate" items="${product_category}">
 		<div class="product">

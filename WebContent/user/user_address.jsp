@@ -68,25 +68,23 @@
             }
 
         </style>
+
       <div class="container">
       <c:choose>
 		<c:when test="${Address!=null}">
+			<c:forEach var="Address" items="${Address}">
 	            <div class="box">
-	                <h1>現在の住所</h1>
-	                <%-- <c:forEach var="Address" items="${Address}"> --%>
-	                <%-- </c:forEach> --%>
+	                <h1>現在の住所</h1><br>
+	                 <input class="add" type="text" value="${Address.address}" readonly>
 	            </div>
-	            <c:forEach var="Address" items="${Address}">
-	            	<p class="add">${Address.address}</p>
-	            </c:forEach>
+
+	         </c:forEach>
 
         </c:when>
 		<c:otherwise>
 			<div class="box">
 	                <h1>現在の住所は登録されていません</h1>
-
-
-	            </div>
+	         </div>
 		</c:otherwise>
 	</c:choose>
 

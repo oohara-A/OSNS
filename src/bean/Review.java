@@ -26,7 +26,20 @@ private Date deleting_time;
 private int	 flag;
 
 private String review_image;
+private String review_video;
 
+/**
+ * @return review_video
+ */
+public String getReview_video() {
+	return review_video;
+}
+/**
+ * @param review_video セットする review_video
+ */
+public void setReview_video(String review_video) {
+	this.review_video = review_video;
+}
 /**
  * @return review_image
  */

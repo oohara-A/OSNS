@@ -38,13 +38,13 @@ public class EmaileDAO extends DAO {
 
 	}
 
-//	受信者のメッセージ取得
-	public Email select_recipient(int id)throws Exception{
+//	受け取ったメッセージ取得
+	public List<Email> select_recipient(int id)throws Exception{
 		List<Email>recipient_maile = new ArrayList<>();
 		Connection con=getConnection();
 //		受信者の情取得
 		PreparedStatement st=con.prepareStatement(
-				"select * from email where sender = ? and flag = 0 ");
+				"select * from email where RECIPIENT = ? and flag = 0 ");
 //		idset
 		st.setInt(1, id);
 //		SQL実行
@@ -55,11 +55,12 @@ public class EmaileDAO extends DAO {
 			p.setSender(rs.getInt("sender"));
 			p.setSubject(rs.getString("subject"));
 			p.setBody(rs.getString("body"));
+			p.setSending_time(rs.getDate("sending_time"));
 			recipient_maile.add(p);
 			}
 		st.close();
 		con.close();
-		return (Email) recipient_maile;
+		return  recipient_maile;
 
 	}
 
