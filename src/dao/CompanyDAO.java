@@ -388,11 +388,11 @@ public class CompanyDAO extends DAO{
 		// SQL文を実行
 		PreparedStatement st;
 		st=con.prepareStatement(
-			"insert into coupon (coupon_name,coupon_code,EFFECT) value(?,?,?)");
+			"insert into coupon (coupon_name,coupon_code,EFFECT) values(?,?,?)");
 		st.setString(1, coupon_name);
 		st.setString(2, coupon_code);
 		st.setInt(3, coupon_discount);
-		st.executeQuery();
+		st.executeUpdate();
 
 		st.close();
 		con.close();
@@ -415,21 +415,23 @@ public class CompanyDAO extends DAO{
 	}
 
 	// クーポン一覧
-	public List<Coupon> coupon_list(String coupon_name)
+	public List<Coupon> coupon_list()
 		throws Exception {
 		List<Coupon> coupon_list=new ArrayList<>();
 
 		Connection con=getConnection();
 
-		PreparedStatement st=con.prepareStatement(
-			"select * from coupon where coupon_name like ?");
-		st.setString(1, "%"+coupon_name+"%");
+		PreparedStatement st;
+		st=con.prepareStatement(
+			"select * from coupon where flag = 0");
 		ResultSet rs=st.executeQuery();
 
 		while (rs.next()) {
 			Coupon coupon=new Coupon();
 			coupon.setCoupon_id(rs.getInt("coupon_id"));
 			coupon.setCoupon_name(rs.getString("coupon_name"));
+			coupon.setCoupon_code(rs.getString("coupon_code"));
+			coupon.setEffect(rs.getInt("effect"));
 			coupon_list.add(coupon);
 		}
 		st.close();

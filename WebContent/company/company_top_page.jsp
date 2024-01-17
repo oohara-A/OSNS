@@ -18,7 +18,7 @@
 			</div>
 
 			<div class="com_button">
-				<button class="combutton" onclick="location.href='coupon_list.jsp'">クーポン一覧</button>
+				<a href="Display_coupon_list.action"><button class="combutton" >クーポン一覧</button></a>
 			</div>
 
 			<div class="com_button">
