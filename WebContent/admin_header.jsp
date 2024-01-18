@@ -12,11 +12,24 @@
 	content="sampie text sampie textsampie textsampie textsampie textsampie textsampie textsampie textsampie text">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
 	rel="stylesheet">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/common.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<link rel="stylesheet"
+	href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath() %>/assets/css/common.css">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 </head>
-<body>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+//セッションの情報を取得
+	User user = null;
+	user = (User)session.getAttribute("user");
+	int user_id = 0;
+	if(user != null){
+		user_id = user.getId();
+	}
+%>
+<header class="header">
+	<h1 class="header-logo">OharaSampleNetShop</h1>
+</header>
 
+<body>

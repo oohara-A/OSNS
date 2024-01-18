@@ -2,11 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="../menu.jsp"%>
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 <c:choose>
 	<c:when test="${user!=null}">
 		<form action="Userlogout.action">
@@ -17,10 +13,6 @@
 	</c:when>
 	<c:otherwise>
 		<div class="inq_sending">
-<<<<<<< HEAD
-
-=======
->>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 			<form action="Login.action" method="post">
 				<h2 class="com_title">ログイン</h2>
 				<div class="log">
@@ -40,10 +32,6 @@
 					<input class="sending" type="submit" value="ログイン">
 				</div>
 			</form>
-<<<<<<< HEAD
-
-=======
->>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 		</div>
 	</c:otherwise>
 </c:choose>
@@ -59,10 +47,7 @@
 	<a href="sign_up.jsp"><input class="sending" type="submit"
 		value="アカウントを作成する"></a>
 </div>
-<<<<<<< HEAD
 <%@include file="../footer.jsp"%>
-=======
 
 
-<%@include file="../footer.jsp"%>
->>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
+

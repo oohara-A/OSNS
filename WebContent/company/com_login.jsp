@@ -1,23 +1,12 @@
-<<<<<<< HEAD
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@include file="../menu.jsp"%>
-<head>
-<title>company_login</title>
-<link rel="stylesheet" href="../assets/css/sanitize.css">
-</head>
-=======
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../com_header.jsp"%>
 
 <form action="company_top_page.jsp" method="post">
 	<div class="back_home">
-			<input class="backhome" type="submit" value="ホームに戻る">
+		<input class="backhome" type="submit" value="ホームに戻る">
 	</div>
 </form>
->>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
 
 <form action="Login_company.action" method="post">
 
@@ -44,9 +33,6 @@
 		</div>
 		</div>
 </form>
-<<<<<<< HEAD
-<%@include file="../footer.jsp"%>
-=======
 
 
 <form action="company_registration.jsp" method="post">
@@ -58,5 +44,4 @@
 				value="アカウントを作成する">
 		</div>
 	</div>
-</form>
->>>>>>> 3d64af93b3190baad20c34ff4872ac982f8e4c5f
+	</form>

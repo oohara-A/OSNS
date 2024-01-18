@@ -105,7 +105,9 @@ public class PostedreviewAction extends Action {
 	//		 String uploadDirectory2 = System.getProperty("user.dir") + File.separator ;
 	////		 ファイル名に日時を足すミリ秒まで
 	//		// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
-			part.write("C:\\\\Users\\\\adomin\\\\OneDrive - ooharastudent\\\\デスクトップ\\\\OSNS\\\\WebContent\\\\assets\\\\review_video" +"\\\\" + filename5);
+				String uploadDirectory = "C:\\Users\\adomin\\OneDrive - ooharastudent\\デスクトップ\\OSNS\\WebContent\\assets\\review_video";
+
+			part.write(uploadDirectory +File.separator + filename5);
 		}
 		ReviewDAO dao = new ReviewDAO();
 		boolean flag = dao.Postedreview(user_id, pro_id, body, rating, submissiondate,filename2,filename5);

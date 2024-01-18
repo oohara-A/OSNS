@@ -57,8 +57,5 @@
 		<h1>評価の高い商品</h1>
 	</div>
 </div>
-
-
-
 <%@include file="../footer.jsp"%>
 

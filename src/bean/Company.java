@@ -23,7 +23,19 @@ public class Company implements java.io.Serializable  {
 	private Date adding_time;
 //	削除日時
 	private Date deleting_time;
-//	更新日時
+/**
+	 * @return adding_time
+	 */
+	public Date getAdding_time() {
+		return adding_time;
+	}
+	/**
+	 * @param adding_time セットする adding_time
+	 */
+	public void setAdding_time(Date adding_time) {
+		this.adding_time = adding_time;
+	}
+	//	更新日時
 	private Date update_time;
 //	削除フラグ
 	private String flag;
@@ -122,18 +134,6 @@ public class Company implements java.io.Serializable  {
 	 */
 	public void setPhone_number(String phone_number) {
 		this.phone_number = phone_number;
-	}
-	/**
-	 * @return adding_time
-	 */
-	public Date getAdding_time() {
-		return adding_time;
-	}
-	/**
-	 * @param adding_time セットする adding_time
-	 */
-	public void setAdding_time(Date adding_time) {
-		this.adding_time = adding_time;
 	}
 	/**
 	 * @return deleting_time

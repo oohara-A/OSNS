@@ -100,7 +100,6 @@ a{
 
 	<h3>商品レビュー</h3>
 	<!-- レビューとリプライの表示 -->
-
 	<div class="box2">
 <c:choose>
     <c:when test="${user_review != null}">
@@ -112,7 +111,7 @@ a{
 						    <p><img alt="写真" src="../assets/review_image/${review.review_image}" width="250px" height="250px"></p>
 						</c:if>
 						 <c:if test="${not empty review.review_video}">
-							<video  controls="controls"  preload="none" data-setup="{}" src="../assets/review_video/${review.review_video}"  width="400" height="500" ty></video>
+							<video  controls="controls"  preload="none" data-setup="{}" src="../assets/review_video/${review.review_video}"  width="400" height="500" ></video>
 						</c:if>
                         <a href="message.jsp?id = ${review.user_id }">返信</a>
                          <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>

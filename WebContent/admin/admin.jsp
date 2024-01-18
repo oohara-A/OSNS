@@ -1,15 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="../menu.jsp"%>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-
+<%@include file="../admin_header.jsp"%>
 	<div class="content">
 
 		<div class="menu">
@@ -19,32 +10,30 @@
 			</div>
 
 			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">企業一覧</button>
+				<a href="Showcompany.action"><button class="combutton" >企業一覧</button></a>
 			</div>
 
 			<div class="com_button">
-				<button class="combutton"
-					onclick="location.href='coupon_registration.jsp'">レビュー一覧</button>
+				<a href="Showreview.action"><button class="combutton">レビュー一覧</button></a>
 			</div>
 
 			<div class="com_button">
-				<button class="combutton"
-					onclick="location.href='company_info_edit.jsp'">ユーザー一覧</button>
+				<a href="Showuser.action"><button class="combutton">ユーザー一覧</button></a>
 			</div>
 
 			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">管理者登録</button>
+				<button class="combutton" onclick="location.href='add_admin.jsp'">管理者登録</button>
 			</div>
 
 			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">管理者削除</button>
+				<a href="Remove.action"><button class="combutton" >管理者削除</button></a>
 			</div>
 		</div>
 
 		<div class="main">
 
 			<div class="logout">
-				<a href="/logout">ログアウト</a>
+				<a href="Logout.action">ログアウト</a>
 			</div>
 
 			<div class="admin_title">
@@ -57,11 +46,11 @@
 
 			<div class="user_info">
 				<p class="com_user">氏名▶</p>
-				<input type="text" name="name">
+				<input type="text" name="name" >
 				<p class="com_user">登録日▶</p>
-				<input type="text" name="reg_date">
+				<input type="text" name="reg_date" >
 				<p class="com_user">メールアドレス▶</p>
-				<input type="email" name="email">
+				<input type="email" name="email" >
 			</div>
 		</div>
 
@@ -70,10 +59,4 @@
 	<footer> &copy; 2023 OharaSampleNetShop. All rights reserved.
 	</footer>
 
-
-
-
 	<%@include file="../footer.jsp"%>
-
-</body>
-</html>
