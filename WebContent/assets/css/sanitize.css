@@ -1,6 +1,9 @@
 @charset "utf-8";
 
 /*企業側共通のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.menu-container{
+	float: left;
+}
 .back_home{
   width: 100%;
   margin: 0 auto; /* 中央寄せ */
@@ -34,13 +37,13 @@
 }
 
 .com_title {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  max-width: 750px;
+  max-width: 800px;
   display: flex;
   align-items: center;
   text-align: left;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .com_title select {
@@ -51,9 +54,9 @@
 
 /*送信↓ーーーーーーーー */
 .inq_sending{
-  width: 80%;
+  width: 100%;
   margin: 0 auto; /* 中央寄せ */
-  max-width: 500px;
+  max-width: 400px;
   padding: 30px;
 }
 
@@ -111,7 +114,7 @@
 }
 
 .content .menu .com_button {
-  width: 80%;
+  width: 100%;
   max-width: 500px;
   text-align: left;
   font: inherit;
@@ -120,7 +123,7 @@
 .content .menu .com_button .combutton {
   background-color: red;
   color: white;
-  padding: 10px 20px;
+  padding: 15px 30px;
   font-size: 20px;
 }
 
@@ -134,7 +137,7 @@
 	font-size : 30px;
 }
 
-.content .main .com_title .com_top{
+.content .main .corporate .corporate_top{
     white-space: nowrap;
     text-align: center;
     margin-left: -10px;
@@ -163,6 +166,10 @@
     margin-right: 10px;
 }
 
+.main .logout {
+	margin-left: auto;
+}
+
 /*トップページ(管理者)のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
 .content .main .admin_title .admin_top{
 	white-space: nowrap;
@@ -172,6 +179,16 @@
 }
 
 /*ログインのcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.login_title{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 750px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-size: 50px;
+}
+
 .log{
   width: 80%;
   margin: 0 auto;
@@ -207,41 +224,48 @@
     justify-content: center;
 }
 
-.com_login{
-	margin-left: 70px;
-}
-
-.admin_log {
-    margin-left: 70px;
-}
-
-.new_acount {
-	margin-left: 35px;
-    text-align: center;
-    position: relative;
-}
-
 .log_error{
 	width: 80%;
   	margin: 0 auto;
-  	max-width: 500px;
-  	font-size : 40px
+  	max-width: 600px;
+  	font-size : 60px
 }
 
 .error_message{
 	width: 80%;
   	margin: 0 auto;
-  	max-width: 500px;
-  	font-size : 18px
+  	max-width: 550px;
+  	font-size : 30px
+}
+
+.log_error_button{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 350px;
+}
+
+.log_error_button .error_button{
+  background-color: red;
+  color: white;
+  padding: 20px 40px;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.new_acount {
+  margin-left: 50px;
+  text-align: center;
+  max-width: 1200px;
 }
 
 .new_acount::before,
 .new_acount::after {
-    content: "ーーーーーーーーーーーーーーーーーーーー";
-    display: block;
-    color: #000;
-    text-align: center;
-    margin-left: 35px;
+  content: "ーーーーーーーーーーーーーーーーーー";
+  display: block;
+  color: #000;
+  text-align: center;
+  max-width: 1200px;
 }
 
 .new_acount::before {
@@ -252,11 +276,46 @@
     margin-top: 10px;
 }
 
+/*ログインボタンのcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.log_button{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 310px;
+  padding: 30px;
+}
+
+.log_button .all_login{
+  background-color: red;
+  color: white;
+  padding: 10px 40px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.acount{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 380px;
+  padding: 30px;
+}
+
+.acount .all_acount{
+  background-color: red;
+  color: white;
+  padding: 10px 40px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
 /*企業登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
 .com_reg{
   width: 80%;
   margin: 0 auto;
   max-width: 500px;
+  margin-bottom: 20px;
 }
 
 .com_reg .comreg{
@@ -264,41 +323,102 @@
 }
 
 .com_reg input[type="text"] {
-  width: 300px;
+  width: 280px;
   height: 40px;
 }
 
 .com_reg input[type="email"]{
-  width: 400px;
+  width: 280px;
   height: 40px;
 }
 
 .com_reg input[type="tel"]{
-  width: 400px;
+  width: 280px;
   height: 40px;
 }
 
 .com_reg input[type="password"] {
-    width: 100%;
+    width: 280px;
     height: 40px;
-    padding: 8px;
-    box-sizing: border-box;
-    margin-bottom: 15px;
 }
 
 .com_reg p.comreg {
     margin-bottom: 5px;
 }
 
-.com_reg {
-    margin-bottom: 20px;
+/*企業登録完了のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.company_signup {
+  width: 80%;
+  margin: 20px auto; /* 上下に20pxのマージンを追加 */
+  max-width: 500px;
+  font-size: 40px;
 }
 
-.company_signup{
-	width: 80%;
-  	margin: 0 auto;
-  	max-width: 500px;
-  	font-size: 40px;
+.com_signup {
+  width: 80%;
+  margin: 20px auto; /* 上下に20pxのマージンを追加 */
+  max-width: 350px;
+}
+
+.com_signup .company_up {
+  background-color: red;
+  color: white;
+  padding: 20px 40px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px; /* ボタン上部に10pxのマージンを追加 */
+}
+
+/*企業登録編集のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.comed_info{
+  width: 100%;
+  margin: 0 auto;
+  max-width: 400px;
+  margin-bottom: 15px;
+}
+
+.comed_info .com_info{
+  font-size: 25px;
+}
+
+.comed_info input[type="text"] {
+  width: 280px;
+  height: 40px;
+}
+
+.comed_info input[type="email"] {
+  width: 280px;
+  height: 40px;
+}
+
+.comed_info input[type="tel"] {
+  width: 280px;
+  height: 40px;
+}
+
+.comed_info input[type="password"] {
+  width: 280px;
+  height: 40px;
+}
+
+.comed_info p.com_info {
+    margin-bottom: 2px;
+}
+
+.complete{
+  width: 100%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 250px;
+}
+
+.complete .com_complete{
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
 /*企業登録解除のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
@@ -308,7 +428,6 @@
     padding: 0;
     background-color: #f4f4f4;
 }
-
 
 .confirmation{
 	margin: 0 auto;
@@ -391,10 +510,18 @@
   	max-width: 600px;
 }
 
+.pro_info{
+	margin-bottom: 15px;
+    font-family: system-ui;
+	width: 100%;
+  	margin: 0 auto;
+  	max-width: 600px;
+}
+
 .product_genre{
 	margin-bottom: 15px;
     font-family: system-ui;
-	width: 80%;
+	width: 100%;
   	margin: 0 auto;
   	max-width: 600px;
 }
@@ -458,6 +585,12 @@ input[type="file"] {
 }
 
 /*クーポン登録のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.coupon_registration .coupon_title{
+	width: 100%;
+	margin: 0 auto;
+	font-size: 40px;
+}
+
 .coupon_registration{
     width: 80%;
     max-width: 600px;
@@ -471,16 +604,29 @@ input[type="file"] {
 
 .coupon_reg {
     margin-bottom: 15px;
+    margin: 20 auto;
 }
 
 .couponreg {
     font-size: 18px;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="date"] {
-   width: 100%;
+.coupon_reg input[type="text"]{
+	width: 90%;
+   	padding: 8px;
+   	box-sizing: border-box;
+   	margin-bottom: 10px;
+}
+
+.coupon_reg input[type="number"]{
+   width: 90%;
+   padding: 8px;
+   box-sizing: border-box;
+   margin-bottom: 10px;
+}
+
+.coupon_reg input[type="date"] {
+   width: 90%;
    padding: 8px;
    box-sizing: border-box;
    margin-bottom: 10px;
@@ -505,14 +651,21 @@ input[type="date"] {
  }
 
 /*お問い合わせのcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.inquiry_title{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 700px;
+  font-size: 40px;
+}
+
 .contact_us{
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   max-width: 500px;
 }
 
 .contact_us .inquiry{
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .contact_us input[type="text"] {
@@ -539,9 +692,130 @@ input[type="date"] {
     height: 40px;
 }
 
-.contact_us input[type="text"]{
-  width: 300px;
-  height: 60px;
+/*管理者追加のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.admin_title{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 700px;
+  font-size: 45px;
 }
 
-/*管理者追加のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+.admin_email{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.admin_password{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.admin_reg_time{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.contact_us .add{
+  font-size: 25px;
+}
+
+.admin_email .add{
+  font-size: 25px;
+}
+
+.admin_password .add{
+  font-size: 25px;
+}
+
+.admin_reg_time .add{
+  font-size: 25px;
+}
+
+.admin_email input[type="email"]{
+  width: 300px;
+  height: 40px;
+}
+
+.admin_password input[type="password"]{
+  width: 300px;
+  height: 40px;
+}
+
+.admin_reg_time input[type="month"]{
+  width: 300px;
+  height: 40px;
+}
+
+.to-add{
+  width: 80%;
+  margin: 0 auto; /* 中央寄せ */
+  max-width: 400px;
+  padding: 30px;
+}
+
+.to-add .add{
+  background-color: #0000ff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.to-add input[type="submit"] {
+  width: 200px;
+  height: 40px;
+}
+
+/*一覧画面のcss↓ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  */
+body, h1, h2, table {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.coupon-list {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    font-size: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.coupon-list a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.coupon-list a:hover {
+    text-decoration: underline;
+}
