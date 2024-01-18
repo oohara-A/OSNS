@@ -221,6 +221,27 @@ public List<Address> AddressAdd(int id, String prefecture)throws Exception{
 	return add;
 }
 
+//住所表示
+public List<Address> Addressdisp(int id)throws Exception{
+	Connection con = getConnection();
+	List<Address> add=new ArrayList<>();
+	PreparedStatement st;
+		st =con.prepareStatement("select * from address where user_id = ?");
+		st.setInt(1, id);
+		//SQL文実行
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Address address=new Address();
+			address.setUser_id(rs.getInt("user_id"));
+			address.setAddress(rs.getString("address"));
+			add.add(address);
+		}
+		st.close();
+		con.close();
+	return add;
+}
+
+
 //クーポン追加
 public List<Coupon> Coupon_Add(int user_id) throws Exception{
 	// TODO 自動生成されたメソッド・スタブ

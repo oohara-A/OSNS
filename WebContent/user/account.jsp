@@ -21,7 +21,7 @@
         <div class="account">
 
             <div class="account_box">
-                <a href="user_address.jsp">住所追加・変更</a>
+                <a href="Adressdisp.action">住所追加・変更</a>
             </div>
 
             <div class="account_box">

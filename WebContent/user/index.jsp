@@ -8,7 +8,7 @@
 	<div class="image">
 		<!--%E9%A3%9F%E5%93%81は「食品」のURLエンコードされた形 この形じゃないと、エラーになる-->
 		<a href="Procategory.action?category=%E9%A3%9F%E5%93%81">
-		<img alt="商品リストへ" src="../assets/image/food_box.png">
+			<img alt="商品リストへ" src="../assets/image/food_box.png">
 		</a>
 		<h1>食料品</h1>
 	</div>

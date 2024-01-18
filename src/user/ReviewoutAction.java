@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import bean.Product;
 import bean.Review;
+import bean.User;
 import dao.ReviewDAO;
 import tool.Action;
 //レビュー編集画面表示
@@ -16,8 +17,16 @@ public class ReviewoutAction extends Action{
 //		セッションを使えるようにする
 		//sessionの情報を取得
 		HttpSession session=request.getSession();
+		User user = (User) session.getAttribute("user");
+		if(user == null){
+			return "login_error.jsp";
+		}
+		int my_user = user.getId();
 		@SuppressWarnings("unchecked")
 		int user_id =Integer.parseInt(request.getParameter("edit_id"));
+		if(my_user!= user_id){
+			return "product_detail.jsp";
+		}
 //商品ID
 		List<Product> pro = (List<Product>) session.getAttribute("product_detail");
 		int pro_id =0;

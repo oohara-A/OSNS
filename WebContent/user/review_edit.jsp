@@ -4,7 +4,6 @@
 <%@include file="../menu.jsp"%>
 <div class="product_detail">
 <c:forEach var="prodetail" items="${product_detail}">
-
 	<div class="product_box">
 		<img alt="商品画像" src="../assets/proimage/${prodetail.image_filename}">
 		<div class="box">
