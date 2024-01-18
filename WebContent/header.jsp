@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<%@page import="java.util.ArrayList"%>
-<%@page import="bean.User"%>
-<%@page import="java.util.List"%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -20,6 +17,9 @@
 	pageEncoding="UTF-8"%>
 </head>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.ArrayList"%>
+<%@page import="bean.User"%>
+<%@page import="java.util.List"%>
 
 <%
 //セッションの情報を取得
