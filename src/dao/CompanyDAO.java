@@ -185,17 +185,14 @@ public class CompanyDAO extends DAO{
 	}
 
 	// 商品一覧
-	public List<Product> product_list(String product_name,int unit_price, int regiinvqua)
+	public List<Product> product_list()
 		throws Exception {
 		List<Product> product_list=new ArrayList<>();
 
 		Connection con=getConnection();
 
 		PreparedStatement st=con.prepareStatement(
-			"select * from product where product_name like ? and unit_price like ? and regiinvqua like ?");
-		st.setString(1, "%"+product_name+"%");
-		st.setInt(2, unit_price);
-		st.setInt(3, regiinvqua);
+			"select * from product where flag = 0");
 		ResultSet rs=st.executeQuery();
 
 		while (rs.next()) {
@@ -204,7 +201,7 @@ public class CompanyDAO extends DAO{
 			product.setProduct_name(rs.getString("product_name"));
 			product.setUnit_price(rs.getInt("unit_price"));
 			product.setRegiinvqua(rs.getInt("regiinvqua"));
-			product.setUpdate_time(rs.getDate("update_date"));
+			product.setAdding_time(rs.getDate("adding_time"));
 			product_list.add(product);
 		}
 		st.close();

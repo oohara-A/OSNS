@@ -36,7 +36,7 @@
 			</div>
 
 			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">商品一覧</button>
+				<a href="Product_list.action"><button class="combutton">商品一覧</button></a>
 			</div>
 
 			<div class="com_button">
