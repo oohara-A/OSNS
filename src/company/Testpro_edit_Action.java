@@ -10,8 +10,9 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import dao.CompanyDAO;
+import tool.Action;
 
-public class Testpro_edit_Action {
+public class Testpro_edit_Action extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
@@ -46,8 +47,8 @@ public class Testpro_edit_Action {
         if (session.getAttribute("login_company")!=null) {
         	//入力した情報をデータベースに登録
 			CompanyDAO dao=new CompanyDAO();
-			Test_product edit_test_product=dao.testpro_edit(testpro_name,test_price,regiinvqua,category_name,product_description,filename,update_date);
-			session.setAttribute("testproduct", edit_test_product);
+//			Test_product edit_test_product=dao.testpro_edit(testpro_name,test_price,regiinvqua,category_name,product_description,filename,update_date);
+//			session.setAttribute("testproduct", edit_test_product);
 			// product_registration_complete.jspをフォワード先に指定
 			return "product_registration_complete.jsp";
 

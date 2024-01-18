@@ -27,28 +27,28 @@
             <div class="account_box">
                 <a href="user_profile.jsp">ユーザ情報変更</a>
             </div>
-
-            <div class="account_box">
-                <a href="passwordChange.jsp">パスワード変更</a>
-            </div>
-
             <div class="account_box">
                 <a href="user_pay.jsp">支払い方法追加</a>
             </div>
 
             <div class="account_box">
-                <a>OSNS</a>
+                <a href="Coupondisp.action">クーポン一覧</a>
             </div>
 
             <div class="account_box">
-                <a>登録解除</a>
+                <a href="deregistration.jsp">登録解除</a>
             </div>
+<<<<<<< HEAD
 
             <div class="account_box">
                 <a>????</a>
             </div>
         </div>
+=======
+           </div>
+>>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
         <hr>
+
         <h4>おすすめ商品</h4>
 
         <div class="detail_img">
@@ -115,4 +115,5 @@
                 <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
             </div>
         </div>
+
         <%@include file="../footer.jsp" %>

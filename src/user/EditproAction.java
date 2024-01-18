@@ -2,7 +2,6 @@ package user;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,16 +17,14 @@ public class EditproAction extends Action {
 		//セッションを使えるようにする
 		HttpSession session=request.getSession();
 		@SuppressWarnings("unchecked")
-		List<User> user_been=(List<User>)session.getAttribute("user");
-		for(User i : user_been){
-			id = i.getId();
-		}
-		//ログイン名を取得
-		String name=request.getParameter("profile_name");
+		User user_been=(User)session.getAttribute("user");
+			id = user_been.getId();
+		String name=request.getParameter("nameInput");
 //		メールアドレス
-		String email = request.getParameter("profile_mail");
+		String email = request.getParameter("mailInput");
+
 //		電話番号
-		String phone_number = request.getParameter("profile_tellephone");
+		String phone_number = request.getParameter("phoneInput");
 		//ログインパスワードを取得
 		String password=request.getParameter("profile_password");
 

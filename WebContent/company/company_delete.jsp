@@ -1,10 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ include file="../menu.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %><%@ include file="../com_header.jsp" %>
+
+<head>
+	<title>company_login</title>
+	<link rel="stylesheet" href="../assets/css/sanitize.css">
+</head>
+
+<form action="company_top_page.jsp" method="post">
 
 <div class="detele">
 
 	<div class="back_home">
-		<input class="backhome" type="submit" value="ホームに戻る">
+		<input class="backhome" type="submit" href="../css/company_top_page" value="ホームに戻る">
 	</div>
 
 	<h2 class="product_title">企業登録解除</h2>
@@ -30,9 +36,9 @@
 	</div>
 
 	<div class="release_signup">
-        <input class="release" type="submit" value="登録を解除する" >
+        <input class="release" type="submit" name="deregistration" value="登録を解除する" >
     </div>
 
 </div>
 
-<%@ include file="../footer.jsp" %>
+</form>

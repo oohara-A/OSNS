@@ -1,6 +1,8 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@include file="../header.jsp" %>
 
+<<<<<<< HEAD
         <style>
             .container {
                 display: flex;
@@ -140,3 +142,6 @@
 
 
         <%@include file="../footer.jsp" %>
+=======
+<%@include file="../footer.jsp" %>
+>>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47

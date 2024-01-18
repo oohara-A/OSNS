@@ -5,8 +5,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.CompanyDAO;
+import tool.Action;
 
-public class Deleting_couponAction {
+public class Deleting_couponAction extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {

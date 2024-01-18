@@ -23,4 +23,8 @@
 
 </form>
 
+<<<<<<< HEAD
 <%@include file="../footer.jsp"%>
+=======
+<%@include file="../footer.jsp"%>
+>>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47

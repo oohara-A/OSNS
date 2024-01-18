@@ -23,8 +23,8 @@ public class LoginAction extends Action{
 		// jspファイルからユーザ名とパスワードとログイン日時を取得
 		String user_name=request.getParameter("inq_name");
 		String password=request.getParameter("inq_com_name");
-		Date date = new Date();
 
+		Date date = new Date();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		String formattedDate = simpleDateFormat.format(date);
 		java.sql.Date login_date = java.sql.Date.valueOf(formattedDate);
@@ -37,7 +37,8 @@ public class LoginAction extends Action{
 		if (user!=null) {
 			session.setAttribute("user",user);
 			System.out.print("ログイン完了");
-			return "index.jsp";
+//			return "index.jsp";
+			return "first_load.jsp";
 		}
 	// エラーページ
 		return "user_login_error.jsp";

@@ -15,8 +15,6 @@ import tool.Action;
 //カート削除
 public class CartdelAction extends Action {
 public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-// カート内の商品のID取得
-	int product_id = Integer.parseInt(request.getParameter("id"));
 	//セッションをインポート
 		HttpSession session=request.getSession();
 		//カートの商品のIDを取得
@@ -30,18 +28,24 @@ public String execute(HttpServletRequest request, HttpServletResponse response) 
 		java.sql.Date date1 = java.sql.Date.valueOf(formattedDate);
 
 		ProductDAO dao = new ProductDAO();
-		boolean flag = dao.del_cart(product_id,date1);
+		boolean flag = dao.del_cart(id,date1);
 
 		//カートの中の商品を消去
 		for (Product_cart i : cart) {
-			if (i.getProduct().getId()==id) {
+			if (i.getCart_id()==id) {
 				cart.remove(i);
 				break;
 			}
 		}
+		List<Product_cart> cart_num=(List<Product_cart>)session.getAttribute("cart");
+		if(cart_num.isEmpty()){
+			cart_num = null;
+			session.setAttribute("cart", cart_num);
+		}
 
 
-		return "user_cart.jsp";
+
+		return "cart.jsp";
 	}
 
 }
