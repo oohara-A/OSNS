@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../com_header.jsp"%>
 
-<form action="registered.jsp" method="post">
+<form action="inquiry_complete.jsp" method="post">
 
 	<h2 class="com_title">企業用お問い合わせ</h2>
 

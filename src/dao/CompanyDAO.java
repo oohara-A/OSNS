@@ -93,18 +93,52 @@ public class CompanyDAO extends DAO{
 		con.close();
 		return true;
 	}
+//	企業情報の取得
+	public Company select_comp(int id)
+			throws Exception {
+			Company company=new Company();
+
+			Connection con=getConnection();
+
+			// SQL文を実行
+			PreparedStatement st;
+			st=con.prepareStatement(
+				"select * from company where id = ?");
+			st.setInt(1, id);
+			ResultSet rs=st.executeQuery();
+			while (rs.next()){
+				company.setId(rs.getInt("id"));
+				company.setCompany_name(rs.getString("company_name"));
+				company.setAddress(rs.getString("address"));
+				company.setPassword(rs.getString("password"));
+				company.setEmail(rs.getString("email"));
+				company.setName(rs.getString("name"));
+				company.setPhone_number(rs.getString("phone_number"));
+			}
+
+			st.close();
+			con.close();
+			return company;
+		}
 
 	//企業情報編集
-	public Company edit_comp_info(String name,String company_name,String address,String email,String phone_number,String password,Date update_date)
+	public Company edit_comp_info(int id,String name,String company_name,String address,String email,String phone_number,String password,Date update_date)
 		throws Exception {
 		Company company=null;
+		System.out.println("企業編集実行");
 
 		Connection con=getConnection();
-
 		// SQL文を実行
 		PreparedStatement st;
+//		if(name!=null){
+//		     st=con.prepareStatement(
+//					"update company set  company_name = ? where id = ?");
+//			    st.setString(1, name);
+//			    st.setInt(2, id);
+//			    st.executeUpdate();
+//		}
 		st=con.prepareStatement(
-			"update company set name=? and company_name=? and address=? and email=? and phone_number=? and password=? and update_time=?");
+			"update company set name=?,company_name=?,address=?,email=?,phone_number=?,password=?,update_time=? where id = ?");
 		st.setString(1, name);
 		st.setString(2, company_name);
 		st.setString(3, address);
@@ -112,12 +146,13 @@ public class CompanyDAO extends DAO{
 		st.setString(5, phone_number);
 		st.setString(6, password);
 		st.setDate(7, update_date);
+		st.setInt(8, id);
 		st.executeUpdate();
 
 		st.close();
 		con.close();
 		return company;
-	}
+		}
 
 	// 商品追加
 	public Product product_registration(String category_name,String product_name, int unit_price, Date add_date, String product_description,int regiinvqua, String filename2 )

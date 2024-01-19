@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../com_header.jsp"%>
 
-<form action="company_top_page.jsp" method="post">
+<form action="../user/index.jsp" method="post">
 	<div class="back_home">
 			<input class="backhome" type="submit" value="ホームに戻る">
 	</div>

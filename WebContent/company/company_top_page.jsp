@@ -27,8 +27,7 @@
 			</div>
 
 			<div class="com_button">
-				<button class="combutton"
-					onclick="location.href='company_info_edit.jsp'">企業情報</button>
+				<a href="Companyinfodisp.action"><button class="combutton">企業情報</button></a>
 			</div>
 
 			<div class="com_button">
@@ -37,10 +36,6 @@
 
 			<div class="com_button">
 				<a href="Product_list.action"><button class="combutton">商品一覧</button></a>
-			</div>
-
-			<div class="com_button">
-				<button class="combutton" onclick="location.href='company_registration.jsp'">企業登録</button>
 			</div>
 
 			<div class="com_button">

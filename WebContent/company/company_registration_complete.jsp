@@ -2,11 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../com_header.jsp"%>
 
-<form action="company_top_page.jsp" method="post">
+<form action="com_login.jsp" method="post">
 
-	<h2 class="company_signup">登録が完了しました！！</h2>
+	<h2 class="company_signup">登録完了</h2>
 
 	<div class="inq_sending">
-		<input class="sending" type="submit" value="トップページへ">
+		<input class="sending" type="submit" value="ログイン">
 	</div>
 </form>
