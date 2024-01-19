@@ -59,7 +59,7 @@ public class ReviewDAO extends DAO{
 		PreparedStatement st;
 		//SQL文レビュー情報を持ってくる とりあえずレビューテーブルからだけ（後でimageも取り出せるようにする）
 		st=con.prepareStatement(
-			"select * from review inner join review_image on review_image.review_id = review.review_id innser join review_video on review_video.review_id = review.review_id where review.review_id=? and  review.product_id = ?  and review.flag = 0" );
+			"select * from review inner join review_image on review_image.review_id = review.review_id inner join review_video on review_video.review_id = review.review_id where review.review_id=? and  review.product_id = ?  and review.flag = 0" );
 		st.setInt(1, review_id);
 		st.setInt(2, pro_id);
 		//SQL文実行
