@@ -20,7 +20,9 @@ import dao.ReviewDAO;
 import tool.Action;
 //レビュー投稿
 @SuppressWarnings("unused")
+
 @MultipartConfig
+
 public class PostedreviewAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception,ServletException {
 		Review rev = new Review();
