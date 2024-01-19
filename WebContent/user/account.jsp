@@ -21,7 +21,7 @@
         <div class="account">
 
             <div class="account_box">
-                <a href="user_address.jsp">住所追加・変更</a>
+                <a href="Adressdisp.action">住所追加・変更</a>
             </div>
 
             <div class="account_box">
@@ -38,15 +38,7 @@
             <div class="account_box">
                 <a href="deregistration.jsp">登録解除</a>
             </div>
-<<<<<<< HEAD
-
-            <div class="account_box">
-                <a>????</a>
-            </div>
-        </div>
-=======
            </div>
->>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
         <hr>
 
         <h4>おすすめ商品</h4>
