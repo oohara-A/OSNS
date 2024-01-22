@@ -3,8 +3,6 @@
 <%@include file="../com_header.jsp"%>
 
 
-<form action="<%=request.getContextPath() %>/user/index.jsp" method="post">
-=======
 <form action="../user/index.jsp" method="post">
 	<div class="back_home">
 		<input class="backhome" type="submit" value="ホームに戻る">

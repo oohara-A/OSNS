@@ -1,5 +1,3 @@
-
-
 create table user (
 	id int auto_increment primary key not null,
 	name varchar(100) not null,
@@ -161,21 +159,12 @@ count int(100000) not null,
 
 
 CREATE TABLE coupon (
-<<<<<<< HEAD
 coupon_id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-product_id int(1000000) not null,
+product_id int(1000000),
 FOREIGN KEY (product_id) REFERENCES product(id),
 effect int(100)	not null,
 coupon_name varchar(100) not null,
 image varchar(100),
-=======
-coupon_id int(1000) AUTO_INCREMENT PRIMARY KEY NOT NULL,
-product_id int(1000000) ,
-FOREIGN KEY (product_id) REFERENCES product(id),
-effect int(100)	not null,
-coupon_name varchar(100) not null,
-image varchar(100) ,
->>>>>>> afe9be06802c10a40549852b475b0a0856ce0425
 coupon_code varchar(100) not null,
 flag TINYINT(1) NOT NULL DEFAULT 0
 );
