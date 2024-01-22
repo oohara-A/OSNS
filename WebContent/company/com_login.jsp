@@ -2,7 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../com_header.jsp"%>
 
+
 <form action="<%=request.getContextPath() %>/user/index.jsp" method="post">
+=======
+<form action="../user/index.jsp" method="post">
 	<div class="back_home">
 		<input class="backhome" type="submit" value="ホームに戻る">
 	</div>
@@ -33,8 +36,6 @@
 		</div>
 		</div>
 </form>
-
-
 <form action="company_registration.jsp" method="post">
 	<div class="com">
 		<p class="new_acount">企業登録の方はこちらをクリック↓</p>
