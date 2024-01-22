@@ -6,7 +6,6 @@
 <c:when test="${cart != null }">
 	<div class="cart-container">
 		<h2>マイカート</h2>
-		<%-- <%@include file="cart_main.jsp"%> --%>
 		<table class="cart_table">
 	<thead>
 		<tr>

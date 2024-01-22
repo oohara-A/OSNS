@@ -73,11 +73,23 @@
       <c:choose>
 		<c:when test="${Address!=null}">
 			<c:forEach var="Address" items="${Address}">
-	            <div class="box">
-	                <h1>現在の住所</h1><br>
-	                 <input class="add" type="text" value="${Address.address}" readonly>
-	            </div>
+			<div class="box">
+				<table class="cart_table">
+				<thead>
+					<tr>
+						<th>住所</th>
 
+					</tr>
+				</thead>
+				<tbody>
+			<!-- Sample cart item, repeat this block for each item in the cart -->
+				<tr>
+					<td>${Address.address}</td>
+				</tr>
+			<!-- Repeat this block for each item in the cart -->
+		</tbody>
+		</table>
+		</div>
 	         </c:forEach>
 
         </c:when>
@@ -159,31 +171,31 @@
 
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
         </div>
 

@@ -115,7 +115,8 @@ a{
 						</c:if>
                         <a href="message.jsp?id = ${review.user_id }">返信</a>
                          <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
-                         <a href="Reviewdel.action?review_id=${review.review_id }">削除</a>
+                         <a href="Reviewdel.action?review_id=${review.review_id }">削除	</a>
+
                     </div>
         </c:forEach>
     </c:when>

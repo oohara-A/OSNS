@@ -36,11 +36,11 @@
 	</c:otherwise>
 </c:choose>
 <div class="com_login">
-	<a href="../company/com_login.jsp">企業の方はこちら</a>
+	<a href="<%=request.getContextPath() %>/company/com_login.jsp">企業の方はこちら</a>
 </div>
 
 <div class="admin_log">
-	<a href="../admin/admin_login.jsp">管理者の方はこちら</a>
+	<a href="<%=request.getContextPath() %>/admin/admin_login.jsp">管理者の方はこちら</a>
 </div>
 <p class="new_acount">新規登録の方はこちらをクリック↓</p>
 <div class="inq_sending">

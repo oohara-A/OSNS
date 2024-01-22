@@ -47,31 +47,31 @@
 
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
         </div>
 
@@ -80,31 +80,31 @@
 
         <div class="detail_img">
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
 
             <div class="img">
-                <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
+                <img alt="商品画像" width="100" height="100" src="<%=request.getContextPath() %>/assets/image/food_box.png">
             </div>
         </div>
 

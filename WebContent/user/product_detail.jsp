@@ -22,7 +22,7 @@
 <c:forEach var="prodetail" items="${product_detail}">
 
 	<div class="product_box">
-		<img alt="商品画像" src="../assets/proimage/${prodetail.image_filename}">
+		<img alt="商品画像" src="<%=request.getContextPath() %>/assets/proimage/${prodetail.image_filename}">
 		<div class="box">
 			<p>商品名:${prodetail.product_name}</p>
 			<p>価格:${prodetail.unit_price}</p>
@@ -61,7 +61,7 @@
 			<div class="product">
 				<div class="image">
 				<!-- product_cate.id・・・・・商品ID -->
-				<a href="Prodetail.action?id=${product_cate.id}"><img alt="商品詳細へ"src="../assets/proimage/${product_cate.image_filename}"></a>
+				<a href="Prodetail.action?id=${product_cate.id}"><img alt="商品詳細へ"src="<%=request.getContextPath() %>/assets/proimage/${product_cate.image_filename}"></a>
 					<p class="font">商品名:${product_cate.product_name }</p>
 					<p class="font">価格:${product_cate.unit_price}</p>
 					<p class="font">★★★★☆</p>
@@ -74,37 +74,37 @@
 	<div class="detail_img">
 		<div class="img">
 			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
+				src="<%=request.getContextPath() %>/assets/image/food_box.png">
 		</div>
 
 		<div class="img">
 			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
+				src="<%=request.getContextPath() %>/assets/image/food_box.png">
 		</div>
 
 		<div class="img">
 			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
+				src="<%=request.getContextPath() %>/assets/image/food_box.png">
 		</div>
 
 		<div class="img">
 			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
+				src="<%=request.getContextPath() %>/assets/image/food_box.png">
 		</div>
 
 		<div class="img">
 			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
+				src="<%=request.getContextPath() %>/assets/image/food_box.png">
 		</div>
 
 		<div class="img">
 			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
+				src="<%=request.getContextPath() %>/assets/image/food_box.png">
 		</div>
 
 		<div class="img">
 			<img alt="商品画像" width="100" height="100"
-				src="../assets/image/food_box.png">
+				src="<%=request.getContextPath() %>/assets/image/food_box.png">
 		</div>
 	</div>
 

@@ -26,7 +26,7 @@
 		<div class="product">
 			<div class="image">
 			<!-- product_cate.id・・・・・商品ID -->
-			<a href="Prodetail.action?id=${product_cate.id}"><img alt="商品詳細へ"src="../assets/proimage/${product_cate.image_filename}"></a>
+			<a href="Prodetail.action?id=${product_cate.id}"><img alt="商品詳細へ"src="<%=request.getContextPath() %>/assets/proimage/${product_cate.image_filename}"></a>
 				<p class="font">商品名:${product_cate.product_name }</p>
 				<p class="font">価格:${product_cate.unit_price}</p>
 				<p class="font">★★★★☆</p>
@@ -41,7 +41,7 @@
 		<div class="product">
 			<div class="image">
 			<!-- product_cate.id・・・・・商品ID -->
-			<a href="Prodetail.action?id=${product_cate.id}"><img alt="商品詳細へ"src="../assets/proimage/${product_cate.image_filename}"></a>
+			<a href="Prodetail.action?id=${product_cate.id}"><img alt="商品詳細へ"src="<%=request.getContextPath() %>/assets/proimage/${product_cate.image_filename}"></a>
 				<p class="font">商品名:${product_cate.product_name }</p>
 				<p class="font">価格:${product_cate.unit_price}</p>
 				<p class="font">★★★★☆</p>
@@ -56,7 +56,7 @@
 		<div class="product">
 			<div class="image">
 			<!-- product_cate.id・・・・・商品ID -->
-			<a href="Prodetail.action?id=${product_cate.id}"><img alt="商品詳細へ"src="../assets/proimage/${product_cate.image_filename}"></a>
+			<a href="Prodetail.action?id=${product_cate.id}"><img alt="商品詳細へ"src="<%=request.getContextPath() %>/assets/proimage/${product_cate.image_filename}"></a>
 				<p class="font">商品名:${product_cate.product_name }</p>
 				<p class="font">価格:${product_cate.unit_price}</p>
 				<p class="font">★★★★☆</p>

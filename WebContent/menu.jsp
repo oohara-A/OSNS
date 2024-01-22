@@ -22,7 +22,7 @@
 		</form>
 		</li>
 		<li class="menu-item">
-			<!--カートのページ  --><a href="cart.jsp">カート</a>
+			<!--カートのページ  --><a href="Cartdisp.action?id=<%=user_id%>">カート</a>
 		</li>
 		<li class="menu-item">
 			<!--通知  --> <a href="Messagviewg.action?id=<%=user_id %>">🔔</a>
