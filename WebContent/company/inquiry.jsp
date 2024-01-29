@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="../com_header.jsp"%>
+	<div class="back_home">
+        <a class="backhome" href="company_top_page.jsp">ホームに戻る</a>
+	</div>
 
 <form action="inquiry_complete.jsp" method="post">
 

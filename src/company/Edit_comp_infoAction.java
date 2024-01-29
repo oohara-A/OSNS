@@ -56,7 +56,7 @@ public class Edit_comp_infoAction extends Action{
 				Company edit_company_info=dao.edit_comp_info(id,name,company_name,address,email,phone_number,password,update_date);
 				session.setAttribute("company", edit_company_info);
 				// company_top_page.jspをフォワード先に指定
-				return "Edit_comp_info_complete.jsp";
+				return "company_info_edit.jsp";
 			// 入力したパスワードが一致しなかった場合
         	}else{
         		// company_info_edit.jspをフォワード先に指定

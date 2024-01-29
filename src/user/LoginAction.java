@@ -36,8 +36,8 @@ public class LoginAction extends Action{
 		if (user!=null) {
 			session.setAttribute("user",user);
 			System.out.print("ログイン完了");
-			return "index.jsp";
-//			return "first_load.jsp";
+//			return "index.jsp";
+			return "first_load.jsp";
 		}
 	// エラーページ
 		return "user_login_error.jsp";

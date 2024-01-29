@@ -19,13 +19,14 @@
 <!-- SimpleLightbox plugin CSS-->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="<%=request.getContextPath() %>/assets/css/toppage.css" rel="stylesheet" />
+
+
 <meta name="description"
 	content="sampie text sampie textsampie textsampie textsampie textsampie textsampie textsampie textsampie text">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
 	rel="stylesheet">
-<%-- <link rel="stylesheet"
-	href="<%=request.getContextPath() %>/assets/css/sanitize.css"> --%>
+<link rel="stylesheet"
+	href="<%=request.getContextPath() %>/assets/css/sanitize.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath() %>/assets/css/common.css">
 </head>

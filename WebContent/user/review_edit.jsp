@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@include file="../menu.jsp"%>
+
 <div class="product_detail">
 <c:forEach var="prodetail" items="${product_detail}">
 	<div class="product_box">

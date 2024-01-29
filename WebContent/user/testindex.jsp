@@ -1,24 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!doctype html>
+<html lang="ja">
 
-<%@include file="../menu.jsp"%>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<style>
-.border{
-	transform: translate(35%, 80px);
-	margin-bottom: 100px;
-}
-h1{
-	color: white;
-}
-label{
-	color: white;
-}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-</style>
-
-
-
+    <title>Hello, world!</title>
+</head>
+<body>
+<div class="contner">
     <div class="border col-7">
         <br>
         <h2>注文情報入力</h2>
@@ -29,11 +25,11 @@ label{
                 <form action="Purchase.action" method="post">
                     <div class="form-group">
                         <label for="country">国:</label>
-                        <input required  id="country"name="country" type="text" class="form-control" placeholder="日本">
+                        <input required  id="country" name="country" type="text" class="form-control" value="日本">
                     </div>
                     <div class="form-group">
                         <label>氏名：</label>
-                        <input required  id="name" name="name"  type="text" class="form-control" placeholder="大原 太郎">
+                        <input required  id="name" name="name" type="text" class="form-control" placeholder="大原 太郎">
                     </div>
 
                     <div class="form-group">
@@ -42,11 +38,11 @@ label{
                     </div>
                     <div class="form-group">
                         <label>郵便番号：</label>
-                        <input required  id="post"  name="post" type="text" class="form-control" placeholder="802-0002">
+                        <input required  name="post" type="text" class="form-control" placeholder="802-0002">
                     </div>
                     <div class="form-group">
                         <label>都道府県：</label>
-                        <input required  id="prefecture" name="prefecture" type="text" class="form-control" placeholder="福岡県">
+                        <input required  id="post" name="prefecture" type="text" class="form-control" placeholder="福岡県">
                     </div>
                     <div class="form-group">
                         <label>市町村：</label>
@@ -62,8 +58,6 @@ label{
                     </div>
                      <div class="form-group">
                         <label>部屋番号:</label>
-                        <input type="text" id="room"
-								name="room" required placeholder="602">
                     </div>
 
                     <h1>2.支払方法</h1>
@@ -94,7 +88,7 @@ label{
         </div>
         <br>
     </div>
-
+</div>
 <script>
 
             function validateForm(event) {
@@ -153,4 +147,8 @@ label{
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<%@include file="../footer.jsp"%>
+</body>
+
+</html>
+
+

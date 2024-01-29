@@ -1,32 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<html>
+<head>
+    <title>login_error</title>
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+</head>
 
+<body>
+    <%
+        boolean loginFailed = true;
+    %>
 
-<%@ include file="../com_header.jsp"%>
+    <form action="registered.jsp" method="post">
+		<div class="log_all_error">
 
-<%
-    boolean loginFailed = true;
-%>
+        <h2 class="log_error">ログインエラー</h2>
 
-<form action="../user/index.jsp" method="post">
-	<div class="back_home">
-			<input class="backhome" type="submit" value="ホームに戻る">
-	</div>
-</form>
+        <div class="error_message">
+            <% if (loginFailed) { %>
+                <p style="color: red;">ログインに失敗しました。</p>
+                <p style="color: red;">メールアドレスとパスワードを確認してください。</p>
+            <% } %>
+        </div>
 
-<form action="com_login.jsp" method="post">
+        <div class="log_error_button">
+            <input class="error_button" type="submit" value="ログイン">
+        </div>
 
-	<h2 class="log_error">ログインエラー</h2>
+        </div>
+    </form>
 
-
-	<div class="error_message">
-		<% if (loginFailed) { %>
-		<p style="color: red;">ログインに失敗しました。メールアドレスとパスワードを確認してください。</p>
-		<% } %>
-	</div>
-
-	<div class="inq_sending">
-		<input class="sending" type="submit" value="ログイン">
-	</div>
-
-</form>
+</body>
+</html>

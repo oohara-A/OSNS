@@ -1,53 +1,81 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page contentType="text/html; charset=UTF-8"%>
 <%@include file="../menu.jsp"%>
+
 
 <c:choose>
 	<c:when test="${user!=null}">
-		<form action="Userlogout.action">
-			<div class="inq_sending">
-				<input class="sending" type="submit" value="ログアウト">
-			</div>
-		</form>
-	</c:when>
-	<c:otherwise>
-		<div class="inq_sending">
-			<form action="Login.action" method="post">
-				<h2 class="com_title">ログイン</h2>
-				<div class="log">
-					<p class="login">ユーザー名</p>
-					<input type="text" name="inq_name" required="required">
-				</div>
-				<div class="log">
-					<p class="login">パスワード</p>
-					<input type="text" name="inq_com_name" required="required">
-				</div>
+			<section class="vh-100 bg-image"
+  style="background-image: url('../assets/image/bg-masthead.jpg;">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Logout account</h2>
 
-				<div class="logged">
-					<input type="checkbox" name="logged">
-					<p class="logged_in">ログインしたままにする</p>
-				</div>
-				<div class="inq_sending">
-					<input class="sending" type="submit" value="ログイン">
-				</div>
-			</form>
-		</div>
-	</c:otherwise>
+              <form action="Userlogout.action" method="post">
+                <div class="form-outline mb-4">
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">ログアウト</button>
+                </div>
+
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</c:when>
+<c:otherwise>
+<section class="vh-100 bg-image"
+  style="background-image: url('../assets/image/bg-masthead.jpg;">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form action="Login.action" method="post">
+                <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3cg">ユーザ名</label>
+                  <input type="text" name="inq_name" id="form3Example3cg" class="form-control form-control-lg" required="required" />
+                </div>
+
+                <div class="form-outline mb-4">
+                 <label class="form-label" for="form3Example4cg">パスワード</label>
+                  <input type="password" name="inq_com_name" id="form3Example4cg" class="form-control form-control-lg" required="required" />
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">ログイン</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="sign_up.jsp"
+                    class="fw-bold text-body"><u>新規作成はこちら</u></a></p>
+
+                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="<%=request.getContextPath() %>/company/com_login.jsp"
+                    class="fw-bold text-body"><u>企業の方はこちら</u></a></p>
+
+                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="<%=request.getContextPath() %>/admin/admin_login.jsp"
+                    class="fw-bold text-body"><u>管理者の方はこちら</u></a></p>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</c:otherwise>
 </c:choose>
-<div class="com_login">
-	<a href="<%=request.getContextPath() %>/company/com_login.jsp">企業の方はこちら</a>
-</div>
-
-<div class="admin_log">
-	<a href="<%=request.getContextPath() %>/admin/admin_login.jsp">管理者の方はこちら</a>
-</div>
-<p class="new_acount">新規登録の方はこちらをクリック↓</p>
-<div class="inq_sending">
-	<a href="sign_up.jsp"><input class="sending" type="submit"
-		value="アカウントを作成する"></a>
-</div>
-<%@include file="../footer.jsp"%>
-
-
-
+ <%@include file="../footer.jsp"%>

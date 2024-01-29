@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@include file="../header.jsp"%>
+<%@include file="../com_header.jsp"%>
 <%
 //セッションの情報を取得
 	User user = null;
@@ -11,6 +11,7 @@
 		user_id = user.getId();
 	}
 %>
+
 
  <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
