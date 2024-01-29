@@ -24,9 +24,11 @@
 	<input type="text" name="onemore" required="required">
 
 	<p>利用規約・プライバシー規約</p>
+	<!-- <p>悪いことはしないから、するな</p>
 
-	<input type="text" name="terms"> <input type="submit"
-		value="登録">
+	<input type="checkbox" name="agree"> -->
+
+	<input type="submit" value="登録">
 </form>
 
 <%@include file="../footer.jsp"%>
