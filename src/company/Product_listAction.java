@@ -27,7 +27,7 @@ public class Product_listAction extends Action{
 	        // 取得した管理者一覧をセッションに保存
 	        session.setAttribute("productlist", product_list);
 
-	     // product_summary.jspをフォワード先に指定
+	        // product_summary.jspをフォワード先に指定
 	        return "product_summary.jsp";
 
 	    //ログインされていない場合

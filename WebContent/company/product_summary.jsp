@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="../assets/css/sanitize.css">
 </head>
 
-<form action="company_top.jsp" method="post">
+<form action="Product_cancellation.action" method="post">
 <div class="coupon-list">
 
 	<div class="back_home">
@@ -40,6 +40,7 @@
                     <td>${item.unit_price}</td>
                     <td>${item.regiinvqua}</td>
                     <td>${item.adding_time}</td>
+                    <td><button type="submit" class="product_delete">検索</button></td>
                 </tr>
              </c:forEach>
         </tbody>
