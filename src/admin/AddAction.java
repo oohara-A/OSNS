@@ -9,8 +9,9 @@ import javax.servlet.http.HttpSession;
 
 import bean.Admin;
 import dao.AdminDAO;
+import tool.Action;
 
-public class AddAction {
+public class AddAction extends Action {
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {

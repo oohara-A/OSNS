@@ -9,19 +9,20 @@ import javax.servlet.http.HttpSession;
 
 import bean.Admin;
 import dao.AdminDAO;
+import tool.Action;
 
-public class LoginAction {
+public class LoginAction extends Action{
 	public String execute(
-		HttpServletRequest request, HttpServletResponse response
-	) throws Exception {
+		HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		// セッションを開始
 		HttpSession session=request.getSession();
 
 		// リクエストパラメータからメールアドレスとパスワードとログイン日時を取得
-		String email=request.getParameter("email");
-
-		String password=request.getParameter("password");
+		String email=request.getParameter("inq_admin_email");
+		System.out.println(email);
+		String password=request.getParameter("inq_admin_pass");
+		System.out.println(password);
 
 		Date date = new Date();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");

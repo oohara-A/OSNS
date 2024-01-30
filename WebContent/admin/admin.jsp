@@ -1,79 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="../menu.jsp"%>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-
-	<div class="content">
-
-		<div class="menu">
-
-			<div class="image">
-				<img alt="Company Logo" src="../assets/image/OSNS_Logo.png">
-			</div>
-
-			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">企業一覧</button>
-			</div>
-
-			<div class="com_button">
-				<button class="combutton"
-					onclick="location.href='coupon_registration.jsp'">レビュー一覧</button>
-			</div>
-
-			<div class="com_button">
-				<button class="combutton"
-					onclick="location.href='company_info_edit.jsp'">ユーザー一覧</button>
-			</div>
-
-			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">管理者登録</button>
-			</div>
-
-			<div class="com_button">
-				<button class="combutton" onclick="location.href='.jsp'">管理者削除</button>
-			</div>
-		</div>
-
-		<div class="main">
-
-			<div class="logout">
-				<a href="/logout">ログアウト</a>
-			</div>
-
-			<div class="admin_title">
-				<h2 class="admin_top">管理者トップ</h2>
-			</div>
-
-			<div class="com_info">
-				<p class="user_information">管理者情報</p>
-			</div>
-
-			<div class="user_info">
-				<p class="com_user">氏名▶</p>
-				<input type="text" name="name">
-				<p class="com_user">登録日▶</p>
-				<input type="text" name="reg_date">
-				<p class="com_user">メールアドレス▶</p>
-				<input type="email" name="email">
-			</div>
-		</div>
-
-	</div>
-
-	<footer> &copy; 2023 OharaSampleNetShop. All rights reserved.
-	</footer>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@include file="../com_header.jsp"%>
+<%
+//セッションの情報を取得
+	User user = null;
+	user = (User)session.getAttribute("user");
+	int user_id = 0;
+	if(user != null){
+		user_id = user.getId();
+	}
+%>
 
 
+ <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="../user/index.jsp">OharaSampleNetShop</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-item">
+                        	<form action="ProSearch.action">
+								<div class="menu-item">
+									<input	class="nav-linkt type="text" placeholder="キーワード" name="keyword">
+									<button type="submit">検索</button>
+								</div>
+							</form>
+						</li>
+                        <li class="nav-item"><a class="nav-link" href="../user/account.jsp">アカウント</a></li>
+                        <li class="nav-item"><a class="nav-link" href="user_login.jsp">ログイン</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Purchasedisp.action?id=<%=user_id%>">注文履歴</a></li>
+                        <li class="nav-item"><a class="nav-link"  href="Cartdisp.action?id=<%=user_id%>">カート</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Messagviewg.action?id=<%=user_id %>">🔔</a></li>
 
-
-	<%@include file="../footer.jsp"%>
-
-</body>
-</html>
+                    </ul>
+                </div>
+            </div>
+        </nav>
