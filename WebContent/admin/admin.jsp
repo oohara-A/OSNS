@@ -12,7 +12,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
 
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/registration.css">
     </head>
     <body id="page-top">
@@ -26,7 +26,7 @@
                         <li class="nav-item"><a class="nav-link" href="Showreview.action">レビュー一覧</a></li>
                         <li class="nav-item"><a class="nav-link" href="Showuser.action">ユーザー一覧</a></li>
                         <li class="nav-item"><a class="nav-link" href="add_admin.jsp">管理者登録</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Remove.action">管理者削除</a></li>
+                        <li class="nav-item"><a class="nav-link" href="detele_admin.jsp">管理者削除</a></li>
                     </ul>
                 </div>
             </div>

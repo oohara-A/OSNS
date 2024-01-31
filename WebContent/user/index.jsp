@@ -18,7 +18,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
+                        <a class="portfolio-box" href="#" title="Project Name">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/boock.jpeg"/>
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
@@ -27,7 +27,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
+                        <a class="portfolio-box" href="#" title="Project Name">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/kesyou.jpeg"/>
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
@@ -36,7 +36,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
+                        <a class="portfolio-box" href="Procategory.action?category=%E9%9B%BB%E6%B0%97%E7%94%A8%E5%93%81" title="電気用品">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/dennka.jpeg" />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
@@ -45,7 +45,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
+                        <a class="portfolio-box" href="#" title="Project Name">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/newpro.jpeg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
@@ -54,7 +54,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
+                        <a class="portfolio-box" href="#" title="Project Name">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/sikyouhinn.jpeg"alt="..." />
                             <div class="portfolio-box-caption p-3">
                                 <div class="project-category text-white-50">カテゴリ</div>
@@ -63,7 +63,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
+                        <a class="portfolio-box" href="#" title="Project Name">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/star.jpeg"alt="..." />
                             <div class="portfolio-box-caption p-3">
                                 <div class="project-category text-white-50">カテゴリ</div>

@@ -2,14 +2,16 @@
 
 <head>
 <title>admin_login</title>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+<link rel="stylesheet" href="../assets/css/sanitize.css">
 </head>
 
-<form action="com_login.jsp" method="post">
+<form action="company_top_page.jsp" method="post">
 
     <h2 class="company_signup">登録が完了しました！！</h2>
 
     <div class="com_signup">
         <input class="company_up" type="submit" value="トップページへ" >
     </div>
+    </form>
+
 </form>

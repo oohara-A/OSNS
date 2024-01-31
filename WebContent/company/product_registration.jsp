@@ -7,7 +7,7 @@
 			<input class="backhome" type="submit" value="ホームに戻る">
 	</div>
 </form>
-
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
 <form action="Product_registration.action" method="post" enctype="multipart/form-data">
 
 	<h2 class="product_title">商品登録</h2>

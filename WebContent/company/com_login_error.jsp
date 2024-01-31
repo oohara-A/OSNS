@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html>
 <head>
     <title>login_error</title>
@@ -11,7 +11,7 @@
         boolean loginFailed = true;
     %>
 
-    <form action="registered.jsp" method="post">
+    <form action="com_login.jsp" method="post">
 		<div class="log_all_error">
 
         <h2 class="log_error">ログインエラー</h2>
@@ -24,7 +24,9 @@
         </div>
 
         <div class="log_error_button">
-            <input class="error_button" type="submit" value="ログイン">
+        	<a href="com_login.jsp">
+            	<input class="error_button" type="submit" value="ログイン">
+            </a>
         </div>
 
         </div>
