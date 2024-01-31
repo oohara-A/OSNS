@@ -2,7 +2,6 @@ package user;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,13 +16,11 @@ public class DeregiAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//セッションを使えるようにする
 		HttpSession session=request.getSession();
-		int id = 0;
+		int uesr_id = 0;
 		@SuppressWarnings("unchecked")
-		List<User> user_been=(List<User>)session.getAttribute("user");
-		for(User i : user_been){
+		User user_been=(User)session.getAttribute("user");
 //			id取得
-			id = i.getId();
-		}
+			uesr_id = user_been.getId();
 //		削除日時日時
 		Date date = new Date();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -31,12 +28,12 @@ public class DeregiAction extends Action {
 		java.sql.Date date1 = java.sql.Date.valueOf(formattedDate);
 		//登録解除
 		UserDAO dao=new UserDAO();
-		boolean user = dao.update(id,date1);
+		boolean user = dao.update(uesr_id,date1);
 //		登録解除が正常に出来た場合
 		if(user == true){
 			// ユーザBeanを削除
 			session.removeAttribute("user");
-			System.out.println("登録解除");
+			System.out.println("登録解除完了");
 //			topページに戻す
 			return "index.jsp";
 

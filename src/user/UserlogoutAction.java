@@ -13,6 +13,11 @@ public class UserlogoutAction extends Action {
 		HttpSession session=request.getSession();
 		// ユーザBeanを削除
 		session.removeAttribute("user");
+		session.removeAttribute("Address");
+		session.removeAttribute("cart");
+		session.removeAttribute("user_review");
+		session.removeAttribute("send_email");
+		session.removeAttribute("purc_his");
 		// フォワード先を指定
 		return "index.jsp";
 	}

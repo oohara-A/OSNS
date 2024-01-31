@@ -1,5 +1,7 @@
+<%@page import="bean.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
 /* レビューフォームのスタイル */
 .review-form {
@@ -27,32 +29,126 @@
 	border-radius: 5px;
 	background-color: #f9f9f9;
 }
+
+/* レビュー表示のcss */
+.box2 {
+	/*  display: flex; */
+	 padding-right10
+    position: relative;
+   padding: 1rem 1rem 1.2rem;
+   	padding-right:2rem;
+ 	border-bottom: 2px solid #333;
+    background: linear-gradient(#DFF3CA 0 calc(100% - 0.2rem), white calc(100% - 0.2rem));
+    font-size: 20px;
+    margin-right:190px;
+	}
+
+.box2:before,
+.box2:after {
+    position: absolute;
+    left: 50%;
+    content: "";
+    height: 0;
+    width: 0;
+}
+
+.box2:before {
+    top: 100%;
+    border: 9px solid;
+    border-color: transparent;
+    border-top-color: #333;
+    margin-left: -9px;
+}
+
+.box2:after {
+    top: 99%;
+    border: 8px solid;
+    border-color: transparent;
+    border-top-color: white;
+    margin-left: -8px;
+}
+
+.box2.p{
+    color: #333;
+    line-height: 1.5;
+}
+.border-radius {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background-color: green;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  margin-right: 10px; /* 余白を調整するために必要に応じてマージンを追加 */
+  }
+.review{
+display:flex;
+align-items: center;
+}
+.ptagu{
+	padding-right: 10px;
+}
+a{
+	color:inherit;
+	text-decoration:none;
+	color: black;
+}
 </style>
 
 <hr>
-<div>
+
 	<h3>商品レビュー</h3>
-
 	<!-- レビューとリプライの表示 -->
-	<div class="product-reviews" id="productReviews">
-		<!-- レビューと返信表示エリア -->
-	</div>
+	<div class="box2">
+<c:choose>
+    <c:when test="${user_review != null}">
+        <c:forEach var="review" items="${user_review}">
+                    <div class="review">
+                        <div class="border-radius">コメ</div>
+                        <p class="ptagu">${review.reviewbody}</p><br>
+                        <c:if test="${not empty review.review_image}">
+						    <p><img alt="写真" src="../assets/review_image/${review.review_image}" width="250px" height="250px"></p>
+						</c:if>
+						 <c:if test="${not empty review.review_video}">
+							<video  controls="controls"  preload="none" data-setup="{}" src="../assets/review_video/${review.review_video}"  width="400" height="500" ></video>
+						</c:if>
+                        <a href="message.jsp?id = ${review.user_id }">返信</a>
+                         <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
+                         <a href="Reviewdel.action?review_id=${review.review_id }">削除	</a>
 
-	<!-- レビュー＆リプライ投稿フォーム -->
-	<form id="productReviewForm"
-		onsubmit="submitProductReview(); return false;" class="review-form">
+                    </div>
+        </c:forEach>
+    </c:when>
+    <c:otherwise>
+        <h1>コメントなし</h1>
+    </c:otherwise>
+</c:choose>
+<!-- レビュー＆リプライ投稿フォーム -->
+
+<div>
 		<h4>商品レビューを投稿</h4>
-		<textarea id="productReviewContent" rows="4" cols="50"
-			placeholder="あなたの商品レビューを入力してください" required></textarea>
-		<br> <label for="rating">評価:</label> <select id="rating" required>
-			<option value="1">☆</option>
-			<option value="2">☆☆</option>
-			<option value="3">☆☆☆</option>
-			<option value="4">☆☆☆☆</option>
-			<option value="5">☆☆☆☆☆</option>
-		</select> <br> <input type="submit" value="投稿">
-	</form>
-</div>
+		<form action="Postedreview.action" enctype="multipart/form-data" method="post" class="review-form">
+		    <textarea name="reviews" id="productReviewContent" rows="4" cols="50"
+		              placeholder="あなたの商品レビューを入力してください" required></textarea>
+		    <br>
+		    <h2>画像選択</h2>
+		    <input type="file" name="part"><br>
+		    <h2>動画選択</h2>
+		    <input type="file" name="part2"><br>
+		    <label for="rating">評価:</label>
+		    <select name="ratings" id="rating" required>
+		        <option value=1>☆</option>
+		        <option value=2>☆☆</option>
+		        <option value=3>☆☆☆</option>
+		        <option value=4>☆☆☆☆</option>
+		        <option value=5>☆☆☆☆☆</option>
+		    </select>
+		    <br>
+		    <input type="submit" value="投稿">
+		</form>
+	</div>
+	</div>
 
 <script>
         var productReviews = []; // 商品レビューとチャットの管理用オブジェクト

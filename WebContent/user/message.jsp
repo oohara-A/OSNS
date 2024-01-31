@@ -1,6 +1,20 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="bean.Product"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ include file="../header.jsp"%>
+<%
+	List<Product> pro = new ArrayList<>();
+	pro = (List<Product> ) session.getAttribute("product_detail");
+	String pro_name = "";
+	for(Product p : pro){
+		pro_name = p.getProduct_name();
+		break;
+	}
+%>
 
 <style>
 body {
@@ -112,10 +126,8 @@ body {
 <script>
             function changeReview(userName, content, rating) {
                 var reviewElement = document.getElementById('current-review');
-                reviewElement.innerHTML = '<div class="review"><p>' + userName + ': ' + content + '：' + rating +
-                    ' <span class="report-link" onclick="reportReview()">通報</span>' +
-                    ' <span class="edit-link" onclick="editReview()">編集</span>' +
-                    ' <span class="delete-link" onclick="deleteReview()">削除</span></p></div>';
+                reviewElement.innerHTML = '<div class="review"><input type="hidden" name="user_id" value="'+userName+'"><p>' +'購入者ID'+ userName + ': ' + content + '：' + rating +
+                    ' <span class="report-link" onclick="reportReview()">通報</span>'
                 // 返信をクリア
                 var replyElement = document.getElementById('current-reply');
                 replyElement.innerHTML = '';
@@ -199,35 +211,29 @@ body {
 <hr>
 <div class="container">
 	<div class="buyer-info">
-		<img alt="ユーザーアイコン" src="#"
-			onclick="changeReview('購入者1', '「あああああああああ」', '★★★★☆')">
+		<img alt="ユーザーアイコン" src="#">
 		<p>購入者レビュー</p>
-		<div class="review-item"
-			onclick="changeReview('購入者1', '「あああああああああ」', '★★★★☆')">
-			<p>「あああああああああ」：★★★★☆</p>
-			<div class="reply" onclick="showReply('購入者2', '使用感はどうでしたか？')">返信：使用感はどうでしたか？</div>
-			<div class="reply"
-				onclick="showReply('購入者3', '少し大きめなので手の大きさによっては使いづらいかもしれません')">
-				返信：少し大きめなので手の大きさによっては使いづらいかもしれません</div>
-		</div>
-		<div class="review-item"
-			onclick="changeReview('購入者2', '「いいいいいいいいい」', '★★★★★')">
-			<p>「いいいいいいいいい」：★★★★★</p>
-			<div class="reply" onclick="showReply('購入者1', 'そうですか？')">返信：そうですか？</div>
-		</div>
+	<div class="review_come">
+		<c:forEach var="review" items="${user_review}">
+                    <div class="review-item" onclick="changeReview('${review.user_id }','${review.reviewbody}' , '★★★★★')">
+                        <div class="border-radius">コメント</div>
+                        <p class="ptagu">${review.reviewbody}</p>
+                    </div>
+        </c:forEach>
 	</div>
 
+</div>
 	<div class="review-chat">
-		<h2>〇〇〇の商品レビューチャット</h2>
-
+		<h2><%=pro_name %>の商品チャット</h2>
+	<form action="Messgsend.action">
 		<div id="current-review"></div>
-
 		<div id="current-reply"></div>
-
 		<div class="review-form">
-			<input type="text" id="replyContent" placeholder="返信を入力"> <input
-				type="submit" value="返信" onclick="replyToReview()">
+			<input type="text" id="replyContent" name="reply" placeholder="返信を入力">
+			<input type="submit" value="返信" >
 		</div>
+		</form>
+
 	</div>
 </div>
 
