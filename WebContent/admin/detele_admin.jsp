@@ -2,11 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../admin_header.jsp"%>
 
+<div class="back_home">
+		<a href="admin.jsp"><input class="backhome" type="submit" value="ホームに戻る"></a>
+</div>
 <form action="Remove.action" method="post">
 
-	<div class="back_home">
-		<input class="backhome" type="submit" value="ホームに戻る">
-	</div>
+
 
 	<h2 class="admin_title">管理者を削除</h2>
 

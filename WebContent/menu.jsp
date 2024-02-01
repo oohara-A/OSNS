@@ -21,13 +21,13 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                     <li class="nav-item">
-                        	<form action="ProSearch.action">
-								<div class="menu-item">
-									<input	class="nav-linkt type="text" placeholder="キーワード" name="keyword">
-									<button type="submit">検索</button>
-								</div>
-							</form>
-						</li>
+                       	<form action="ProSearch.action">
+							<div class="menu-item">
+								<input	class="nav-linkt type="text" placeholder="キーワード" name="keyword">
+								<button type="submit">検索</button>
+							</div>
+						</form>
+					</li>
                         <li class="nav-item"><a class="nav-link" href="../user/account.jsp">アカウント</a></li>
                         <li class="nav-item"><a class="nav-link" href="user_login.jsp">ログイン</a></li>
                         <li class="nav-item"><a class="nav-link" href="Purchasedisp.action?id=<%=user_id%>">注文履歴</a></li>

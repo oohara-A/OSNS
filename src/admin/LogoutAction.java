@@ -11,9 +11,10 @@ public class LogoutAction extends Action {
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 		HttpSession session=request.getSession();
+
 		// セッションから削除
 		session.removeAttribute("login_admin");
 		// admin.jspをフォワード先に指定
-		return "../user/index.jsp";
+		return "";
 	}
 }
