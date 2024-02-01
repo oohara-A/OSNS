@@ -18,8 +18,11 @@ public class Edit_comp_infoAction extends Action{
 
 		// セッションを開始
 		HttpSession session=request.getSession();
+//		企業ID
+		int id = Integer.parseInt(request.getParameter("com_id"));
 		// 氏名
 		String name=request.getParameter("name");
+		System.out.println("企業編集"+name);
 		// 企業名
 		String company_name=request.getParameter("company_name");
 		// 所在地
@@ -28,10 +31,14 @@ public class Edit_comp_infoAction extends Action{
 		String email=request.getParameter("email");
 		// 電話番号
 		String phone_number=request.getParameter("phone_number");
+
 		// パスワード
 		String password=request.getParameter("password");
+		System.out.println("編集アクションのパスワード１"+password);
+
 		// パスワード(確認)
 		String password2=request.getParameter("password2");
+		System.out.println("編集アクションのパスワード2"+password2);
 
 		//更新日時
 		Date date = new Date();
@@ -42,16 +49,18 @@ public class Edit_comp_infoAction extends Action{
 		// ログインされている場合
         if (session.getAttribute("login_company")!=null) {
         	// 入力したパスワードが一致した場合
-        	if (password==password2){
+        	if(password.equals(password2)){
+        		System.out.println("編集アクションのtrue実行");
 	        	//入力した情報をデータベースに登録
 				CompanyDAO dao=new CompanyDAO();
-				Company edit_company_info=dao.edit_comp_info(name,company_name,address,email,phone_number,password,update_date);
+				Company edit_company_info=dao.edit_comp_info(id,name,company_name,address,email,phone_number,password,update_date);
 				session.setAttribute("company", edit_company_info);
 				// company_top_page.jspをフォワード先に指定
-				return "company_top_page.jsp";
+				return "company_info_edit.jsp";
 			// 入力したパスワードが一致しなかった場合
         	}else{
         		// company_info_edit.jspをフォワード先に指定
+        		System.out.println("編集アクションのelse実行");
         		return "company_info_edit.jsp";
         	}
 
