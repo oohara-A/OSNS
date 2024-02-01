@@ -10,11 +10,10 @@
 <div class="detele">
 
 	<div class="back_home">
-		<input class="backhome" type="submit" href="../css/company_top_page" value="ホームに戻る">
-	</div>
+            <a class="backhome" href="company_top_page.jsp">ホームに戻る</a>
+    </div>
 
 	<h2 class="product_title">企業登録解除</h2>
-
 
 	<div class="confirmation">
 		<p class="deregistration">●登録解除の確認について</p>

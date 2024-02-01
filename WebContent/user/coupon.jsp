@@ -17,71 +17,7 @@ body{
 
 <a href="Couponadd.action" class="border_btn08"><span class=>トップに戻る</span></a>
 <div id="particles-js"></div>
-<!-- Please heart it if you like! -->
-<!-- <div id="book">
-	<div id="top"></div>
-	<div id="front"></div>
-	<div id="right"></div>
-	<div id="bottom"></div>
-	<div id="shadow"></div>
-	<div id="bookmark">
-		<div>
-			<div>
-				<div>
-					<div></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="bookmark-shadow"></div>
-</div>
-<div id="flip">
-	<div id="front">
-		<div>
-			<div>
-				<div>
-					<div>
-						<div>
-							<div>
-								<div>
-									<div>
-										<div>
-											<div></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 
-<div id="back">
-	<div>
-		<div>
-			<div>
-				<div>
-					<div>
-						<div>
-							<div>
-								<div>
-									<div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
- -->
 <div id="editor-drag-cover" class="drag-cover"></div>
 
 

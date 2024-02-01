@@ -2,6 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../admin_header.jsp"%>
 
+<style>
+.contact_us{
+	 padding-left: 630px;
+}
+</style>
 <div class="back_home">
 	<a href="admin.jsp"><input class="backhome" type="submit" value="ホームに戻る"></a>
 </div>
@@ -29,4 +34,4 @@
 
 </form>
 
-<%@ include file="../footer.jsp"%>
+</body>

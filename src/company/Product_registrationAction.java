@@ -65,7 +65,7 @@ public class Product_registrationAction extends Action{
 			Product add_product=dao.product_registration(category_name,product_name,unit_price,add_date,product_description,regiinvqua,filename2 );
 			session.setAttribute("product", add_product);
 			// product_registration_complete.jspをフォワード先に指定
-			return "company_registration_complete.jsp";
+			return "product_registration_complete.jsp";
 
 		//ログインされていない場合
         }else{

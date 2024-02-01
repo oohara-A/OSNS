@@ -47,7 +47,7 @@
 
             <div class='gacha-body'>
                 <img src="https://lallapallooza.jp/wp-content/uploads/2020/07/gacha.png">
-                 <button type="submit" class="rever rotate"><img onClick="Rotation();"  src="../assets/image/gacha-rever.png"></button>
+                 <button type="submit" class="rever rotate"><img onClick="Rotation();"  src="<%=request.getContextPath() %>/assets/image/gacha-rever.png"></button>
             </div>
             <div id="editor-drag-cover" class="drag-cover"></div>
         </div>
