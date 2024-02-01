@@ -24,7 +24,7 @@ public class Display_coupon_listAction extends Action{
 			CompanyDAO dao=new CompanyDAO();
 			List<Coupon> coupon_list = dao.coupon_list();
 
-	        // 取得した管理者一覧をセッションに保存
+	        // 取得したクーポン一覧をセッションに保存
 	        session.setAttribute("couponlist", coupon_list);
 
 	     // product_summary.jspをフォワード先に指定

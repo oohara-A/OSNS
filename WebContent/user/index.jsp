@@ -10,7 +10,7 @@
                 <div class="row g-0">
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="Procategory.action?category=%E9%A3%9F%E5%93%81" title="食料品">
-                            <img class="img-fluid"  src="<%=request.getContextPath() %>/assets/image/food.jpeg" alt="..." />
+                            <img class="img-fluid"  src="<%=request.getContextPath() %>/assets/image/new_food.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
                                 <div class="project-name">食料品</div>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="#" title="Project Name">
-                            <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/boock.jpeg"/>
+                            <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/new_book.jpg"/>
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
                                 <div class="project-name">書籍</div>
@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="#" title="Project Name">
-                            <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/kesyou.jpeg"/>
+                            <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/new_cosmetics.jpg"/>
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
                                 <div class="project-name">化粧品</div>
@@ -37,7 +37,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="Procategory.action?category=%E9%9B%BB%E6%B0%97%E7%94%A8%E5%93%81" title="電気用品">
-                            <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/dennka.jpeg" />
+                            <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/new_kaden.jpg" />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
                                 <div class="project-name">電化製品</div>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="#" title="Project Name">
-                            <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/newpro.jpeg" alt="..." />
+                            <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/osns_new.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
                                 <div class="project-name">新商品</div>
