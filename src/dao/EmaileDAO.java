@@ -25,8 +25,11 @@ public class EmaileDAO extends DAO {
 			Email p=new Email();
 			p.setEmail_id(rs.getInt("email_id"));
 			p.setSender(rs.getInt("sender"));
+			p.setRecipient(rs.getInt("recipient"));
 			p.setSubject(rs.getString("subject"));
 			p.setBody(rs.getString("body"));
+			p.setStatus(rs.getString("status"));
+			p.setSending_time(rs.getDate("sending_time"));
 			user_maile.add(p);
 			}
 		st.close();
@@ -35,13 +38,13 @@ public class EmaileDAO extends DAO {
 
 	}
 
-//	受信者のメッセージ取得
-	public Email select_recipient(int id)throws Exception{
+//	受け取ったメッセージ取得
+	public List<Email> select_recipient(int id)throws Exception{
 		List<Email>recipient_maile = new ArrayList<>();
 		Connection con=getConnection();
 //		受信者の情取得
 		PreparedStatement st=con.prepareStatement(
-				"select * from email where sender = ? and flag = 0 ");
+				"select * from email where RECIPIENT = ? and flag = 0 ");
 //		idset
 		st.setInt(1, id);
 //		SQL実行
@@ -52,11 +55,12 @@ public class EmaileDAO extends DAO {
 			p.setSender(rs.getInt("sender"));
 			p.setSubject(rs.getString("subject"));
 			p.setBody(rs.getString("body"));
+			p.setSending_time(rs.getDate("sending_time"));
 			recipient_maile.add(p);
 			}
 		st.close();
 		con.close();
-		return (Email) recipient_maile;
+		return  recipient_maile;
 
 	}
 
@@ -80,9 +84,9 @@ public class EmaileDAO extends DAO {
 //	メッセージ削除
 	public boolean emaile_del(int email_id, int user_id)throws Exception{
 		Connection con=getConnection();
-		byte flag = 1;
+		int flag = 1;
 		PreparedStatement st=con.prepareStatement(
-				"update email set flag = ?,where email_id = ? and sender = ?");
+				"update email set flag = ? where email_id = ? and sender = ?");
 		st.setInt(1, flag);
 		st.setInt(2, email_id);
 		st.setInt(3, user_id);

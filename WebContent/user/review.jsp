@@ -100,17 +100,23 @@ a{
 
 	<h3>商品レビュー</h3>
 	<!-- レビューとリプライの表示 -->
-
 	<div class="box2">
 <c:choose>
     <c:when test="${user_review != null}">
         <c:forEach var="review" items="${user_review}">
                     <div class="review">
                         <div class="border-radius">コメ</div>
-                        <p class="ptagu">${review.reviewbody}</p>
-                        <a href="message.jsp?id = ${user_id }">返信</a>
-                         <a href="#">編集</a>
-                         <a href="Reviewdel.action?review_id=${review.review_id }">削除</a>
+                        <p class="ptagu">${review.reviewbody}</p><br>
+                        <c:if test="${not empty review.review_image}">
+						    <p><img alt="写真" src="../assets/review_image/${review.review_image}" width="250px" height="250px"></p>
+						</c:if>
+						 <c:if test="${not empty review.review_video}">
+							<video  controls="controls"  preload="none" data-setup="{}" src="../assets/review_video/${review.review_video}"  width="400" height="500" ></video>
+						</c:if>
+                        <a href="message.jsp?id = ${review.user_id }">返信</a>
+                         <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
+                         <a href="Reviewdel.action?review_id=${review.review_id }">削除	</a>
+
                     </div>
         </c:forEach>
     </c:when>
@@ -119,21 +125,29 @@ a{
     </c:otherwise>
 </c:choose>
 <!-- レビュー＆リプライ投稿フォーム -->
-		<div>
-			<form action="Postedreview.action" id="productReviewForm"
-				onsubmit="submitProductReview(); return false;" class="review-form">
-				<h4>商品レビューを投稿</h4>
-				<textarea name="reviews" id="productReviewContent" rows="4" cols="50"
-					placeholder="あなたの商品レビューを入力してください" required></textarea>
-				<br> <label for="rating">評価:</label> <select name="ratings" id="rating" required>
-					<option value=1>☆</option>
-					<option value=2>☆☆</option>
-					<option value=3>☆☆☆</option>
-					<option value=4>☆☆☆☆</option>
-					<option value=5>☆☆☆☆☆</option>
-				</select> <br> <input type="submit" value="投稿">
-			</form>
-			</div>
+
+<div>
+		<h4>商品レビューを投稿</h4>
+		<form action="Postedreview.action" enctype="multipart/form-data" method="post" class="review-form">
+		    <textarea name="reviews" id="productReviewContent" rows="4" cols="50"
+		              placeholder="あなたの商品レビューを入力してください" required></textarea>
+		    <br>
+		    <h2>画像選択</h2>
+		    <input type="file" name="part"><br>
+		    <h2>動画選択</h2>
+		    <input type="file" name="part2"><br>
+		    <label for="rating">評価:</label>
+		    <select name="ratings" id="rating" required>
+		        <option value=1>☆</option>
+		        <option value=2>☆☆</option>
+		        <option value=3>☆☆☆</option>
+		        <option value=4>☆☆☆☆</option>
+		        <option value=5>☆☆☆☆☆</option>
+		    </select>
+		    <br>
+		    <input type="submit" value="投稿">
+		</form>
+	</div>
 	</div>
 
 <script>

@@ -1,7 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../menu.jsp"%>
+<%@ include file="../com_header.jsp"%>
 
+<form action="company_top_page.jsp" method="post">
+	<div class="back_home">
+			<input class="backhome" type="submit" value="ホームに戻る">
+	</div>
+</form>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
 <form action="Product_registration.action" method="post" enctype="multipart/form-data">
 
 	<h2 class="product_title">商品登録</h2>
@@ -53,11 +59,6 @@
         <input type="submit" value="登録完了">
     </div>
 </form>
-
 	<div class="sample_info">
-		<a href="sample_registration.jsp">試供品登録はこちら</a>
+		<a href="sample__registration.jsp">試供品登録はこちら</a>
 	</div>
-
-
-
-<%@ include file="../footer.jsp"%>

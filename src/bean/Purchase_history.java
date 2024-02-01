@@ -26,11 +26,37 @@ private Date purchase_time;
 //キャンセルフラグ
 private	boolean cancel_flag;
 private int product_id;
+private int count;
+private String image_filename;
 /**
  * @return product_id
  */
 public int getProduct_id() {
 	return product_id;
+}
+/**
+ * @return image_filename
+ */
+public String getImage_filename() {
+	return image_filename;
+}
+/**
+ * @param image_filename セットする image_filename
+ */
+public void setImage_filename(String image_filename) {
+	this.image_filename = image_filename;
+}
+/**
+ * @return count
+ */
+public int getCount() {
+	return count;
+}
+/**
+ * @param count セットする count
+ */
+public void setCount(int count) {
+	this.count = count;
 }
 /**
  * @param product_id セットする product_id

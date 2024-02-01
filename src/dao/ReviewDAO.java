@@ -17,14 +17,14 @@ import bean.Review_video;
 public class ReviewDAO extends DAO{
 	public List<Review> select(int pro_id) throws Exception{
 		List<Review> review= new ArrayList<>();
-		Review_image re_image = new Review_image();
-		Review_video re_video = new Review_video();
+//		Review_image re_image = new Review_image();
+//		Review_video re_video = new Review_video();
 		//データベース接続
 		Connection con=getConnection();
 		PreparedStatement st;
 		//SQL文レビュー情報を持ってくる とりあえずレビューテーブルからだけ（後でimageも取り出せるようにする）
 		st=con.prepareStatement(
-			"select * from review where product_id = ? and flag = 0" );
+			"select * from review inner join review_image on review_image.review_id = review.review_id inner join review_video on review_video.review_id = review.review_id  where  review.product_id = ?  and review.flag = 0" );
 		st.setInt(1, pro_id);
 		//SQL文実行
 		ResultSet rs=st.executeQuery();
@@ -34,10 +34,48 @@ public class ReviewDAO extends DAO{
 			r.setReview_id(rs.getInt("review_id"));
 			r.setUser_id(rs.getInt("user_id"));
 			r.setProduct_id(rs.getInt("product_id"));
+			r.setReview_image(rs.getString("image_filename"));
+			System.out.println("REVIEWだお"+rs.getString("image_filename"));
+			r.setReview_video(rs.getString("video_filename"));
+			System.out.println("review_video"+rs.getString("video_filename"));
 			r.setRating(rs.getInt("rating"));
 			r.setReviewbody(rs.getString("reviewbody"));
 			review.add(r);
 
+		}
+		//データベース接続切断
+		st.close();
+		con.close();
+//レビュー情報
+		return review ;
+	}
+
+	public List<Review> select_userrev(int review_id,int pro_id) throws Exception{
+		List<Review> review= new ArrayList<>();
+		Review_image re_image = new Review_image();
+		Review_video re_video = new Review_video();
+		//データベース接続
+		Connection con=getConnection();
+		PreparedStatement st;
+		//SQL文レビュー情報を持ってくる とりあえずレビューテーブルからだけ（後でimageも取り出せるようにする）
+		st=con.prepareStatement(
+			"select * from review inner join review_image on review_image.review_id = review.review_id inner join review_video on review_video.review_id = review.review_id where review.review_id=? and  review.product_id = ?  and review.flag = 0" );
+		st.setInt(1, review_id);
+		st.setInt(2, pro_id);
+		//SQL文実行
+		ResultSet rs=st.executeQuery();
+//データベースからレビュー情報を取得
+		while (rs.next()) {
+			Review r = new Review();
+			r.setReview_id(rs.getInt("review_id"));
+			r.setUser_id(rs.getInt("user_id"));
+			r.setProduct_id(rs.getInt("product_id"));
+			r.setReview_image(rs.getString("image_filename"));
+			r.setReview_video(rs.getString("video_filename"));
+			System.out.println("review_video"+rs.getString("video_filename"));
+			r.setRating(rs.getInt("rating"));
+			r.setReviewbody(rs.getString("reviewbody"));
+			review.add(r);
 		}
 		//データベース接続切断
 		st.close();
@@ -96,10 +134,16 @@ public class ReviewDAO extends DAO{
 	public boolean review_del(int review_id)throws Exception{
 //		データベース接続
 		Connection con = getConnection();
-		PreparedStatement st = con.prepareStatement(
+		PreparedStatement st;
+		 st = con.prepareStatement(
 				"update review set flag = ? where review_id =?"
 				);
 		st.setInt(1, 1);
+		st.setInt(2,review_id );
+		st.executeUpdate();
+		 st = con.prepareStatement(
+				"update review_image set flag = ? where review_id =?");
+		 st.setInt(1, 1);
 		st.setInt(2,review_id );
 		st.executeUpdate();
 		st.close();

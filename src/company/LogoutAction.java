@@ -14,9 +14,10 @@ public class LogoutAction extends Action{
 		HttpSession session=request.getSession();
 
 		// セッションから削除
-		session.removeAttribute("company");
+		session.removeAttribute("login_company");
+		System.out.println("ログアウト");
 		// company_top_page.jspをフォワード先に指定
-		return "company_top_page.jsp";
+		return "../user/index.jsp";
 
 	}
 }

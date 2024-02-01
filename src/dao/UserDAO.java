@@ -6,19 +6,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import bean.Address;
+import bean.Coupon;
 import bean.User;
 //ログイン操作など
 public class UserDAO extends DAO {
 //	ログイン時使用
-
 	public User search(String user_name, String password,Date login_date)
 			throws Exception {
 			User user=null;
 			//データベース接続
 			Connection con=getConnection();
-
 			PreparedStatement st;
 			//SQL文ログインしたユーザ情報があるかどうか
 			st=con.prepareStatement(
@@ -39,7 +39,6 @@ public class UserDAO extends DAO {
 				user.setEmail("email");
 				user_id = rs.getInt("id");
 			}
-
 			if(user_id != 0){
 	//			履歴にID登録
 				//ログイン履歴
@@ -197,17 +196,16 @@ public boolean favorite_insert(int id, int product_id)throws Exception{
 	return true;
 
 }
+
 //住所追加
 public List<Address> AddressAdd(int id, String prefecture)throws Exception{
 	Connection con = getConnection();
 	List<Address> add=new ArrayList<>();
 	PreparedStatement st;
-
 	 st = con.prepareStatement("insert into address (user_id,address) values(?, ?)");
 		st.setInt(1, id);
 		st.setString(2, prefecture);
 		st.executeUpdate();
-
 		st =con.prepareStatement("select * from address where user_id = ?");
 		st.setInt(1, id);
 		//SQL文実行
@@ -221,8 +219,105 @@ public List<Address> AddressAdd(int id, String prefecture)throws Exception{
 		st.close();
 		con.close();
 	return add;
+}
+
+//住所表示
+public List<Address> Addressdisp(int id)throws Exception{
+	Connection con = getConnection();
+	List<Address> add=new ArrayList<>();
+	PreparedStatement st;
+		st =con.prepareStatement("select * from address where user_id = ?");
+		st.setInt(1, id);
+		//SQL文実行
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Address address=new Address();
+			address.setUser_id(rs.getInt("user_id"));
+			address.setAddress(rs.getString("address"));
+			add.add(address);
+		}
+		st.close();
+		con.close();
+	return add;
+}
 
 
+//クーポン追加
+public List<Coupon> Coupon_Add(int user_id) throws Exception{
+	// TODO 自動生成されたメソッド・スタブ
+	Connection con = getConnection();
+	PreparedStatement st;
+	ResultSet rs;
+	List<Coupon> coupon_list = new ArrayList<>();
+	st = con.prepareStatement("select * from coupon");
+	int count = 0;
+	//SQL文実行
+	 rs=st.executeQuery();
+	while(rs.next()){
+		Coupon coupon = new Coupon();
+		coupon.setCoupon_id(rs.getInt("coupon_id"));
+		coupon.setCoupon_name(rs.getString("coupon_name"));
+		coupon.setProduct_id(rs.getInt("product_id"));
+		coupon.setEffect(rs.getInt("effect"));
+		coupon.setCoupon_code(rs.getString("coupon_code"));
+		count+=1;
+	}
+	// 乱数生成器のインスタンス化
+    Random random = new Random();
+    // 1から10までの乱数を生成
+    int randomNumber = random.nextInt(count) + 1;
+    System.out.println("クーポン番号="+randomNumber);
+    st = con.prepareStatement("select * from coupon where coupon_id = ?");
+    st.setInt(1, randomNumber);
+    rs = st.executeQuery();
+//    取得したクーポン情報
+    int coupon_id = 0;
+
+    while(rs.next()){
+		Coupon coupon = new Coupon();
+		coupon.setCoupon_id(rs.getInt("coupon_id"));
+		coupon_id = rs.getInt("coupon_id");
+		coupon.setCoupon_name(rs.getString("coupon_name"));
+		coupon.setProduct_id(rs.getInt("product_id"));
+		coupon.setEffect(rs.getInt("effect"));
+		coupon.setCoupon_code(rs.getString("coupon_code"));
+		System.out.println("クーポンコード="+rs.getString("coupon_code"));
+		coupon_list.add(coupon);
+    }
+
+    st = con.prepareStatement("insert into have_coupon (coupon_id,user_id) values(?,?)");
+    st.setInt(1, coupon_id);
+	st.setInt(2, user_id);
+	st.executeUpdate();
+	st.close();
+	con.close();
+	return coupon_list;
+}
+
+//所持しているクーポンを表示する
+public List<Coupon> Cooupon_view(int user_id)throws Exception{
+	Connection con = getConnection();
+	PreparedStatement st;
+	ResultSet rs;
+	List<Coupon> have_coupon = new ArrayList<>();
+//	所持しているクーポン情報を持ってくる
+	st = con.prepareStatement("select * from coupon inner join have_coupon on coupon.coupon_id = have_coupon.coupon_id where have_coupon.user_id = ? and have_coupon.used_flag = 0 ");
+	st.setInt(1, user_id);
+    rs = st.executeQuery();
+    while(rs.next()){
+		Coupon coupon = new Coupon();
+		coupon.setCoupon_id(rs.getInt("coupon_id"));
+		coupon.setCoupon_name(rs.getString("coupon_name"));
+		coupon.setProduct_id(rs.getInt("product_id"));
+		coupon.setEffect(rs.getInt("effect"));
+		coupon.setCoupon_code(rs.getString("coupon_code"));
+		System.out.println("クーポンコード="+rs.getString("coupon_code"));
+		have_coupon.add(coupon);
+    }
+    st.close();
+	con.close();
+	return have_coupon;
 
 }
+
 }

@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="../menu.jsp"%>
+<%@include file="../com_header.jsp"%>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+	<div class="back_home">
+        <a class="backhome" href="company_top_page.jsp">ホームに戻る</a>
+	</div>
 
-<form action="registered.jsp" method="post">
+<form action="inquiry_complete.jsp" method="post">
 
 	<h2 class="com_title">企業用お問い合わせ</h2>
 
@@ -56,5 +60,3 @@
 	</div>
 
 </form>
-
-<%@include file="../footer.jsp"%>

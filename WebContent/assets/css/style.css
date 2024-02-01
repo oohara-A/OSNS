@@ -1,75 +1,77 @@
 /* フォームのスタイル */
 #tweetReplyForm {
-	margin-top: 20px;
-	padding: 15px;
-	border: 2px solid #333;
-	border-radius: 10px;
+  margin-top: 20px;
+  padding: 15px;
+  border: 2px solid #333;
+  border-radius: 10px;
 }
 
 #tweetReplyContent {
-	width: 100%;
-	margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 #rating {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /* レビューと返信のスタイル */
 .tweet {
-	border: 2px solid #333;
-	border-radius: 10px;
-	margin-top: 20px;
-	padding: 15px;
-	position: relative;
+  border: 2px solid #333;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 15px;
+  position: relative;
 }
 
 .reply {
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	margin-top: 10px;
-	padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 8px;
 }
 
 /* 返信入力フォームのスタイル */
 form[id^="replyForm"] {
-	margin-top: 10px;
-	padding: 10px;
-	border: 1px solid #ddd;
-	border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 form[id^="replyForm"] textarea {
-	width: 100%;
-	margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 /* 編集・通報リンクのスタイル */
-.edit-link, .report-link, .reply-link {
-	cursor: pointer;
-	color: #0066cc;
-	margin-left: 10px;
+.edit-link,
+.report-link,
+.reply-link {
+  cursor: pointer;
+  color: #0066cc;
+  margin-left: 10px;
 }
 
 /* レビューと返信の評価表示のスタイル */
 .rating {
-	margin-left: 10px;
+  margin-left: 10px;
 }
 
 /* エディットアイコンのスタイル */
 .edit-link::before {
-	content: '\270E'; /* Unicode character for pencil icon */
-	margin-right: 5px;
+  content: '\270E'; /* Unicode character for pencil icon */
+  margin-right: 5px;
 }
 
 /* 通報アイコンのスタイル */
 .report-link::before {
-	content: '\26A0'; /* Unicode character for warning icon */
-	margin-right: 5px;
+  content: '\26A0'; /* Unicode character for warning icon */
+  margin-right: 5px;
 }
 
 /* リプライアイコンのスタイル */
 .reply-link::before {
-	content: '\21A9'; /* Unicode character for left arrow icon */
-	margin-right: 5px;
+  content: '\21A9'; /* Unicode character for left arrow icon */
+  margin-right: 5px;
 }

@@ -1,5 +1,3 @@
-
-
 create table user (
 	id int auto_increment primary key not null,
 	name varchar(100) not null,
@@ -22,9 +20,9 @@ CREATE TABLE address (
 
 CREATE TABLE admin (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    admin_name VARCHAR(20) NOT NULL,
-    password VARCHAR(20) NOT NULL,
-    email VARCHAR(20) NOT NULL,
+    admin_name VARCHAR(200) NOT NULL,
+    password VARCHAR(200) NOT NULL,
+    email VARCHAR(1000) NOT NULL,
     adding_time DATE ,
     deleting_time DATE  ,
     update_time DATE ,
@@ -33,13 +31,13 @@ CREATE TABLE admin (
 
 CREATE TABLE company (
 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-company_name VARCHAR(20) NOT NULL,
-address VARCHAR(30) NOT NULL,
-password VARCHAR(20) NOT NULL,
-company_image VARCHAR(20) NOT NULL,
-email VARCHAR(20) NOT NULL,
-name VARCHAR(20) NOT NULL,
-phone_number VARCHAR(20) NOT NULL,
+company_name VARCHAR(100) NOT NULL,
+address VARCHAR(300) NOT NULL,
+password VARCHAR(200) NOT NULL,
+company_image VARCHAR(200),
+email VARCHAR(200) NOT NULL,
+name VARCHAR(200) NOT NULL,
+phone_number VARCHAR(200) NOT NULL,
 adding_time DATE  ,
 deleting_time DATE ,
 update_time DATE ,
@@ -90,12 +88,29 @@ flag TINYINT(1) NOT NULL DEFAULT 0
 
 );
 
+CREATE TABLE testpro_image (
+pro_image_id int(10000) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+product_id int(1000000) not null,
+FOREIGN KEY (product_id) REFERENCES test_product(id),
+image_filename varchar(1000)  not null,
+flag TINYINT(1) NOT NULL DEFAULT 0
+
+);
+
 CREATE TABLE product_category (
 id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
 product_category_id int(1000)  NOT NULL,
 product_id int(1000000) not null,
 FOREIGN KEY (product_id) REFERENCES product(id),
 category_name varchar(100) not null,
+icon_image varchar(100)
+);
+
+CREATE TABLE testpro_category (
+product_category_id int(1000) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+product_id int(1000000) not null,
+FOREIGN KEY (product_id) REFERENCES test_product(id),
+name varchar(100) not null,
 icon_image varchar(100)
 );
 
@@ -122,6 +137,7 @@ product_id int(1000000) not null,
 FOREIGN KEY (product_id ) REFERENCES product(id),
 user_id int(100000000) not null,
 FOREIGN KEY (user_id) REFERENCES user(id),
+count int(1000),
 coupon_id varchar(10000) ,
 phone_number int(10000) ,
 purchase_price int(1000000) not null,
@@ -144,11 +160,11 @@ count int(100000) not null,
 
 CREATE TABLE coupon (
 coupon_id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-product_id int(1000000) not null,
+product_id int(1000000),
 FOREIGN KEY (product_id) REFERENCES product(id),
 effect int(100)	not null,
 coupon_name varchar(100) not null,
-image varchar(100) not null,
+image varchar(100),
 coupon_code varchar(100) not null,
 flag TINYINT(1) NOT NULL DEFAULT 0
 );
@@ -158,7 +174,7 @@ id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
 coupon_id int(1000) not null,
 FOREIGN KEY (coupon_id) REFERENCES coupon(coupon_id),
 user_id int(10000000) not null,
-coupon_code varchar(100) not null,
+coupon_code varchar(100),
 used_flag TINYINT(1) NOT NULL DEFAULT 0
 );
 
@@ -179,14 +195,15 @@ CREATE TABLE review_video (
 id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
 review_id int(10000000) not null,
 FOREIGN KEY (review_id) REFERENCES review(review_id),
-video_filename varchar(100) not null,
+video_filename varchar(100),
 flag TINYINT(1) NOT NULL DEFAULT 0
 );
 
 CREATE TABLE review_image (
 id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
 review_id int(1000000) not null,
-image_filename varchar(100) not null,
+FOREIGN KEY (review_id) REFERENCES review(review_id),
+image_filename varchar(100) ,
 flag TINYINT(1) NOT NULL DEFAULT 0
 );
 

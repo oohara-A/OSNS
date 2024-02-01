@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.Email;
 import bean.Product;
 import bean.User;
 import dao.EmaileDAO;
@@ -17,6 +18,7 @@ public class MessgsendAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//sessionの情報を取得
 		HttpSession session=request.getSession();
+		session.removeAttribute("send_email");
 		@SuppressWarnings("unchecked")
 		User user =(User) session.getAttribute("user");
 		List<Product> pro = (List<Product>) session.getAttribute("product_detail");
@@ -48,8 +50,10 @@ public class MessgsendAction extends Action {
 //		送信処理
 		EmaileDAO dao = new EmaileDAO();
 		boolean flag = dao.emaile_send(user_id, id, pro_name,body, status,send_date);
+		List<Email> email = dao.selectuser(user_id);
+		session.setAttribute("send_email", email);
 		if(flag== true){
-			return "message.jsp";
+			return "message_inf.jsp";
 		}
 //エラー処理
 		return "login_error.jsp";

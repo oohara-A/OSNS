@@ -77,31 +77,67 @@ public class CompanyDAO extends DAO{
 	}
 
 	//企業削除
-	public boolean delete_company(int companyId)
+	public boolean deregister_company(int companyId,Date deleting_time)
 		throws Exception {
-		boolean flag =true;
+		int flag =1;
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
-				"update company set flag = ?,where companyId = ?");
-		st.setBoolean(1, flag);
-		st.setInt(2,companyId);
+				"update company set flag = ? ,deleting_time = ? where Id = ?");
+		st.setInt(1, flag);
+		st.setDate(2,deleting_time);
+		st.setInt(3,companyId);
+		st.executeUpdate();
 
 		st.close();
 		con.close();
 		return true;
 	}
+//	企業情報の取得
+	public Company select_comp(int id)
+			throws Exception {
+			Company company=new Company();
+
+			Connection con=getConnection();
+
+			// SQL文を実行
+			PreparedStatement st;
+			st=con.prepareStatement(
+				"select * from company where id = ?");
+			st.setInt(1, id);
+			ResultSet rs=st.executeQuery();
+			while (rs.next()){
+				company.setId(rs.getInt("id"));
+				company.setCompany_name(rs.getString("company_name"));
+				company.setAddress(rs.getString("address"));
+				company.setPassword(rs.getString("password"));
+				company.setEmail(rs.getString("email"));
+				company.setName(rs.getString("name"));
+				company.setPhone_number(rs.getString("phone_number"));
+			}
+
+			st.close();
+			con.close();
+			return company;
+		}
 
 	//企業情報編集
-	public Company edit_comp_info(String name,String company_name,String address,String email,String phone_number,String password,Date update_date)
+	public Company edit_comp_info(int id,String name,String company_name,String address,String email,String phone_number,String password,Date update_date)
 		throws Exception {
 		Company company=null;
+		System.out.println("企業編集実行");
 
 		Connection con=getConnection();
-
 		// SQL文を実行
 		PreparedStatement st;
+//		if(name!=null){
+//		     st=con.prepareStatement(
+//					"update company set  company_name = ? where id = ?");
+//			    st.setString(1, name);
+//			    st.setInt(2, id);
+//			    st.executeUpdate();
+//		}
 		st=con.prepareStatement(
-			"update company set name=? and company_name=? and address=? and email=? and phone_number=? and password=? and update_time=?");
+			"update company set name=?,company_name=?,address=?,email=?,phone_number=?,password=?,update_time=? where id = ?");
 		st.setString(1, name);
 		st.setString(2, company_name);
 		st.setString(3, address);
@@ -109,12 +145,13 @@ public class CompanyDAO extends DAO{
 		st.setString(5, phone_number);
 		st.setString(6, password);
 		st.setDate(7, update_date);
+		st.setInt(8, id);
 		st.executeUpdate();
 
 		st.close();
 		con.close();
 		return company;
-	}
+		}
 
 	// 商品追加
 	public Product product_registration(String category_name,String product_name, int unit_price, Date add_date, String product_description,int regiinvqua, String filename2 )
@@ -185,17 +222,14 @@ public class CompanyDAO extends DAO{
 	}
 
 	// 商品一覧
-	public List<Product> product_list(String product_name,int unit_price, int regiinvqua)
+	public List<Product> product_list()
 		throws Exception {
 		List<Product> product_list=new ArrayList<>();
 
 		Connection con=getConnection();
 
 		PreparedStatement st=con.prepareStatement(
-			"select * from product where product_name like ? and unit_price like ? and regiinvqua like ?");
-		st.setString(1, "%"+product_name+"%");
-		st.setInt(2, unit_price);
-		st.setInt(3, regiinvqua);
+			"select * from product where flag = 0");
 		ResultSet rs=st.executeQuery();
 
 		while (rs.next()) {
@@ -204,7 +238,7 @@ public class CompanyDAO extends DAO{
 			product.setProduct_name(rs.getString("product_name"));
 			product.setUnit_price(rs.getInt("unit_price"));
 			product.setRegiinvqua(rs.getInt("regiinvqua"));
-			product.setUpdate_time(rs.getDate("update_date"));
+			product.setAdding_time(rs.getDate("adding_time"));
 			product_list.add(product);
 		}
 		st.close();
@@ -318,14 +352,14 @@ public class CompanyDAO extends DAO{
 		System.out.println(pro_id);
 		//商品画像をテーブルに追加
 		st=con.prepareStatement(
-				"insert into pro_image (product_id,image_filename) values(?,?)");
+				"insert into testpro_image (product_id,image_filename) values(?,?)");
 		st.setInt(1, pro_id);
 		st.setString(2, filename2);
 		st.executeUpdate();
 
 		//カテゴリをテーブル追加
 		st=con.prepareStatement(
-				"insert into product_category (PRODUCT_CATEGORY_ID ,product_id,category_name) values(?,?,?)");
+				"insert into testpro_category (PRODUCT_CATEGORY_ID ,product_id,name) values(?,?,?)");
 		st.setInt(1, category_id);
 		st.setInt(2, pro_id);
 		st.setString(3, category_name);
@@ -380,7 +414,7 @@ public class CompanyDAO extends DAO{
 //	}
 
 	// クーポン発行
-	public Coupon coupon_issuing_creation(String coupon_name, String coupon_code, int effect)
+	public Coupon coupon_issuing_creation(String coupon_name, String coupon_code, int coupon_discount)
 		throws Exception {
 		Coupon coupon=null;
 
@@ -388,10 +422,11 @@ public class CompanyDAO extends DAO{
 		// SQL文を実行
 		PreparedStatement st;
 		st=con.prepareStatement(
-			"insert into coupon coupon_name=? and coupon_code=? and effect=?");
+			"insert into coupon (coupon_name,coupon_code,EFFECT) values(?,?,?)");
 		st.setString(1, coupon_name);
 		st.setString(2, coupon_code);
-		st.setInt(3, effect);st.executeQuery();
+		st.setInt(3, coupon_discount);
+		st.executeUpdate();
 
 		st.close();
 		con.close();
@@ -414,21 +449,23 @@ public class CompanyDAO extends DAO{
 	}
 
 	// クーポン一覧
-	public List<Coupon> coupon_list(String coupon_name)
+	public List<Coupon> coupon_list()
 		throws Exception {
 		List<Coupon> coupon_list=new ArrayList<>();
 
 		Connection con=getConnection();
 
-		PreparedStatement st=con.prepareStatement(
-			"select * from coupon where coupon_name like ?");
-		st.setString(1, "%"+coupon_name+"%");
+		PreparedStatement st;
+		st=con.prepareStatement(
+			"select * from coupon where flag = 0");
 		ResultSet rs=st.executeQuery();
 
 		while (rs.next()) {
 			Coupon coupon=new Coupon();
 			coupon.setCoupon_id(rs.getInt("coupon_id"));
 			coupon.setCoupon_name(rs.getString("coupon_name"));
+			coupon.setCoupon_code(rs.getString("coupon_code"));
+			coupon.setEffect(rs.getInt("effect"));
 			coupon_list.add(coupon);
 		}
 		st.close();

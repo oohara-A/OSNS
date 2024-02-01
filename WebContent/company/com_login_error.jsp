@@ -1,27 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="../menu.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%
-    boolean loginFailed = true;
-%>
+<html>
+<head>
+    <title>login_error</title>
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+</head>
 
-<form action="com_login.jsp" method="post">
+<body>
+    <%
+        boolean loginFailed = true;
+    %>
 
-	<h2 class="log_error">ログインエラー</h2>
+    <form action="com_login.jsp" method="post">
+		<div class="log_all_error">
 
+        <h2 class="log_error">ログインエラー</h2>
 
-	<div class="error_message">
-		<% if (loginFailed) { %>
-		<p style="color: red;">ログインに失敗しました。メールアドレスとパスワードを確認してください。</p>
-		<% } %>
-	</div>
+        <div class="error_message">
+            <% if (loginFailed) { %>
+                <p style="color: red;">ログインに失敗しました。</p>
+                <p style="color: red;">メールアドレスとパスワードを確認してください。</p>
+            <% } %>
+        </div>
 
-	<div class="inq_sending">
-		<input class="sending" type="submit" value="ログイン">
-	</div>
-</form>
+        <div class="log_error_button">
+        	<a href="com_login.jsp">
+            	<input class="error_button" type="submit" value="ログイン">
+            </a>
+        </div>
 
+        </div>
+    </form>
 
-
-<%@ include file="../footer.jsp"%>
+</body>
+</html>

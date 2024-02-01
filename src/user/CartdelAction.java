@@ -37,6 +37,12 @@ public String execute(HttpServletRequest request, HttpServletResponse response) 
 				break;
 			}
 		}
+		List<Product_cart> cart_num=(List<Product_cart>)session.getAttribute("cart");
+		if(cart_num.isEmpty()){
+			cart_num = null;
+			session.setAttribute("cart", cart_num);
+		}
+
 
 
 		return "cart.jsp";

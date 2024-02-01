@@ -8,15 +8,16 @@ import javax.servlet.http.HttpSession;
 
 import bean.User;
 import dao.AdminDAO;
+import tool.Action;
 
-public class ShowuserAction {
+public class ShowuserAction extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
 		HttpSession session=request.getSession();
 		// ユーザ名
-		String user_name=request.getParameter("user_name");
+		String user_name=request.getParameter("search");
 		if (user_name==null) user_name="";
 
 		// ログインされている場合

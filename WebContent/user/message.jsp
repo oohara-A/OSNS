@@ -211,8 +211,7 @@ body {
 <hr>
 <div class="container">
 	<div class="buyer-info">
-		<img alt="ユーザーアイコン" src="#"
-			onclick="changeReview('購入者1', '「あああああああああ」', '★★★★☆')">
+		<img alt="ユーザーアイコン" src="#">
 		<p>購入者レビュー</p>
 	<div class="review_come">
 		<c:forEach var="review" items="${user_review}">
@@ -228,7 +227,6 @@ body {
 		<h2><%=pro_name %>の商品チャット</h2>
 	<form action="Messgsend.action">
 		<div id="current-review"></div>
-
 		<div id="current-reply"></div>
 		<div class="review-form">
 			<input type="text" id="replyContent" name="reply" placeholder="返信を入力">

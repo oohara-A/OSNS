@@ -1,16 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="../menu.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<form action="company_top_page.jsp" method="post">
+<head>
+<title>admin_login</title>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+</head>
 
-	<h2 class="company_signup">登録が完了しました！！</h2>
+<form action="com_login.jsp" method="post">
 
-	<div class="inq_sending">
-		<input class="sending" type="submit" value="トップページへ">
-	</div>
+    <h2 class="company_signup">登録が完了しました！！</h2>
+
+    <div class="com_signup">
+        <input class="company_up" type="submit" value="トップページへ" >
+    </div>
 </form>
-
-
-
-<%@ include file="../footer.jsp"%>

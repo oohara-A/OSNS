@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../menu.jsp"%>
+<%@ include file="../headtwo.jsp"%>
+
 
 
 <form action="user_login.jsp" method="post">
@@ -10,7 +12,7 @@
 
 	<div class="error_message">
 
-		<p style="color: red;">削除または変更する際はログインしてください！</p>
+		<p style="color: red;">ログインをしてください！</p>
 
 	</div>
 
