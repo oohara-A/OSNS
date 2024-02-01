@@ -2,6 +2,7 @@ package admin;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,9 +20,9 @@ public class LoginAction extends Action{
 		HttpSession session=request.getSession();
 
 		// リクエストパラメータからメールアドレスとパスワードとログイン日時を取得
-		String email=request.getParameter("inq_admin_email");
+		String email=request.getParameter("inq_name");
 		System.out.println(email);
-		String password=request.getParameter("inq_admin_pass");
+		String password=request.getParameter("inq_com_name");
 		System.out.println(password);
 
 		Date date = new Date();
@@ -31,7 +32,7 @@ public class LoginAction extends Action{
 
 		// 指定したメールアドレスとパスワードの管理者をデータベースから検索する
 		AdminDAO dao=new AdminDAO();
-		Admin admin=dao.login(email, password,login_date);
+		List<Admin> admin=dao.login(email, password,login_date);
 
 		// メールアドレスとパスワードに合致する管理者が見つかった場合、属性名login_adminで登録する
 		if (admin!=null) {

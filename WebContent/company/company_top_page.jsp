@@ -1,48 +1,74 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="../com_header.jsp" %>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Company_page</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="Logout.action">ログアウト</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="Display_coupon_list.action">クーポン一覧</a></li>
-                        <li class="nav-item"><a class="nav-link" href="coupon_registration.jsp">クーポン登録</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Companyinfodisp.action">企業情報</a></li>
-                        <li class="nav-item"><a class="nav-link" href="product_registration.jsp">商品登録</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Product_list.action">商品一覧</a></li>
-                        <li class="nav-item"><a class="nav-link" href="company_delete.jsp">登録解除</a></li>
-                        <li class="nav-item"><a class="nav-link" href="inquiry.jsp">お問い合わせ</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 h-100">
-                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold">OharaSampleNetShop</h1>
-                        <hr class="divider" />
-                    </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">ようこそ！！お待ちしておりました。</p>
-                        <a class="btn btn-primary btn-xl" href="#about">Find Out Mor</a>
-                    </div>
-                </div>
-            </div>
-        </header>
 
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="content">
+
+	<div class="menu">
+
+		<div class="image">
+		    <img alt="Company Logo" name="logo" src="../assets/image/OSNS_Logo.png">
+		</div>
+
+		<div class="com_button">
+			<button class="combutton" name="coupon_list" onclick="location.href='coupon_list.jsp'">クーポン一覧</button>
+		</div>
+
+		<div class="com_button">
+		    <button class="combutton" name="coupon_regi" onclick="location.href='coupon_registration.jsp'">クーポン登録</button>
+		</div>
+
+		<div class="com_button">
+		    <button class="combutton" name="company_info" onclick="location.href='company_info_edit.jsp'">企業情報</button>
+		</div>
+
+		<div class="com_button">
+		    <button class="combutton" name="product_regi" onclick="location.href='product_registration.jsp'">商品登録</button>
+		</div>
+
+		<div class="com_button">
+		    <button class="combutton" name="product_list" onclick="location.href='product_summary.jsp'">商品一覧</button>
+		</div>
+
+		<div class="com_button">
+		    <button class="combutton" name="company_regi" onclick="location.href='company_registration.jsp'">企業登録</button>
+		</div>
+
+		<div class="com_button">
+		    <button class="combutton" name="deregistration" onclick="location.href='company_delete.jsp'">登録解除</button>
+		</div>
+
+		<div class="com_button">
+		    <button class="combutton" name="inquiry" onclick="location.href='inquiry.jsp'">お問い合わせ</button>
+		</div>
+		 <div class="logout">
+        	<a href="/logout">ログアウト</a>
+    	</div>
+
+	</div>
+
+	<div class="main">
+
+		 <div class="logout">
+        	<a href="/logout">ログアウト</a>
+    	</div>
+
+		<div class="corporate">
+			<h2 class="corporate_top">企業トップ</h2>
+		</div>
+	</div>
+
+</div>
+
+    <%@include file="../com_footer.jsp" %>
+
+</body>
+</html>

@@ -21,9 +21,7 @@ public class EncodingFilter implements Filter {
 		FilterChain chain
 	) throws IOException, ServletException {
 		request.setCharacterEncoding("UTF-8");
-//		↓デプロイ時邪魔する可能性があるためデプロイ時はコメントアウト
-		/*response.setContentType("text/html; charset=UTF-8");*/
-
+		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		//各ファイルの共通の部分↓
 		System.out.println("フィルタの前処理");

@@ -18,14 +18,14 @@ public class ReviewdelAction extends Action{
 		//sessionの情報を取得
 		HttpSession session=request.getSession();
 		List<Review> rev = (List<Review>) session.getAttribute("user_review");
-//		int revuser = 0;
-//		if(rev == null){
-//			return "product_detail.jsp";
-//		}
-//		for(Review r :rev){
-//			 revuser = r.getUser_id();
-//			break;
-//		}
+		int revuser = 0;
+		if(rev == null){
+			return "product_detail.jsp";
+		}
+		for(Review r :rev){
+			 revuser = r.getUser_id();
+			break;
+		}
 		session.removeAttribute("user_review");
 		User user = (User) session.getAttribute("user");
 		if(user == null){
@@ -33,10 +33,10 @@ public class ReviewdelAction extends Action{
 			session.setAttribute("error", messege);
 			return "login_error.jsp";
 		}
-//		int user_id = user.getId();
-//		if(revuser!= user_id){
-//			return "product_detail.jsp";
-//		}
+		int user_id = user.getId();
+		if(revuser!= user_id){
+			return "product_detail.jsp";
+		}
 
 		 @SuppressWarnings("unchecked")
 		List<Product> pro = (List<Product>) session.getAttribute("product_detail");

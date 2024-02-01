@@ -20,7 +20,7 @@ public class RemoveAction extends Action {
         if (session.getAttribute("login_admin")!=null) {
         	int admin_id = 0;
     		Admin admin = new Admin();
-    		admin =  (Admin) session.getAttribute("login_admin");
+    		admin = (Admin) session.getAttribute("login_admin");
     		admin_id = admin.getId();
     		System.out.println("かんりしゃID"+admin_id);
         	AdminDAO dao=new AdminDAO();

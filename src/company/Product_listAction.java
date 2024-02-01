@@ -16,13 +16,22 @@ public class Product_listAction extends Action{
 	) throws Exception {
 
 		HttpSession session=request.getSession();
+		// 商品名
+		String product_name=request.getParameter("product_name");
+		// 価格
+		int unit_price=Integer.parseInt(request.getParameter("unit_price")) ;
+		// 在庫
+		int regiinvqua=Integer.parseInt(request.getParameter("regiinvqua"));
+
+		// 商品名が入力されていない場合
+		if (product_name==null) product_name="";
 
 		//ログインされている場合
-		if (session.getAttribute("login_company")!=null){
+		if (session.getAttribute("login_company")!=null)  {
 
-	        // CompanyDAOを使用して商品一覧を取得
+	        // AdminDAOを使用して管理者一覧を取得
 			CompanyDAO dao=new CompanyDAO();
-			List<Product> product_list = dao.product_list();
+			List<Product> product_list = dao.product_list(product_name,unit_price,regiinvqua);
 
 	        // 取得した管理者一覧をセッションに保存
 	        session.setAttribute("productlist", product_list);

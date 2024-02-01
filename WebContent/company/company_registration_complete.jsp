@@ -2,7 +2,7 @@
 
 <head>
 <title>admin_login</title>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+<link rel="stylesheet" href="../assets/css/sanitize.css">
 </head>
 
 <form action="com_login.jsp" method="post">

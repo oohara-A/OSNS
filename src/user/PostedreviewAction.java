@@ -76,14 +76,11 @@ public class PostedreviewAction extends Action {
 			int len = filenames2.size();
 			filename2 = filenames2.get(len - 1);
 			System.out.println(filename2);
-//			String uploadDirectory = System.getProperty("user.dir") + File.separator ;
-//			String basePath = "\\\\localhost\\\\osns\\\\WebContent\\\\assets\\\\review_image";
-			 // ファイルセパレータを使用してパスを結合
-//	        String fullPath = basePath + "\\" + filename2;
+			String uploadDirectory = System.getProperty("user.dir") + File.separator ;
+			 String path =request.getContextPath();
+			 System.out.println(path);
 			// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
 			part.write("C:\\\\Users\\\\adomin\\\\OneDrive - ooharastudent\\\\デスクトップ\\\\OSNS\\\\WebContent\\\\assets\\\\review_image"+"\\\\" + filename2);
-//			part.write(fullPath);
-
 		}
 
 
@@ -111,6 +108,7 @@ public class PostedreviewAction extends Action {
 	////		 ファイル名に日時を足すミリ秒まで
 	//		// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
 				String uploadDirectory = "C:\\Users\\adomin\\OneDrive - ooharastudent\\デスクトップ\\OSNS\\WebContent\\assets\\review_video";
+
 			part.write(uploadDirectory +File.separator + filename5);
 		}
 		ReviewDAO dao = new ReviewDAO();

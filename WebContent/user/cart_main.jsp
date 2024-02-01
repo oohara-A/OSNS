@@ -15,7 +15,7 @@
 		<!-- Sample cart item, repeat this block for each item in the cart -->
 		<tr>
 			<td><a href="product_detail.jsp"> <img alt="商品リストへ"
-					width="80" height="80" src="<%=request.getContextPath() %>/assets/proimage/${prodetail.image_filename}">
+					width="80" height="80" src="../assets/proimage/${prodetail.image_filename}">
 			</a></td>
 
 			<td>\2000</td>

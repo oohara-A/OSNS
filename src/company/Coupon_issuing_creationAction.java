@@ -33,7 +33,7 @@ public class Coupon_issuing_creationAction extends Action{
         	session.setAttribute("couponissue", issue_coupon);
 
         	// product_list.jspをフォワード先に指定
-        	return "coupon_registration_complete.jsp";
+        	return "company_registration_complete.jsp";
 
         // ログインされていない場合
         } else {

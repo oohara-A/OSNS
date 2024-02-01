@@ -16,6 +16,7 @@ public class LoginAction extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
+
 		// セッションを開始
 		HttpSession session=request.getSession();
 

@@ -8,7 +8,7 @@
 <p>購入を続けるか、アカウントに移動するかお選びください。</p>
 
 <div>
-  <a href="account.jsp">トップページへ移動する</a>
+  <a href="account.jsp">アカウントへ移動する</a>
 </div>
 
 <div>

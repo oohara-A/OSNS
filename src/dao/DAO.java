@@ -1,6 +1,7 @@
 package dao;
 import java.sql.Connection;
 
+//DAO・・・SQL文などを実行したり実行結果を返したりする
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
@@ -13,11 +14,8 @@ public class DAO {
 			//データソースの初期化ーーーーーーーーーーーーー。
 			InitialContext ic=new InitialContext();
 			ds=(DataSource)ic.lookup("java:/comp/env/jdbc/osns");
-//			ーーーーーーーーーーーーーーーーーーーーーーー
+			//ーーーーーーーーーーーーーーーーーーーーーーー
 		}
-//		↓デプロイ用
-//		Class.forName("org.h2.Driver");
-//		return DriverManager.getConnection("jdbc:h2:tcp://localhost/~/osns","sa","");
 		return ds.getConnection();
 	}
 }

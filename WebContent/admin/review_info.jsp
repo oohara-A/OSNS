@@ -4,7 +4,7 @@
 
 <head>
 	<title>admin_page</title>
-	<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+	<link rel="stylesheet" href="../assets/css/sanitize.css">
 </head>
 	<div class="back_home">
         <a class="backhome" href="admin.jsp">ホームに戻る</a>
