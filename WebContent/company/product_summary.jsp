@@ -7,12 +7,14 @@
 	<link rel="stylesheet" href="../assets/css/sanitize.css">
 </head>
 
-<form action="Product_cancellation.action" method="post">
-<div class="coupon-list">
-
+<form action="company_top.jsp" method="post">
 	<div class="back_home">
         <a class="backhome" href="company_top_page.jsp">ホームに戻る</a>
 	</div>
+</form>
+
+<form action="Product_search.action" method="post">
+	<div class="coupon-list">
 
     <h2>商品一覧</h2>
 
@@ -44,6 +46,7 @@
              </c:forEach>
         </tbody>
     </table>
-</div>
-
+	</div>
 </form>
+
+

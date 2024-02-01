@@ -1,12 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="../com_header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<form action="Display_coupon_list.action" method="post">
+<head>
+<title>admin_login</title>
+<link rel="stylesheet" href="../assets/css/sanitize.css">
+</head>
 
-	<h2 class="company_signup">クーポン登録完了</h2>
+<form action="company_top_page.jsp" method="post">
 
-	<div class="inq_sending">
-		<input class="sending" type="submit" value="クーポン一覧">
-	</div>
+    <h2 class="company_signup">登録が完了しました！！</h2>
+
+    <div class="com_signup">
+        <input class="company_up" type="submit" value="トップページへ" >
+    </div>
+    </form>
+
 </form>

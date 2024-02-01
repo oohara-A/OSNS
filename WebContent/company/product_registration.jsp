@@ -7,7 +7,7 @@
 			<input class="backhome" type="submit" value="ホームに戻る">
 	</div>
 </form>
-
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
 <form action="Product_registration.action" method="post" enctype="multipart/form-data">
 
 	<h2 class="product_title">商品登録</h2>
@@ -16,22 +16,22 @@
 
 	    <div class="product_info">
 	        <label for="productName">商品名:</label>
-	        <input type="text" id="productName" name="product_name">
+	        <input type="text" id="productName" name="product_name"required="required">
 	    </div>
 
 	    <div class="product_info">
 	        <label for="productPrice">商品価格:</label>
-	        <input type="number" id="productPrice" name="unit_price">
+	        <input type="number" id="productPrice" name="unit_price"required="required">
 	    </div>
 
 	    <div class="product_info">
 	        <label for="productImage">商品画像:</label>
-	        <input  type="file" id="productImage" name="image_filename" accept="image/*">
+	        <input  type="file" id="productImage" name="image_filename" accept="image/*"required="required">
 	    </div>
 
 		<div class="pro_info">
         	<label for="productStock">在庫数:</label>
-        	<input type="number" id="pro_input_stock" name="regiinvqua">
+        	<input type="number" id="pro_input_stock" name="regiinvqua"required="required">
     	</div>
 
 	    <div class="product_genre">
@@ -46,12 +46,12 @@
 
 		<div class="pro_info">
 			<label for="shippingCost">送料設定:</label> <input type="number"
-				id="shippingCost" name="shipping_fee">
+				id="shippingCost" name="shipping_fee"required="required">
 		</div>
 
     	<div class="product_info">
         	<label for="productDescription">商品説明:</label>
-        	<textarea id="productDescription" name="product_description" rows="4"></textarea>
+        	<textarea id="productDescription" name="product_description" rows="4"required="required"></textarea>
     	</div>
 	</div>
 
@@ -59,7 +59,6 @@
         <input type="submit" value="登録完了">
     </div>
 </form>
-
 	<div class="sample_info">
 		<a href="sample__registration.jsp">試供品登録はこちら</a>
 	</div>

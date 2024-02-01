@@ -23,15 +23,15 @@ public class Register_companyAction extends Action{
 		HttpSession session=request.getSession();
 		Review rev = new Review();
 		//氏名
-		String name=request.getParameter("name");
+		String name=request.getParameter("com_full_name");
 		//企業名
-		String company_name=request.getParameter("company_name");
+		String company_name=request.getParameter("com_name");
 		//所在地
-		String address=request.getParameter("address");
+		String address=request.getParameter("com_address");
 		//メールアドレス
-		String email=request.getParameter("email");
+		String email=request.getParameter("com_email");
 		//電話番号
-		String phone_number=request.getParameter("phone_number");
+		String phone_number=request.getParameter("com_tel");
 
 		// 商品画像
 		Part part = request.getPart("image_filename");
@@ -47,9 +47,9 @@ public class Register_companyAction extends Action{
 		System.out.println(filename2);
 
 		//パスワード
-		String password=request.getParameter("password");
+		String password=request.getParameter("com_password");
 		//パスワード(確認)
-		String password2=request.getParameter("password2");
+		String password2=request.getParameter("one_com_password");
 		//追加日時
 		Date date = new Date();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");

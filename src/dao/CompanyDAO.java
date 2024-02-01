@@ -259,6 +259,34 @@ public class CompanyDAO extends DAO{
 		return true;
 	}
 
+	// 商品検索
+	public List<Product> product_search(String product_name)
+		throws Exception {
+		List<Product> product_list=new ArrayList<>();
+
+		Connection con=getConnection();
+
+		// SQL文を実行
+		PreparedStatement st;
+		st=con.prepareStatement(
+			"select * from product where product_name = ? and flag = 0");
+		st.setString(1, product_name);
+		ResultSet rs=st.executeQuery();
+		while (rs.next()){
+			Product product=new Product();
+			product.setId(rs.getInt("id"));
+			product.setProduct_name(rs.getString("product_name"));
+			product.setUnit_price(rs.getInt("unit_price"));
+			product.setRegiinvqua(rs.getInt("regiinvqua"));
+			product.setAdding_time(rs.getDate("adding_time"));
+			product_list.add(product);
+		}
+
+		st.close();
+		con.close();
+		return product_list;
+	}
+
 //	// 商品編集
 //	public Product product_edit(String product_name, int unit_price, int regiinvqua, String category_name, String product_description, Date update_date)
 //		throws Exception {
@@ -466,6 +494,33 @@ public class CompanyDAO extends DAO{
 			coupon.setEffect(rs.getInt("effect"));
 			coupon_list.add(coupon);
 		}
+		st.close();
+		con.close();
+		return coupon_list;
+	}
+
+	// クーポン検索
+	public List<Coupon> coupon_search(String coupon_name)
+		throws Exception {
+		List<Coupon> coupon_list=new ArrayList<>();
+
+		Connection con=getConnection();
+
+		// SQL文を実行
+		PreparedStatement st;
+		st=con.prepareStatement(
+			"select * from coupon where coupon_name = ? and flag = 0");
+		st.setString(1, coupon_name);
+		ResultSet rs=st.executeQuery();
+		while (rs.next()){
+			Coupon coupon=new Coupon();
+			coupon.setCoupon_id(rs.getInt("coupon_id"));
+			coupon.setCoupon_name(rs.getString("coupon_name"));
+			coupon.setCoupon_code(rs.getString("coupon_code"));
+			coupon.setEffect(rs.getInt("effect"));
+			coupon_list.add(coupon);
+		}
+
 		st.close();
 		con.close();
 		return coupon_list;

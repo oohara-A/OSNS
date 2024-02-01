@@ -24,7 +24,7 @@ public class Product_listAction extends Action{
 			CompanyDAO dao=new CompanyDAO();
 			List<Product> product_list = dao.product_list();
 
-	        // 取得した管理者一覧をセッションに保存
+	        // 取得した商品一覧をセッションに保存
 	        session.setAttribute("productlist", product_list);
 
 	        // product_summary.jspをフォワード先に指定

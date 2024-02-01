@@ -1,54 +1,58 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@include file="../com_header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.ArrayList"%>
 
-<form action="Register_company.action" method="post" enctype="multipart/form-data">
+<head>
+	<title>company_page</title>
+	<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+</head>
 
-	<h2 class="com_title">企業登録</h2>
+<form action="Edit_comp_info.action" method="post">
 
-	<div class="com_reg">
-		<p class="comreg">氏名</p>
-		<input type="text" name="name">
-	</div>
-	<div class="com_reg">
-		<p class="comreg">企業名</p>
-		<input type="text" name="company_name">
-  			<p>(例)株式会社大原</p>
+	<div class="back_home">
+        <a class="backhome" href="../user/index.jsp">ホームに戻る</a>
 	</div>
 
-	<div class="com_reg">
-		<p class="comreg">所在地</p>
-		<input type="text" name="address">
-		<p>(例)福岡県北九州市</p>
+	<div class="com_title">
+		<h2 class="company_reg">企業登録</h2>
 	</div>
 
-	<div class="com_reg">
-		<p class="comreg">メールアドレス</p>
-		<input type="text" name="email">
-		<p>(例)kkr11111@stu.o-hara.ac.jp</p>
-	</div>
+		<div class="com_reg">
+			<p class="comreg">氏名</p>
+			<input type="text" name="com_full_name">
+		</div>
 
-	<div class="com_reg">
-		<p class="comreg">携帯電話番号</p>
-		<input type="tel" name="phone_number">
-	</div>
+		<div class="com_reg">
+			<p class="comreg">企業名</p>
+			<input type="text" name="com_name">
+		</div>
 
-	<div class="company_info">
-	        <label for="companyImage">企業画像:</label>
-	        <input  type="file" id="companyImage" name="image_filename" accept="image/*">
-	</div>
+		<div class="com_reg">
+			<p class="comreg">所在地</p>
+			<input type="text" name="com_address">
+		</div>
 
-	<div class="com_reg">
-		<p class="comreg">パスワード</p>
-		<input type="password" name="password">
-	</div>
+		<div class="com_reg">
+			<p class="comreg">メールアドレス</p>
+			<input type="email" name="com_email">
+		</div>
 
-	<div class="com_reg">
-		<p class="comreg">もう一度パスワード</p>
-		<input type="password" name="password2">
-	</div>
+		<div class="com_reg">
+			<p class="comreg">携帯電話番号</p>
+			<input type="tel" name="com_tel">
+		</div>
 
-	<div class="inq_sending">
-		<input class="sending" type="submit" value="次に進む">
-	</div>
+		<div class="com_reg">
+			<p class="comreg">パスワード</p>
+			<input type="password" name="com_password">
+		</div>
+
+		<div class="com_reg">
+			<p class="comreg">もう一度パスワード</p>
+			<input type="password" name="one_com_password">
+		</div>
+
+		<div class="inq_sending">
+			<input class="sending" type="submit" value="次に進む">
+		</div>
 </form>
