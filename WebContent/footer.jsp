@@ -33,7 +33,7 @@
 		<div class="inbox">
 			<h4>ヘルプ＆ガイド</h4>
 			<ul>
-				<li><a href="#">お問い合わせ</a></li>
+				<li><a href="">お問い合わせ</a></li>
 				<li><a href="#">LLLLL</a></li>
 				<li><a href="#">MMMMM</a></li>
 				<li><a href="#">NNNNN</a></li>
