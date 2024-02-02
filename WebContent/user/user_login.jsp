@@ -2,6 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="../menu.jsp"%>
+<<<<<<< HEAD
+=======
+
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 
 <c:choose>
 	<c:when test="${user!=null}">
@@ -38,6 +42,7 @@
 <div class="com_login">
 	<a href="../company/com_login.jsp">企業の方はこちら</a>
 </div>
+<<<<<<< HEAD
 
 <div class="admin_log">
 	<a href="../admin/admin_login.jsp">管理者の方はこちら</a>
@@ -51,3 +56,18 @@
 
 
 
+=======
+
+<div class="admin_log">
+	<a href="../admin/admin_login.jsp">管理者の方はこちら</a>
+</div>
+<p class="new_acount">新規登録の方はこちらをクリック↓</p>
+
+<div class="inq_sending">
+	<a href="sign_up.jsp"><input class="sending" type="submit"
+		value="アカウントを作成する"></a>
+</div>
+
+
+<%@include file="../footer.jsp"%>
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337

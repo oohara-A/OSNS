@@ -105,6 +105,7 @@ product_category_id int(1000)  NOT NULL,
 product_id int(1000000) not null,
 FOREIGN KEY (product_id) REFERENCES product(id),
 category_name varchar(100) not null,
+<<<<<<< HEAD
 icon_image varchar(100)
 );
 
@@ -113,11 +114,17 @@ product_category_id int(1000) AUTO_INCREMENT PRIMARY KEY NOT NULL,
 product_id int(1000000) not null,
 FOREIGN KEY (product_id) REFERENCES test_product(id),
 name varchar(100) not null,
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 icon_image varchar(100)
 );
 
 CREATE TABLE product_cart (
+<<<<<<< HEAD
 cart_id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
+=======
+id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 user_id int(100000000) not null,
 FOREIGN KEY (user_id) REFERENCES user(id),
 product_id int(100000) not null,
@@ -211,6 +218,10 @@ flag TINYINT(1) NOT NULL DEFAULT 0
 
 CREATE TABLE email (
 email_id int AUTO_INCREMENT PRIMARY KEY NOT NULL,
+<<<<<<< HEAD
+=======
+review_id int(1000000) not null,
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 sender int(10000000) not null,
 FOREIGN KEY(sender) REFERENCES user(id),
 recipient int(10000000) not null,

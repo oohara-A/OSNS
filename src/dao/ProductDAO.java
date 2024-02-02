@@ -15,7 +15,10 @@ public class ProductDAO extends DAO {
 //	購入する商品の情報を持ってる関数
 	public List<Product> selectId(int pro_id)throws Exception{
 		List<Product> prduct_detail=new ArrayList<>();
+<<<<<<< HEAD
 		Product point;
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 		Connection con=getConnection();
 //商品情報を持ってくる
 		PreparedStatement st=con.prepareStatement(
@@ -103,7 +106,10 @@ public class ProductDAO extends DAO {
 			List<Product> prduct=new ArrayList<>();
 			PreparedStatement st;
 			int goukei = 0;
+<<<<<<< HEAD
 			System.out.println(user_id);
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 
 		 st=con.prepareStatement(
 				"insert into product_cart(user_id,product_id,company_id,order_count,adding_time) values(?, ?, ?,?,?) ");
@@ -115,6 +121,7 @@ public class ProductDAO extends DAO {
 
 			//SQL文実行
 			st.executeUpdate();
+<<<<<<< HEAD
 			st.close();
 			con.close();
 			Connection con2=getConnection();
@@ -161,6 +168,46 @@ public class ProductDAO extends DAO {
 //			カート内の情報を入れる
 			st.close();
 			con.close();
+=======
+//			select文
+			st = con.prepareStatement(
+					"select * from PRODUCT  inner join PRO_IMAGE on product.id = pro_image.product_id inner join PRODUCT_CART on PRODUCT_CART.product_id = product.id where PRODUCT_CART.USER_ID = ?");
+			st.setInt(1, user_id);
+
+			ResultSet rs=st.executeQuery();
+
+			while (rs.next()) {
+				Product_cart p=new Product_cart();
+//				商品ID
+				p.setId(rs.getInt("id"));
+//				企業ID
+				p.setCompany_id(rs.getInt("company_id"));
+//				本商品ID
+				p.setOriginal_products_id(rs.getInt("original_products_id"));
+//				商品カテゴリID
+				p.setProduct_category_id(rs.getInt("product_category_id"));
+//				商品名
+				p.setProduct_name(rs.getString("product_name"));
+//				単価
+				p.setUnit_price(rs.getInt("unit_price"));
+//				商品説明
+				p.setProduct_description(rs.getString("product_description"));
+//				登録在庫数
+				p.setRegiinvqua(rs.getInt("regiinvqua"));
+//				商品概要
+				p.setProduct_overview(rs.getString("product_overview"));
+//				ファイルネーム
+				p.setFile_name(rs.getString("image_filename"));
+//				個数
+				p.setOrder_count(rs.getInt("order_count"));
+//				カートない合計
+
+				prduct.add(p);
+			}
+//			カート内の情報を入れる
+			st.close();
+			con.close();
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 			return prduct;
 		}
 

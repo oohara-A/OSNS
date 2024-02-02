@@ -9,6 +9,16 @@
 	content="sampie text sampie textsampie textsampie textsampie textsampie textsampie textsampie textsampie text">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
 	rel="stylesheet">
+<<<<<<< HEAD
+=======
+<link rel="stylesheet"
+	href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath() %>/assets/css/common.css">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+</head>
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 
 <link rel="stylesheet"
 	href="<%=request.getContextPath() %>/assets/css/common.css">
@@ -36,9 +46,15 @@
 	<nav class="header-menu">
 		<ul class="header-list">
 			<li class="head"><a href="../user/index.jsp">OharaSampleNetShop</a></li>
+<<<<<<< HEAD
 			<li class="head"><a href="../user/account.jsp">アカウント</a></li>
 			<li class="head"><a href="user_login.jsp">ログイン</a></li>
 			<li class="head"><a href="Purchasedisp.action?id=<%=user_id%>">注文履歴</a></li>
+=======
+			<li class="head"><a href="../user/user_login.jsp">アカウント</a></li>
+			<li class="head"><a href="user_login.jsp">ログイン</a></li>
+			<li class="head"><a href="#">注文履歴</a></li>
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 		</ul>
 	</nav>
 </header>

@@ -116,48 +116,66 @@ keyframes page { 15% {
 transform
 :
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 rotateY
 (-2deg);
 
 =======
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
  
 rotateY
 (-2deg);
  
+<<<<<<< HEAD
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 }
 65%
 {
 transform
 :
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 rotateY
 (10deg);
 
 =======
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
  
 rotateY
 (10deg);
  
+<<<<<<< HEAD
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 }
 100%
 {
 transform
 :
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 rotateY
 (0deg);
 
 =======
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
  
 rotateY
 (0deg);
  
+<<<<<<< HEAD
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 }
 }
 #book {
@@ -181,6 +199,7 @@ keyframes book { 25% {
 box-shadow
 :
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 inset
 
@@ -189,6 +208,11 @@ inset
 inset
  
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+ 
+inset
+ 
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 rgba
 (0
 ,
@@ -196,6 +220,7 @@ rgba
 .2
 )
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 0
 px
@@ -205,6 +230,8 @@ px
 px
 
 =======
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
  
 0
 px
@@ -213,22 +240,30 @@ px
 50
 px
  
+<<<<<<< HEAD
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 -140
 px
 ;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+    
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 }
 100%
 {
 box-shadow
 :
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 inset
 
@@ -237,6 +272,11 @@ inset
 inset
  
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+ 
+inset
+ 
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 rgba
 (0
 ,
@@ -244,6 +284,7 @@ rgba
 .2
 )
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 510
 px
@@ -253,6 +294,8 @@ px
 px
 
 =======
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
  
 510
 px
@@ -261,16 +304,23 @@ px
 50
 px
  
+<<<<<<< HEAD
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 -140
 px
 ;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+    
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 }
 }
 #book #top {
@@ -319,6 +369,7 @@ keyframes shadow { 20% {
 box-shadow
 :
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 inset
 
@@ -327,6 +378,11 @@ inset
 inset
  
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+ 
+inset
+ 
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 rgba
 (83
 ,
@@ -336,6 +392,7 @@ rgba
 .3
 )
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 -350
 px
@@ -345,6 +402,8 @@ px
 px
 
 =======
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
  
 -350
 px
@@ -353,22 +412,30 @@ px
 150
 px
  
+<<<<<<< HEAD
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 -140
 px
 ;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+    
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 }
 60%
 {
 box-shadow
 :
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 inset
 
@@ -377,6 +444,11 @@ inset
 inset
  
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+ 
+inset
+ 
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 rgba
 (83
 ,
@@ -386,27 +458,37 @@ rgba
 -200
 px
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 0
 150
 px
 
 =======
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
  
 0
 150
 px
  
+<<<<<<< HEAD
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 -140
 px
 ;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> 8bb6f1ff6ee19b6530e1890ba8dc9320d42daf47
+=======
+    
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 }
 }
 #book #front {

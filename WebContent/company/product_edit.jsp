@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <%@ include file="../com_header.jsp"%>
+=======
+<%@ include file="../menu.jsp"%>
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 
 <form action="company_top_page.jsp" method="post">
 
@@ -63,4 +67,10 @@
 		<a href="sample_registration.jsp">試供品編集はこちら</a>
 	</div>
 
+<<<<<<< HEAD
 </form>
+=======
+</form>
+
+<%@ include file="../footer.jsp"%>
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337

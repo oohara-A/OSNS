@@ -1,3 +1,8 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@include file="../header.jsp"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@include file="../header.jsp" %>
         <style>
@@ -107,5 +112,10 @@
                 <img alt="商品画像" width="100" height="100" src="../assets/image/food_box.png">
             </div>
         </div>
+<<<<<<< HEAD
 
         <%@include file="../footer.jsp" %>
+=======
+        <%@include file="../footer.jsp" %>
+
+>>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
