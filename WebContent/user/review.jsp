@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 <%@page import="bean.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-=======
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 <style>
 /* レビューフォームのスタイル */
 .review-form {
@@ -34,7 +29,6 @@
 	border-radius: 5px;
 	background-color: #f9f9f9;
 }
-<<<<<<< HEAD
 
 /* レビュー表示のcss */
 .box2 {
@@ -121,7 +115,8 @@ a{
 						</c:if>
                         <a href="message.jsp?id = ${review.user_id }">返信</a>
                          <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
-                         <a href="Reviewdel.action?review_id=${review.review_id }">削除</a>
+                         <a href="Reviewdel.action?review_id=${review.review_id }">削除	</a>
+
                     </div>
         </c:forEach>
     </c:when>
@@ -155,35 +150,6 @@ a{
 	</div>
 	</div>
 
-=======
-</style>
-
-<hr>
-<div>
-	<h3>商品レビュー</h3>
-
-	<!-- レビューとリプライの表示 -->
-	<div class="product-reviews" id="productReviews">
-		<!-- レビューと返信表示エリア -->
-	</div>
-
-	<!-- レビュー＆リプライ投稿フォーム -->
-	<form id="productReviewForm"
-		onsubmit="submitProductReview(); return false;" class="review-form">
-		<h4>商品レビューを投稿</h4>
-		<textarea id="productReviewContent" rows="4" cols="50"
-			placeholder="あなたの商品レビューを入力してください" required></textarea>
-		<br> <label for="rating">評価:</label> <select id="rating" required>
-			<option value="1">☆</option>
-			<option value="2">☆☆</option>
-			<option value="3">☆☆☆</option>
-			<option value="4">☆☆☆☆</option>
-			<option value="5">☆☆☆☆☆</option>
-		</select> <br> <input type="submit" value="投稿">
-	</form>
-</div>
-
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 <script>
         var productReviews = []; // 商品レビューとチャットの管理用オブジェクト
 

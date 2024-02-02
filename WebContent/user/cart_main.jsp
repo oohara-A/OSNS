@@ -15,7 +15,7 @@
 		<!-- Sample cart item, repeat this block for each item in the cart -->
 		<tr>
 			<td><a href="product_detail.jsp"> <img alt="商品リストへ"
-					width="80" height="80" src="../assets/proimage/${prodetail.image_filename}">
+					width="80" height="80" src="<%=request.getContextPath() %>/assets/proimage/${prodetail.image_filename}">
 			</a></td>
 
 			<td>\2000</td>
@@ -43,10 +43,6 @@
 		カート内合計: \<span id="subtotal">2000</span>
 	</p>
 </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 	<script>
             function deleteCartItem(button) {
                 // バリデーションを無効にする
