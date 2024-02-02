@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../com_header.jsp"%>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
 
 <form action="company_top_page.jsp" method="post">
 	<div class="back_home">
 			<input class="backhome" type="submit" value="ホームに戻る">
 	</div>
 </form>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+
 <form action="Product_registration.action" method="post" enctype="multipart/form-data">
 
 	<h2 class="product_title">商品登録</h2>
