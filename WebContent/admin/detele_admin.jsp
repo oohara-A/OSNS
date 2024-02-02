@@ -2,11 +2,16 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../menu.jsp"%>
 
+<<<<<<< HEAD
 <form action="processAdminDeletion.jsp" method="post">
+=======
+<div class="back_home">
+		<a href="admin.jsp"><input class="backhome" type="submit" value="ホームに戻る"></a>
+</div>
+<form action="Remove.action" method="post">
+>>>>>>> e6ab42305ac231d595646d97c858f9c48e0b2b61
 
-	<div class="back_home">
-		<input class="backhome" type="submit" value="ホームに戻る">
-	</div>
+
 
 	<h2 class="admin_title">管理者を削除</h2>
 
