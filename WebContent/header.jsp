@@ -1,62 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> --%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="bean.User"%>
+<%@page import="java.util.List"%>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>kouka_web</title>
-<meta name="description"
-	content="sampie text sampie textsampie textsampie textsampie textsampie textsampie textsampie textsampie text">
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP"
-	rel="stylesheet">
-<<<<<<< HEAD
-=======
-<link rel="stylesheet"
-	href="<%=request.getContextPath() %>/assets/css/sanitize.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath() %>/assets/css/common.css">
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
+<!-- Favicon-->
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+<!-- Bootstrap Icons-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+<!-- Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+
+<!-- SimpleLightbox plugin CSS-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet" />
+
+<link href="<%=request.getContextPath() %>/assets/css/toppage.css" rel="stylesheet" />
+<meta name="description" content="sampie text sampie textsampie textsampie textsampie textsampie textsampie textsampie textsampie text" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/common.css" />
+
 </head>
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 
-<link rel="stylesheet"
-	href="<%=request.getContextPath() %>/assets/css/common.css">
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-</head>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="java.util.ArrayList"%>
-<%@page import="bean.User"%>
-<%@page import="java.util.List"%>
+<style>
+a:visited {
+ color: #551A8B;
+ text-decoration: underline;
+}
+a:active {
+ color: #FF0000;
+ text-decoration: underline;
+}
 
-<%
-//セッションの情報を取得
-	User user = null;
-	user = (User)session.getAttribute("user");
-	int user_id = 0;
-	if(user != null){
-		user_id = user.getId();
-	}
-%>
-<header class="header">
+body {
+background-color: #9d9087;
+ }
 
-	<h1 class="header-logo">OharaSampleNetShop</h1>
 
-	<nav class="header-menu">
-		<ul class="header-list">
-			<li class="head"><a href="../user/index.jsp">OharaSampleNetShop</a></li>
-<<<<<<< HEAD
-			<li class="head"><a href="../user/account.jsp">アカウント</a></li>
-			<li class="head"><a href="user_login.jsp">ログイン</a></li>
-			<li class="head"><a href="Purchasedisp.action?id=<%=user_id%>">注文履歴</a></li>
-=======
-			<li class="head"><a href="../user/user_login.jsp">アカウント</a></li>
-			<li class="head"><a href="user_login.jsp">ログイン</a></li>
-			<li class="head"><a href="#">注文履歴</a></li>
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
-		</ul>
-	</nav>
-</header>
-
+</style>
 <body>
