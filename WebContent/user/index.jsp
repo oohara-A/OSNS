@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="../menu.jsp"%>
@@ -19,11 +19,11 @@
 			<img alt="商品詳細へ"src="../assets/image/tosyokan_book_tana.png">
 		</a>
 		<h1>書籍</h1>
-=======
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@include file="../menu.jsp"%>
+
 <div class="index">
 	<div class="image">
 		<!--%E9%A3%9F%E5%93%81は「食品」のURLエンコードされた形 この形じゃないと、エラーになる-->
@@ -45,30 +45,30 @@
 			src="../assets/image/makeup_eyeshadow.png">
 		</a>
 		<h1>化粧品</h1>
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
+
 	</div>
 
 	<div class="image">
 		<a href="#"> <img alt="商品詳細へ"
-<<<<<<< HEAD
+
 			src="../assets/image/makeup_eyeshadow.png">
 		</a>
 		<h1>化粧品</h1>
-=======
+
 			src="../assets/image/kaden_pikapika.png">
 		</a>
 		<h1>電化製品</h1>
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
+
 	</div>
 
 	<div class="image">
 		<a href="#"> <img alt="商品詳細へ"
-<<<<<<< HEAD
+
 			src="../assets/image/kaden_pikapika.png">
 		</a>
 		<h1>電化製品</h1>
 	</div>
-=======
+
 			src="../assets/image/shichakushitsu.png">
 		</a>
 		<h1>服飾雑貨</h1>
@@ -90,7 +90,7 @@
 		<h1>評価の高い商品</h1>
 	</div>
 </div>
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
+
 
 	<div class="image">
 		<a href="#"> <img alt="商品詳細へ"
@@ -117,8 +117,6 @@
 </div>
 <%@include file="../footer.jsp"%>
 
-<<<<<<< HEAD
-=======
+
 <%@include file="../footer.jsp"%>
 
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
