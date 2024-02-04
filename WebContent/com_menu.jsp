@@ -17,15 +17,15 @@
 		</div>
 
 		<div class="com_button">
+		    <button class="combutton" name="company_info" onclick="location.href='company_info_edit.jsp'">企業情報</button>
+		</div>
+
+		<div class="com_button">
 			<button class="combutton" name="coupon_list" onclick="location.href='coupon_list.jsp'">クーポン一覧</button>
 		</div>
 
 		<div class="com_button">
 		    <button class="combutton" name="coupon_regi" onclick="location.href='coupon_registration.jsp'">クーポン登録</button>
-		</div>
-
-		<div class="com_button">
-		    <button class="combutton" name="company_info" onclick="location.href='company_info_edit.jsp'">企業情報</button>
 		</div>
 
 		<div class="com_button">
