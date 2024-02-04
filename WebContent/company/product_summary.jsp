@@ -13,7 +13,7 @@
 	</div>
 </form>
 
-<form action="Product_search.action" method="post">
+<form>
 	<div class="coupon-list">
 
     <h2>商品一覧</h2>
@@ -21,7 +21,8 @@
     <div class="search-container">
         <label for="search">商品検索:</label>
         <input type="text" id="search" name="search" placeholder="商品名を入力">
-        <button type="submit" class="pro_search">検索</button>
+        <input type="submit" class="pro_search" value="検索" formaction="Product_search.action" formmethod="POST"/>
+        <input type="submit" class="all_pro_search" value="全て表示"formaction="Product_list.action" formmethod="POST"/>
     </div>
 
     <table border="1">
@@ -36,7 +37,6 @@
 
         <tbody>
         	<c:forEach var="item" items="${productlist}">
-
                 <tr>
                     <td>${item.product_name}</td>
                     <td>${item.unit_price}</td>
