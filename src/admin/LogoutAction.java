@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import tool.Action;
+import user.SendindexAction;
 
 public class LogoutAction extends Action {
 	public String execute(
@@ -14,7 +15,8 @@ public class LogoutAction extends Action {
 
 		// セッションから削除
 		session.removeAttribute("login_admin");
+		SendindexAction sendindexAction = new SendindexAction();
 		// admin.jspをフォワード先に指定
-		return "";
+		return sendindexAction.execute(request, response);
 	}
 }

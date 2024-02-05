@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../com_header.jsp"%>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
 <form action="company_top_page.jsp" method="post">
 	<div class="back_home">
 			<input class="backhome" type="submit" value="ホームに戻る">
@@ -37,9 +38,10 @@
 			<label for="productGenre">ジャンル:</label> <select id="productGenre"
 				name="category_name" required>
 				<!-- Add genre options here -->
-				<option value="genre1">本</option>
-				<option value="genre2">化粧品</option>
-				<option value="genre3">食料品</option>
+				 <option value="本">本</option>
+	            <option value="化粧品">化粧品</option>
+	            <option value="食品">食品</option>
+	            <option value="電気用品">電気用品</option>
 			</select>
 		</div>
 
@@ -50,7 +52,7 @@
 
 		<div class="product_info">
 			<label for="productDescription">商品説明:</label>
-			<textarea id="productDescription" name="product_description" rows="4"
+			<textarea id="productDescription" name="p	roduct_description" rows="4"
 				required></textarea>
 		</div>
 

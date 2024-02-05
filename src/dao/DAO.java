@@ -10,10 +10,8 @@ public class DAO {
 //データベース接続を取得するためのメソッド
 	public Connection getConnection() throws Exception {
 		if (ds==null) {
-			//データソースの初期化ーーーーーーーーーーーーー。
 			InitialContext ic=new InitialContext();
 			ds=(DataSource)ic.lookup("java:/comp/env/jdbc/osns");
-//			ーーーーーーーーーーーーーーーーーーーーーーー
 		}
 //		↓デプロイ用
 //		Class.forName("org.h2.Driver");

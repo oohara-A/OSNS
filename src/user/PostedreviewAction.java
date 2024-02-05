@@ -79,8 +79,16 @@ public class PostedreviewAction extends Action {
 			 // ファイルセパレータを使用してパスを結合
 //	        String fullPath = basePath + "\\" + filename2;
 			// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
+
 			part.write("C:\\\\Users\\\\adomin\\\\OneDrive - ooharastudent\\\\デスクトップ\\\\OSNS\\\\WebContent\\\\assets\\\\review_image"+"\\\\" + filename2);
-//			part.write(fullPath);
+//			  String filePath = request.getContextPath()+File.separator +"WebContent"+File.separator +"assets"+File.separator+"review_image"+File.separator + filename2;
+			  // ファイルを保存
+//		        try (InputStream input = part.getInputStream()) {
+//		            Files.copy(input, new File(filePath).toPath(), StandardCopyOption.REPLACE_EXISTING);
+//		        }
+//			part.write(filePath);
+
+			//			part.write(fullPath);
 
 		}
 
@@ -108,9 +116,11 @@ public class PostedreviewAction extends Action {
 	//		 String uploadDirectory2 = System.getProperty("user.dir") + File.separator ;
 	////		 ファイル名に日時を足すミリ秒まで
 	//		// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
-				String uploadDirectory = "C:\\Users\\adomin\\OneDrive - ooharastudent\\デスクトップ\\OSNS\\WebContent\\assets\\review_video";
-			part.write(uploadDirectory +File.separator + filename5);
+				String uploadDirectory = "assets\\review_video";
+//				String uploadDirectory = "C:\\Users\\adomin\\OneDrive - ooharastudent\\デスクトップ\\OSNS\\WebContent\\assets\\review_video";
+			part.write(request.getContextPath()+File.separator +uploadDirectory +File.separator + filename5);
 		}
+
 		ReviewDAO dao = new ReviewDAO();
 		boolean flag = dao.Postedreview(user_id, pro_id, body, rating, submissiondate,filename2,filename5);
 

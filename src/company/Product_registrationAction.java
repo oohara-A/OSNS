@@ -44,6 +44,8 @@ public class Product_registrationAction extends Action{
 		int len = filenames2.size();
 		String filename2 = filenames2.get(len - 1);
 		System.out.println(filename2);
+		part.write("C:\\\\Users\\\\adomin\\\\OneDrive - ooharastudent\\\\デスクトップ\\\\OSNS\\\\WebContent\\\\assets\\\\proimage"+"\\\\" + filename2);
+
 
 		// 在庫
 		int regiinvqua=Integer.parseInt(request.getParameter("regiinvqua"));

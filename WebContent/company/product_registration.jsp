@@ -8,8 +8,8 @@
 	</div>
 </form>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
-<form action="Product_registration.action" method="post" enctype="multipart/form-data">
 
+<form action="Product_registration.action" method="post" enctype="multipart/form-data">
 	<h2 class="product_title">商品登録</h2>
 
 	<div class="item_entry">
@@ -37,12 +37,12 @@
 	    <div class="product_genre">
 	        <label for="productGenre">ジャンル:</label>
 	        <select id="productGenre" name="category_name">
-	            <option value="genre1">本</option>
-	            <option value="genre2">化粧品</option>
-	            <option value="genre3">食料品</option>
+	            <option value="本">本</option>
+	            <option value="化粧品">化粧品</option>
+	            <option value="食品">食品</option>
+	            <option value="電気用品">電気用品</option>
 	        </select>
     	</div>
-
 
 		<div class="pro_info">
 			<label for="shippingCost">送料設定:</label> <input type="number"

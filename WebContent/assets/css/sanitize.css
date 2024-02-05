@@ -485,7 +485,7 @@ input[type="password"] {
 .com_complete {
     padding: 8px 16px;
     background-color: #4CAF50;
-    color: white;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -738,22 +738,47 @@ input[type="file"] {
 }
 
 .back_home {
-    margin-bottom: 20px;
+	text-align: right;
+	margin-top: 40px;
+	margin-right: 100px;
 }
 
 .inquiry_title {
-    font-size: 40px;
+    font-size: 60px;
     color: #333;
     margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.conteiner{
+	padding-top: 20px;
+	padding-bottom: 100px;
 }
 
 .contact_us {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
+	border-top: 1px dotted #000000;
 }
 
-.inquiry {
-    font-size: 16px;
-    margin-bottom: 5px;
+.contact_us .input_inq{
+	width: 80%;
+
+}
+
+.contact_us .inquiry {
+    font-size: 20px;
+    text-align: left;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.contact_us .input_inq_item{
+	width: 20%;
+}
+
+.contact_us .input_inq_content{
+	height: 200px;
+	width: 80%;
 }
 
 input[type="text"],
@@ -791,6 +816,12 @@ select {
   font-size: 45px;
 }
 
+.admin_name{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
 .admin_email{
   width: 80%;
   margin: 0 auto;
@@ -803,26 +834,9 @@ select {
   max-width: 500px;
 }
 
-.admin_reg_time{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
-}
-
-.contact_us .add{
-  font-size: 25px;
-}
-
-.admin_email .add{
-  font-size: 25px;
-}
-
-.admin_password .add{
-  font-size: 25px;
-}
-
-.admin_reg_time .add{
-  font-size: 25px;
+.admin_name input[type="text"]{
+  width: 300px;
+  height: 40px;
 }
 
 .admin_email input[type="email"]{
@@ -831,11 +845,6 @@ select {
 }
 
 .admin_password input[type="password"]{
-  width: 300px;
-  height: 40px;
-}
-
-.admin_reg_time input[type="month"]{
   width: 300px;
   height: 40px;
 }

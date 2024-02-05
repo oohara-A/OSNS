@@ -1,5 +1,10 @@
 package bean;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
 import java.sql.Date;
 
 import javax.servlet.annotation.MultipartConfig;
@@ -199,4 +204,21 @@ public String getFileName(Part part) {
 	 }
 	 return fileName;
 	 }
+
+// URLから動画ファイルをダウンロードして保存するメソッド
+public  void saveVideoFromUrl(String videoUrl, String destinationPath) throws IOException {
+    // 動画ファイルのURLを作成
+    URL url = new URL(videoUrl);
+
+    // 入力ストリームと出力ストリームを使用してファイルを保存
+    try (InputStream inputStream = url.openStream();
+         OutputStream outputStream = new FileOutputStream(destinationPath)) {
+        byte[] buffer = new byte[4096];
+        int bytesRead;
+        // バイトデータを読み取り、ファイルに書き込む
+        while ((bytesRead = inputStream.read(buffer)) != -1) {
+            outputStream.write(buffer, 0, bytesRead);
+        }
+    }
+}
 }

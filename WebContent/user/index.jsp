@@ -9,7 +9,7 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="Procategory.action?category=%E9%A3%9F%E5%93%81" title="食料品">
+                        <a class="portfolio-box" href="../user/Procategory.action?category=%E9%A3%9F%E5%93%81" title="食料品">
                             <img class="img-fluid"  src="<%=request.getContextPath() %>/assets/image/food.jpeg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
@@ -18,7 +18,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="#" title="Project Name">
+                        <a class="portfolio-box" href="../user/Procategory.action?category=%E6%9C%AC" title="書籍">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/boock.jpeg"/>
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
@@ -36,7 +36,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="Procategory.action?category=%E9%9B%BB%E6%B0%97%E7%94%A8%E5%93%81" title="電気用品">
+                        <a class="portfolio-box" href="../user/Procategory.action?category=%E9%9B%BB%E6%B0%97%E7%94%A8%E5%93%81" title="電気用品">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/dennka.jpeg" />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
