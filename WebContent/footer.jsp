@@ -13,7 +13,7 @@
 		<div class="inbox">
 			<h4>カテゴリー</h4>
 			<ul>
-				<li><a href="#">食料品</a></li>
+				<li><a href="#"></a>食料品</li>
 				<li><a href="#">書籍</a></li>
 				<li><a href="#">化粧品</a></li>
 				<li><a href="#">電化製品</a></li>
@@ -30,7 +30,7 @@
 		<div class="inbox">
 			<h4>その他</h4>
 			<ul>
-				<li><a href="inquiry">お問い合わせ</a></li>
+				<li><a href="inquiry.jsp">お問い合わせ</a></li>
 				<li><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fohara_kitakyu">Twitter</a></li>
 				<li><a href="https://www.instagram.com/oharakokura__gram/">Instagram</a></li>
 			</ul>
