@@ -20,37 +20,37 @@
 
 	<div class="contact_us">
 	<p class="inquiry">お名前</p>
-	<input class="input_inq" type="text" name="inq_name">
+	<input class="input_inq" type="text" name="inq_name"required="required">
 	</div>
 
 	<div class="contact_us">
 	<p class="inquiry">企業名</p>
-	<input class="input_inq" type="text" name="inq_com_name">
+	<input class="input_inq" type="text" name="inq_com_name"required="required">
 	</div>
 
 	<div class="contact_us">
 	<p class="inquiry">部署名</p>
-	<input class="input_inq" type="text" name="inq_de_sign">
+	<input class="input_inq" type="text" name="inq_de_sign"required="required">
 	</div>
 
 	<div class="contact_us">
 	<p class="inquiry">役職名</p>
-	<input class="input_inq" type="text" name="inq_job_title">
+	<input class="input_inq" type="text" name="inq_job_title"required="required">
 	</div>
 
 	<div class="contact_us">
 	<p class="inquiry">メールアドレス</p>
-	<input class="input_inq" type="email" name="inq_email">
+	<input class="input_inq" type="email" name="inq_email"required="required">
 	</div>
 
 	<div class="contact_us">
 	<p class="inquiry">電話番号</p>
-	<input class="input_inq" type="tel" name="inq_phnum">
+	<input class="input_inq" type="tel" name="inq_phnum"required="required">
 	</div>
 
 	<div class="contact_us">
 	<p class="inquiry">お問い合わせ項目</p>
-	<select class="input_inq_item" name="contact_item" id="inquiry">
+	<select class="input_inq_item" name="contact_item" id="inquiry"required="required">
 		<option value="purchase">商品の販売について</option>
 		<option value="sample">試供品について</option>
 		<option value="review">レビューについて</option>
@@ -60,7 +60,7 @@
 
 	<div class="contact_us">
 	<p class="inquiry">お問い合わせ内容</p>
-	<textarea class="input_inq_content" name="inq_detail" rows="5" cols="50" maxlength="1000"></textarea>
+	<textarea class="input_inq_content" name="inq_detail" rows="5" cols="50" maxlength="1000"required="required"></textarea>
 	</div>
 
 	<div class="inq_sending">
