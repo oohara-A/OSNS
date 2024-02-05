@@ -791,6 +791,12 @@ select {
   font-size: 45px;
 }
 
+.admin_name{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
 .admin_email{
   width: 80%;
   margin: 0 auto;
@@ -803,26 +809,9 @@ select {
   max-width: 500px;
 }
 
-.admin_reg_time{
-  width: 80%;
-  margin: 0 auto;
-  max-width: 500px;
-}
-
-.contact_us .add{
-  font-size: 25px;
-}
-
-.admin_email .add{
-  font-size: 25px;
-}
-
-.admin_password .add{
-  font-size: 25px;
-}
-
-.admin_reg_time .add{
-  font-size: 25px;
+.admin_name input[type="text"]{
+  width: 300px;
+  height: 40px;
 }
 
 .admin_email input[type="email"]{
@@ -831,11 +820,6 @@ select {
 }
 
 .admin_password input[type="password"]{
-  width: 300px;
-  height: 40px;
-}
-
-.admin_reg_time input[type="month"]{
   width: 300px;
   height: 40px;
 }

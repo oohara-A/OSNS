@@ -5,7 +5,7 @@
 <form action="Remove.action" method="post">
 
 	<div class="back_home">
-		<input class="backhome" type="submit" value="ホームに戻る">
+        <a class="backhome" href="admin.jsp">ホームに戻る</a>
 	</div>
 
 	<h2 class="admin_title">管理者を削除</h2>
@@ -16,5 +16,3 @@
 	</div>
 
 </form>
-
-<%@ include file="../footer.jsp"%>
