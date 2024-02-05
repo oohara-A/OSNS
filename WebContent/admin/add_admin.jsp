@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../admin_header.jsp"%>
 
+
 <style>
 .contact_us{
 	 padding-left: 630px;
