@@ -1,15 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.ArrayList"%>
-<head>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
-
-	<title>company_page</title>
-</head>
-
-	<div class="back_home">
-        <a class="backhome" href="company_top_page.jsp">ホームに戻る</a>
-	</div>
 <%@page import="bean.Company"%>
 <%@include file="../com_header.jsp"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -24,6 +15,13 @@ Company com = null;
   String password = com.getPassword();
   int id = com.getId();
 %>
+
+<head>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+
+	<title>company_page</title>
+</head>
+
 <style>
 .com_info_main{
  	transform: translate(40% ,0%);
@@ -43,10 +41,11 @@ Company com = null;
 .com_complete{
 	margin-left: 290px;
 }
-
 </style>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
 
+<div class="back_home">
+        <a class="backhome" href="company_top_page.jsp">HOME</a>
+</div>
 <h2 class="info_edit">企業情報編集</h2>
 
 <form action="Edit_comp_info.action" method="post">

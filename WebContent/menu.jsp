@@ -31,7 +31,7 @@
                         <li class="nav-item"><a class="nav-link" href="../user/account.jsp">アカウント</a></li>
                         <li class="nav-item"><a class="nav-link" href="user_login.jsp">ログイン</a></li>
                         <li class="nav-item"><a class="nav-link" href="Purchasedisp.action?id=<%=user_id%>">注文履歴</a></li>
-                        <li class="nav-item"><a class="nav-link"  href="Cartdisp.action?id=<%=user_id%>">カート</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Cartdisp.action?id=<%=user_id%>">カート</a></li>
                         <li class="nav-item"><a class="nav-link" href="Messagviewg.action?id=<%=user_id %>">🔔</a></li>
 
                     </ul>

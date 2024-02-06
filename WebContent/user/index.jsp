@@ -18,7 +18,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="#" title="Project Name">
+                        <a class="portfolio-box" href="Procategory.action?category=" title="書籍">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/new_book.jpg"/>
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
