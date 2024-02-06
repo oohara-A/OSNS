@@ -13,20 +13,18 @@
               <form action="Newreg.action" method="post">
 
                 <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example1cg">氏名</label>
-                  <input type="text" name="account_name" id="form3Example1cg" class="form-control form-control-lg" required="required" />
-
+	                <label class="form-label" for="form3Example1cg">氏名</label>
+	                <input type="text" name="account_name" id="form3Example1cg" class="form-control form-control-lg" required="required" />
                 </div>
 
                 <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example3cg">ユーザ名</label>
-                  <input type="text" name="account_user" id="form3Example3cg" class="form-control form-control-lg" required="required" />
-
+                <input type="text" name="account_user" id="form3Example3cg" class="form-control form-control-lg" required="required" />
                 </div>
+
                 <div class="form-outline mb-4">
                 <label class="form-label" for="form3Example3cg">メールアドレス</label>
                   <input type="email" name="account_email" id="form3Example3cg" class="form-control form-control-lg" required="required" />
-
                 </div>
 
                 <div class="form-outline mb-4">
@@ -34,11 +32,9 @@
                   <input type="password" name="account_password" id="form3Example4cg" class="form-control form-control-lg" required="required" />
                 </div>
 
-
-
                 <div class="d-flex justify-content-center">
                   <button type="submit"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">新規作成</button>
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Sign up</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="user_login.jsp"

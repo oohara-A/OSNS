@@ -9,7 +9,7 @@
 	padding-top: 100px;
 }
 	td{
-		color: white;
+		color: black;
 	}
 </style>
 <c:choose>
@@ -25,7 +25,6 @@
 				<th>効果</th>
 				<th>クーポン名</th>
 				<th>クーポンコード</th>
-				<th>有効期限</th>
 			</tr>
 		</thead>
 <c:forEach var="coupon" items="${have_coupon}">
@@ -42,9 +41,6 @@
 				</td>
 				<td>
 					コード: <input type="button" id="${coupon.coupon_id}"  value="${coupon.coupon_code }" onclick="copyToClipboard(this)" readonly>
-				</td>
-				<td>
-					2024年12月31日まで有効
 				</td>
 			</tr>
 			<!-- Repeat this block for each item in the cart -->
