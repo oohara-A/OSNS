@@ -34,13 +34,12 @@ Company com = null;
     text-decoration: underline;
     text-decoration-color: #ff0000;
 }
-.comed_info input{
-	width: 120px;
-}
+
 
 .com_complete{
 	margin-left: 290px;
 }
+
 </style>
 
 <div class="back_home">
