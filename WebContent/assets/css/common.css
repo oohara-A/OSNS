@@ -202,6 +202,7 @@
 .product_box {
   display: flex;
   justify-content: space-between;
+  margin-top: 80px;
 }
 
 .product_detail img {
@@ -210,18 +211,11 @@
 }
 
 .box {
-  width: 300px;
-  height: 400px;
-  margin: 2em;
-  border: solid 3px black;
-
-}
-
-.com_box {
-  width: 600px;
-  height: 200px;
-  margin: 2em;
-  border: solid 1px black;
+	width: 300px;
+	height: 400px;
+	margin: 2em;
+	border: solid 3px black;
+	border-radius: 15px;
 }
 
 
