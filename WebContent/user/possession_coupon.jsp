@@ -16,6 +16,7 @@
 <c:when test="${have_coupon!=null }">
 <div class="cart-container">
 		<h2>所持クーポン一覧</h2>
+
 		<%-- <%@include file="cart_main.jsp"%> --%>
 	<table class="cart_table">
 		<thead>
@@ -43,7 +44,7 @@
 					コード: <input type="button" id="${coupon.coupon_id}"  value="${coupon.coupon_code }" onclick="copyToClipboard(this)" readonly>
 				</td>
 				<td>
-					999999年12月31日まで有効
+					2024年12月31日まで有効
 				</td>
 			</tr>
 			<!-- Repeat this block for each item in the cart -->
@@ -55,7 +56,7 @@
 	<c:otherwise>
 		<div class="cart-container">
 			<h2>所持クーポン一覧</h2>
-			<p>所持しているクーポンは一つもありません。</p>
+			<p class="no_coupon">所持しているクーポンは一つもありません。</p>
 		</div>
  	</c:otherwise>
 </c:choose>
