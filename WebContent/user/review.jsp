@@ -108,10 +108,10 @@ a{
                         <div class="border-radius">コメ</div>
                         <p class="ptagu">${review.reviewbody}</p><br>
                         <c:if test="${not empty review.review_image}">
-						    <p><img alt="写真" src="../assets/review_image/${review.review_image}" width="250px" height="250px"></p>
+						    <p><img alt="写真" src="<%=request.getContextPath() %>/assets/review_image/${review.review_image}" width="250px" height="250px"></p>
 						</c:if>
 						 <c:if test="${not empty review.review_video}">
-							<video  controls="controls"  preload="none" data-setup="{}" src="../assets/review_video/${review.review_video}"  width="400" height="500" ></video>
+							<video  controls="controls"  preload="none" data-setup="{}" src="<%=request.getContextPath() %>/assets/review_video/${review.review_video}"  width="400" height="500" ></video>
 						</c:if>
                         <a href="message.jsp?id = ${review.user_id }">返信</a>
                          <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
