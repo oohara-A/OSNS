@@ -110,6 +110,7 @@ card
 	width: 700px;
 	height: 1000px;
 	margin-left: auto;
+	background-color: white;
 }
 .cart_box {
   width: 300px;
@@ -118,6 +119,7 @@ card
   border: solid 3px black;
   border-radius: 15px;
   padding-top: 20px;
+  background-color: white;
 }
 .cart_box p {
 	font-size: 25px;
@@ -152,11 +154,7 @@ card
 	margin-left: 100px;
 }
 
-.section .grid-item{
-
-}
-
-h1 {
+.title1 {
 	color: white;
 	padding-left: 3rem;
 	font-size: 3.5rem;
@@ -194,7 +192,7 @@ h1 {
 </c:forEach>
 </div>
 	<hr>
-	<h1>おすすめ商品</h1>
+	<h1 class="title1">おすすめ商品</h1>
 
  <section class="section">
     <ul class="grid grid-col-3">
