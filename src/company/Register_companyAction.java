@@ -37,7 +37,7 @@ public class Register_companyAction extends Action{
 		Part part = request.getPart("image_filename");
 		String filename = rev.getFileName(part);
 		System.out.println(filename);
-		 String[] filenames = filename.split("\\\\"); // Windowsの場合
+		String[] filenames = filename.split("\\\\"); // Windowsの場合
 		List<String> filenames2 = new ArrayList<>();
 		for (String file : filenames) {
 		    filenames2.add(file);

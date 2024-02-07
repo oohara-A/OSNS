@@ -12,6 +12,7 @@ public class CompanyinfodispAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// セッションを開始
 		HttpSession session=request.getSession();
+		//データベースに接続
 		Company company = new Company();
 		CompanyDAO dao = new CompanyDAO();
 		Company login_ifo=(Company)session.getAttribute("login_company");
@@ -19,6 +20,7 @@ public class CompanyinfodispAction extends Action {
 		company = dao.select_comp(com_id);
 		session.setAttribute("company_info", company);
 
+		//company_info_edit.jspに遷移
 		return "company_info_edit.jsp";
 	}
 

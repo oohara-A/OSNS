@@ -27,6 +27,7 @@ public class Coupon_issuing_creationAction extends Action{
 
         // ログインされている場合
         if (session.getAttribute("login_company")!=null) {
+
         	CompanyDAO dao=new CompanyDAO();
         	Coupon issue_coupon=dao.coupon_issuing_creation(coupon_name,coupon_code,coupon_discount);
 

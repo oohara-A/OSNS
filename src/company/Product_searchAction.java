@@ -15,6 +15,7 @@ public class Product_searchAction extends Action{
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
+		//セッション開始
 		HttpSession session=request.getSession();
 
 		// 商品名
