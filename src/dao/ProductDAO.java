@@ -58,7 +58,6 @@ public class ProductDAO extends DAO {
 //	select関数カテゴリ商品を選択する(jsp側で商品を表示する際に使用)
 		public List<Product> selecategory(String category) throws Exception {
 			List<Product> prduct=new ArrayList<>();
-			System.out.println("カテゴリアクション"+category+"です");
 
 			Connection con=getConnection();
 			//カテゴリで商品情報を持ってくる
