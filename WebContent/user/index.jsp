@@ -3,7 +3,6 @@
 <%@include file="../menu.jsp"%>
 <%@include file="../head.jsp"%>
 
-
 <!-- Portfolio-->
         <div id="portfolio">
             <div class="container-fluid p-0">

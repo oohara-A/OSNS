@@ -33,14 +33,17 @@
 /* レビュー表示のcss */
 .box2 {
 	/*  display: flex; */
-	 padding-right10
+	padding-right10
     position: relative;
-   padding: 1rem 1rem 1.2rem;
+   	padding: 1rem 1rem 1.2rem;
    	padding-right:2rem;
+   	padding-bottom:3rem;
  	border-bottom: 2px solid #333;
     background: linear-gradient(#DFF3CA 0 calc(100% - 0.2rem), white calc(100% - 0.2rem));
     font-size: 20px;
     margin-right:190px;
+    margin-left: 50px;
+    margin-bottom: 100px;
 	}
 
 .box2:before,
@@ -94,13 +97,25 @@ a{
 	text-decoration:none;
 	color: black;
 }
+
+h2{
+	margin-left: 50px;
+}
+
+.posted_review input{
+	margin-bottom: 1.5rem;
+}
+
+.review-form {
+	height: 500px;
+}
 </style>
 
 <hr>
 
-	<h3>商品レビュー</h3>
+	<h2>商品レビュー</h2>
 	<!-- レビューとリプライの表示 -->
-	<div class="box2">
+<div class="box2">
 <c:choose>
     <c:when test="${user_review != null}">
         <c:forEach var="review" items="${user_review}">
@@ -108,10 +123,10 @@ a{
                         <div class="border-radius">コメ</div>
                         <p class="ptagu">${review.reviewbody}</p><br>
                         <c:if test="${not empty review.review_image}">
-						    <p><img alt="写真" src="<%=request.getContextPath() %>/assets/review_image/${review.review_image}" width="250px" height="250px"></p>
+						    <p><img alt="写真" src="../assets/review_image/${review.review_image}" width="250px" height="250px"></p>
 						</c:if>
 						 <c:if test="${not empty review.review_video}">
-							<video  controls="controls"  preload="none" data-setup="{}" src="<%=request.getContextPath() %>/assets/review_video/${review.review_video}"  width="400" height="500" ></video>
+							<video  controls="controls"  preload="none" data-setup="{}" src="../assets/review_video/${review.review_video}"  width="400" height="500" ></video>
 						</c:if>
                         <a href="message.jsp?id = ${review.user_id }">返信</a>
                          <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
@@ -126,16 +141,18 @@ a{
 </c:choose>
 <!-- レビュー＆リプライ投稿フォーム -->
 
-<div>
+	<div class="posted_review">
 		<h4>商品レビューを投稿</h4>
 		<form action="Postedreview.action" enctype="multipart/form-data" method="post" class="review-form">
 		    <textarea name="reviews" id="productReviewContent" rows="4" cols="50"
 		              placeholder="あなたの商品レビューを入力してください" required></textarea>
 		    <br>
 		    <h2>画像選択</h2>
-		    <input type="file" name="part"><br>
+		    <input type="file" name="part">
+		    <br>
 		    <h2>動画選択</h2>
-		    <input type="file" name="part2"><br>
+		    <input type="file" name="part2">
+		    <br>
 		    <label for="rating">評価:</label>
 		    <select name="ratings" id="rating" required>
 		        <option value=1>☆</option>
@@ -148,7 +165,7 @@ a{
 		    <input type="submit" value="投稿">
 		</form>
 	</div>
-	</div>
+</div>
 
 <script>
         var productReviews = []; // 商品レビューとチャットの管理用オブジェクト
