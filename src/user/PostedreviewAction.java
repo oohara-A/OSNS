@@ -1,11 +1,16 @@
 package user;
 
-import java.io.File;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
@@ -74,13 +79,17 @@ public class PostedreviewAction extends Action {
 			int len = filenames2.size();
 			filename2 = filenames2.get(len - 1);
 			System.out.println(filename2);
-//			String uploadDirectory = System.getProperty("user.dir") + File.separator ;
-//			String basePath = "\\\\localhost\\\\osns\\\\WebContent\\\\assets\\\\review_image";
-			 // ファイルセパレータを使用してパスを結合
-//	        String fullPath = basePath + "\\" + filename2;
-			// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
-			part.write("C:\\\\Users\\\\adomin\\\\OneDrive - ooharastudent\\\\デスクトップ\\\\OSNS\\\\WebContent\\\\assets\\\\review_image"+"\\\\" + filename2);
-//			part.write(fullPath);
+
+			//アップロードするフォルダ
+			ServletContext context  = request.getServletContext();
+
+			String uploadDirectory=context.getRealPath("/assets/");
+
+			//ファイルの保存先のパス
+			String filePath = Paths.get(uploadDirectory, "review_image", filename).toString();
+			//実際にファイルが保存されるパス確認
+			System.out.println(filePath);
+			part.write(filePath);
 
 		}
 
@@ -105,12 +114,31 @@ public class PostedreviewAction extends Action {
 				int len2 = filenames4.size();
 				filename5 = filenames4.get(len2 - 1);
 				System.out.println("動画ファイル名"+filename5);
-	//		 String uploadDirectory2 = System.getProperty("user.dir") + File.separator ;
-	////		 ファイル名に日時を足すミリ秒まで
-	//		// アップロードする場所 C:\work\pleiades\workspace\OSNS\image
-				String uploadDirectory = "C:\\Users\\adomin\\OneDrive - ooharastudent\\デスクトップ\\OSNS\\WebContent\\assets\\review_video";
-			part.write(uploadDirectory +File.separator + filename5);
+				//アップロードするフォルダ
+				ServletContext context  = request.getServletContext();
+
+				String uploadDirectory=context.getRealPath("/assets/");
+
+				//ファイルの保存先のパス
+				String filePath = Paths.get(uploadDirectory, "review_video", filename5).toString();
+				//実際にファイルが保存されるパス確認
+				System.out.println(filePath);
+
+
+				// ファイルをアップロード先のディレクトリに保存
+		        try (InputStream input = part2.getInputStream()) {
+		        	//アップロードするフォルダ
+					ServletContext context2  = request.getServletContext();
+					String uploadDirectory2=context.getRealPath("/assets/");
+					//ファイルの保存先のパス
+					Path  filePath2 = Paths.get(uploadDirectory, "review_video", filename5);
+
+		            Files.copy(input, filePath2, StandardCopyOption.REPLACE_EXISTING);
+		        }
+//			part.write(uploadDirectory +File.separator + filename5);
+
 		}
+
 		ReviewDAO dao = new ReviewDAO();
 		boolean flag = dao.Postedreview(user_id, pro_id, body, rating, submissiondate,filename2,filename5);
 
@@ -123,4 +151,3 @@ public class PostedreviewAction extends Action {
 	}
 
 }
-

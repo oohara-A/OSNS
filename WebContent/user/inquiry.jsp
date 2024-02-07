@@ -3,6 +3,29 @@
 
 <%@include file="../menu.jsp"%>
 
+<style>
+h2 {
+	margin-top: 6rem;
+	font-size: 3.5rem;
+
+}
+.contact_us{
+
+}
+.contact_us p{
+	font-size: 1.5rem;
+}
+.inq_sending{
+	font-size: 1rem;
+}
+select option{
+	font-size: 1.5rem;
+}
+input {
+	margin-bottom: 1rem;
+}
+</style>
+
 
 <form action="inquiry_complete.jsp" method="post">
 
