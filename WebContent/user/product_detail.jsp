@@ -156,6 +156,12 @@ card
 
 }
 
+h1 {
+	color: white;
+	padding-left: 3rem;
+	font-size: 3.5rem;
+}
+
 </style>
 <div class="product_detail">
 <c:forEach var="prodetail" items="${product_detail}">
