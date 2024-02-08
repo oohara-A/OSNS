@@ -102,6 +102,12 @@ h2{
 	margin-left: 50px;
 }
 
+.review_title {
+	color: white;
+	font-size: 3.5rem;
+	padding-bottom: 1rem;
+}
+
 .posted_review input{
 	margin-bottom: 1.5rem;
 }
@@ -109,11 +115,15 @@ h2{
 .review-form {
 	height: 500px;
 }
+
+.review a{
+	padding-left: 1rem;
+}
 </style>
 
 <hr>
 
-	<h2>商品レビュー</h2>
+	<h2 class="review_title">商品レビュー</h2>
 	<!-- レビューとリプライの表示 -->
 <div class="box2">
 <c:choose>
@@ -129,8 +139,8 @@ h2{
 							<video  controls="controls"  preload="none" data-setup="{}" src="../assets/review_video/${review.review_video}"  width="400" height="500" ></video>
 						</c:if>
                         <a href="message.jsp?id = ${review.user_id }">返信</a>
-                         <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
-                         <a href="Reviewdel.action?review_id=${review.review_id }">削除	</a>
+                        <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
+                        <a href="Reviewdel.action?review_id=${review.review_id }">削除	</a>
 
                     </div>
         </c:forEach>
