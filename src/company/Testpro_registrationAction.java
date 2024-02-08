@@ -1,10 +1,12 @@
 package company;
 
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -43,6 +45,16 @@ public class Testpro_registrationAction extends Action{
 		int len = filenames2.size();
 		String filename2 = filenames2.get(len - 1);
 		System.out.println(filename2);
+		//アップロードするフォルダ
+		ServletContext context  = request.getServletContext();
+
+		String uploadDirectory=context.getRealPath("/assets/");
+
+		//ファイルの保存先のパス
+		String filePath = Paths.get(uploadDirectory, "proimage", filename2).toString();
+		//実際にファイルが保存されるパス確認
+		System.out.println(filePath);
+		part.write(filePath);
 
 		// 在庫
 		int regiinvqua=Integer.parseInt(request.getParameter("regiinvqua"));

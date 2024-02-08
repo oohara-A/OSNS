@@ -28,9 +28,10 @@ public class ProdetailAction extends Action {
 
 			List<Product> product=dao.selectId(pro_id);
 			List<Review> review = dao2.select(pro_id);
-//
+
 			//セッションにlist属性で登録
 			session.setAttribute("product_detail", product);
+
 			if(review.isEmpty()){
 				System.out.print("ProdetailAction not set");
 				session.removeAttribute("user_review");

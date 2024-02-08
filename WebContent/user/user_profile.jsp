@@ -6,34 +6,39 @@
 <style>
 .user_info{
 	padding-top: 80px;
+	max-width: 800px;
+    margin: 80px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-p{
-	font-size: 25px;
+.us_info{
+	font-size: 38px;
+}
 
+h1 {
+    text-align: center;
+}
 
-	}
-   h1 {
-       text-align: center;
-
-
-   }
    .container {
        display: flex;
        justify-content: center;
-
    }
 
    .box {
-       border: 1px solid #ccc;
-       padding: 10px;
-       margin: 10px;
+       border: 10px solid #ccc;
+       padding: 20px;
+       margin: 30px;
+       width: 1000px;
+
    }
 
    .box-item {
        display: flex;
        justify-content: space-between;
        align-items: center;
-       margin-bottom: 10px;
+       margin-bottom: 20px;
    }
 
    .content-with-button {
@@ -43,12 +48,13 @@ p{
    }
 
    .add-button {
-       padding: 8px 16px;
+       padding: 20px 20px;
        background-color: #4CAF50;
        color: white;
        border: none;
        border-radius: 4px;
        cursor: pointer;
+       font-size: 15px;
    }
 
    .modal {
@@ -194,28 +200,28 @@ card
 	        <div class="container">
 	            <div class="box">
 	                <div class="box-item">
-	                    <p> お名前:${user.user_name}</p>
+	                    <p class="us_info"> お名前:${user.user_name}</p>
 	                    <button class="add-button" onclick="openModal('name')">
 	                        変更
 	                    </button>
 	                </div>
 
 	                <div class="box-item">
-	                    <p>Eメール:${user.email}</p>
+	                    <p class="us_info">Eメール:${user.email}</p>
 	                    <button class="add-button" onclick="openModal('mail')">
 	                        変更
 	                    </button>
 	                </div>
 
 	                <div class="box-item">
-	                    <p>電話番号:</p>
+	                    <p class="us_info">電話番号:</p>
 	                    <button class="add-button" onclick="openModal('phone')">
 	                        変更
 	                    </button>
 	                </div>
 
 	                <div class="box-item">
-	                    <p>パスワード:＊＊＊</p>
+	                    <p class="us_info">パスワード:＊＊＊＊＊</p>
 	                    <button class="add-button" onclick="openModal('pass')">
 	                変更
 	            </button>

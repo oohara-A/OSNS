@@ -305,23 +305,8 @@ public class CompanyDAO extends DAO{
 	public Test_product testpro_registration(String testpro_name, int test_price, String filename2,int regiinvqua, String category_name, String product_description, Date add_date)
 		throws Exception {
 		Test_product test_product=null;
-
+//		試供品
 		int  category_id = 0;
-
-//		カテゴリの判定条件  食料品だったら１
-		if (category_name.equals("食品")) {
-			category_id = 1;
-		}else if (category_name.equals("電気用品")){
-			category_id = 2;
-		//化粧品を選択した場合
-		}else if (category_name.equals("化粧品")){
-			category_id =3;
-		//本を選択した場合
-		}else if (category_name.equals("本")){
-			category_id = 4;
-		}
-
-
 
 		String PRODUCT_OVERVIEW = "abcdefg";
 
@@ -330,7 +315,8 @@ public class CompanyDAO extends DAO{
 		Connection con=getConnection();
 		PreparedStatement st;
 		st=con.prepareStatement(
-			"insert into test_product (product_category_id,testpro_name,test_price,regiinvqua,product_description,adding_time,PRODUCT_OVERVIEW) values(?,?,?,?,?,?,?)") ;
+	"insert into product (product_category_id,product_name,unit_price,adding_time,product_description,regiinvqua,PRODUCT_OVERVIEW) values(?,?,?,?,?,?,?)");
+//	"insert into test_product (product_category_id,testpro_name,test_price,regiinvqua,product_description,adding_time,PRODUCT_OVERVIEW) values(?,?,?,?,?,?,?)")
 		st.setInt(1, category_id);
 		st.setString(2, testpro_name);
 		st.setInt(3, test_price);
@@ -341,31 +327,32 @@ public class CompanyDAO extends DAO{
 		st.executeUpdate();
 
 		//商品ID
-		st=con.prepareStatement(
-				"SELECT * FROM test_product where testpro_name = ?");
-		st.setString(1, testpro_name);
-		ResultSet rs=st.executeQuery();
-		//商品Id取得
-		while (rs.next()) {
-			pro_id = rs.getInt("id");
-		}
-		System.out.println(pro_id);
-		//商品画像をテーブルに追加
-		st=con.prepareStatement(
-				"insert into testpro_image (product_id,image_filename) values(?,?)");
-		st.setInt(1, pro_id);
-		st.setString(2, filename2);
-		st.executeUpdate();
+				st=con.prepareStatement(
+						"SELECT * FROM product where product_name = ?");
+				st.setString(1, testpro_name);
+				ResultSet rs=st.executeQuery();
+				//商品Id取得
+				while (rs.next()) {
+					pro_id = rs.getInt("id");
+				}
+				System.out.println(pro_id);
+				//商品画像をテーブルに追加
+				st=con.prepareStatement(
+						"insert into pro_image (product_id,image_filename) values(?,?)");
+				st.setInt(1, pro_id);
+				st.setString(2, filename2);
+				st.executeUpdate();
 
-		//カテゴリをテーブル追加
-		st=con.prepareStatement(
-				"insert into testpro_category (PRODUCT_CATEGORY_ID ,product_id,name) values(?,?,?)");
-		st.setInt(1, category_id);
-		st.setInt(2, pro_id);
-		st.setString(3, category_name);
-		st.executeUpdate();
-		st.close();
-		con.close();
+				//カテゴリをテーブル追加
+				st=con.prepareStatement(
+						"insert into product_category (PRODUCT_CATEGORY_ID ,product_id,category_name) values(?,?,?)");
+				st.setInt(1, category_id);
+				st.setInt(2, pro_id);
+				st.setString(3, category_name);
+				st.executeUpdate();
+				st.close();
+				con.close();
+
 
 		return test_product;
 	}

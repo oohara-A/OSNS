@@ -10,7 +10,7 @@
 </style>
 
 <div class="back_home">
-       <a class="backhome" href="company_top_page.jsp">ホームに戻る</a>
+       <a class="backhome" href="index.jsp">ホームに戻る</a>
 </div>
 <h2 class="inquiry_title">お問い合わせ</h2>
 <hr color="#ff0000" >

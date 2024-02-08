@@ -125,7 +125,7 @@ public class PostedreviewAction extends Action {
 				System.out.println(filePath);
 
 
-				// ファイルをアップロード先のディレクトリに保存
+				// 動画ファイルをアップロード先のディレクトリに保存
 		        try (InputStream input = part2.getInputStream()) {
 		        	//アップロードするフォルダ
 					ServletContext context2  = request.getServletContext();
