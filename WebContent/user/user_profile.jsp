@@ -34,6 +34,12 @@ h1 {
 
    }
 
+   .sending{
+  	width: 20%;
+  	margin: 0 auto; /* 中央寄せ */
+  	max-width: 500px;
+}
+
    .box-item {
        display: flex;
        justify-content: space-between;

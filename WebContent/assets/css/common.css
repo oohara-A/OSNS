@@ -380,6 +380,7 @@ table td:last-child {
 
 table tr:last-child td:first-child {
   border-radius: 0 0 0 5px;
+  color: black;
 }
 
 table tr:last-child td:last-child {
