@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@include file="../menu.jsp"%>
+
 
 <style>
 
@@ -61,7 +63,6 @@
 						<h1 class="pro_nam">${purchase.product_name }</h1>
 							<p>単価:${purchase.purchase_price }円</p>
 							<p>購入数:${purchase.count }個</p>
-							<a class="button_his"><button>再購入</button></a>
 							<a class="button_his" href="PurCancel.action?log_number=${purchase.id}"><button> キャンセル</button></a>
 					</div>
 				</div>

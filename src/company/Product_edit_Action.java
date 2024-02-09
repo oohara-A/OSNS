@@ -15,7 +15,6 @@ public class Product_edit_Action extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
-
 		// セッションを開始
 		HttpSession session=request.getSession();
 		// 商品名

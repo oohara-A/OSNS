@@ -1,101 +1,66 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<<<<<<< HEAD
 <%@include file="../com_header.jsp"%>
-=======
-<%@include file="../menu.jsp"%>
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+<style>
+.conteiner {
+	margin: 0 auto;
+	width: 60%;
+}
+</style>
 
-<form action="registered.jsp" method="post">
+<div class="back_home">
+       <a class="backhome" href="company_top_page.jsp">ホームに戻る</a>
+</div>
+<h2 class="inquiry_title">お問い合わせ</h2>
+<hr color="#ff0000" >
 
-	<h2 class="com_title">企業用お問い合わせ</h2>
+<div class="conteiner">
+<form action="inquiry_complete.jsp" method="post">
 
 	<div class="contact_us">
-		<p class="inquiry">お名前</p>
-		<input type="text" name="inq_name">
+	<p class="inquiry">お名前</p>
+	<input class="input_inq" type="text" name="inq_name"required="required">
 	</div>
 
 	<div class="contact_us">
-		<p class="inquiry">企業名</p>
-		<input type="text" name="inq_com_name">
-	</div>
-<<<<<<< HEAD
-=======
-
-	<div class="contact_us">
-		<p class="inquiry">部署名</p>
-		<input type="text" name="inq_de_sign">
+	<p class="inquiry">企業名</p>
+	<input class="input_inq" type="text" name="inq_com_name"required="required">
 	</div>
 
 	<div class="contact_us">
-		<p class="inquiry">役職名</p>
-		<input type="text" name="inq_job_title">
+	<p class="inquiry">部署名</p>
+	<input class="input_inq" type="text" name="inq_de_sign"required="required">
 	</div>
 
 	<div class="contact_us">
-		<p class="inquiry">メールアドレス</p>
-		<input type="email" name="inq_email">
+	<p class="inquiry">役職名</p>
+	<input class="input_inq" type="text" name="inq_job_title"required="required">
 	</div>
 
 	<div class="contact_us">
-		<p class="inquiry">電話番号</p>
-		<input type="tel" name="inq_phnum">
+	<p class="inquiry">メールアドレス</p>
+	<input class="input_inq" type="email" name="inq_email"required="required">
 	</div>
 
 	<div class="contact_us">
-		<p class="inquiry">お問い合わせ項目</p>
-		<select name="contact_item" id="inquiry">
-			<option value="purchase">商品の販売について</option>
-			<option value="sample">試供品について</option>
-			<option value="review">レビューについて</option>
-			<option value="other">その他</option>
-		</select>
+	<p class="inquiry">電話番号</p>
+	<input class="input_inq" type="tel" name="inq_phnum"required="required">
 	</div>
 
 	<div class="contact_us">
-		<p class="inquiry">お問い合わせ内容</p>
-		<textarea name="inq_detail" rows="5" cols="50" maxlength="1000"></textarea>
-	</div>
-
-	<div class="inq_sending">
-		<input class="sending" type="submit" value="送信">
-	</div>
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
-
-	<div class="contact_us">
-		<p class="inquiry">部署名</p>
-		<input type="text" name="inq_de_sign">
-	</div>
-
-<<<<<<< HEAD
-	<div class="contact_us">
-		<p class="inquiry">役職名</p>
-		<input type="text" name="inq_job_title">
+	<p class="inquiry">お問い合わせ項目</p>
+	<select class="input_inq_item" name="contact_item" id="inquiry"required="required">
+		<option value="purchase">商品の販売について</option>
+		<option value="sample">試供品について</option>
+		<option value="review">レビューについて</option>
+		<option value="other">その他</option>
+	</select>
 	</div>
 
 	<div class="contact_us">
-		<p class="inquiry">メールアドレス</p>
-		<input type="email" name="inq_email">
-	</div>
-
-	<div class="contact_us">
-		<p class="inquiry">電話番号</p>
-		<input type="tel" name="inq_phnum">
-	</div>
-
-	<div class="contact_us">
-		<p class="inquiry">お問い合わせ項目</p>
-		<select name="contact_item" id="inquiry">
-			<option value="purchase">商品の販売について</option>
-			<option value="sample">試供品について</option>
-			<option value="review">レビューについて</option>
-			<option value="other">その他</option>
-		</select>
-	</div>
-
-	<div class="contact_us">
-		<p class="inquiry">お問い合わせ内容</p>
-		<textarea name="inq_detail" rows="5" cols="50" maxlength="1000"></textarea>
+	<p class="inquiry">お問い合わせ内容</p>
+	<textarea class="input_inq_content" name="inq_detail" rows="5" cols="50" maxlength="1000"required="required"></textarea>
 	</div>
 
 	<div class="inq_sending">
@@ -103,6 +68,4 @@
 	</div>
 
 </form>
-=======
-<%@include file="../footer.jsp"%>
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
+</div>

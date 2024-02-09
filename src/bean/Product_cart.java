@@ -37,14 +37,10 @@ private String file_name;
 private boolean deletion_flag;
 
 private Product product;//プロダクト型の変数
-<<<<<<< HEAD
 //↓追加
 private Pro_image pro_image;
 //↓追加
 private int total;
-=======
-private Pro_image pro_image;
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 /**
  * @return pro_image
  */
@@ -52,7 +48,6 @@ public Pro_image getPro_image() {
 	return pro_image;
 }
 /**
-<<<<<<< HEAD
  * @return total
  */
 public int getTotal() {
@@ -66,8 +61,6 @@ public void setTotal(int total) {
 	this.total = total;
 }
 /**
-=======
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
  * @param pro_image セットする pro_image
  */
 public void setPro_image(Pro_image pro_image) {
@@ -86,22 +79,6 @@ public void setProduct(Product product) {
 	this.product = product;
 }
 
-<<<<<<< HEAD
-=======
-/**
- * @return file_name
- */
-public String getFile_name() {
-	return file_name;
-}
-/**
- * @param file_name セットする file_name
- */
-public void setFile_name(String file_name) {
-	this.file_name = file_name;
-}
-
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
 /**
  * @return file_name
  */

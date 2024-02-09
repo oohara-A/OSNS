@@ -1,56 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="../menu.jsp"%>
-<<<<<<< HEAD
-<%@ include file="../com_header.jsp" %>
-    <div class="menu-container">
-        <%@ include file="../com_menu.jsp" %>
-    </div>
-<%@ include file="../com_header.jsp"%>
-=======
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%
-    boolean loginFailed = true;
-%>
+<html>
+<head>
+    <title>login_error</title>
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
+</head>
 
-<<<<<<< HEAD
-<form action="company_top_page.jsp" method="post">
-	<div class="back_home">
-			<input class="backhome" type="submit" value="ホームに戻る">
-	</div>
-</form>
+<body>
+    <%
+        boolean loginFailed = true;
+    %>
 
-<form action="com_login.jsp" method="post">
+    <form action="com_login.jsp" method="post">
+		<div class="log_all_error">
 
-=======
-<form action="com_login.jsp" method="post">
+        <h2 class="log_error">ログインエラー</h2>
 
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
-	<h2 class="log_error">ログインエラー</h2>
+        <div class="error_message">
+            <% if (loginFailed) { %>
+                <p style="color: red;">ログインに失敗しました。</p>
+                <p style="color: red;">メールアドレスとパスワードを確認してください。</p>
+            <% } %>
+        </div>
 
+        <div class="log_error_button">
+        	<a href="com_login.jsp">
+            	<input class="error_button" type="submit" value="ログイン">
+            </a>
+        </div>
 
-	<div class="error_message">
-		<% if (loginFailed) { %>
-		<p style="color: red;">ログインに失敗しました。メールアドレスとパスワードを確認してください。</p>
-		<% } %>
-<<<<<<< HEAD
-	</div>
+        </div>
+    </form>
 
-	<div class="inq_sending">
-		<input class="sending" type="submit" value="ログイン">
-	</div>
-
-</form>
-=======
-	</div>
-
-	<div class="inq_sending">
-		<input class="sending" type="submit" value="ログイン">
-	</div>
-</form>
-
-
-
-<%@ include file="../footer.jsp"%>
->>>>>>> f5f4f59a51d2788a7dc7f63bd9c6f7876b3a3337
+</body>
+</html>

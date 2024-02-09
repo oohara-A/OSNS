@@ -1,57 +1,72 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@include file="../com_admin_header.jsp"%>
-	<head>
-	    <title>Admin Login</title>
-	    <link rel="stylesheet" href="../assets/css/sanitize.css">
-	</head>
-	<style>
-	.contener{
-		transform: translate(0px, 25%);
-	}
-	.login_title{
-		color: white;
-	}
-		.vh-100{
-		height: 800px;
-		}
-</style>
+<%@page contentType="text/html; charset=UTF-8"%>
+<%@include file="../menu.jsp"%>
 
-<body>
-<form action="Login.action" method="post" class="login-container" >
-<section class="vh-100 bg-image"
+<c:choose>
+	<c:when test="${admin!=null}">
+			<section class="vh-100 bg-image"
   style="background-image: url('../assets/image/bg-masthead.jpg;">
-	<div class="contener">
-	    <h2 class="login_title">Admin Login Page</h2>
-	    <div class="login" >
-	        <div class="login-triangle"></div>
-	        <p><input type="email" placeholder="Email" name="inq_admin_email" autocomplete="off"></p>
-	        <p><input type="password" placeholder="Password" name="inq_admin_pass" autocomplete="off"></p>
-	        <div class="log_button">
-	            <input class="all_login" type="submit" name="login" value="ログイン">
-	            <a  href="../user/index.jsp"><input class="all_login" src="" type="button" name="login" value="TOP"></a>
-	        </div>
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Logout account</h2>
+              <form action="Logout.action" method="post">
+                <div class="form-outline mb-4">
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Logout</button>
+                </div>
 
-	    </div>
-    </div>
-    </section>
-</form>
+                </div>
+              </form>
 
-
-<!-- <form action="Login.action" method="post" class="login-container">
-<section class="vh-100 bg-image"
-  style="background-image: url('../assets/image/bg-masthead.jpg;">
-    <h2 class="login_title">Admin Login Page</h2>
-    <div class="login">
-        <div class="login-triangle"></div>
-
-        <p><input type="email" placeholder="Email" name="inq_admin_email"></p>
-        <p><input type="password" placeholder="Password" name="inq_admin_pass"></p>
-
-        <div class="log_button">
-            <input class="all_login" type="submit" name="login" value="ログイン">
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    </section>
-</form>
- --></body>
-</html>
+  </div>
+</section>
+</c:when>
+<c:otherwise>
+<section class="vh-100 bg-image"
+  style="background-image: url('../assets/image/bg-masthead.jpg;">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5" >Admin_Login</h2>
+
+              <form action="Login.action" method="post">
+                <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3cg">Email</label>
+                  <input type="text" name="inq_admin_email" id="form3Example3cg" class="form-control form-control-lg" required="required" />
+                </div>
+
+                <div class="form-outline mb-4">
+                 <label class="form-label" for="form3Example4cg">Password</label>
+                 <input type="password" name="inq_admin_pass" id="form3Example4cg" class="form-control form-control-lg" required="required" />
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0"><a href="<%=request.getContextPath() %>/company/com_login.jsp"
+                class="fw-bold text-body"><u>企業の方はこちら</u></a></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</c:otherwise>
+</c:choose>
+ <%@include file="../footer.jsp"%>

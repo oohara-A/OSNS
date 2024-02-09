@@ -89,7 +89,8 @@ card
 }
 .product_detail{
 
-	padding-top: 50px;}
+	padding-top: 50px;
+}
   .detail_img {
     display: flex;
     flex-wrap: wrap;
@@ -104,88 +105,135 @@ card
   .font{
   	font-size: 25px;
   }
+
+.box {
+	width: 700px;
+	height: 1000px;
+	margin-left: auto;
+	background-color: white;
+}
+.cart_box {
+  width: 300px;
+  height: 400px;
+  margin: 2em;
+  border: solid 3px black;
+  border-radius: 15px;
+  padding-top: 20px;
+  background-color: white;
+}
+.cart_box p {
+	font-size: 25px;
+	padding-left: 20px;
+}
+
+.box .pro_name{
+	font-size: 70px;
+	padding-left: 15px;
+}
+
+.pro_detail{
+	font-size: 35px;
+	padding-left: 20px;
+}
+.com_box {
+	width: 600px;
+	height: 330px;
+	border: solid 1px black;
+	padding-left: 5px;
+	margin-left: 20px;
+}
+.pro_description {
+	font-size: 35px;
+}
+
+.description {
+	font-size: 20px;
+}
+.pro_img img{
+	margin-top: 120px;
+	margin-left: 100px;
+}
+
+.title1 {
+	color: white;
+	padding-left: 3rem;
+	font-size: 3.5rem;
+}
+
 </style>
 <div class="product_detail">
 <c:forEach var="prodetail" items="${product_detail}">
-
+	<div class="pro_img">
+		<img alt="商品画像" src="<%=request.getContextPath() %>/assets/proimage/${prodetail.image_filename}"width="30%"height="30%">
+	</div>
 	<div class="product_box">
-		<img alt="商品画像" src="<%=request.getContextPath() %>/assets/proimage/${prodetail.image_filename}">
 		<div class="box">
-			<p>商品名:${prodetail.product_name}</p>
-			<p>価格:${prodetail.unit_price}</p>
-			<p>ポイント:${(prodetail.unit_price * 0.001)}</p>
-			<p>クーポン:なし</p>
+			<p class="pro_name">${prodetail.product_name}</p>
+			<hr>
+			<p class="pro_detail">$${prodetail.unit_price}</p>
+			<p class="pro_detail">ポイント:${(prodetail.unit_price * 0.001)}</p>
+			<p class="pro_detail">クーポン:なし</p>
+			<p class="pro_detail">在庫:${prodetail.regiinvqua }</p>
+			<div class="com_box">
+				<p class="pro_description">この商品について</p>
+
+				<p class="description">・${prodetail.product_description }</p>
+			</div>
 		</div>
 
-		<div class="box">
+		<div class="cart_box">
 			<p>在庫:${prodetail.regiinvqua }</p>
 			<form action="Cartadd.action">
-				<p>
-					数量:<input  type="number" name="cnt" min="1" max="100"  required="required">
-				</p>
-				<p>
-					カート
-					<button type="submit" name="id" value="${prodetail.id }">追加</button>
-				</p>
+				<p>数量:<input  type="number" name="cnt" min="1" max="100"  required="required"></p>
+				<p>カート<button type="submit" name="id" value="${prodetail.id }">追加</button></p>
 			</form>
-
-			</div>
-	</div>
-
-		<div class="com_box">
-			<p>商品説明文<br>${prodetail.product_description }</p>
 		</div>
+	</div>
 </c:forEach>
 </div>
-
-
-
 	<hr>
-	<h1>おすすめ商品</h1>
+	<h1 class="title1">おすすめ商品</h1>
 
  <section class="section">
     <ul class="grid grid-col-3">
     <c:forEach var="product_cate" items="${product_category}">
-            <li class="grid-item">
-                <!--article・・・一固まりで完結するコンテンツ  -->
-               <article class="card">
-                <a href="Prodetail.action?id=${product_cate.id}" class="card-link">
-                    <img class="card-image" src="<%=request.getContextPath() %>/assets/proimage/${product_cate.image_filename}" alt="thumnail">
-                    <div class="card-info">
-                        <time class="card-time" datetime="2022-01-01">2022.01.01<time>
-                            <h1 class="card-hedline">${product_cate.product_name }</h1>
-                            <p class="card-description">￥:${product_cate.unit_price}</p>
-                            <p class="card-description">★★★★☆</p>
-                    </div>
-                </a>
-               </article>
-            </li>
-      </c:forEach>
-       </ul>
-    </section><hr>
+	    <li class="grid-item">
+	        <!--article・・・一固まりで完結するコンテンツ  -->
+	       <article class="card">
+	       	<a href="Prodetail.action?id=${product_cate.id}" class="card-link">
+	       		<img class="card-image" src="<%=request.getContextPath() %>/assets/proimage/${product_cate.image_filename}" alt="thumnail">
+	           	<div class="card-info">
+	               <time class="card-time" datetime="2022-01-01">2022.01.01<time>
+	               <h1 class="card-hedline">${product_cate.product_name }</h1>
+	               <p class="card-description">￥:${product_cate.unit_price}</p>
+	               <p class="card-description">★★★★☆</p>
+	           </div>
+	       	</a>
+	       </article>
+	    </li>
+    </c:forEach>
+    </ul>
+ </section><hr>
 
  <section class="section">
     <ul class="grid grid-col-3">
     <c:forEach var="product_cate" items="${product_category}">
-            <li class="grid-item">
-                <!--article・・・一固まりで完結するコンテンツ  -->
-               <article class="card">
-                <a href="Prodetail.action?id=${product_cate.id}" class="card-link">
-                    <img class="card-image" src="<%=request.getContextPath() %>/assets/proimage/${product_cate.image_filename}" alt="thumnail">
-                    <div class="card-info">
-                        <time class="card-time" datetime="2022-01-01">2022.01.01<time>
-                            <h1 class="card-hedline">${product_cate.product_name }</h1>
-                            <p class="card-description">￥:${product_cate.unit_price}</p>
-                            <p class="card-description">★★★★☆</p>
-                    </div>
-                </a>
-               </article>
-            </li>
-      </c:forEach>
-       </ul>
-    </section>
-
-
-
+	    <li class="grid-item">
+	        <!--article・・・一固まりで完結するコンテンツ  -->
+	       <article class="card">
+	        <a href="Prodetail.action?id=${product_cate.id}" class="card-link">
+	            <img class="card-image" src="<%=request.getContextPath() %>/assets/proimage/${product_cate.image_filename}" alt="thumnail">
+	            <div class="card-info">
+	                <time class="card-time" datetime="2022-01-01">2022.01.01<time>
+	                <h1 class="card-hedline">${product_cate.product_name }</h1>
+	                <p class="card-description">￥:${product_cate.unit_price}</p>
+	                <p class="card-description">★★★★☆</p>
+	            </div>
+	        </a>
+	       </article>
+	    </li>
+     </c:forEach>
+     </ul>
+ </section>
 <%@include file="../user/review.jsp"%>
 <%@include file="../footer.jsp"%>

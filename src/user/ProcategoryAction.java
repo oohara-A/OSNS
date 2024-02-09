@@ -15,6 +15,8 @@ public class ProcategoryAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//セッションの情報を取得
 		HttpSession session=request.getSession();
+		session.removeAttribute("product_category");
+		session.removeAttribute("test_product");
 		//商品検索した名前の所得
 		String keyword=request.getParameter("category");
 		System.out.print(keyword);

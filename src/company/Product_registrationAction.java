@@ -1,10 +1,12 @@
 package company;
 
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -44,6 +46,16 @@ public class Product_registrationAction extends Action{
 		int len = filenames2.size();
 		String filename2 = filenames2.get(len - 1);
 		System.out.println(filename2);
+		//アップロードするフォルダ
+		ServletContext context  = request.getServletContext();
+
+		String uploadDirectory=context.getRealPath("/assets/");
+
+		//ファイルの保存先のパス
+		String filePath = Paths.get(uploadDirectory, "proimage", filename2).toString();
+		//実際にファイルが保存されるパス確認
+		System.out.println(filePath);
+		part.write(filePath);
 
 		// 在庫
 		int regiinvqua=Integer.parseInt(request.getParameter("regiinvqua"));
@@ -65,7 +77,7 @@ public class Product_registrationAction extends Action{
 			Product add_product=dao.product_registration(category_name,product_name,unit_price,add_date,product_description,regiinvqua,filename2 );
 			session.setAttribute("product", add_product);
 			// product_registration_complete.jspをフォワード先に指定
-			return "company_registration_complete.jsp";
+			return "product_registration_complete.jsp";
 
 		//ログインされていない場合
         }else{

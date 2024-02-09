@@ -15,7 +15,7 @@ import bean.User;
 public class AdminDAO extends DAO {
 
 	//ログイン
-	public List<Admin> login(String email, String password, Date login_date)
+	public Admin login(String email, String password, Date login_date)
 		throws Exception {
 		Admin admin=null;
 		List<Admin>admin_list = new ArrayList<>();
@@ -41,7 +41,7 @@ public class AdminDAO extends DAO {
 			System.out.println(rs.getString("email"));
 			admin.setAdding_time(rs.getDate("adding_time"));
 			System.out.println(rs.getString("adding_time"));
-			admin_list.add(admin);
+
 		}
 //		//ログイン時の日時
 	// SQL文を実行
@@ -51,7 +51,7 @@ public class AdminDAO extends DAO {
 		st.executeUpdate();
 		st.close();
 		con.close();
-		return admin_list;
+		return admin;
 	}
 
 	//管理者追加

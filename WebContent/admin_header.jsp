@@ -28,8 +28,5 @@
 		user_id = user.getId();
 	}
 %>
-<header class="header">
-	<h1 class="header-logo">OharaSampleNetShop</h1>
-</header>
 
 <body>
