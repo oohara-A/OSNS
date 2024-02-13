@@ -32,11 +32,19 @@
 .button_his{
 	padding-left: 20px;
 }
-h1 {
-	margin-top: 3rem;
+.title1{
+	margin-top: 5rem;
+	margin-left: 3rem;
+	font-size: 3.5rem;
+	color: white;
+}
+.title2{
+	margin-top: 2rem;
+	margin-left: 3rem;
+	color: white;
 }
 </style>
-<h1>注文履歴</h1>
+<h1 class="title1">注文履歴</h1>
 <c:choose>
 <c:when test="${not empty purc_his }">
 	<div class="cart-container">
@@ -79,7 +87,7 @@ h1 {
 	</div>
 </c:when>
 	<c:otherwise>
-		<h1>購入履歴はありません！</h1>
+		<h1 class="title2">購入履歴はありません！</h1>
 	</c:otherwise>
 </c:choose>
 
