@@ -15,8 +15,8 @@
             }
 
             .box {
-                width: 300px;
-                height: 300px;
+                width: 400px;
+                height: 400px;
                 position: relative;
                 display: flex;
             }
@@ -178,7 +178,12 @@ card
   .font{
   	font-size: 25px;
   }
-        </style>
+
+  .close-button{
+  	margin: 0 auto;
+  }
+
+</style>
 
       <div class="container">
       	<div class="partner">
