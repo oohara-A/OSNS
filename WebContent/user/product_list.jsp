@@ -107,8 +107,14 @@ card
   .font{
   	font-size: 25px;
   }
+
+ .title{
+  	color: white;
+  	font-size: 3.5rem;
+  	margin-left: 2rem;
+  }
 </style>
-<h1>売れ筋商品</h1>
+<h1 class="title">売れ筋商品</h1>
 
  <section class="section">
     <ul class="grid grid-col-3">
@@ -130,7 +136,7 @@ card
       </c:forEach>
        </ul>
     </section><hr>
-	<h1>新着商品</h1>
+	<h1 class="title">新着商品</h1>
  <section class="section">
     <ul class="grid grid-col-3">
     <c:forEach var="product_cate" items="${product_category}">
@@ -152,7 +158,7 @@ card
        </ul>
     </section>
 <hr>
-	<h1>評価の高い商品</h1>
+	<h1 class="title">評価の高い商品</h1>
  <section class="section">
     <ul class="grid grid-col-3">
     <c:forEach var="product_cate" items="${product_category}">

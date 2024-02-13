@@ -2,27 +2,99 @@
 	pageEncoding="UTF-8"%>
 
 <%@include file="../menu.jsp"%>
+<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
 
 <style>
+
+
 .border{
-	transform: translate(35%, 80px);
+	max-width: 1200px;
+    margin: 60px auto;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.border{
 	margin-bottom: 100px;
 }
 h1{
-	color: white;
+	color: black;
+	text-align:center;
+}
+h2{
+	color: black;
+	text-align:center;
+}
+h3 {
+	margin-left: 20%;
 }
 label{
-	color: white;
+	margin-left: 21%;
+	font-size: 25px;
+}
+
+input.form-control{
+width: 65%;
+text-align: center;
+margin-left: 20%;
+padding: 1%
+}
+
+.form-group{
+padding: 1%
+}
+
+input.coupon-code{
+width: 40%
+}
+
+.btn{
+text-align:center;
+}
+
+.form-control{
+font-size: 30px;
+color: red;
+}
+
+button.purchase{
+margin-left: 75%;
+width: 50%;
+display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 0.3rem;
+	border-bottom: 7px solid #008000;
+	background: #008000;
+	color: #fff;
+	height: 50px;
+
+}
+
+button.purchase:hover {
+
+	border-bottom: 1px solid #0686b2;
+	color: #fff;
+}
+
+.text-center {
+    padding: 5%;
+}
+
+input.coupon-code {
+	withg: 25px;
+	font-size: 25px;
 }
 
 </style>
-
-
-
     <div class="border col-7">
         <br>
         <h2>注文情報入力</h2>
-        <h2>1.受け取り場所</h2>
+        <h1>1.受け取り場所</h1>
         <br>
         <div class="row">
             <div class="col-md">
@@ -40,6 +112,7 @@ label{
                         <label>電話番号</label>
                         <input required  id="phone" name="phone" type="text" class="form-control" placeholder="093-551-0820">
                     </div>
+
                     <div class="form-group">
                         <label>郵便番号：</label>
                         <input required  id="post"  name="post" type="text" class="form-control" placeholder="802-0002">
@@ -62,29 +135,22 @@ label{
                     </div>
                      <div class="form-group">
                         <label>部屋番号:</label>
-                        <input type="text" id="room"
-								name="room" required placeholder="602">
+                        <input type="text" id="room" name="room" required class="form-control" placeholder="602">
                     </div>
 
                     <h1>2.支払方法</h1>
-					 <div class="form-group">
-                        <label>クーポンを使用する</label>
-                        <input onclick="toggleCouponInput()" type="radio" id="coupon" name="coupon" class="form-control" >
-                    </div>
-                    <div id="coupon-input" style="display: none;">
-					<h4>クーポンコード入力</h4>
+                    <div id="coupon-input">
+					<h3>クーポンコード入力</h3>
 					<div class="form-group">
-					<label for="coupon-code">クーポンコード:</label>
-                        <input id="coupon-code" name="coupon-code" placeholder="クーポンコードを入力" >
-                       </div>
-					<button type="button" onclick="toggleCouponInput()">キャンセル</button>
-
+						<label for="coupon-code">クーポンコード:</label>
+                        <input id="coupon-code" name="coupon-code" class="coupon-code" placeholder="クーポンコードを入力" >
+                     </div>
 				</div>
 				<div class="row center-block text-center">
             <div class="col-1">
             </div>
             <div class="col-5">
-                <button  type="submit" class="btn btn-outline-secondary btn-block">購入確定</button>
+                <button  type="submit" class="purchase">購入確定</button>
             </div>
         </div>
         <div class="col-1">

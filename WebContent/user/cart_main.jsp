@@ -3,6 +3,15 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
+	.cart-container{
+	max-width: 900px;
+    margin: 60px auto;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
     th, td {
         width: 20%;
         text-align: left;
