@@ -91,7 +91,14 @@ align-items: center;
 }
 .ptagu{
 	padding-right: 10px;
+	margin-top:3%
 }
+
+
+img.review-img{
+margin-left: 30%
+}
+
 a{
 	color:inherit;
 	text-decoration:none;
@@ -119,6 +126,9 @@ h2{
 .review a{
 	padding-left: 1rem;
 }
+.posted_review{
+	margin-top: 2rem;
+}
 </style>
 
 <hr>
@@ -130,19 +140,20 @@ h2{
     <c:when test="${user_review != null}">
         <c:forEach var="review" items="${user_review}">
                     <div class="review">
-                        <div class="border-radius">コメ</div>
-                        <p class="ptagu">${review.reviewbody}</p><br>
-                        <c:if test="${not empty review.review_image}">
-						    <p><img alt="写真" src="../assets/review_image/${review.review_image}" width="250px" height="250px"></p>
-						</c:if>
-						 <c:if test="${not empty review.review_video}">
-							<video  controls="controls"  preload="none" data-setup="{}" src="../assets/review_video/${review.review_video}"  width="400" height="500" ></video>
-						</c:if>
-                        <a href="message.jsp?id = ${review.user_id }">返信</a>
-                        <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
-                        <a href="Reviewdel.action?review_id=${review.review_id }">削除	</a>
-
+                        <div>
+                        	<img alt="" src="https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_user_11.png" class=icon width="80px" height="80px">${review.reviewbody}<br>
+	                        <c:if test="${not empty review.review_image}">
+							    <p><img alt="写真" src="../assets/review_image/${review.review_image}" class="review-img" width="250px" height="250px"></p>
+							</c:if>
+							 <c:if test="${not empty review.review_video}">
+								<video  controls="controls"  preload="none" data-setup="{}" src="../assets/review_video/${review.review_video}"  width="400" height="500" ></video>
+							</c:if>
+	                        <a href="message.jsp?id = ${review.user_id }">返信</a>
+	                        <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
+	                        <a href="Reviewdel.action?review_id=${review.review_id }">削除	</a>
+						</div>
                     </div>
+                    <hr>
         </c:forEach>
     </c:when>
     <c:otherwise>
