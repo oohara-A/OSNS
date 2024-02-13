@@ -105,10 +105,6 @@ a{
 	color: black;
 }
 
-h2{
-	margin-left: 50px;
-}
-
 .review_title {
 	color: white;
 	font-size: 3.5rem;
@@ -120,7 +116,8 @@ h2{
 }
 
 .review-form {
-	height: 500px;
+	height: 412px;
+    width: 101%;
 }
 
 .review a{
@@ -129,6 +126,54 @@ h2{
 .posted_review{
 	margin-top: 2rem;
 }
+.posted_review h4 {
+	font-size: 2.5rem;
+	margin-left: 1rem;
+}
+
+textarea{
+	margin-left: 2%;
+    width: 70%;
+    margin-top: 25px;
+}
+
+.select-movie{
+	margin-left: 58%;
+    margin-top: -9%;
+}
+
+.select-image{
+	margin-left: 27%;
+    margin-top: 2%;
+}
+
+.select-movie h2{
+	font-size: 170%;
+	margin-left: 2px;
+}
+
+.select-image h2{
+	font-size: 170%;
+	margin-left: 2px;
+}
+
+.evaluation{
+	margin-top: -11%;
+    margin-left: 4%;
+    font-size: 1.5rem;
+}
+
+.evaluation label {
+	font-size: 143%;
+}
+
+.button input {
+	margin-top: 46px;
+    margin-left: 48px;
+    padding: 1px 30px;
+}
+
+
 </style>
 
 <hr>
@@ -167,23 +212,29 @@ h2{
 		<form action="Postedreview.action" enctype="multipart/form-data" method="post" class="review-form">
 		    <textarea name="reviews" id="productReviewContent" rows="4" cols="50"
 		              placeholder="あなたの商品レビューを入力してください" required></textarea>
+			<div class="select-image">
+		    	<h2>画像選択</h2>
+		    	<input type="file" name="part">
+		    </div>
+			<div class="select-movie">
+			    <h2>動画選択</h2>
+			    <input type="file" name="part2">
+			</div>
 		    <br>
-		    <h2>画像選択</h2>
-		    <input type="file" name="part">
+		    <div class="evaluation">
+		    	<label for="rating">評価:</label>
+			    <select name="ratings" id="rating" required>
+			        <option value=1>☆</option>
+			        <option value=2>☆☆</option>
+			        <option value=3>☆☆☆</option>
+			        <option value=4>☆☆☆☆</option>
+			        <option value=5>☆☆☆☆☆</option>
+			    </select>
+		    </div>
 		    <br>
-		    <h2>動画選択</h2>
-		    <input type="file" name="part2">
-		    <br>
-		    <label for="rating">評価:</label>
-		    <select name="ratings" id="rating" required>
-		        <option value=1>☆</option>
-		        <option value=2>☆☆</option>
-		        <option value=3>☆☆☆</option>
-		        <option value=4>☆☆☆☆</option>
-		        <option value=5>☆☆☆☆☆</option>
-		    </select>
-		    <br>
-		    <input type="submit" value="投稿">
+		    <div class="button">
+		    	<input type="submit" value="投稿">
+		    </div>
 		</form>
 	</div>
 </div>
