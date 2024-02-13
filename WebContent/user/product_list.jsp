@@ -107,6 +107,12 @@ card
   .font{
   	font-size: 25px;
   }
+
+  h1 {
+  	color: white;
+  	font-size: 3.5rem;
+  	margin-left: 2rem;
+  }
 </style>
 <h1>売れ筋商品</h1>
 
