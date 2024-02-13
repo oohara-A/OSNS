@@ -14,8 +14,6 @@ import tool.Action;
 
 //商品詳細を表示させる
 public class ProdetailAction extends Action {
-
-
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		//セッションの情報を取得
 			HttpSession session=request.getSession();
@@ -28,9 +26,10 @@ public class ProdetailAction extends Action {
 
 			List<Product> product=dao.selectId(pro_id);
 			List<Review> review = dao2.select(pro_id);
-//
+
 			//セッションにlist属性で登録
 			session.setAttribute("product_detail", product);
+
 			if(review.isEmpty()){
 				System.out.print("ProdetailAction not set");
 				session.removeAttribute("user_review");

@@ -11,7 +11,7 @@
             width: 150px;
             border-radius: 50%;
             box-shadow: -20px -10px 40px rgba(0, 0, 0, .5) inset;
-            background: linear-gradient(white 46%, red 46%, red 54%, white 54%);
+            background: linear-gradient(red 46%, red 46%, red 54%, white 54%);
             display: grid;
             place-items: center;
             position: relative;

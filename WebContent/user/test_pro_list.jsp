@@ -1,84 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
- <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@include file="../menu.jsp"%>
 <%@include file="../headtwo.jsp"%>
+
 <style>
-.account_box a{
-color: white;
-}
-h4{
-color: white;
-}
-
-.account_box {
-  width: 230px;
-  height: 50px;
-  margin: 5em;
-  display: inline-block;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-	*,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
-html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.btn,
-a.btn,
-button.btn {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.5;
-  position: relative;
-  display: inline-block;
-  padding: 1rem 4rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
-}
-
-.account_box,
-a.account_box {
-  color: #fff;
-  background-color: #eb6100;
-}
-
-.account_box:hover,
-a.account_box:hover {
-  color: #fff;
-  background: black;
-}
-
-.account {
-  text-align: center;
-  /* ボックスを中央に配置する */
-}
-
-.account_box .ac_change{
-font-size: 30px;
-text-decoration: none;
-margin-top: 45%;
-margin-bottom: 50%;
-}
-
 body {
   margin: 0;
 }
@@ -163,7 +90,9 @@ card
 }
 .product_detail{
 
-	padding-top: 50px;}
+	padding-top: 50px;
+
+	}
   .detail_img {
     display: flex;
     flex-wrap: wrap;
@@ -178,32 +107,32 @@ card
   .font{
   	font-size: 25px;
   }
- </style>
+</style>
+<h1>試供品商品</h1>
 
-        <hr>
-        <div class="account">
+ <section class="section">
+    <ul class="grid grid-col-3">
+   <c:forEach var="testpro" items="${test_product }">
+            <li class="grid-item">
+                <!--article・・・一固まりで完結するコンテンツ  -->
+               <article class="card">
+                <a href="Testprodetail.action?id=${testpro.id}" class="card-link">
+                    <img class="card-image" src="<%=request.getContextPath() %>/assets/proimage/${testpro.image_filename}" alt="thumnail">
+                    <div class="card-info">
+                        <time class="card-time" datetime="2022-01-01">2022.01.01</time>
+                            <h1 class="card-hedline">${testpro.testpro_name }</h1>
+                            <p class="card-description">試供品価格:${testpro.test_price}</p>
+                            <p class="card-description">★★★★☆</p>
+					</div>
+                </a>
+               </article>
+            </li>
+      </c:forEach>
+       </ul>
+    </section><hr>
 
-            <div class="account_box">
-                <a href="Adressdisp.action" class="ac_change">住所追加・変更</a>
-            </div>
-
-            <div class="account_box">
-                <a href="user_profile.jsp" class="ac_change">ユーザ情報変更</a>
-            </div>
-
-            <div class="account_box">
-                <a href="Coupondisp.action" class="ac_change">クーポン一覧</a>
-            </div>
-
-            <div class="account_box">
-                <a href="deregistration.jsp" class="ac_change">登録解除</a>
-            </div>
-           </div>
-        <hr>
-
-        <h4>おすすめ商品</h4>
-
-    <section class="section">
+	<h1>新着商品</h1>
+ <section class="section">
     <ul class="grid grid-col-3">
     <c:forEach var="product_cate" items="${product_category}">
             <li class="grid-item">
@@ -222,10 +151,10 @@ card
             </li>
       </c:forEach>
        </ul>
-    </section><hr>
-        <h4>商品</h4>
-
-         <section class="section">
+    </section>
+<hr>
+	<h1>評価の高い商品</h1>
+ <section class="section">
     <ul class="grid grid-col-3">
     <c:forEach var="product_cate" items="${product_category}">
             <li class="grid-item">
@@ -246,4 +175,4 @@ card
        </ul>
     </section>
 
-        <%@include file="../footer.jsp" %>
+<%@include file="../footer.jsp"%>

@@ -15,7 +15,6 @@ public class Product_edit_Action extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
-
 		// セッションを開始
 		HttpSession session=request.getSession();
 		// 商品名
@@ -26,11 +25,13 @@ public class Product_edit_Action extends Action{
 		// 商品画像
 		//商品画像ID
 		String[] pro_image_ids = request.getParameterValues("pro_image_id");
-
 		//商品画像IDがnullの場合
-		//if(pro_image_ids==null)pro_image_ids=" ";
+//		if(pro_image_ids==null)pro_image_ids=" ";
 		//intに変換
 		int[] intArray = Stream.of(pro_image_ids).mapToInt(Integer::parseInt).toArray();
+
+		//商品画像リスト
+
 
 		// 在庫
 		int regiinvqua=Integer.parseInt(request.getParameter("regiinvqua"));

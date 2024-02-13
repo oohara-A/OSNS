@@ -15,7 +15,6 @@ public class Test_product implements java.io.Serializable{
 	private int test_price;
 //	追加日時
 	private Date adding_time;
-
 //	削除日時
 	private Date deleting_time;
 //	更新日時
@@ -26,6 +25,20 @@ public class Test_product implements java.io.Serializable{
 	private int regiinvqua;
 //	削除フラグ
 	private boolean flag;
+//	画像
+	private String image_filename;
+	/**
+	 * @return image_filename
+	 */
+	public String getImage_filename() {
+		return image_filename;
+	}
+	/**
+	 * @param image_filename セットする image_filename
+	 */
+	public void setImage_filename(String image_filename) {
+		this.image_filename = image_filename;
+	}
 	/**
 	 * @return id
 	 */

@@ -31,8 +31,9 @@
 }
 .button_his{
 	padding-left: 20px;
-
-
+}
+h1 {
+	margin-top: 3rem;
 }
 </style>
 <h1>注文履歴</h1>

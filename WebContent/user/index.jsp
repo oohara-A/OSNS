@@ -17,7 +17,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="#" title="Project Name">
+                        <a class="portfolio-box" href="Procategory.action?category=%E6%9C%AC" title="Project Name">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/new_book.jpg"/>
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
@@ -26,7 +26,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="#" title="Project Name">
+                        <a class="portfolio-box" href="Procategory.action?category=%E5%8C%96%E7%B2%A7%E5%93%81" title="化粧品">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/new_cosmetics.jpg"/>
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>
@@ -53,11 +53,12 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="#" title="Project Name">
+                     <!-- href="Testproc.action"  -->
+                        <a class="portfolio-box" href="Procategory.action?category=%E8%A9%A6%E4%BE%9B%E5%93%81" title="Project Name">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/sample.jpg"alt="..." />
                             <div class="portfolio-box-caption p-3">
                                 <div class="project-category text-white-50">カテゴリ</div>
-                                <div class="project-name">お試し商品</div>
+                                <div class="project-name">試供品</div>
 							</div>
                         </a>
                     </div>
