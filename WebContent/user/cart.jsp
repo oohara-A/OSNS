@@ -111,6 +111,12 @@ card
     font-size: 350%;
     margin-top: 1%;
     text-align: center;
+	}
+.card-description{
+	font-size: 200%;
+}
+.card-description-evaluation{
+	font-size: 145%;
 }
 </style>
 <c:choose>
@@ -173,7 +179,7 @@ card
 	</c:otherwise>
 	</c:choose>
 	<hr>
-	<h1 class="product_title">おすすめ商品</h1>>
+	<h1 class="product_title">おすすめ商品</h1>
 	 <section class="section">
     <ul class="grid grid-col-3">
     <c:forEach var="product_cate" items="${product_category}">
@@ -186,7 +192,7 @@ card
                         <time class="card-time" datetime="2022-01-01">2022.01.01<time>
                             <h1 class="card-hedline">${product_cate.product_name }</h1>
                             <p class="card-description">￥:${product_cate.unit_price}</p>
-                            <p class="card-description">★★★★☆</p>
+                            <p class="card-description-evaluation">★★★★☆</p>
                     </div>
                 </a>
                </article>
