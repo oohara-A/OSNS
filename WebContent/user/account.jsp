@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="../menu.jsp"%>
-<%@include file="../headtwo.jsp"%>
+
 <style>
 .account_box a{
 color: white;
@@ -34,56 +34,44 @@ html {
   box-sizing: border-box;
 }
 
-.btn,
-a.btn,
-button.btn {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.5;
-  position: relative;
-  display: inline-block;
-  padding: 1rem 4rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
-}
-
-.account_box,
-a.account_box {
-  color: #fff;
-  background-color: #eb6100;
-}
-
-.account_box:hover,
-a.account_box:hover {
-  color: #fff;
-  background: black;
-}
 
 .account {
-  text-align: center;
+  	text-align: center;
+    margin-top: 6%;
+    margin-bottom: 7%;
   /* ボックスを中央に配置する */
 }
 
 .account_box .ac_change{
-font-size: 30px;
-text-decoration: none;
-margin-top: 45%;
-margin-bottom: 50%;
+	width: 130%;
+    font-size: 30px;
+    text-decoration: none;
 }
 
 body {
-  margin: 0;
+  margin-top: 4.5%;
+
+}
+
+.ac_change {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #eb6100;;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+	text-align: center;
+	box-shodow: 6px 6px 3px #666666;
+	border: 2px solid #000066;
+
+
+}
+
+.ac_change:hover,
+a.account_box:hover {
+	color: #fff;
+    background-color: black;
 }
 
 /*
@@ -183,28 +171,27 @@ card
   .font{
   	font-size: 25px;
   }
- </style>
+</style>
 
  <hr>
-	 <div class="account">
+<div class="account">
+    <div class="account_box">
+        <a href="Adressdisp.action" class="ac_change">住所追加・変更</a>
+    </div>
 
-	     <div class="account_box">
-	         <a href="Adressdisp.action" class="ac_change">住所追加・変更</a>
-	     </div>
+    <div class="account_box">
+        <a href="user_profile.jsp" class="ac_change">ユーザ情報変更</a>
+    </div>
 
-	     <div class="account_box">
-	         <a href="user_profile.jsp" class="ac_change">ユーザ情報変更</a>
-	     </div>
+    <div class="account_box">
+        <a href="Coupondisp.action" class="ac_change">クーポン一覧</a>
+    </div>
 
-	     <div class="account_box">
-	         <a href="Coupondisp.action" class="ac_change">クーポン一覧</a>
-	     </div>
-
-	     <div class="account_box">
-	         <a href="deregistration.jsp" class="ac_change">登録解除</a>
-	     </div>
-	 </div>
- <hr>
+    <div class="account_box">
+        <a href="deregistration.jsp" class="ac_change">登録解除</a>
+    </div>
+</div>
+ <hr class="ac">
 
  <h4 class="product_title">おすすめ商品</h4>
 
