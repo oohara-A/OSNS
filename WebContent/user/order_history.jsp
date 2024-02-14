@@ -6,6 +6,18 @@
 
 
 <style>
+	.cart-container{
+	max-width: 1400px;
+    margin: 60px auto;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+  .cart_table{
+  	font-size: 30px;
+  }
 
   .product_list {
     display: flex;
@@ -63,7 +75,7 @@
 		<!-- Sample cart item, repeat this block for each item in the cart -->
 			<tr>
 				<td>
-					お届け先住所：${purchase.deladdress }
+					お届け先住所：<br>${purchase.deladdress }
 				</td>
 				<td >
 				<div class="image_pro">
