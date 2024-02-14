@@ -3,6 +3,8 @@ drop table address if exists;
 drop table admin if exists;
 drop table company if exists;
 drop table test_product if exists;
+drop table testpro_image if exists;
+drop table testpro_category if exists;
 drop table product if exists;
 drop table pro_image if exists;
 drop table product_category if exists;
