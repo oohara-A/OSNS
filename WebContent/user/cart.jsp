@@ -105,6 +105,13 @@ card
   .font{
   	font-size: 25px;
   }
+
+  .product_title {
+    color: white;
+    font-size: 350%;
+    margin-top: 1%;
+    text-align: center;
+}
 </style>
 <c:choose>
 <c:when test="${cart != null }">
@@ -166,7 +173,7 @@ card
 	</c:otherwise>
 	</c:choose>
 	<hr>
-	<p>おすすめ商品</p>
+	<h1 class="product_title">おすすめ商品</h1>>
 	 <section class="section">
     <ul class="grid grid-col-3">
     <c:forEach var="product_cate" items="${product_category}">
