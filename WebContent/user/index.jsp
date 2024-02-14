@@ -45,6 +45,24 @@
                     </div>
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="#" title="Project Name">
+                            <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/clothes.jpg"alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                <div class="project-category text-white-50">カテゴリ</div>
+                                <div class="project-name">服</div>
+							</div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="#" title="Project Name">
+                            <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/sports_supplies.jpg"alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                <div class="project-category text-white-50">カテゴリ</div>
+                                <div class="project-name">スポーツ用品</div>
+							</div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="#" title="Project Name">
                             <img class="img-fluid" src="<%=request.getContextPath() %>/assets/image/osns_new%20.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">カテゴリ</div>

@@ -91,15 +91,18 @@ align-items: center;
 }
 .ptagu{
 	padding-right: 10px;
+	margin-top:3%
 }
+
+
+img.review-img{
+margin-left: 30%
+}
+
 a{
 	color:inherit;
 	text-decoration:none;
 	color: black;
-}
-
-h2{
-	margin-left: 50px;
 }
 
 .review_title {
@@ -113,12 +116,64 @@ h2{
 }
 
 .review-form {
-	height: 500px;
+	height: 412px;
+    width: 101%;
 }
 
 .review a{
 	padding-left: 1rem;
 }
+.posted_review{
+	margin-top: 2rem;
+}
+.posted_review h4 {
+	font-size: 2.5rem;
+	margin-left: 1rem;
+}
+
+textarea{
+	margin-left: 2%;
+    width: 70%;
+    margin-top: 25px;
+}
+
+.select-movie{
+	margin-left: 58%;
+    margin-top: -9%;
+}
+
+.select-image{
+	margin-left: 27%;
+    margin-top: 2%;
+}
+
+.select-movie h2{
+	font-size: 170%;
+	margin-left: 2px;
+}
+
+.select-image h2{
+	font-size: 170%;
+	margin-left: 2px;
+}
+
+.evaluation{
+	margin-top: -11%;
+    margin-left: 4%;
+    font-size: 1.5rem;
+}
+
+.evaluation label {
+	font-size: 143%;
+}
+
+.button input {
+	margin-top: 46px;
+    margin-left: 48px;
+    padding: 1px 30px;
+}
+
+
 </style>
 
 <hr>
@@ -130,19 +185,20 @@ h2{
     <c:when test="${user_review != null}">
         <c:forEach var="review" items="${user_review}">
                     <div class="review">
-                        <div class="border-radius">コメ</div>
-                        <p class="ptagu">${review.reviewbody}</p><br>
-                        <c:if test="${not empty review.review_image}">
-						    <p><img alt="写真" src="../assets/review_image/${review.review_image}" width="250px" height="250px"></p>
-						</c:if>
-						 <c:if test="${not empty review.review_video}">
-							<video  controls="controls"  preload="none" data-setup="{}" src="../assets/review_video/${review.review_video}"  width="400" height="500" ></video>
-						</c:if>
-                        <a href="message.jsp?id = ${review.user_id }">返信</a>
-                        <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
-                        <a href="Reviewdel.action?review_id=${review.review_id }">削除	</a>
-
+                        <div>
+                        	<img alt="" src="https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_user_11.png" class=icon width="80px" height="80px">${review.reviewbody}<br>
+	                        <c:if test="${not empty review.review_image}">
+							    <p><img alt="写真" src="../assets/review_image/${review.review_image}" class="review-img" width="250px" height="250px"></p>
+							</c:if>
+							 <c:if test="${not empty review.review_video}">
+								<video  controls="controls"  preload="none" data-setup="{}" src="../assets/review_video/${review.review_video}"  width="400" height="500" ></video>
+							</c:if>
+	                        <a href="message.jsp?id = ${review.user_id }">返信</a>
+	                        <a href="Reviewout.action?edit_id=${review.review_id }">編集</a>
+	                        <a href="Reviewdel.action?review_id=${review.review_id }">削除	</a>
+						</div>
                     </div>
+                    <hr>
         </c:forEach>
     </c:when>
     <c:otherwise>
@@ -156,23 +212,29 @@ h2{
 		<form action="Postedreview.action" enctype="multipart/form-data" method="post" class="review-form">
 		    <textarea name="reviews" id="productReviewContent" rows="4" cols="50"
 		              placeholder="あなたの商品レビューを入力してください" required></textarea>
+			<div class="select-image">
+		    	<h2>画像選択</h2>
+		    	<input type="file" name="part">
+		    </div>
+			<div class="select-movie">
+			    <h2>動画選択</h2>
+			    <input type="file" name="part2">
+			</div>
 		    <br>
-		    <h2>画像選択</h2>
-		    <input type="file" name="part">
+		    <div class="evaluation">
+		    	<label for="rating">評価:</label>
+			    <select name="ratings" id="rating" required>
+			        <option value=1>☆</option>
+			        <option value=2>☆☆</option>
+			        <option value=3>☆☆☆</option>
+			        <option value=4>☆☆☆☆</option>
+			        <option value=5>☆☆☆☆☆</option>
+			    </select>
+		    </div>
 		    <br>
-		    <h2>動画選択</h2>
-		    <input type="file" name="part2">
-		    <br>
-		    <label for="rating">評価:</label>
-		    <select name="ratings" id="rating" required>
-		        <option value=1>☆</option>
-		        <option value=2>☆☆</option>
-		        <option value=3>☆☆☆</option>
-		        <option value=4>☆☆☆☆</option>
-		        <option value=5>☆☆☆☆☆</option>
-		    </select>
-		    <br>
-		    <input type="submit" value="投稿">
+		    <div class="button">
+		    	<input type="submit" value="投稿">
+		    </div>
 		</form>
 	</div>
 </div>
