@@ -216,7 +216,7 @@ card
                          <div class="card-info">
                              <time class="card-time" datetime="2022-01-01">2022.01.01<time>
                                      <h1 class="card-hedline">${product_cate.product_name }</h1>
-                                     <p class="card-description">￥:${product_cate.unit_price}</p>
+                                     <p class="card-description">￥${product_cate.unit_price}</p>
                                      <p class="card-description-evaluation">★★★★☆</p>
                          </div>
                      </a>
@@ -242,7 +242,7 @@ card
 	                         <div class="card-info">
 	                             <time class="card-time" datetime="2022-01-01">2022.01.01<time>
 	                                     <h1 class="card-hedline">${product_cate.product_name }</h1>
-	                                     <p class="card-description">￥:${product_cate.unit_price}</p>
+	                                     <p class="card-description">￥${product_cate.unit_price}</p>
 	                                     <p class="card-description-evaluation">★★★★☆</p>
 	                         </div>
 	                     </a>
