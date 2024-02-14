@@ -171,6 +171,14 @@ card
   .font{
   	font-size: 25px;
   }
+
+  .card-description {
+  	font-size: 205%;
+  }
+
+  .card-description-evaluation{
+  	font-size: 145%;
+  }
 </style>
 
  <hr>
@@ -209,7 +217,7 @@ card
                              <time class="card-time" datetime="2022-01-01">2022.01.01<time>
                                      <h1 class="card-hedline">${product_cate.product_name }</h1>
                                      <p class="card-description">￥:${product_cate.unit_price}</p>
-                                     <p class="card-description">★★★★☆</p>
+                                     <p class="card-description-evaluation">★★★★☆</p>
                          </div>
                      </a>
                  </article>
@@ -219,7 +227,7 @@ card
  </section>
  <hr>
 
-	 <h4 class="product_title">商品</h4>
+	 <h4 class="product_title"></h4>
 
 	 <section class="section">
 	     <ul class="grid grid-col-3">
@@ -235,7 +243,7 @@ card
 	                             <time class="card-time" datetime="2022-01-01">2022.01.01<time>
 	                                     <h1 class="card-hedline">${product_cate.product_name }</h1>
 	                                     <p class="card-description">￥:${product_cate.unit_price}</p>
-	                                     <p class="card-description">★★★★☆</p>
+	                                     <p class="card-description-evaluation">★★★★☆</p>
 	                         </div>
 	                     </a>
 	                 </article>
