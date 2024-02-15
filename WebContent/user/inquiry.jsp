@@ -24,21 +24,6 @@
 	</div>
 
 	<div class="contact_us">
-	<p class="inquiry">企業名</p>
-	<input class="input_inq" type="text" name="inq_com_name"required="required">
-	</div>
-
-	<div class="contact_us">
-	<p class="inquiry">部署名</p>
-	<input class="input_inq" type="text" name="inq_de_sign"required="required">
-	</div>
-
-	<div class="contact_us">
-	<p class="inquiry">役職名</p>
-	<input class="input_inq" type="text" name="inq_job_title"required="required">
-	</div>
-
-	<div class="contact_us">
 	<p class="inquiry">メールアドレス</p>
 	<input class="input_inq" type="email" name="inq_email"required="required">
 	</div>

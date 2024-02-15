@@ -81,6 +81,7 @@ section
     padding: 5px 15px;
     text-align:center;
 	margin-left: 3%;
+    margin-bottom: 4%;
 }
 .section.section-secounday{
     background-color: #efefef;

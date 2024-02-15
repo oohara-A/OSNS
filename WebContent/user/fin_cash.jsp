@@ -2,18 +2,27 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../header.jsp"%>
 
-<hr>
-<h1>購入が完了しました</h1>
+<style>
+.buy_completion{
+	text-align: center:
+}
+</style>
 
-<p>購入を続けるか、アカウントに移動するかお選びください。</p>
 
-<div>
-  <a href="account.jsp">トップページへ移動する</a>
-</div>
+<div class="buy_completion">
+	<hr>
+	<h1>購入が完了しました</h1>
 
-<div>
-  <img alt="810" src="../assets/image/Ecommerce Shopping LogoC.png">
+	<p>購入を続けるか、アカウントに移動するかお選びください。</p>
+
+	<div>
+  		<a href="account.jsp">トップページへ移動する</a>
+	</div>
+
+	<div>
+  		<img alt="810" src="../assets/image/Ecommerce Shopping LogoC.png">
+	</div>
+
 </div>
 
 <%@include file="../footer.jsp" %>
-

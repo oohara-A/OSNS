@@ -1,16 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="../header.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@include file="../menu.jsp"%>
 
-<hr>
-<h1>送信が完了しました</h1>
+<style>
+	img{
+		margin-bottom: 3%;
+	}
+	h1{
+		color: white;
+		font-size: 320%;
+		margin-bottom: 2%;
 
-<div>
-  <a href="account.jsp">トップページへ移動する</a>
-</div>
+	}
+	.top{
+		font-size: 190%;
+	}
+	.inq_comp{
+		margin-top: 6%;
+    	text-align: center;
+	}
 
-<div>
-  <img alt="810" src="../assets/image/Ecommerce Shopping LogoC.png">
+</style>
+<div class="inq_comp">
+	<h1>送信が完了しました</h1>
+
+	<div>
+	  <a class="top" href="../user/index.jsp">
+	  	<img alt="810" src="../assets/image/Ecommerce Shopping LogoC.png" >
+	  </a>
+	</div>
 </div>
 
 <%@include file="../footer.jsp" %>

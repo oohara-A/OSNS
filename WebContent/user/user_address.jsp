@@ -6,86 +6,91 @@
 
         <style>
 
-        td{
-        	color: white;
-        }
-            .container {
-                display: flex;
+td{
+    color: white;
+}
+.container {
+    display: flex;
+}
 
-            }
+.box {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    display: flex;
+}
 
-            .box {
-                width: 300px;
-                height: 300px;
-                position: relative;
-                display: flex;
-            }
+.add-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: pink;
+    color: white;
+    border: none;
+    padding: 20px 20px;
+    font-size: 60px;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
-            .add-button {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: pink;
-                color: white;
-                border: none;
-                padding: 20px 20px;
-                font-size: 60px;
-                cursor: pointer;
-                border-radius: 5px;
-            }
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
 
-            .modal {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                justify-content: center;
-                align-items: center;
-            }
 
-            .modal-content {
-                background-color: #fefefe;
-                padding: 20px;
-                border-radius: 5px;
-            }
 
-            .close {
-                color: #aaa;
-                float: right;
-                font-size: 28px;
-                font-weight: bold;
-                cursor: pointer;
-            }
+ .modal-content {
+    background-color: #fefefe;
+	padding: 20px;
+	border-radius: 5px;
+	text-align: center;
+ }
 
-            .close:hover {
-                color: black;
-            }
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-            .add{
+ .close:hover {
+    color: black;
+}
 
-            	font-size: 50px;
-            	position: absolute;
-				top: 30%;
-				margin-left:-300px;
-            }
-            .partner{
-             display: flex;
-             	padding-top: 50px;
-            }
+.add{
+    font-size: 50px;
+    position: absolute;
+	top: 30%;
+    margin-left:-300px;
+}
+.partner{
+    display: flex;
+    padding-top: 50px;
+    padding-left: 23%;
+}
 
-            body {
-  margin: 0;
+body {
+  	margin: 0;
 }
 
 /*
 section
 */
-.section{
-    padding: 30px 15px;
+.section {
+    padding: 5px 15px;
+    text-align: center;
+    margin-left: 3%;
+    margin-bottom: 4%;
 }
 .section.section-secounday{
     background-color: #efefef;
@@ -178,7 +183,31 @@ card
   .font{
   	font-size: 25px;
   }
-        </style>
+
+  .close-button{
+  	margin-top: 1%;
+  	width: 9%;
+  	padding: 0.5%;
+  }
+
+.form-group{
+	margin-top: 1%;
+}
+  .card-description {
+  	font-size: 205%;
+  }
+
+  .card-description-evaluation{
+  	font-size: 145%;
+  }
+
+  .product_title {
+color: white;
+font-size: 350%;
+margin-top: 1%;
+text-align: center;
+}
+</style>
 
       <div class="container">
       	<div class="partner">
@@ -278,7 +307,7 @@ card
 
         <hr>
 
-        <p>おすすめ商品</p>
+        <h4 class="product_title">おすすめ商品</h4>
 
  <section class="section">
     <ul class="grid grid-col-3">
@@ -292,7 +321,7 @@ card
                         <time class="card-time" datetime="2022-01-01">2022.01.01<time>
                             <h1 class="card-hedline">${product_cate.product_name }</h1>
                             <p class="card-description">￥:${product_cate.unit_price}</p>
-                            <p class="card-description">★★★★☆</p>
+                            <p class="card-description-evaluation">★★★★☆</p>
                     </div>
                 </a>
                </article>

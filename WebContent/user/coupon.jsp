@@ -5,11 +5,25 @@
 body{
 	 background:radial-gradient(#ed384d, #ad4483);
 }
+h1{
+	display: inline-block;
+    vertical-align: top;
+    font-size: 200%;
+    font-weight: bold;
+    margin-bottom: 20%;
+    width: 145%;
+}
+p{
+	display: inline-block;
+    vertical-align: top;
+    font-size: 152%;
+    font-weight: bold;
+}
 </style>
 <div class="text">
-	<p>クーポン獲得！！</p>
+	<h1>クーポン獲得！！</h1><br>
 	<p>
-		<span class="word wisteria">おめでとう！.</span> <span class="word belize">クーポン一覧で</span>
+		<span class="word wisteria">おめでとう！!</span> <span class="word belize">クーポン一覧で</span>
 		<span class="word pomegranate">クーポンコードを</span> <span class="word green">確認してね</span>
 		<!-- <span class="word midnight">cheap.</span> -->
 	</p>

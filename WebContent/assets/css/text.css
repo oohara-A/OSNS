@@ -23,7 +23,7 @@ p {
 
 .word {
     position: absolute;
-    width: 220px;
+    width: 140%;
     opacity: 0;
 }
 
@@ -50,19 +50,19 @@ p {
 }
 
 .wisteria {
-    color: #8e44ad;
+    color: #ffffff;
 }
 
 .belize {
-    color: #2980b9;
+    color: #009aff;
 }
 
 .pomegranate {
-    color: #c0392b;
+    color: #08cd34;
 }
 
 .green {
-    color: #16a085;
+    color: #ffca00;
 }
 
 .midnight {

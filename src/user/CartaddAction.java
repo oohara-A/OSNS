@@ -21,7 +21,7 @@ public class CartaddAction extends Action {
 //			ログインしていない場合
 			User user = (User) session.getAttribute("user");
 			if(user == null){
-				return "user_login.jsp";
+				return "user_login_error.jsp";
 			}
 			//product.jspで追加するを押した商品のid取得
 			int product_id=Integer.parseInt(request.getParameter("id"));

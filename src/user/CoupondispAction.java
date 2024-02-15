@@ -33,7 +33,7 @@ public class CoupondispAction extends Action {
 		}
 
 		// TODO 自動生成されたメソッド・スタブ
-		return "possession_coupon.jsp";
+		return "user_login_error.jsp";
 	}
 
 }
