@@ -35,8 +35,8 @@
 			<h4>その他</h4>
 			<ul>
 				<li><a href="inquiry.jsp">お問い合わせ</a></li>
-				<li><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fohara_kitakyu">Twitter</a></li>
-				<li><a href="https://www.instagram.com/oharakokura__gram/">Instagram</a></li>
+				<li><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fohara_kitakyu" target="_blank" rel="noopener noreferrer">X(旧Twitter)</a></li>
+				<li><a href="https://www.instagram.com/oharakokura__gram/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
 			</ul>
 		</div>
 	</div>

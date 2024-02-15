@@ -8,7 +8,7 @@ body{
 h1{
 	display: inline-block;
     vertical-align: top;
-    font-size: 200%;
+    font-size: 220%;
     font-weight: bold;
     margin-bottom: 20%;
     width: 145%;
@@ -16,15 +16,42 @@ h1{
 p{
 	display: inline-block;
     vertical-align: top;
-    font-size: 152%;
+    font-size: 180%;
     font-weight: bold;
+}
+.belize{
+	color: #009aff;
+	width: 245%;
+	margin-left: -61%;
+}
+
+.pomegranate {
+    color: #08cd34;
+    width: 210%;
+    margin-left: -43%;
+}
+
+.green {
+    color: #ffca00;
+    width: 274%;
+    margin-left: -72%;
+}
+
+.wisteria {
+    color: #ffffff;
+}
+
+.word {
+    position: absolute;
+    opacity: 0;
 }
 </style>
 <div class="text">
-	<h1>クーポン獲得！！</h1><br>
+	<h1>クーポンGET！！</h1><br>
 	<p>
-		<span class="word wisteria">おめでとう！!</span> <span class="word belize">クーポン一覧で</span>
-		<span class="word pomegranate">クーポンコードを</span> <span class="word green">確認してね</span>
+		<span class="word belize">ようこそOharaSampleNetShopへ</span>
+		<span class="word pomegranate">特別なクーポンをプレゼント！</span>
+		<span class="word green">お得なショッピングをお楽しみください！</span>
 		<!-- <span class="word midnight">cheap.</span> -->
 	</p>
 </div>

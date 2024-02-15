@@ -21,19 +21,23 @@ public class CoupondispAction extends Action {
 		User user = (User)session.getAttribute("user");
 		if(user != null){
 			user_id = user.getId();
-		}
-		UserDAO dao = new UserDAO();
-		List<Coupon> have_coupon = new ArrayList<Coupon>();
-		have_coupon = dao.Cooupon_view(user_id);
-		if(have_coupon.isEmpty()){
-			have_coupon=null;
-			session.setAttribute("have_coupon", have_coupon);
-		}else {
-			session.setAttribute("have_coupon", have_coupon);
-		}
 
-		// TODO 自動生成されたメソッド・スタブ
+
+			UserDAO dao = new UserDAO();
+			List<Coupon> have_coupon = new ArrayList<Coupon>();
+			have_coupon = dao.Cooupon_view(user_id);
+			if(have_coupon.isEmpty()){
+				have_coupon=null;
+				session.setAttribute("have_coupon", have_coupon);
+			}else {
+				session.setAttribute("have_coupon", have_coupon);
+			}
+
+			// TODO 自動生成されたメソッド・スタブ
+			return "possession_coupon.jsp";
+		}
 		return "user_login_error.jsp";
+
 	}
 
 }

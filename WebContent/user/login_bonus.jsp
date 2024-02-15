@@ -4,54 +4,78 @@
 
 <style>
 
-    body {
-        margin: 0;
-         background:radial-gradient(#ed384d, #ad4483);
-    }
+ body {
+     margin: 0;
+      background:radial-gradient(#ed384d, #ad4483);
+ }
 
-    h1{
-    	margin: 10px;
-		font-size: 285%;
-		width: 228%;
-		font-weight: bold;
-    }
+ h1{
+ 	margin: 10px;
+	font-size: 285%;
+	width: 228%;
+	font-weight: bold;
+ }
 
-    p {
-        margin: 10px;
-		font-size: 242%;
-		width: 228%;
-		font-weight: bold;
-    }
+ p {
+     margin: 10px;
+	font-size: 242%;
+	width: 228%;
+	font-weight: bold;
+ }
 
-    .container {
-        display: flex;
-    }
+ .container {
+     display: flex;
+ }
 
-    .item {
-        width: 80px;
-        height: 80px;
-        background:radial-gradient(#ed384d, #ad4483);
-        margin: 20px;
-    }
+ .item {
+     width: 80px;
+     height: 80px;
+     background:radial-gradient(#ed384d, #ad4483);
+     margin: 20px;
+ }
 
 
-    .rever {
-        position: absolute;
-        background: transparent;
-        border: none;
-        left: 157px;
-        /* transform: translateX(-343px); */
-        top: 545px;
+ .rever {
+     position: absolute;
+     background: transparent;
+     border: none;
+     left: 157px;
+     /* transform: translateX(-343px); */
+     top: 545px;
 
-    }
+ }
+ .belize{
+	color: #009aff;
+	width: 213%;
+}
+
+.pomegranate {
+    color: #08cd34;
+    width: 136%;
+}
+
+.green {
+    color: #ffca00;
+    width: 215%;
+}
+
+.wisteria {
+    color: #ffffff;
+}
+
+.word {
+    position: absolute;
+    opacity: 0;
+}
 </style>
 
      <div id="editor-drag-cover" class="drag-cover"></div>
      	<div class="text">
 	        <h1>ログインボーナス！！</h1>
 	        <p>
+	            <span class="word pomegranate">引いてみよう！</span>
 	            <span class="word belize">レバーをクリックしてね</span>
-	            <span class="word pomegranate">クリックで抽選</span> <span class="word green">開始！！！</span>
+	            <span class="word green">クーポンをGETしよう！</span>
 	        </p>
     	</div>
     <div id="particles-js">
