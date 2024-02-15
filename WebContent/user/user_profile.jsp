@@ -215,7 +215,6 @@ button.close-button{
 	padding: 1.5%;
 	margin-left: 1%;
 	background-color: #198754;
-
 }
         </style>
 

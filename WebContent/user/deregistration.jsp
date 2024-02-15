@@ -7,10 +7,25 @@
 <style>
 h1{
 	color: white;
+	text-alight: center;
 }
-	.inq_sending{
-		padding-top: 100px;
-	}
+h2{
+	color: white;
+	text-alight: center;
+}
+.inq_sending{
+	padding-top: 100px;
+	text-align: center;
+}
+
+.sending{
+	width: 7%;
+	padding: 0.5%;
+	margin-left: 1%;
+	background-color: #red;
+	color: #fff;
+}
+
 </style>
 <c:choose>
 	<c:when test="${user==null}">
@@ -23,7 +38,8 @@ h1{
 	<c:otherwise>
 	<form action="Deregi.action">
 		<div class="inq_sending">
-			<h1>登録解除したい場合↓のボタンをクリック</h1>
+			<h1>登録解除したい場合のボタンをクリック</h1>
+			<h2>↓</h2>
 				<input class="sending" type="submit" value="登録解除">
 		</div>
 	</form>
