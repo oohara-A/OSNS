@@ -18,11 +18,11 @@ h2{
 	text-align: center;
 }
 
-.sending{
+input.sending{
 	width: 7%;
 	padding: 0.5%;
 	margin-left: 1%;
-	background-color: #red;
+	background-color: red;
 	color: #fff;
 }
 
