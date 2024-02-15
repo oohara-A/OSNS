@@ -1,7 +1,14 @@
 <%@page contentType="text/html; charset=UTF-8"%>
 <%@include file="../menu.jsp"%>
+<style>
+.vh-100 {
+	height: 139vh !important;
+}
+</style>
+
 <section class="vh-100 bg-image"
-  style="background-image: url('../assets/image/bg-masthead.jpg;">
+   style="background-image: url('../assets/image/bg-masthead.jpg;">
+
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -52,8 +59,8 @@
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Sign up</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="user_login.jsp"
-                    class="fw-bold text-body"><u>Login here</u></a></p>
+                <p class="text-center text-muted mt-5 mb-0">既にアカウントをお持ちの方はこちら：<a href="../company/com_login.jsp"
+                    class="fw-bold text-body"><u>ログイン</u></a></p>
               </form>
 
             </div>
@@ -63,4 +70,5 @@
     </div>
   </div>
 </section>
+
  <%@include file="../footer.jsp"%>

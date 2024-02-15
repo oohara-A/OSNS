@@ -37,8 +37,8 @@
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Sign up</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="user_login.jsp"
-                    class="fw-bold text-body"><u>Login here</u></a></p>
+                <p class="text-center text-muted mt-5 mb-0">既にアカウントをお持ちの方はこちら： <a href="user_login.jsp"
+                    class="fw-bold text-body"><u>ログイン</u></a></p>
               </form>
 
             </div>

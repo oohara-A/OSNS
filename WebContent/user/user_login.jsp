@@ -1,9 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8"%>
 <%@include file="../menu.jsp"%>
-<style>
-
-
-</style>
 <c:choose>
 	<c:when test="${user!=null}">
 			<section class="vh-100 bg-image"
@@ -47,12 +43,12 @@
 
               <form action="Login.action" method="post">
                 <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example3cg">User Name</label>
+                <label class="form-label" for="form3Example3cg">ユーザ名</label>
                   <input type="text" name="inq_name" id="form3Example3cg" class="form-control form-control-lg" required="required" />
                 </div>
 
                 <div class="form-outline mb-4">
-                 <label class="form-label" for="form3Example4cg">Password</label>
+                 <label class="form-label" for="form3Example4cg">パスワード</label>
                   <input type="password" name="inq_com_name" id="form3Example4cg" class="form-control form-control-lg" required="required" />
                 </div>
 
@@ -61,8 +57,8 @@
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">アカウントをお持ちでない方：<a href="sign_up.jsp"
-                    class="fw-bold text-body"><u>新規作成はこちら</u></a></p>
+                <p class="text-center text-muted mt-5 mb-0">アカウントをお持ちでない方はこちら：<a href="sign_up.jsp"
+                    class="fw-bold text-body"><u>新規作成</u></a></p>
 
                     <p class="text-center text-muted mt-5 mb-0"><a href="<%=request.getContextPath() %>/company/com_login.jsp"
                     class="fw-bold text-body"><u>企業の方はこちら</u></a></p>
