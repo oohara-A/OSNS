@@ -39,7 +39,6 @@
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 mb-5">ようこそ！！お待ちしておりました。</p>
-                        <a class="btn btn-primary btn-xl" href="#about">Find Out Mor</a>
                     </div>
                 </div>
             </div>

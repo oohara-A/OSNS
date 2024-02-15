@@ -246,4 +246,5 @@ card
      </c:forEach>
      </ul>
  </section>
+ <%@include file="../user/review.jsp"%>
 <%@include file="../footer.jsp"%>
