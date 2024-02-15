@@ -13,7 +13,9 @@ body {
 section
 */
 .section{
-    padding: 30px 15px;
+    padding: 5px 15px;
+    text-align: center;
+    margin-left: 3%;
 }
 .section.section-secounday{
     background-color: #efefef;
@@ -155,9 +157,18 @@ card
 }
 
 .title1 {
-	color: white;
-	padding-left: 3rem;
-	font-size: 3.5rem;
+	text-align: center;
+    color: white;
+    padding-left: 3rem;
+    font-size: 3.5rem;
+}
+
+.card-description{
+	font-size: 37px;
+}
+
+.card-description-evaluation{
+	font-size: 25px;
 }
 
 </style>
@@ -170,10 +181,10 @@ card
 		<div class="box">
 			<p class="pro_name">${prodetail.product_name}</p>
 			<hr>
-			<p class="pro_detail">$${prodetail.unit_price}</p>
-			<p class="pro_detail">ポイント:${(prodetail.unit_price * 0.001)}</p>
-			<p class="pro_detail">クーポン:なし</p>
-			<p class="pro_detail">在庫:${prodetail.regiinvqua }</p>
+			<p class="pro_detail">￥${prodetail.unit_price}</p>
+			<p class="pro_detail">ポイント  ${(prodetail.unit_price * 0.001)}</p>
+
+			<p class="pro_detail">在庫 ${prodetail.regiinvqua }</p>
 			<div class="com_box">
 				<p class="pro_description">この商品について</p>
 
@@ -205,8 +216,8 @@ card
 	           	<div class="card-info">
 	               <time class="card-time" datetime="2022-01-01">2022.01.01<time>
 	               <h1 class="card-hedline">${product_cate.product_name }</h1>
-	               <p class="card-description">￥:${product_cate.unit_price}</p>
-	               <p class="card-description">★★★★☆</p>
+	               <p class="card-description">￥${product_cate.unit_price}</p>
+	               <p class="card-description-evaluation">★★★★☆</p>
 	           </div>
 	       	</a>
 	       </article>
@@ -226,8 +237,8 @@ card
 	            <div class="card-info">
 	                <time class="card-time" datetime="2022-01-01">2022.01.01<time>
 	                <h1 class="card-hedline">${product_cate.product_name }</h1>
-	                <p class="card-description">￥:${product_cate.unit_price}</p>
-	                <p class="card-description">★★★★☆</p>
+	                <p class="card-description">￥${product_cate.unit_price}</p>
+	                <p class="card-description-evaluation">★★★★☆</p>
 	            </div>
 	        </a>
 	       </article>

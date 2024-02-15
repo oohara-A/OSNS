@@ -55,7 +55,7 @@ h1 {
 
    .add-button {
        padding: 20px 20px;
-       background-color: #4CAF50;
+       background-color: #198754;
        color: white;
        border: none;
        border-radius: 4px;
@@ -77,14 +77,16 @@ h1 {
 
    .modal-content {
        background-color: #fefefe;
-       padding: 20px;
+       padding: 50px;
        border-radius: 5px;
+       width:42%;
+
    }
 
    .close {
        color: #aaa;
        float: right;
-       font-size: 28px;
+       font-size: 45px;
        font-weight: bold;
        cursor: pointer;
    }
@@ -99,6 +101,12 @@ h1 {
 body {
   margin: 0;
 }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    text-align: center;
+}
+
 
 /*
 section
@@ -136,8 +144,9 @@ section
     list-style: none;
     padding-left: 15px;
     padding-top: 10px;
-
 }
+
+
 
 /*
 card
@@ -195,6 +204,19 @@ card
   .font{
   	font-size: 25px;
   }
+
+input.reg{
+	width: 45%;
+	padding: 3%;
+}
+
+button.close-button{
+	width: 12%;
+	padding: 1.5%;
+	margin-left: 1%;
+	background-color: #198754;
+
+}
         </style>
 
 	<div class="user_info">
@@ -264,9 +286,9 @@ card
             <form action="Editpro.action">
                 <span class="close" onclick="closeModal('name')">&times;</span>
                 <!-- ユーザー名の入力フィールド -->
-                <input type="text" id="nameInput" name="nameInput" placeholder="ユーザー名を入力">
+                <input type="text" id="nameInput" name="nameInput" class="reg" placeholder="ユーザー名を入力">
                 <!-- 登録ボタン -->
-               <button type="submit" class="close-button" >登録</button>
+               <button type="submit" class="close-button">登録</button>
               </form>
             </div>
         </div>
@@ -276,7 +298,7 @@ card
              <form action="Editpro.action">
                 <span class="close" onclick="closeModal('mail')">&times;</span>
                 <!-- メールの入力フィールド -->
-                <input type="text" id="mailInput" name="mailInput" placeholder="メールアドレスを入力">
+                <input type="text" id="mailInput" name="mailInput" class="reg" placeholder="メールアドレスを入力">
                 <!-- 登録ボタン -->
                 <button class="close-button" type="submit" >登録</button>
                 </form>
@@ -288,7 +310,7 @@ card
              <form action="">
                 <span class="close" onclick="closeModal('phone')">&times;</span>
                 <!-- 電話番号の入力フィールド -->
-                <input type="text" id="phoneInput" name="phoneInput" placeholder="電話番号を入力">
+                <input type="text" id="phoneInput" name="phoneInput" class="reg" placeholder="電話番号を入力">
                 <!-- 登録ボタン -->
                 <button class="close-button" type="submit">登録</button>
                 </form>
@@ -300,7 +322,7 @@ card
              <form action="Editpro.action">
                 <span class="close" onclick="closeModal('pass')">&times;</span>
                 <!-- 電話番号の入力フィールド -->
-                <input type="text" id="passInput" name="passInput" placeholder="パスワードを入力">
+                <input type="text" id="passInput" name="passInput"  class="reg" placeholder="パスワードを入力">
                 <!-- 登録ボタン -->
                 <button class="close-button" type="submit">登録</button>
                 </form>
@@ -312,7 +334,7 @@ card
             <div class="modal-content">
                 <span class="close" onclick="closeModal('2fa')">&times;</span>
                 <!-- 2段階認証の入力フィールド -->
-                <input type="text" id="2faInput" name="2faInput" placeholder="2段階認証を入力">
+                <input type="text" id="2faInput" name="2faInput" class="reg" placeholder="2段階認証を入力">
                 <!-- 登録ボタン -->
                 <button class="close-button" type="submit">登録</button>
             </div>

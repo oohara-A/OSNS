@@ -109,6 +109,7 @@ a{
 	color: white;
 	font-size: 3.5rem;
 	padding-bottom: 1rem;
+	padding-left: 3rem;
 }
 
 .posted_review input{
@@ -116,7 +117,7 @@ a{
 }
 
 .review-form {
-	height: 412px;
+	height: 500px;
     width: 101%;
 }
 
@@ -137,15 +138,16 @@ textarea{
     margin-top: 25px;
 }
 
-.select-movie{
-	margin-left: 58%;
-    margin-top: -9%;
+.select-image{
+	float: left;
 }
 
-.select-image{
-	margin-left: 27%;
-    margin-top: 2%;
+.select-content{
+	margin-left: 2%;
+    margin-top: 3%;
 }
+
+
 
 .select-movie h2{
 	font-size: 170%;
@@ -158,9 +160,10 @@ textarea{
 }
 
 .evaluation{
-	margin-top: -11%;
-    margin-left: 4%;
     font-size: 1.5rem;
+    padding-top: 2%;
+    padding-left: 2%;
+
 }
 
 .evaluation label {
@@ -168,9 +171,8 @@ textarea{
 }
 
 .button input {
-	margin-top: 46px;
-    margin-left: 48px;
-    padding: 1px 30px;
+	margin: 0% 2%;
+    padding: 0% 2%
 }
 
 
@@ -212,16 +214,8 @@ textarea{
 		<form action="Postedreview.action" enctype="multipart/form-data" method="post" class="review-form">
 		    <textarea name="reviews" id="productReviewContent" rows="4" cols="50"
 		              placeholder="あなたの商品レビューを入力してください" required></textarea>
-			<div class="select-image">
-		    	<h2>画像選択</h2>
-		    	<input type="file" name="part">
-		    </div>
-			<div class="select-movie">
-			    <h2>動画選択</h2>
-			    <input type="file" name="part2">
-			</div>
-		    <br>
-		    <div class="evaluation">
+
+			<div class="evaluation">
 		    	<label for="rating">評価:</label>
 			    <select name="ratings" id="rating" required>
 			        <option value=1>☆</option>
@@ -231,7 +225,18 @@ textarea{
 			        <option value=5>☆☆☆☆☆</option>
 			    </select>
 		    </div>
-		    <br>
+		    <div class="select-content">
+				<div class="select-image">
+			    	<h2>画像選択</h2>
+			    	<input type="file" name="part">
+			    </div>
+
+				<div class="select-movie">
+				    <h2>動画選択</h2>
+				    <input type="file" name="part2">
+				</div>
+			    <br>
+		    </div>
 		    <div class="button">
 		    	<input type="submit" value="投稿">
 		    </div>
