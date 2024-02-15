@@ -4,12 +4,13 @@
 
 <style>
 	.cart-container{
-	max-width: 900px;
+	max-width: 50%;
     margin: 60px auto;
     background-color: #ffffff;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 20%;
 }
 
     th, td {

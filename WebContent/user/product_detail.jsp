@@ -109,8 +109,8 @@ card
   }
 
 .box {
-	width: 700px;
-	height: 1000px;
+	width: 60%;
+	height: 715px;
 	margin-left: auto;
 	background-color: white;
 }
@@ -246,5 +246,4 @@ card
      </c:forEach>
      </ul>
  </section>
-<%@include file="../user/review.jsp"%>
 <%@include file="../footer.jsp"%>

@@ -8,9 +8,17 @@ body {
   margin: 0;
 }
 
-/*
-section
-*/
+.cart-content{
+    margin: 60px auto;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    margin-top: 5%;
+    text-align: center;
+}
+
 .section{
     padding: 30px 15px;
 }
@@ -63,6 +71,7 @@ card
 .card-link:hover{
     background-color: #eee;
 }
+
 .card-label{
     position: absolute;
     left: 0;
@@ -105,10 +114,37 @@ card
   .font{
   	font-size: 25px;
   }
+
+
+   button.btn_03 {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 35%;
+	margin-left: 30%;
+    margin-top: 1%;
+	padding: 1%;
+	font-weight: bold;
+	border: 2px solid #27acd9;
+	color: #27acd9;
+	border-radius: 100vh;
+	transition: 0.5s;
+}
+	button.btn_03:hover {
+	color: #fff;
+	background: #27acd9;
+}
+
+.price{
+font-size:20px
+}
 </style>
+
+
 <c:choose>
 <c:when test="${cart != null }">
-	<div class="cart-container">
+	<div class="cart-content">
 		<h2>マイカート</h2>
 		<table class="cart_table">
 	<thead>
@@ -130,10 +166,10 @@ card
 					</a>
 				</td>
 
-				<td >￥:${cart.unit_price }</td>
+				<td class="price">￥${cart.unit_price }</td>
 
-				<td><input id="number" type="number" size="auto" value="${cart.order_count}"></td>
-				<td>￥:${cart.order_count * cart.unit_price}</td>
+				<td>${cart.order_count}</td>
+				<td class="price">￥${cart.order_count * cart.unit_price}</td>
 				<td>
 				<a href="Cartdel.action?id=${cart.cart_id}">
 					<button id="delete">
@@ -147,15 +183,7 @@ card
 		</tbody>
 		</c:forEach >
 	</table>
-	<div class="cart-summary">
-		<p >
-			カート内数量: <span id="total-items">0</span>
-		</p>
-		<p>
-			カート内合計￥:<span id="subtotal">10000</span>
-		</p>
-	</div>
-		<button onclick="location.href='cash_register.jsp'">レジに進む</button>
+		<button onclick="location.href='cash_register.jsp'" class="btn_03">レジに進む</button>
 	</div>
 	</c:when>
 	<c:otherwise>

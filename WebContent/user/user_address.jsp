@@ -6,79 +6,81 @@
 
         <style>
 
-        td{
-        	color: white;
-        }
-            .container {
-                display: flex;
+td{
+    color: white;
+}
+.container {
+    display: flex;
+}
 
-            }
+.box {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    display: flex;
+}
 
-            .box {
-                width: 400px;
-                height: 400px;
-                position: relative;
-                display: flex;
-            }
+.add-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: pink;
+    color: white;
+    border: none;
+    padding: 20px 20px;
+    font-size: 60px;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
-            .add-button {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: pink;
-                color: white;
-                border: none;
-                padding: 20px 20px;
-                font-size: 60px;
-                cursor: pointer;
-                border-radius: 5px;
-            }
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
 
-            .modal {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                justify-content: center;
-                align-items: center;
-            }
 
-            .modal-content {
-                background-color: #fefefe;
-                padding: 20px;
-                border-radius: 5px;
-            }
 
-            .close {
-                color: #aaa;
-                float: right;
-                font-size: 28px;
-                font-weight: bold;
-                cursor: pointer;
-            }
+ .modal-content {
+    background-color: #fefefe;
+	padding: 20px;
+	border-radius: 5px;
+	text-align: center;
+ }
 
-            .close:hover {
-                color: black;
-            }
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-            .add{
+ .close:hover {
+    color: black;
+}
 
-            	font-size: 50px;
-            	position: absolute;
-				top: 30%;
-				margin-left:-300px;
-            }
-            .partner{
-             display: flex;
-             	padding-top: 50px;
-            }
+.add{
+    font-size: 50px;
+    position: absolute;
+	top: 30%;
+    margin-left:-300px;
+}
+.partner{
+    display: flex;
+    padding-top: 50px;
+    padding-left: 23%;
+}
 
-            body {
-  margin: 0;
+body {
+  	margin: 0;
 }
 
 /*
@@ -180,9 +182,14 @@ card
   }
 
   .close-button{
-  	margin: 0 auto;
+  	margin-top: 1%;
+  	width: 9%;
+  	padding: 0.5%;
   }
 
+.form-group{
+	margin-top: 1%;
+}
 </style>
 
       <div class="container">
