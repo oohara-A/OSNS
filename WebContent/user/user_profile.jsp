@@ -216,14 +216,89 @@ button.close-button{
 	margin-left: 1%;
 	background-color: #198754;
 }
-        </style>
 
-	<div class="user_info">
-        <h1>アカウント情報の更新</h1>
+  .card-description {
+  	font-size: 205%;
+  }
+
+  .card-description-evaluation{
+  	font-size: 145%;
+  }
+
+  .product_title {
+color: white;
+font-size: 350%;
+margin-top: 1%;
+text-align: center;
+}
+
+.log-error{
+	text-align: center;
+}
+.log_error_container{
+	text-align: center;
+    background-color: white;
+    width: 33%;
+    margin: 7% auto;
+    padding: 2% 0%;
+    border-radius: 35px;
+}
+.log_error{
+	color: red;
+    font-size: 400%;
+    margin-bottom: 7%;
+}
+
+.error-mark{
+	width: 15%;
+}
+.error_message p{
+	font-size: 200%;
+	margin-top: 8%;
+}
+a.sending {
+	display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    width: 220px;
+    margin: auto;
+    padding: 1rem 4rem 1rem 3rem;
+    font-weight: bold;
+    background: #198754;
+    color: #fff;
+    border-radius: 100vh;
+    position: relative;
+    transition: 0.3s;
+    border: solid;
+
+}
+a.sending::before {
+	content: '';
+	width: 7px;
+	height: 7px;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+	transform: rotate(45deg);
+}
+a.sending:hover {
+	background: #fff;
+	color: #000000;
+}
+.inq_sending{
+	margin-top: 7%;
+}
+</style>
+
+
+
        <c:choose>
 		<c:when test="${user!=null}">
 
 	        <c:forEach var="use" items="user">
+	        <div class="user_info">
+	        <h1>アカウント情報の更新</h1>
 	        <div class="container">
 	            <div class="box">
 	                <div class="box-item">
@@ -264,19 +339,30 @@ button.close-button{
 	            </div>
 
 	        </div>
-
+		</div>
  </c:forEach>
 </c:when>
 
 	<c:otherwise>
 
-				<div class="inq_sending">
-						<h1>ログインしてください</h1>
-					<a href="user_login.jsp"><input class="sending" type="submit" value="ログイン"></a>
+	<form action="user_login.jsp" method="post">
+		<div class="log-error">
+			<div class="log_error_container">
+				<h1 class="log_error">ログインエラー</h1>
+				<div class="error_message">
+					<img class="error-mark" alt="エラーマーク" src="https://upload.wikimedia.org/wikipedia/commons/3/34/ErrorMessage.png">
+					<p>ログインをしてください！</p>
 				</div>
+
+				<div class="inq_sending">
+					<a class="sending" type="submit" href="../user/user_login.jsp">ログイン</a>
+				</div>
+			</div>
+		</div>
+	</form>
 	</c:otherwise>
 </c:choose>
- </div>
+
 
 
 <!--入力欄表示  -->
@@ -341,7 +427,7 @@ button.close-button{
 
         <hr>
 
-        <p>おすすめ商品</p>
+ <h4 class="product_title">おすすめ商品</h4>
 
  <section class="section">
     <ul class="grid grid-col-3">
@@ -355,7 +441,7 @@ button.close-button{
                         <time class="card-time" datetime="2022-01-01">2022.01.01<time>
                             <h1 class="card-hedline">${product_cate.product_name }</h1>
                             <p class="card-description">￥:${product_cate.unit_price}</p>
-                            <p class="card-description">★★★★☆</p>
+                            <p class="card-description-evaluation">★★★★☆</p>
                     </div>
                 </a>
                </article>

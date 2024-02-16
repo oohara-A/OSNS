@@ -86,8 +86,11 @@ body {
 /*
 section
 */
-.section{
-    padding: 30px 15px;
+.section {
+    padding: 5px 15px;
+    text-align: center;
+    margin-left: 3%;
+    margin-bottom: 4%;
 }
 .section.section-secounday{
     background-color: #efefef;
@@ -190,6 +193,20 @@ card
 .form-group{
 	margin-top: 1%;
 }
+  .card-description {
+  	font-size: 205%;
+  }
+
+  .card-description-evaluation{
+  	font-size: 145%;
+  }
+
+  .product_title {
+color: white;
+font-size: 350%;
+margin-top: 1%;
+text-align: center;
+}
 </style>
 
       <div class="container">
@@ -290,7 +307,7 @@ card
 
         <hr>
 
-        <p>おすすめ商品</p>
+        <h4 class="product_title">おすすめ商品</h4>
 
  <section class="section">
     <ul class="grid grid-col-3">
@@ -304,7 +321,7 @@ card
                         <time class="card-time" datetime="2022-01-01">2022.01.01<time>
                             <h1 class="card-hedline">${product_cate.product_name }</h1>
                             <p class="card-description">￥:${product_cate.unit_price}</p>
-                            <p class="card-description">★★★★☆</p>
+                            <p class="card-description-evaluation">★★★★☆</p>
                     </div>
                 </a>
                </article>

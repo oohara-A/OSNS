@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@include file="../menu.jsp"%>
@@ -13,9 +12,7 @@ body {
 section
 */
 .section{
-    padding: 5px 15px;
-    text-align: center;
-    margin-left: 3%;
+    padding: 30px 15px;
 }
 .section.section-secounday{
     background-color: #efefef;
@@ -109,10 +106,9 @@ card
   }
 
 .box {
-	width: 60%;
-	height: 715px;
+	width: 700px;
+	height: 1000px;
 	margin-left: auto;
-	background-color: white;
 }
 .cart_box {
   width: 300px;
@@ -121,7 +117,6 @@ card
   border: solid 3px black;
   border-radius: 15px;
   padding-top: 20px;
-  background-color: white;
 }
 .cart_box p {
 	font-size: 25px;
@@ -156,55 +151,39 @@ card
 	margin-left: 100px;
 }
 
-.title1 {
-	text-align: center;
-    color: white;
-    padding-left: 3rem;
-    font-size: 3.5rem;
-}
+.section .grid-item{
 
-.card-description{
-	font-size: 37px;
-}
-
-.card-description-evaluation{
-	font-size: 25px;
 }
 
 </style>
 <div class="product_detail">
-<c:forEach var="prodetail" items="${product_detail}">
+<c:forEach var="prodetail" items="${test_detail}">
 	<div class="pro_img">
 		<img alt="商品画像" src="<%=request.getContextPath() %>/assets/proimage/${prodetail.image_filename}"width="30%"height="30%">
 	</div>
 	<div class="product_box">
 		<div class="box">
-			<p class="pro_name">${prodetail.product_name}</p>
+			<p class="pro_name">${prodetail.testpro_name}</p>
 			<hr>
-			<p class="pro_detail">￥${prodetail.unit_price}</p>
-			<p class="pro_detail">ポイント  ${(prodetail.unit_price * 0.001)}</p>
-
-			<p class="pro_detail">在庫 ${prodetail.regiinvqua }</p>
+			<p class="pro_detail">商品価格：￥${prodetail.test_price }</p>
+			<p class="pro_detail">在庫:${prodetail.regiinvqua }</p>
 			<div class="com_box">
 				<p class="pro_description">この商品について</p>
-
 				<p class="description">・${prodetail.product_description }</p>
 			</div>
 		</div>
-
 		<div class="cart_box">
-			<p>在庫:${prodetail.regiinvqua }</p>
 			<form action="Cartadd.action">
-				<p>数量:<input  type="number" name="cnt" min="1" max="100"  required="required"></p>
+				<p>数量:<input  type="number" name="cnt" min="1" max="1" value="1"  required="required"></p>
 				<p>カート<button type="submit" name="id" value="${prodetail.id }">追加</button></p>
 			</form>
 		</div>
 	</div>
 </c:forEach>
 </div>
-	<hr>
-	<h1 class="title1">おすすめ商品</h1>
 
+	<hr>
+	<h1>おすすめ商品</h1>
  <section class="section">
     <ul class="grid grid-col-3">
     <c:forEach var="product_cate" items="${product_category}">
@@ -216,8 +195,8 @@ card
 	           	<div class="card-info">
 	               <time class="card-time" datetime="2022-01-01">2022.01.01<time>
 	               <h1 class="card-hedline">${product_cate.product_name }</h1>
-	               <p class="card-description">￥${product_cate.unit_price}</p>
-	               <p class="card-description-evaluation">★★★★☆</p>
+	               <p class="card-description">￥:${product_cate.unit_price}</p>
+	               <p class="card-description">★★★★☆</p>
 	           </div>
 	       	</a>
 	       </article>
@@ -237,8 +216,8 @@ card
 	            <div class="card-info">
 	                <time class="card-time" datetime="2022-01-01">2022.01.01<time>
 	                <h1 class="card-hedline">${product_cate.product_name }</h1>
-	                <p class="card-description">￥${product_cate.unit_price}</p>
-	                <p class="card-description-evaluation">★★★★☆</p>
+	                <p class="card-description">￥:${product_cate.unit_price}</p>
+	                <p class="card-description">★★★★☆</p>
 	            </div>
 	        </a>
 	       </article>
@@ -246,5 +225,5 @@ card
      </c:forEach>
      </ul>
  </section>
- <%@include file="../user/review.jsp"%>
+<%@include file="../user/review.jsp"%>
 <%@include file="../footer.jsp"%>

@@ -1,6 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../com_header.jsp"%>
+<style>
+.product_in{
+	width: 80%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    margin-top: 2%;
+    max-width: 65%;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="number"].register{
+	width: 100%;
+	text-align:center;
+}
+
+input[type="file"].file{
+	width: 100%;
+	text-align:center;
+	padding-left: 30%;
+}
+
+input[type="text"].title{
+	width: 100%;
+	text-align:center;
+}
+
+.select{
+	text-align:center;
+}
+
+</style>
+
 
 <form action="company_top_page.jsp" method="post">
 	<div class="back_home">
@@ -9,34 +45,34 @@
 </form>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
 <form action="Product_registration.action" method="post" enctype="multipart/form-data">
-
+<div class="product_in">
 	<h2 class="product_title">商品登録</h2>
 
 	<div class="item_entry">
 
 	    <div class="product_info">
 	        <label for="productName">商品名:</label>
-	        <input type="text" id="productName" name="product_name">
+	        <input type="text" id="productName" name="product_name" class=title>
 	    </div>
 
 	    <div class="product_info">
 	        <label for="productPrice">商品価格:</label>
-	        <input type="number" id="productPrice" name="unit_price">
+	        <input type="number" id="productPrice" min="0" name="unit_price" class=register>
 	    </div>
 
 	    <div class="product_info">
 	        <label for="productImage">商品画像:</label>
-	        <input  type="file" id="productImage" name="image_filename" accept="image/*">
+	        <input  type="file" id="productImage" name="image_filename" accept="image/*" class=file>
 	    </div>
 
 		<div class="pro_info">
         	<label for="productStock">在庫数:</label>
-        	<input type="number" id="pro_input_stock" name="regiinvqua">
+        	<input type="number" id="pro_input_stock" min="0" name="regiinvqua" class=register>
     	</div>
 
 	    <div class="product_genre">
 	        <label for="productGenre">ジャンル:</label>
-	        <select id="productGenre" name="category_name">
+	        <select id="productGenre" name="category_name" class=select>
 	            <option value="genre1">本</option>
 	            <option value="genre2">化粧品</option>
 	            <option value="genre3">食料品</option>
@@ -46,7 +82,7 @@
 
 		<div class="pro_info">
 			<label for="shippingCost">送料設定:</label> <input type="number"
-				id="shippingCost" name="shipping_fee">
+				id="shippingCost" name="shipping_fee" min="0" class=register>
 		</div>
 
     	<div class="product_info">
@@ -58,7 +94,9 @@
     <div class="product_submit">
         <input type="submit" value="登録完了">
     </div>
+    </div>
 </form>
+
 	<div class="sample_info">
 		<a href="sample__registration.jsp">試供品登録はこちら</a>
 	</div>

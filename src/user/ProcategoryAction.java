@@ -16,6 +16,7 @@ public class ProcategoryAction extends Action {
 		//セッションの情報を取得
 		HttpSession session=request.getSession();
 		session.removeAttribute("product_category");
+		session.removeAttribute("test_product");
 		//商品検索した名前の所得
 		String keyword=request.getParameter("category");
 		System.out.print(keyword);

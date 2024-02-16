@@ -1,12 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@include file="../com_header.jsp"%>
+<style>
+.coupon_regist {
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    margin-top: 5%;
+    max-width: 600px;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.registration_button .register_button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+}
+
+</style>
+
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/sanitize.css">
 
 <form action="Coupon_issuing_creation.action" method="post">
 
-	<div class="coupon_registration">
+	<div class="coupon_regist">
 
 		<div class="back_home">
 			<a class="backhome" href="company_top_page.jsp">ホームに戻る</a>

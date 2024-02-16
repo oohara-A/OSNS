@@ -20,7 +20,10 @@ body {
 }
 
 .section{
-    padding: 30px 15px;
+    padding: 5px 15px;
+    text-align:center;
+	margin-left: 3%;
+    margin-bottom: 4%;
 }
 .section.section-secounday{
     background-color: #efefef;
@@ -139,6 +142,21 @@ card
 .price{
 font-size:20px
 }
+
+.product_title {
+color: white;
+font-size: 350%;
+margin-top: 1%;
+text-align: center;
+}
+
+.card-description {
+  	font-size: 205%;
+  }
+
+  .card-description-evaluation{
+  	font-size: 145%;
+  }
 </style>
 
 
@@ -194,7 +212,7 @@ font-size:20px
 	</c:otherwise>
 	</c:choose>
 	<hr>
-	<p>おすすめ商品</p>
+	<h4 class="product_title">おすすめ商品</h4>
 	 <section class="section">
     <ul class="grid grid-col-3">
     <c:forEach var="product_cate" items="${product_category}">
@@ -207,7 +225,7 @@ font-size:20px
                         <time class="card-time" datetime="2022-01-01">2022.01.01<time>
                             <h1 class="card-hedline">${product_cate.product_name }</h1>
                             <p class="card-description">￥:${product_cate.unit_price}</p>
-                            <p class="card-description">★★★★☆</p>
+                            <p class="card-description-evaluation">★★★★☆</p>
                     </div>
                 </a>
                </article>

@@ -134,26 +134,3 @@ public boolean updatePurchase(int log_number ,Date cancel_time) throws Exception
 
 }
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

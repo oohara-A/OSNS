@@ -2,17 +2,31 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.ArrayList"%>
 
+<style>
+.coupon-list {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    height: 63%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+</style>
+
 <head>
 	<title>company_page</title>
 	<link rel="stylesheet" href="../assets/css/sanitize.css">
 </head>
 
 <form action="company_top.jsp" method="post">
-<div class="coupon-list">
-
 	<div class="back_home">
         <a class="backhome" href="company_top_page.jsp">ホームに戻る</a>
 	</div>
+</form>
+
+<form action="Coupon_search.action" method="post">
+	<div class="coupon-list">
 
     <h2>クーポン一覧</h2>
 
@@ -42,7 +56,6 @@
                 </tr>
              </c:forEach>
         </tbody>
-    </table>
-</div>
-
+    　</table>
+	</div>
 </form>
