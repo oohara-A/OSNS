@@ -9,6 +9,7 @@ import java.util.List;
 
 import bean.Admin;
 import bean.Company;
+import bean.Purchase_history;
 import bean.Review;
 import bean.User;
 
@@ -193,4 +194,35 @@ public class AdminDAO extends DAO {
 		con.close();
 		return true;
 	}
+
+
+	//購入者情報一覧
+	public List<Purchase_history> purchaser_info()throws Exception {
+		List<Purchase_history> purchase_his =  new ArrayList<>();
+		Connection con=getConnection();
+		//商品情報を持ってくる
+		PreparedStatement st=con.prepareStatement(
+			"select * from purchase_history inner join product on purchase_history.product_id = product.id  inner join pro_image on pro_image.product_id = product.id  where  CANCEL_FLAG = 0 ");
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Purchase_history p=new Purchase_history();
+			p.setId(rs.getInt("id"));
+			p.setUser_id(rs.getInt("user_id"));
+			p.setUser_id(rs.getInt("product_id"));
+			p.setProduct_name(rs.getString("product_name"));
+			p.setCompany_id(rs.getInt("company_id"));
+			p.setCoupon_id(rs.getString("coupon_id"));
+			p.setPurchase_time(rs.getDate("purchase_time"));
+			p.setPurchase_price(rs.getInt("purchase_price"));
+			p.setPaymentmethod(rs.getString("paymentmethod"));
+			p.setDeladdress(rs.getString("deladdress"));
+			p.setPhone_number(rs.getString("phone_number"));
+			p.setCount(rs.getInt("count"));
+			p.setImage_filename(rs.getString("image_filename"));
+			purchase_his.add(p);
+		}
+		st.close();
+		con.close();
+		return purchase_his;
+}
 }

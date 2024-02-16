@@ -243,7 +243,7 @@ body {
 		<div id="current-review"></div>
 		<div id="current-reply"></div>
 		<div class="review-form">
-			<input type="text" id="replyContent" name="reply" placeholder="返信を入力">
+			<input type="text" id="replyContent" name="reply" placeholder="返信を入力" required="required">
 			<input id="submit" type="submit" value="返信" disabled>
 		</div>
 		</form>
