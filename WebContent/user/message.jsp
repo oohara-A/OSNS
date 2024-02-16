@@ -36,6 +36,7 @@ body {
 	padding: 10px;
 	border-radius: 8px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin-left: 19%;
 }
 
 .buyer-info img {
@@ -70,6 +71,7 @@ body {
 	padding: 20px;
 	border-radius: 8px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin-left: 10%;
 }
 
 .review-chat h2 {
@@ -131,6 +133,7 @@ body {
                 // 返信をクリア
                 var replyElement = document.getElementById('current-reply');
                 replyElement.innerHTML = '';
+
             }
 
             function showReply(userName, replyContent) {
@@ -204,6 +207,16 @@ body {
                     replyElement.innerHTML = '';
                 }
             }
+            function change() {
+            	var element;
+            	if (document.getElementById("review-item")) {
+            		element = document.getElementById("submit");
+                    element.disabled = false;
+            	}else{
+            		element = document.getElementById("submit");
+                    element.disabled = true;
+            	}
+            }
         </script>
 
 
@@ -215,7 +228,7 @@ body {
 		<p>購入者レビュー</p>
 	<div class="review_come">
 		<c:forEach var="review" items="${user_review}">
-                    <div class="review-item" onclick="changeReview('${review.user_id }','${review.reviewbody}' , '★★★★★')">
+                    <div id="review-item" class="review-item" onclick="changeReview('${review.user_id }','${review.reviewbody}' , '★★★★★'),change()">
                         <div class="border-radius">コメント</div>
                         <p class="ptagu">${review.reviewbody}</p>
                     </div>
@@ -225,12 +238,13 @@ body {
 </div>
 	<div class="review-chat">
 		<h2><%=pro_name %>の商品チャット</h2>
+		<p id="warning-text">返信したいコメントを押してください。</p><br>
 	<form action="Messgsend.action">
 		<div id="current-review"></div>
 		<div id="current-reply"></div>
 		<div class="review-form">
 			<input type="text" id="replyContent" name="reply" placeholder="返信を入力">
-			<input type="submit" value="返信" >
+			<input id="submit" type="submit" value="返信" disabled>
 		</div>
 		</form>
 

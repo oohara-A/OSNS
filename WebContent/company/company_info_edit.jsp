@@ -23,6 +23,16 @@ Company com = null;
 </head>
 
 <style>
+.com_edit{
+	max-width: 60%;
+    margin: 70px auto;
+    background-color: #ffffff;
+    padding: 3%;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
+}
+
 .com_info_main{
  	transform: translate(40% ,0%);
 }
@@ -35,16 +45,59 @@ Company com = null;
     text-decoration-color: #ff0000;
 }
 
+input[type="text"] {
+    width: 450px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: -9%;
+}
 
-.com_complete{
-	margin-left: 290px;
+input[type="email"] {
+    width: 450px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: -9%;
+}
+
+input[type="password"] {
+    width: 450px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: -9%;
+}
+
+.com_complete {
+    padding: 2%;
+    margin-top: 1%;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: black;
+    border-radius: 4px;
+    width: 20%;
+    text-align: center;
+}
+
+.com_info {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 150%;
+    margin-top: 1%;
+    margin-left: -8%;
 }
 
 </style>
 
 <div class="back_home">
-        <a class="backhome" href="company_top_page.jsp">HOME</a>
+        <a class="backhome" href="company_top_page.jsp">ホームに戻る</a>
 </div>
+
+<div class="com_edit">
 <h2 class="info_edit">企業情報編集</h2>
 
 <form action="Edit_comp_info.action" method="post">
@@ -92,3 +145,4 @@ Company com = null;
 		</div>
 	</c:forEach>
 </form>
+</div>
