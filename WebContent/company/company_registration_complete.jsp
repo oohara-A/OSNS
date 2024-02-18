@@ -10,6 +10,6 @@
     <h2 class="company_signup">登録が完了しました！！</h2>
 
     <div class="com_signup">
-        <input class="company_up" type="submit" value="トップページへ" >
+        <input class="company_up" type="submit" value="ログインページへ" >
     </div>
 </form>

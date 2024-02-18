@@ -6,10 +6,15 @@
 
 <style>
 .cart-container{
-	padding-top: 100px;
+	padding-top: 2%;
+	margin-top: 5%;
 }
 	td{
 		color: black;
+	}
+
+	input.code{
+		width: 100%;
 	}
 </style>
 <c:choose>
@@ -40,7 +45,7 @@
 					${coupon.coupon_name }
 				</td>
 				<td>
-					コード: <input type="button" id="${coupon.coupon_id}"  value="${coupon.coupon_code }" onclick="copyToClipboard(this)" readonly>
+					コード: <br><input type="button" class="code" id="${coupon.coupon_id}"  value="${coupon.coupon_code }" onclick="copyToClipboard(this)" readonly>
 				</td>
 			</tr>
 			<!-- Repeat this block for each item in the cart -->

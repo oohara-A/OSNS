@@ -39,16 +39,16 @@
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5" >Admin_Login</h2>
+              <h2 class="text-uppercase text-center mb-5" >Admin Login</h2>
 
               <form action="Login.action" method="post">
                 <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example3cg">Email</label>
+                <label class="form-label" for="form3Example3cg">メールアドレス</label>
                   <input type="text" name="inq_admin_email" id="form3Example3cg" class="form-control form-control-lg" required="required" />
                 </div>
 
                 <div class="form-outline mb-4">
-                 <label class="form-label" for="form3Example4cg">Password</label>
+                 <label class="form-label" for="form3Example4cg">パスワード</label>
                  <input type="password" name="inq_admin_pass" id="form3Example4cg" class="form-control form-control-lg" required="required" />
                 </div>
 
@@ -56,6 +56,9 @@
                   <button type="submit"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
                 </div>
+
+                <p class="text-center text-muted mt-5 mb-0"><a href="<%=request.getContextPath() %>/user/user_login.jsp"
+                    class="fw-bold text-body"><u>ユーザの方はこちら</u></a></p>
 
                 <p class="text-center text-muted mt-5 mb-0"><a href="<%=request.getContextPath() %>/company/com_login.jsp"
                 class="fw-bold text-body"><u>企業の方はこちら</u></a></p>

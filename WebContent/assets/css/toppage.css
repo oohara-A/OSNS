@@ -595,7 +595,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
@@ -11589,7 +11589,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
@@ -22154,7 +22154,7 @@ h6, .h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+
 }
 
 abbr[title] {
@@ -22583,7 +22583,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
@@ -29303,6 +29303,7 @@ textarea.form-control-lg {
 
 .vh-100 {
   height: 100vh !important;
+
 }
 
 .min-vh-100 {
@@ -29391,6 +29392,7 @@ textarea.form-control-lg {
 
 .align-items-center {
   align-items: center !important;
+
 }
 
 .align-items-baseline {

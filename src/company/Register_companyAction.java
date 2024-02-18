@@ -1,14 +1,11 @@
 package company;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
 
 import bean.Company;
 import bean.Review;
@@ -23,29 +20,30 @@ public class Register_companyAction extends Action{
 		HttpSession session=request.getSession();
 		Review rev = new Review();
 		//氏名
-		String name=request.getParameter("name");
+		String name=request.getParameter("com_full_name");
 		//企業名
 		String company_name=request.getParameter("company_name");
 		//所在地
-		String address=request.getParameter("address");
+		String address=request.getParameter("com_address");
 		//メールアドレス
-		String email=request.getParameter("email");
+		String email=request.getParameter("com_email");
 		//電話番号
-		String phone_number=request.getParameter("phone_number");
+		String phone_number=request.getParameter("com_tel");
 
 		// 商品画像
-		Part part = request.getPart("image_filename");
-		String filename = rev.getFileName(part);
-		System.out.println(filename);
-		 String[] filenames = filename.split("\\\\"); // Windowsの場合
-		List<String> filenames2 = new ArrayList<>();
-		for (String file : filenames) {
-		    filenames2.add(file);
-		}
-		int len = filenames2.size();
-		String filename2 = filenames2.get(len - 1);
-		System.out.println(filename2);
-
+//		Part part = request.getPart("image_filename");
+//		String filename = rev.getFileName(part);
+//		System.out.println(filename);
+//		 String[] filenames = filename.split("\\\\"); // Windowsの場合
+//		List<String> filenames2 = new ArrayList<>();
+//		for (String file : filenames) {
+//		    filenames2.add(file);
+//		}
+//		int len = filenames2.size();
+//		String filename2 = filenames2.get(len - 1);
+//		System.out.println(filename2);
+//
+		String filename2 = "なし";
 		//パスワード
 		String password=request.getParameter("password");
 		//パスワード(確認)

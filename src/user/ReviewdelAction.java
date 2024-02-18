@@ -31,7 +31,7 @@ public class ReviewdelAction extends Action{
 		if(user == null){
 			String messege = "ログインしてください";
 			session.setAttribute("error", messege);
-			return "login_error.jsp";
+			return "user_login_error.jsp";
 		}
 //		int user_id = user.getId();
 //		if(revuser!= user_id){

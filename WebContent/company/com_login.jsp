@@ -40,16 +40,16 @@
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5" >Company_Login</h2>
+              <h2 class="text-uppercase text-center mb-5" >Company Login</h2>
 
               <form action="Login_company.action" method="post">
                 <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example3cg">Email</label>
+                <label class="form-label" for="form3Example3cg">メールアドレス</label>
                   <input type="text" name="email" id="form3Example3cg" class="form-control form-control-lg" required="required" />
                 </div>
 
                 <div class="form-outline mb-4">
-                 <label class="form-label" for="form3Example4cg">Password</label>
+                 <label class="form-label" for="form3Example4cg">パスワード</label>
                   <input type="password" name="password" id="form3Example4cg" class="form-control form-control-lg" required="required" />
                 </div>
 
@@ -58,8 +58,14 @@
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">アカウントをお持ちでない方：<a href="company_registration.jsp"
-                    class="fw-bold text-body"><u>新規作成はこちら</u></a></p>
+                <p class="text-center text-muted mt-5 mb-0">アカウントをお持ちでない方はこちら：<a href="company_registration.jsp"
+                    class="fw-bold text-body"><u>新規作成</u></a></p>
+
+                <p class="text-center text-muted mt-5 mb-0"><a href="<%=request.getContextPath() %>/user/user_login.jsp"
+                    class="fw-bold text-body"><u>ユーザの方はこちら</u></a></p>
+
+                <p class="text-center text-muted mt-5 mb-0"><a href="<%=request.getContextPath() %>/admin/admin_login.jsp"
+                    class="fw-bold text-body"><u>管理者の方はこちら</u></a></p>
               </form>
             </div>
           </div>

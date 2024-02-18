@@ -43,11 +43,19 @@ public class PurchaseAction extends Action {
 		int cartid = 0;
 		ArrayList<Integer> comp_id = new ArrayList<>();
 		int id = 0;
+//		カート内数量を入れる変数
+		ArrayList<Integer> cart_num_list = new ArrayList<>();
+		int cart_num = 0;
 		for(Product_cart i : cart){
 			id = i.getCompany_id();
 			cartid = i.getCart_id();
+			cart_num = i.getOrder_count();
+//			企業ID
 			comp_id.add(id);
+//			カート内ID
 			cart_id.add(cartid);
+//			購入数量
+			cart_num_list.add(cart_num);
 		}
 //		ユーザー情報取得
 		User user = (User) session.getAttribute("user");

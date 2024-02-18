@@ -17,7 +17,7 @@ public class AdressdispAction extends Action {
 		HttpSession session=request.getSession();
 		User user = (User) session.getAttribute("user");
 		if(user == null){
-			return "login_error.jsp";
+			return "user_login_error.jsp";
 		}
 		int user_id = user.getId();
 		UserDAO dao = new UserDAO();

@@ -140,7 +140,7 @@ a{
 <!-- レビュー＆リプライ投稿フォーム -->
 		<div>
 			<form action="Reviewedit.action" id="productReviewForm" onsubmit="submitProductReview(); return false;" class="review-form">
-				<h4>商品レビューを投稿</h4>
+				<h4>商品レビューを編集</h4>
 				<input type="hidden" name = "review_id" value="<%=review_id%>">
 				<input type="hidden" name="id" value="<%=edit_user%>">
 				<textarea name="reviews" id="productReviewContent" rows="4" cols="50"

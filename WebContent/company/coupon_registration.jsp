@@ -25,7 +25,7 @@
 		</div>
 
 		<div class="coupon_reg">
-			<p class="couponreg">発行数</p>
+			<p class="couponreg">発行日</p>
 			<input type="date" name="coupon_issue_number">
 		</div>
 

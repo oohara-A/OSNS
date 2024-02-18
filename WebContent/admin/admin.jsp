@@ -25,6 +25,7 @@
                         <li class="nav-item"><a class="nav-link" href="Showcompany.action">企業一覧</a></li>
                         <li class="nav-item"><a class="nav-link" href="Showreview.action">レビュー一覧</a></li>
                         <li class="nav-item"><a class="nav-link" href="Showuser.action">ユーザー一覧</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Purchaser_info.action">購入者情報一覧</a></li>
                         <li class="nav-item"><a class="nav-link" href="add_admin.jsp">管理者登録</a></li>
                         <li class="nav-item"><a class="nav-link" href="detele_admin.jsp">管理者削除</a></li>
                     </ul>

@@ -67,8 +67,10 @@ public class CompanyDAO extends DAO{
 		st.setString(3, address);
 		st.setString(4, email);
 		st.setString(5, phone_number);
-		st.setString(6, password);
-		st.setDate(7, add_date);
+		st.setString(6, filename2);
+		st.setString(7, password);
+		st.setDate(8, add_date);
+
 		st.executeUpdate();
 
 		st.close();

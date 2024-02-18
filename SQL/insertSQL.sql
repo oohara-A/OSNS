@@ -1,9 +1,21 @@
 
 INSERT INTO user (name, email, password, user_name, adding_time, deleting_time, update_time, flag)
 VALUES 
-('John Doe', 'john.doe@example.com', 'password123', 'john_doe', '2023-12-06', '2023-12-07', '2023-12-08', 0),
-('Jane Smith', 'jane.smith@example.com', 'securepass', 'jane_smith', '2023-12-06', '2023-12-07', '2023-12-08', 1),
-('Bob Johnson', 'bob.johnson@example.com', 'pass123', 'bob_johnson', '2023-12-06', '2023-12-07', '2023-12-08', 0);
+('John Doe1', 'john.doe@example.com', '123456789', 'user1', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('Jane Smith2', 'jane.smith@example.com', '123456789', 'user2', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('Bob Johnson3', 'bob.johnson@example.com', '123456789', 'user3', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('John Doe4', 'john.doe@example.com', '123456789', 'user4', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('Jane Smith5', 'jane.smith@example.com', '123456789', 'user5', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('Bob Johnson6', 'bob.johnson@example.com', '123456789', 'user6', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('Bob Johnson7', 'bob.johnson@example.com', '123456789', 'user7', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('John Doe8', 'john.doe@example.com', '123456789', 'user8', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('Jane Smith9', 'jane.smith@example.com', '123456789', 'user9', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('Bob Johnson10', 'bob.johnson@example.com', '123456789', 'user10', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('Bob Johnson11', 'bob.johnson@example.com', '123456789', 'user11', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('Bob Johnson12', 'bob.johnson@example.com', '123456789', 'user12', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('Bob Johnson13', 'bob.johnson@example.com', '123456789', 'user13', '2023-12-06', '2023-12-07', '2023-12-08', 0),
+('Bob Johnson14', 'bob.johnson@example.com', '123456789', 'user14', '2023-12-06', '2023-12-07', '2023-12-08', 0);
+
 
 INSERT INTO login_history (user_id, login_date)
 VALUES 
@@ -25,16 +37,16 @@ INSERT INTO company (
     flag
 ) VALUES (
     '会社A', -- 例: company_name の値
-    '東京都渋谷区', -- 例: address の値
-    'password123', -- 例: password の値
+    '東京都渋谷区12', -- 例: address の値
+    'asdwq', -- 例: password の値
     'companyA_image.png', -- 例: company_image の値
-    'info@companyA.com', -- 例: email の値
+    'a@.com', -- 例: email の値
     '担当者A', -- 例: name の値
     '123-4567-8901', -- 例: phone_number の値
     '2023-01-01', -- 例: adding_time の値
     NULL, -- 例: deleting_time の値
     NULL, -- 例: update_time の値
-    1 -- 例: flag の値
+    0 -- 例: flag の値
 );
 
 INSERT INTO company (
@@ -51,103 +63,110 @@ INSERT INTO company (
     flag
 ) VALUES (
     '会社B', 
-    '大阪府大阪市', 
-    'password456', 
+    '大阪府大阪市12', 
+    'asdwq', 
     'companyB_image.png',
-    'info@companyB.com', 
+    'b@.com', 
     '担当者B', 
     '987-6543-2109',
     '2023-01-02', 
     NULL, 
     NULL, 
     0
-);
+),('会社B', '大阪府大阪市1', 'asdwq', 'companyB_image.png', 'c@.com', '担当者B','987-6543-2109','2023-01-02', NULL, NULL,0 ),
+('会社B', '大阪府大阪市2', 'asdwq', 'companyB_image.png', 'd@.com', '担当者B','987-6543-2109','2023-01-02', NULL, NULL, 0),
+('会社B', '大阪府大阪市3', 'asdwq', 'companyB_image.png', 'e@.com', '担当者B','987-6543-2109','2023-01-02', NULL, NULL, 0),
+('会社B', '大阪府大阪市4', 'asdwq', 'companyB_image.png', 'f@.com', '担当者B','987-6543-2109','2023-01-02', NULL, NULL, 0),
+('会社B', '大阪府大阪市5', 'asdwq', 'companyB_image.png', 'g@.com', '担当者B','987-6543-2109','2023-01-02', NULL, NULL, 0),
+('会社B', '大阪府大阪市6', 'asdwq', 'companyB_image.png', 'h@.com', '担当者B','987-6543-2109','2023-01-02', NULL, NULL, 0),
+('会社B', '大阪府大阪市7', 'asdwq', 'companyB_image.png', 'i@.com', '担当者B','987-6543-2109','2023-01-02', NULL, NULL, 0),
+('会社B', '大阪府大阪市8', 'asdwq', 'companyB_image.png', 'j@.com', '担当者B','987-6543-2109','2023-01-02', NULL, NULL, 0),
+('会社B', '大阪府大阪市9', 'asdwq', 'companyB_image.png', 'k@.com', '担当者B','987-6543-2109','2023-01-02', NULL, NULL, 0),
+('会社B', '大阪府大阪市10', 'asdwq', 'companyB_image.png', 'l@.com', '担当者B','987-6543-2109','2023-01-02', NULL, NULL, 0),
+('会社B', '大阪府大阪市13', 'asdwq', 'companyB_image.png', 'm@.com', '担当者B','987-6543-2109','2023-01-02', NULL, NULL, 0),
+('会社B', '大阪府大阪市14', 'asdwq', 'companyB_image.png', 'n@.com', '担当者B','987-6543-2109','2023-01-02', NULL, NULL, 0);
+
+
 
 
 --商品用のinsert分
 -- 食品--
 -- テスト用データ1
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
-VALUES (1, 101, 1, '商品A', 1000, '2023-01-01', NULL, NULL, '商品Aの説明',  50, '商品Aの概要', 0);
+VALUES (1, 101, 1, 'BASEBRED', 1000, '2023-01-01', NULL, NULL, '商品Aの説明',  50, '商品Aの概要', 0);
 
 -- テスト用データ2
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
-VALUES (2, 102, 1, '商品B', 1500, '2023-01-02', NULL, NULL, '商品Bの説明',  30, '商品Bの概要', 0);
+VALUES (2, 102, 1, 'カロリーメイト', 1500, '2023-01-02', NULL, NULL, '商品Bの説明',  30, '商品Bの概要', 0);
 
 -- テスト用データ3
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
-VALUES (1, 103, 1, '商品C', 2000, '2023-01-03', NULL, NULL, '商品Cの説明',  40, '商品Cの概要', 0);
+VALUES (1, 103, 1, 'おかし詰め合わせ', 2000, '2023-01-03', NULL, NULL, '商品Cの説明',  40, '商品Cの概要', 0);
 
 -- テスト用データ4
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
-VALUES (2, 104, 1, '商品D', 1200, '2023-01-04', NULL, NULL, '商品Dの説明', 25, '商品Dの概要', 0);
+VALUES (2, 104, 1, 'ビスケット詰め合わせ', 1200, '2023-01-04', NULL, NULL, '商品Dの説明', 25, '商品Dの概要', 0);
 
 -- テスト用データ5
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
-VALUES (1, 105, 1, '商品E', 1800, '2023-01-05', NULL, NULL, '商品Eの説明',  60, '商品Eの概要', 0);
+VALUES (1, 105, 1, 'カレー', 1800, '2023-01-05', NULL, NULL, '商品Eの説明',  60, '商品Eの概要', 0);
 
 -- テスト用データ6
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
-VALUES (2, 106, 1, '商品F', 800, '2023-01-06', NULL, NULL, '商品Fの説明',  35, '商品Fの概要', 0);
+VALUES (2, 106, 1, 'たくさんどんぶりset', 800, '2023-01-06', NULL, NULL, '商品Fの説明',  35, '商品Fの概要', 0);
 
 -- テスト用データ7
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
-VALUES (1, 107, 1, '商品G', 2500, '2023-01-07', NULL, NULL, '商品Gの説明',  28, '商品Gの概要', 0);
+VALUES (1, 107, 1, 'きつね、たぬき、力もちなどたくさんset', 2500, '2023-01-07', NULL, NULL, '商品Gの説明',  28, '商品Gの概要', 0);
 
 -- テスト用データ8
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
-VALUES (2, 108, 1, '商品H', 3000, '2023-01-08', NULL, NULL, '商品Hの説明',  45, '商品Hの概要', 0);
+VALUES (2, 108, 1, 'インスタントラーメン詰め合わせセット', 3000, '2023-01-08', NULL, NULL, '商品Hの説明',  45, '商品Hの概要', 0);
 
 -- テスト用データ9
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
-VALUES (1, 109, 1, '商品I', 1600, '2023-01-09', NULL, NULL, '商品Iの説明', 55, '商品Iの概要', 0);
+VALUES (1, 109, 1, '魚介詰め合わせセット', 1600, '2023-01-09', NULL, NULL, '商品Iの説明', 55, '商品Iの概要', 0);
 
 -- テスト用データ10
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
-VALUES (2, 110, 2, '商品J', 2200, '2023-01-10', NULL, NULL, '商品Jの説明',32, '商品Jの概要', 0);
+VALUES (2, 110, 2, '電子レンジ', 2200, '2023-01-10', NULL, NULL, '商品Jの説明',32, '商品Jの概要', 0);
 ----------------------------------
+
 --本--
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
 VALUES 
-(1, 101, 4, '商品A', 1000, '2023-01-01', NULL, NULL, '商品Aの説明', 50, '商品Aの概要', 0),
-(1, 102, 4, '商品B', 1500, '2023-01-02', NULL, NULL, '商品Bの説明', 40, '商品Bの概要', 0),
-(1, 103, 4, '商品C', 2000, '2023-01-03', NULL, NULL, '商品Cの説明', 30, '商品Cの概要', 0),
-(1, 104, 4, '商品D', 2500, '2023-01-04', NULL, NULL, '商品Dの説明', 20, '商品Dの概要', 0),
-(1, 105, 4, '商品E', 3000, '2023-01-05', NULL, NULL, '商品Eの説明', 10, '商品Eの概要', 0),
-(1, 106, 4, '商品F', 3500, '2023-01-06', NULL, NULL, '商品Fの説明', 45, '商品Fの概要', 0),
-(1, 107, 4, '商品G', 4000, '2023-01-07', NULL, NULL, '商品Gの説明', 55, '商品Gの概要', 0),
-(1, 108, 4, '商品H', 4500, '2023-01-08', NULL, NULL, '商品Hの説明', 65, '商品Hの概要', 0),
-(1, 109, 4, '商品I', 5000, '2023-01-09', NULL, NULL, '商品Iの説明', 75, '商品Iの概要', 0),
-(1, 110, 4, '商品J', 5500, '2023-01-10', NULL, NULL, '商品Jの説明', 85, '商品Jの概要', 0);
+(1, 101, 4, 'Docker＆仮想サーバー', 1000, '2023-01-01', NULL, NULL, '商品Aの説明', 50, '商品Aの概要', 0),
+(1, 102, 4, 'ChatGPT', 1500, '2023-01-02', NULL, NULL, '商品Bの説明', 40, '商品Bの概要', 0),
+(1, 103, 4, '生成AI時代ビジネスサービス', 2000, '2023-01-03', NULL, NULL, '商品Cの説明', 30, '商品Cの概要', 0),
+(1, 104, 4, '生成AIで世界は変わる', 2500, '2023-01-04', NULL, NULL, '商品Dの説明', 20, '商品Dの概要', 0),
+(1, 105, 4, 'AWS認定', 3000, '2023-01-05', NULL, NULL, '商品Eの説明', 10, '商品Eの概要', 0),
+(1, 106, 4, 'エンジニア思考', 3500, '2023-01-06', NULL, NULL, '商品Fの説明', 45, '商品Fの概要', 0),
+(1, 107, 4, 'Python入門', 4000, '2023-01-07', NULL, NULL, '商品Gの説明', 55, '商品Gの概要', 0),
+(1, 108, 4, 'JAVA入門', 4500, '2023-01-08', NULL, NULL, '商品Hの説明', 65, '商品Hの概要', 0),
+(1, 109, 4, 'JAVA・SE・silver', 5000, '2023-01-09', NULL, NULL, '商品Iの説明', 75, '商品Iの概要', 0),
+(1, 110, 4, 'JavaScript', 5500, '2023-01-10', NULL, NULL, '商品Jの説明', 85, '商品Jの概要', 0);
 -----------------------------------------------------------
 
 --電気用品--
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
 VALUES 
-(1, 101, 2, '商品A', 10000, '2023-01-01', NULL, NULL, '商品Aの説明', 50, '商品Aの概要', 0),
-(1, 102, 2, '商品B', 15000, '2023-01-02', NULL, NULL, '商品Bの説明', 40, '商品Bの概要', 0),
-(1, 103, 2, '商品C', 20000, '2023-01-03', NULL, NULL, '商品Cの説明', 30, '商品Cの概要', 0),
-(1, 104, 2, '商品D', 25000, '2023-01-04', NULL, NULL, '商品Dの説明', 20, '商品Dの概要', 0),
-(1, 105, 2, '商品E', 30000, '2023-01-05', NULL, NULL, '商品Eの説明', 10, '商品Eの概要', 0);
+(1, 101, 2, 'ヒーター', 10000, '2023-01-01', NULL, NULL, '商品Aの説明', 50, '商品Aの概要', 0),
+(1, 102, 2, 'あったかウォーマー', 15000, '2023-01-02', NULL, NULL, '商品Bの説明', 40, '商品Bの概要', 0),
+(1, 103, 2, '電気式毛布', 20000, '2023-01-03', NULL, NULL, '商品Cの説明', 30, '商品Cの概要', 0),
+(1, 104, 2, 'ドライヤー', 25000, '2023-01-04', NULL, NULL, '商品Dの説明', 20, '商品Dの概要', 0),
+(1, 105, 2, 'どこでもチキン', 30000, '2023-01-05', NULL, NULL, '商品Eの説明', 10, '商品Eの概要', 0);
 -------------------------------------
 
 --試供品----
 -- テスト用のデータ挿入
 INSERT INTO product (company_id, original_products_id, product_category_id, product_name, unit_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
 VALUES 
-(1, 101, 0, '試供品', 0, '2023-01-01', NULL, NULL, 'これは試供品です', 50, 'Overview of test product 1', 0),
-(1, 102, 0, '試供品', 0, '2023-01-02', NULL, NULL, 'これは試供品です', 40, 'Overview of test product 1', 0),
-(1, 103, 0, '試供品', 0, '2023-01-03', NULL, NULL, 'これは試供品です', 30, 'Overview of test product 1', 0),
-(1, 104, 0, '試供品', 0, '2023-01-04', NULL, NULL, 'これは試供品です', 20, 'Overview of test product 1', 0),
-(1, 105, 0, '試供品', 0, '2023-01-05', NULL, NULL, 'これは試供品です', 10, 'Overview of test product 1', 0);
+(1, 101, 0, '化粧水（お試し用）', 0, '2023-01-01', NULL, NULL, 'これは試供品です', 50, 'Overview of test product 1', 0),
+(1, 102, 0, '化粧水（お試し用）', 0, '2023-01-02', NULL, NULL, 'これは試供品です', 40, 'Overview of test product 1', 0),
+(1, 103, 0, '特茶（お試し用）※数量限定', 0, '2023-01-03', NULL, NULL, 'これは試供品です', 30, 'Overview of test product 1', 0),
+(1, 104, 0, '親子丼の具など（お試し用）', 0, '2023-01-04', NULL, NULL, 'これは試供品です', 20, 'Overview of test product 1', 0),
+(1, 105, 0, 'カロリーメイト（お試し用）', 0, '2023-01-05', NULL, NULL, 'これは試供品です', 10, 'Overview of test product 1', 0);
 
--- INSERT INTO product (pro_id, product_category_id, testpro_name, test_price, adding_time, deleting_time, update_time, product_description, regiinvqua, product_overview, flag) 
--- VALUES 
--- (1, 1, '試供品', 0, '2024-02-08', NULL, NULL, 'これは試供品です', 10, 'Overview of test product 1', 0),
--- (2, 2, '試供品', 0, '2024-02-08', NULL, NULL, 'これは試供品です', 20, 'Overview of test product 2', 0),
--- (3, 3, '試供品', 0, '2024-02-08', NULL, NULL, 'これは試供品です', 15, 'Overview of test product 3', 0),
--- (4, 4, '試供品', 0, '2024-02-08', NULL, NULL, 'これは試供品です', 5, 'Overview of test product 4', 0),
--- (5, 5, '試供品', 0, '2024-02-08', NULL, NULL, 'これは試供品です', 25, 'Overview of test product 5', 0);
 ------------------------------------------------------------
 
 
@@ -206,20 +225,11 @@ INSERT INTO pro_image (product_id, image_filename, flag) VALUES (25, 'pro25.jpg'
 
 ---試供品----
 -- テスト用のデータ挿入
-INSERT INTO pro_image (product_id, image_filename, flag) VALUES (26, 'test_image_1.jpg', 0);
-INSERT INTO pro_image (product_id, image_filename, flag) VALUES (27, 'test_image_2.jpg', 0);
-INSERT INTO pro_image (product_id, image_filename, flag) VALUES (28, 'test_image_3.jpg', 0);
-INSERT INTO pro_image (product_id, image_filename, flag) VALUES (29, 'test_image_4.jpg', 0);
-INSERT INTO pro_image (product_id, image_filename, flag) VALUES (30, 'test_image_5.jpg', 0);
-
--- INSERT INTO testpro_image (product_id, image_filename, flag) 
--- VALUES 
--- (1, 'test_image_1.jpg', 0),
--- (2, 'test_image_2.jpg', 0),
--- (3, 'test_image_3.jpg', 0),
--- (4, 'test_image_4.jpg', 0),
--- (5, 'test_image_5.jpg', 0);
--------------------------------------------
+    INSERT INTO pro_image (product_id, image_filename, flag) VALUES (26, 'test_image_1.jpg', 0);
+    INSERT INTO pro_image (product_id, image_filename, flag) VALUES (27, 'test_image_2.jpg', 0);
+    INSERT INTO pro_image (product_id, image_filename, flag) VALUES (28, 'test_image_3.jpg', 0);
+    INSERT INTO pro_image (product_id, image_filename, flag) VALUES (29, 'test_image_4.jpg', 0);
+    INSERT INTO pro_image (product_id, image_filename, flag) VALUES (30, 'test_image_5.jpg', 0);
 
 -- 商品カテゴリ用のテストデータ
 -- テスト用データ1
@@ -286,13 +296,6 @@ VALUES
 (0, 29, '試供品', 'icon_category_1.png'),
 (0, 30, '試供品', 'icon_category_1.png');
 
--- INSERT INTO testpro_category (product_category_id, product_id, name, icon_image) 
--- VALUES 
--- (1, 1, 'Category 1', 'icon_category_1.png'),
--- (2, 2, 'Category 2', 'icon_category_2.png'),
--- (3, 3, 'Category 3', 'icon_category_3.png'),
--- (4, 4, 'Category 4', 'icon_category_4.png'),
--- (5, 5, 'Category 5', 'icon_category_5.png');
 -------------------------------------------------
 
 
@@ -302,6 +305,17 @@ VALUES
 
 -- adminのinsert文
 INSERT INTO admin (admin_name, password, email, adding_time, deleting_time, update_time, flag)
-VALUES ('Admin1', 'password123', 'admin1@example.com', '2024-01-17', NULL, NULL, 0),
-       ('Admin2', 'securepass', 'admin2@example.com', '2024-01-18', NULL, NULL, 0),
-       ('Admin3', 'adminpass', 'admin3@example.com', '2024-01-19', NULL, NULL, 0);
+VALUES ('Admin1', '123456789a', 'ad1@.com', '2024-01-17', NULL, NULL, 0),
+        ('Admin2', '123456789a', 'ad2@.com', '2024-01-18', NULL, NULL, 0),
+        ('Admin3', '123456789a', 'ad3@.com', '2024-01-19', NULL, NULL, 0),
+        ('Admin3', '123456789a', 'ad4@.com', '2024-01-19', NULL, NULL, 0),
+        ('Admin3', '123456789a', 'ad5@.com', '2024-01-19', NULL, NULL, 0),
+        ('Admin3', '123456789a', 'ad6@.com', '2024-01-19', NULL, NULL, 0),
+        ('Admin3', '123456789a', 'ad7@.com', '2024-01-19', NULL, NULL, 0),
+        ('Admin3', '123456789a', 'ad8@.com', '2024-01-19', NULL, NULL, 0),
+        ('Admin3', '123456789a', 'ad9@.com', '2024-01-19', NULL, NULL, 0),
+        ('Admin3', '123456789a', 'ad10@.com', '2024-01-19', NULL, NULL, 0),
+        ('Admin3', '123456789a', 'ad11@.com', '2024-01-19', NULL, NULL, 0),
+        ('Admin3', '123456789a', 'ad12@.com', '2024-01-19', NULL, NULL, 0),
+        ('Admin3', '123456789a', 'ad13@.com', '2024-01-19', NULL, NULL, 0),
+        ('Admin3', '123456789a', 'ad14@.com', '2024-01-19', NULL, NULL, 0);

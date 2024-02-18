@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="../menu.jsp"%>
-<%@include file="../headtwo.jsp"%>
+
 <style>
 .account_box a{
 color: white;
 }
-h4{
+.product_title {
 color: white;
+font-size: 350%;
+margin-top: 1%;
+text-align: center;
 }
 
 .account_box {
@@ -31,63 +34,54 @@ html {
   box-sizing: border-box;
 }
 
-.btn,
-a.btn,
-button.btn {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.5;
-  position: relative;
-  display: inline-block;
-  padding: 1rem 4rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
-}
-
-.account_box,
-a.account_box {
-  color: #fff;
-  background-color: #eb6100;
-}
-
-.account_box:hover,
-a.account_box:hover {
-  color: #fff;
-  background: black;
-}
 
 .account {
-  text-align: center;
+  	text-align: center;
+    margin-top: 6%;
+    margin-bottom: 7%;
   /* ボックスを中央に配置する */
 }
 
 .account_box .ac_change{
-font-size: 30px;
-text-decoration: none;
-margin-top: 45%;
-margin-bottom: 50%;
+	width: 130%;
+    font-size: 30px;
+    text-decoration: none;
 }
 
 body {
-  margin: 0;
+  margin-top: 4.5%;
+
+}
+
+.ac_change {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #eb6100;;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+	text-align: center;
+	box-shodow: 6px 6px 3px #666666;
+	border: 2px solid #000066;
+
+
+}
+
+.ac_change:hover,
+a.account_box:hover {
+	color: #fff;
+    background-color: black;
 }
 
 /*
 section
 */
 .section{
-    padding: 30px 15px;
+    padding: 5px 15px;
+    text-align:center;
+	margin-left: 3%;
+    margin-bottom: 4%;
 }
 .section.section-secounday{
     background-color: #efefef;
@@ -178,72 +172,85 @@ card
   .font{
   	font-size: 25px;
   }
- </style>
 
-        <hr>
-        <div class="account">
+  .card-description {
+  	font-size: 205%;
+  }
 
-            <div class="account_box">
-                <a href="Adressdisp.action" class="ac_change">住所追加・変更</a>
-            </div>
+  .card-description-evaluation{
+  	font-size: 145%;
+  }
+</style>
 
-            <div class="account_box">
-                <a href="user_profile.jsp" class="ac_change">ユーザ情報変更</a>
-            </div>
+ <hr>
+<div class="account">
+    <div class="account_box">
+        <a href="Adressdisp.action" class="ac_change">住所追加・変更</a>
+    </div>
 
-            <div class="account_box">
-                <a href="Coupondisp.action" class="ac_change">クーポン一覧</a>
-            </div>
+    <div class="account_box">
+        <a href="user_profile.jsp" class="ac_change">ユーザ情報変更</a>
+    </div>
 
-            <div class="account_box">
-                <a href="deregistration.jsp" class="ac_change">登録解除</a>
-            </div>
-           </div>
-        <hr>
+    <div class="account_box">
+        <a href="Coupondisp.action" class="ac_change">クーポン一覧</a>
+    </div>
 
-        <h4>おすすめ商品</h4>
+    <div class="account_box">
+        <a href="deregistration.jsp" class="ac_change">登録解除</a>
+    </div>
+</div>
+ <hr class="ac">
 
-    <section class="section">
-    <ul class="grid grid-col-3">
-    <c:forEach var="product_cate" items="${product_category}">
-            <li class="grid-item">
-                <!--article・・・一固まりで完結するコンテンツ  -->
-               <article class="card">
-                <a href="Prodetail.action?id=${product_cate.id}" class="card-link">
-                    <img class="card-image" src="<%=request.getContextPath() %>/assets/proimage/${product_cate.image_filename}" alt="thumnail">
-                    <div class="card-info">
-                        <time class="card-time" datetime="2022-01-01">2022.01.01<time>
-                            <h1 class="card-hedline">${product_cate.product_name }</h1>
-                            <p class="card-description">￥:${product_cate.unit_price}</p>
-                            <p class="card-description">★★★★☆</p>
-                    </div>
-                </a>
-               </article>
-            </li>
-      </c:forEach>
-       </ul>
-    </section><hr>
-        <h4>商品</h4>
+ <h4 class="product_title">おすすめ商品</h4>
 
-         <section class="section">
-    <ul class="grid grid-col-3">
-    <c:forEach var="product_cate" items="${product_category}">
-            <li class="grid-item">
-                <!--article・・・一固まりで完結するコンテンツ  -->
-               <article class="card">
-                <a href="Prodetail.action?id=${product_cate.id}" class="card-link">
-                    <img class="card-image" src="<%=request.getContextPath() %>/assets/proimage/${product_cate.image_filename}" alt="thumnail">
-                    <div class="card-info">
-                        <time class="card-time" datetime="2022-01-01">2022.01.01<time>
-                            <h1 class="card-hedline">${product_cate.product_name }</h1>
-                            <p class="card-description">￥:${product_cate.unit_price}</p>
-                            <p class="card-description">★★★★☆</p>
-                    </div>
-                </a>
-               </article>
-            </li>
-      </c:forEach>
-       </ul>
-    </section>
+ <section class="section">
+     <ul class="grid grid-col-3">
+         <c:forEach var="product_cate" items="${product_category}">
+             <li class="grid-item">
+                 <!--article・・・一固まりで完結するコンテンツ  -->
+                 <article class="card">
+                     <a href="Prodetail.action?id=${product_cate.id}" class="card-link">
+                         <img class="card-image"
+                             src="<%=request.getContextPath() %>/assets/proimage/${product_cate.image_filename}"
+                             alt="thumnail">
+                         <div class="card-info">
+                             <time class="card-time" datetime="2022-01-01">2022.01.01<time>
+                                     <h1 class="card-hedline">${product_cate.product_name }</h1>
+                                     <p class="card-description">￥${product_cate.unit_price}</p>
+                                     <p class="card-description-evaluation">★★★★☆</p>
+                         </div>
+                     </a>
+                 </article>
+             </li>
+         </c:forEach>
+     </ul>
+ </section>
+ <hr>
 
-        <%@include file="../footer.jsp" %>
+	 <h4 class="product_title"></h4>
+
+	 <section class="section">
+	     <ul class="grid grid-col-3">
+	         <c:forEach var="product_cate" items="${product_category}">
+	             <li class="grid-item">
+	                 <!--article・・・一固まりで完結するコンテンツ  -->
+	                 <article class="card">
+	                     <a href="Prodetail.action?id=${product_cate.id}" class="card-link">
+	                         <img class="card-image"
+	                             src="<%=request.getContextPath() %>/assets/proimage/${product_cate.image_filename}"
+	                             alt="thumnail">
+	                         <div class="card-info">
+	                             <time class="card-time" datetime="2022-01-01">2022.01.01<time>
+	                                     <h1 class="card-hedline">${product_cate.product_name }</h1>
+	                                     <p class="card-description">￥${product_cate.unit_price}</p>
+	                                     <p class="card-description-evaluation">★★★★☆</p>
+	                         </div>
+	                     </a>
+	                 </article>
+	             </li>
+	         </c:forEach>
+	     </ul>
+	 </section>
+
+ <%@include file="../footer.jsp" %>

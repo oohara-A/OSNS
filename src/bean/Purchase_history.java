@@ -28,6 +28,20 @@ private	boolean cancel_flag;
 private int product_id;
 private int count;
 private String image_filename;
+
+private String user_name;
+/**
+ * @return user_name
+ */
+public String getUser_name() {
+	return user_name;
+}
+/**
+ * @param user_name セットする user_name
+ */
+public void setUser_name(String user_name) {
+	this.user_name = user_name;
+}
 /**
  * @return product_id
  */

@@ -1,9 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.ArrayList"%>
 
-<%@include file="../menu.jsp"%>
+<head>
+	<title>company_page</title>
+	<link rel="stylesheet" href="../assets/css/sanitize.css">
+</head>
 
+<form action="company_top.jsp" method="post">
+	<div class="back_home">
+        <a class="backhome" href="company_top_page.jsp">ホームに戻る</a>
+	</div>
+</form>
 
 <style>
 	.cart-container{
@@ -56,35 +64,37 @@
 	color: white;
 }
 </style>
-<h1 class="title1">注文履歴</h1>
+<h1 class="title1">発注履歴</h1>
 <c:choose>
-<c:when test="${not empty purc_his }">
+<c:when test="${not empty com_purc_his }">
 	<div class="cart-container">
 		<%-- <%@include file="cart_main.jsp"%> --%>
-		<c:forEach var="purchase" items="${purc_his}">
+		<c:forEach var="purchase" items="${com_purc_his}">
 		<table class="cart_table">
 		<thead>
 			<tr>
-				<td>ユーザ名:${purchase.id}</td>
+				<td>ユーザ名</td>
 				<td>注文番号:${purchase.id}</td>
+				<td>合計金額${purchase.purchase_price * purchase.count}</td>
 				<td>クーポン使用</td>
-
 			</tr>
 		</thead>
 		<tbody>
 		<!-- Sample cart item, repeat this block for each item in the cart -->
 			<tr>
 				<td>
-					お届け先住所：<br>${purchase.deladdress }
+					${purchase.user_name}
+				</td>
+				<td>
+					お届け先住所:<br>${purchase.deladdress}
 				</td>
 				<td >
 				<div class="image_pro">
-					<a href="Prodetail.action?id=${purchase.product_id }"><img src="../assets/proimage/${purchase.image_filename}" alt="imageなし"  width="230" height="230"></a>
+					<img src="../assets/proimage/${purchase.image_filename}" alt="imageなし"  width="230" height="230">
 					<div class="pro_inf1">
 						<h1 class="pro_nam">${purchase.product_name }</h1>
 							<p>単価:${purchase.purchase_price }円</p>
 							<p>購入数:${purchase.count }個</p>
-							<%-- <a class="button_his" href="PurCancel.action?log_number=${purchase.id}"><button> キャンセル</button></a> --%>
 					</div>
 				</div>
 				</td>
@@ -99,9 +109,6 @@
 	</div>
 </c:when>
 	<c:otherwise>
-		<h1 class="title2">購入履歴はありません！</h1>
+		<h1 class="title2">発注履歴はありません！</h1>
 	</c:otherwise>
 </c:choose>
-
-
-<%@include file="../footer.jsp"%>

@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@include file="../menu.jsp"%>
-<%@include file="../headtwo.jsp"%>
+
 
 <style>
 body {
@@ -81,6 +81,7 @@ card
 }
 .card-info{
     padding:  5px 10px;
+    text-align: center;
 }
 /* .card-time{
 
@@ -107,8 +108,26 @@ card
   .font{
   	font-size: 25px;
   }
+
+ .title{
+  	color: white;
+  	font-size: 3.5rem;
+  	margin-left: 2rem;
+  	margin-top: 4%;
+    text-align: center;
+  }
+
+  .card-description {
+  	font-size: 200%;
+  }
+
+  .card-description-evaluation {
+  	font-size: 145%;
+  }
+
+
 </style>
-<h1>売れ筋商品</h1>
+<h1 class="title">売れ筋商品</h1>
 
  <section class="section">
     <ul class="grid grid-col-3">
@@ -121,8 +140,8 @@ card
                     <div class="card-info">
                         <time class="card-time" datetime="2022-01-01">2022.01.01<time>
                             <h1 class="card-hedline">${product_cate.product_name }</h1>
-                            <p class="card-description">￥:${product_cate.unit_price}</p>
-                            <p class="card-description">★★★★☆</p>
+                            <p class="card-description">￥${product_cate.unit_price}</p>
+                            <p class="card-description-evaluation">★★★★☆</p>
                     </div>
                 </a>
                </article>
@@ -130,7 +149,7 @@ card
       </c:forEach>
        </ul>
     </section><hr>
-	<h1>新着商品</h1>
+	<h1 class="title">新着商品</h1>
  <section class="section">
     <ul class="grid grid-col-3">
     <c:forEach var="product_cate" items="${product_category}">
@@ -142,8 +161,8 @@ card
                     <div class="card-info">
                         <time class="card-time" datetime="2022-01-01">2022.01.01<time>
                             <h1 class="card-hedline">${product_cate.product_name }</h1>
-                            <p class="card-description">￥:${product_cate.unit_price}</p>
-                            <p class="card-description">★★★★☆</p>
+                            <p class="card-description">￥${product_cate.unit_price}</p>
+                            <p class="card-description-evaluation">★★★★☆</p>
                     </div>
                 </a>
                </article>
@@ -152,7 +171,7 @@ card
        </ul>
     </section>
 <hr>
-	<h1>評価の高い商品</h1>
+	<h1 class="title">評価の高い商品</h1>
  <section class="section">
     <ul class="grid grid-col-3">
     <c:forEach var="product_cate" items="${product_category}">
@@ -164,8 +183,8 @@ card
                     <div class="card-info">
                         <time class="card-time" datetime="2022-01-01">2022.01.01<time>
                             <h1 class="card-hedline">${product_cate.product_name }</h1>
-                            <p class="card-description">￥:${product_cate.unit_price}</p>
-                            <p class="card-description">★★★★☆</p>
+                            <p class="card-description">￥${product_cate.unit_price}</p>
+                            <p class="card-description-evaluation">★★★★☆</p>
                     </div>
                 </a>
                </article>

@@ -29,7 +29,7 @@
 <link href="<%=request.getContextPath() %>/assets/css/toppage.css" rel="stylesheet" />
 <meta name="description" content="sampie text sampie textsampie textsampie textsampie textsampie textsampie textsampie textsampie text" />
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/common.css" />
-
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/list.css" />
 </head>
 
 <style>

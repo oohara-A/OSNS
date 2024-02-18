@@ -24,6 +24,7 @@
                         <li class="nav-item"><a class="nav-link" href="Companyinfodisp.action">企業情報</a></li>
                         <li class="nav-item"><a class="nav-link" href="product_registration.jsp">商品登録</a></li>
                         <li class="nav-item"><a class="nav-link" href="Product_list.action">商品一覧</a></li>
+                         <li class="nav-item"><a class="nav-link" href="Comorder.action">発注履歴</a></li>
                         <li class="nav-item"><a class="nav-link" href="company_delete.jsp">登録解除</a></li>
                         <li class="nav-item"><a class="nav-link" href="inquiry.jsp">お問い合わせ</a></li>
                     </ul>
@@ -39,10 +40,7 @@
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 mb-5">ようこそ！！お待ちしておりました。</p>
-
                     </div>
                 </div>
             </div>
         </header>
-
-
