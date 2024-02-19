@@ -221,14 +221,15 @@ public class CompanyDAO extends DAO{
 
 
 	// 商品一覧
-	public List<Product> product_list()
+	public List<Product> product_list(int company_id)
 		throws Exception {
 		List<Product> product_list=new ArrayList<>();
 
 		Connection con=getConnection();
 
 		PreparedStatement st=con.prepareStatement(
-			"select * from product where flag = 0");
+			"select * from product where company_id = ? and flag = 0");
+		st.setInt(1, company_id);
 		ResultSet rs=st.executeQuery();
 
 		while (rs.next()) {
@@ -438,7 +439,7 @@ public class CompanyDAO extends DAO{
 	}
 
 	// クーポン一覧
-	public List<Coupon> coupon_list()
+	public List<Coupon> coupon_list(int company_id)
 		throws Exception {
 		List<Coupon> coupon_list=new ArrayList<>();
 
@@ -446,7 +447,8 @@ public class CompanyDAO extends DAO{
 
 		PreparedStatement st;
 		st=con.prepareStatement(
-			"select * from coupon where flag = 0");
+			"select * from coupon c, product p where c.product_id = p.id and p.company_id = ? and c.flag = 0 and p.flag = 0");
+		st.setInt(1, company_id);
 		ResultSet rs=st.executeQuery();
 
 		while (rs.next()) {
@@ -462,7 +464,7 @@ public class CompanyDAO extends DAO{
 		return coupon_list;
 	}
 	// クーポン検索
-		public List<Coupon> coupon_search(String coupon_name)
+		public List<Coupon> coupon_search(int company_id, String coupon_name)
 			throws Exception {
 			List<Coupon> coupon_list=new ArrayList<>();
 
@@ -471,8 +473,9 @@ public class CompanyDAO extends DAO{
 			// SQL文を実行
 			PreparedStatement st;
 			st=con.prepareStatement(
-				"select * from coupon where coupon_name = ? and flag = 0");
-			st.setString(1, coupon_name);
+				"select * from coupon c, product p where c.product_id = p.id and p.company_id = ? and coupon_name like ? and c.flag = 0 and p.flag = 0");
+			st.setInt(1, company_id);
+			st.setString(2, "%"+coupon_name+"%");
 			ResultSet rs=st.executeQuery();
 			while (rs.next()){
 				Coupon coupon=new Coupon();
@@ -488,7 +491,7 @@ public class CompanyDAO extends DAO{
 			return coupon_list;
 		}
 		// 商品検索
-		public List<Product> product_search(String product_name)
+		public List<Product> product_search(int company_id,String product_name)
 			throws Exception {
 			List<Product> product_list=new ArrayList<>();
 
@@ -497,8 +500,9 @@ public class CompanyDAO extends DAO{
 			// SQL文を実行
 			PreparedStatement st;
 			st=con.prepareStatement(
-				"select * from product where product_name = ? and flag = 0");
-			st.setString(1, product_name);
+				"select * from product where company_id = ? and product_name like ? and flag = 0");
+			st.setInt(1, company_id);
+			st.setString(2, "%"+product_name+"%");
 			ResultSet rs=st.executeQuery();
 			while (rs.next()){
 				Product product=new Product();
