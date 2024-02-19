@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.Company;
 import bean.Product;
 import dao.CompanyDAO;
 import tool.Action;
@@ -19,10 +20,12 @@ public class Product_listAction extends Action{
 
 		//ログインされている場合
 		if (session.getAttribute("login_company")!=null){
+			Company company = (Company) session.getAttribute("login_company");
+			int company_id = company.getId();
 
 	        // CompanyDAOを使用して商品一覧を取得
 			CompanyDAO dao=new CompanyDAO();
-			List<Product> product_list = dao.product_list();
+			List<Product> product_list = dao.product_list(company_id);
 
 	        // 取得した管理者一覧をセッションに保存
 	        session.setAttribute("productlist", product_list);

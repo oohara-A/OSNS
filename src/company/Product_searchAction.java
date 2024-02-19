@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.Company;
 import bean.Product;
 import dao.CompanyDAO;
 import tool.Action;
@@ -22,10 +23,12 @@ public class Product_searchAction extends Action{
 
 		//ログインされている場合
 		if (session.getAttribute("login_company")!=null){
+			Company company = (Company) session.getAttribute("login_company");
+			int company_id = company.getId();
 
 	        // CompanyDAOを使用して商品一覧を取得
 			CompanyDAO dao=new CompanyDAO();
-			List<Product> product_search = dao.product_search(product_name);
+			List<Product> product_search = dao.product_search(company_id,product_name);
 
 	        // 取得した商品一覧をセッションに保存
 	        session.setAttribute("productlist", product_search);
